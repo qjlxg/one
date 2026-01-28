@@ -3,44 +3,65 @@ import re
 import requests
 from datetime import datetime
 import pytz
+from concurrent.futures import ThreadPoolExecutor
 
-def fetch_and_save():
-    # 1. 设置上海时区
-    shanghai_tz = pytz.timezone('Asia/Shanghai')
-    now = datetime.now(shanghai_tz)
-    
-    # 2. 爬取
-    channel_id = "oneclickvpnkeys"
+# 配置
+CHANNELS = ["oneclickvpnkeys"] 
+SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
+
+def fetch_single_channel(channel_id):
     url = f"https://t.me/s/{channel_id}"
     try:
-        response = requests.get(url, timeout=30)
+        # 增加 headers 模拟浏览器，防止被屏蔽
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
+        # 匹配各种协议节点
+        pattern = r'(vmess|ss|ssr|trojan|vless)://[^\s<"\'#]+'
+        return re.findall(pattern, response.text)
     except Exception as e:
-        print(f"抓取失败: {e}")
-        return
+        print(f"抓取 {channel_id} 出错: {e}")
+        return []
 
-    # 3. 提取与去重 (匹配 vmess, ss, vless, trojan 等)
-    pattern = r'(vmess|ss|ssr|trojan|vless)://[^\s<"\'#]+'
-    nodes = re.findall(pattern, response.text)
-    unique_nodes = list(dict.fromkeys(nodes))
+def main():
+    now = datetime.now(SHANGHAI_TZ)
+    all_nodes = []
+
+    # --- 脚本并行运行 ---
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = executor.map(fetch_single_channel, CHANNELS)
     
-    if not unique_nodes:
-        print("未发现有效节点。")
+    for nodes in results:
+        all_nodes.extend(nodes)
+
+    # 全局去重
+    final_nodes = list(dict.fromkeys(all_nodes))
+
+    if not final_nodes:
+        print("未获取到任何节点。")
         return
 
-    # 4. 创建年月目录 (例如: 2026/01)
+    content = '\n'.join(final_nodes)
+    script_base_name = os.path.basename(__file__).split('.')[0]
+
+    # 1. 在根目录生成/更新文件 (不带时间戳，始终保持最新)
+    root_file_path = f"{script_base_name}.txt"
+    with open(root_file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"根目录文件已更新: {root_file_path}")
+
+    # 2. 在年月目录生成备份文件 (带时间戳)
     dir_path = now.strftime('%Y/%m')
-    if not os.path.exists(dir_path):
-        os.makedirs(dir_path)
+    os.makedirs(dir_path, exist_ok=True)
     
-    # 5. 文件命名: 脚本名_时间戳.txt
-    file_name = f"{channel_id}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
-    full_path = os.path.join(dir_path, file_name)
+    timestamp = now.strftime('%Y%m%d_%H%M%S')
+    backup_file_name = f"{script_base_name}_{timestamp}.txt"
+    backup_full_path = os.path.join(dir_path, backup_file_name)
     
-    with open(full_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(unique_nodes))
+    with open(backup_full_path, 'w', encoding='utf-8') as f:
+        f.write(content)
     
-    print(f"任务完成：保存 {len(unique_nodes)} 个节点至 {full_path}")
+    print(f"备份完成，已保存至: {backup_full_path}")
 
 if __name__ == "__main__":
-    fetch_and_save()
+    main()
