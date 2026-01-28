@@ -1,0 +1,44 @@
+name: oneclickvpnkeys
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'oneclickvpnkeys.py'
+      - '.github/workflows/oneclickvpnkeys.yml'
+
+jobs:
+  gather-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false # 即使其中一个脚本报错，其他脚本也继续运行
+      matrix:
+        # 在这里列出所有需要运行的脚本名称（不带 .py 后缀）
+        script_name: [oneclickvpnkeys]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests pytz
+
+      - name: Run script
+        # 动态运行矩阵中的脚本
+        run: python ${{ matrix.script_name }}.py
+
+      - name: Commit and Push changes
+        # 并行运行时，为了防止冲突，增加重试机制
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git pull --rebase origin main
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: ${{ matrix.script_name }}" && git push)
