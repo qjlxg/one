@@ -1,6 +1,7 @@
 import os
 import re
 import requests
+import html
 from datetime import datetime
 import pytz
 from concurrent.futures import ThreadPoolExecutor
@@ -10,7 +11,7 @@ CHANNELS = ["oneclickvpnkeys"]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
 def fetch_single_channel(channel_id):
-    """抓取频道并只提取代理协议节点"""
+    """抓取频道并修复转义问题"""
     url = f"https://t.me/s/{channel_id}"
     try:
         headers = {
@@ -19,10 +20,12 @@ def fetch_single_channel(channel_id):
         response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
         
-        # 核心修改：只匹配指定的代理协议头
-        # 排除掉你结果中出现的 https://, tg://, http:// 等非节点链接
+        # --- 关键修复：将 &amp; 还原为 & ---
+        raw_text = html.unescape(response.text)
+        
+        # 只提取主流代理协议
         pattern = r'(?:ss|vmess|vless|trojan|hysteria|tuic)://[^\s<"\'#]+'
-        nodes = re.findall(pattern, response.text)
+        nodes = re.findall(pattern, raw_text)
         
         return nodes
     except Exception as e:
@@ -33,38 +36,36 @@ def main():
     now = datetime.now(SHANGHAI_TZ)
     all_nodes = []
 
-    # 脚本内部并行执行
+    # 并行抓取
     with ThreadPoolExecutor(max_workers=5) as executor:
         results = executor.map(fetch_single_channel, CHANNELS)
     
     for nodes in results:
         all_nodes.extend(nodes)
 
-    # 全局去重
+    # 去重
     final_nodes = list(dict.fromkeys(all_nodes))
 
     if not final_nodes:
-        print("未发现纯净代理节点。")
+        print("未发现有效节点。")
         return
 
-    content = '\n'.join(final_nodes)
-    script_name = "oneclickvpnkeys"
+    # 保存重命名后的文件
+    base_name = "nodes_list"
+    
+    # 1. 根目录文件 (修复后的纯净列表)
+    with open(f"{base_name}.txt", 'w', encoding='utf-8') as f:
+        f.write('\n'.join(final_nodes))
 
-    # --- 保存逻辑 ---
-    # 1. 根目录文件 (纯净节点列表)
-    with open(f"{script_name}.txt", 'w', encoding='utf-8') as f:
-        f.write(content)
-
-    # 2. 年月目录备份 (带时间戳)
+    # 2. 备份
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     timestamp = now.strftime('%Y%m%d_%H%M%S')
-    backup_path = os.path.join(dir_path, f"{script_name}_{timestamp}.txt")
-    
+    backup_path = os.path.join(dir_path, f"{base_name}_{timestamp}.txt")
     with open(backup_path, 'w', encoding='utf-8') as f:
-        f.write(content)
+        f.write('\n'.join(final_nodes))
     
-    print(f"提取完成！过滤了图片和网页链接，共获得 {len(final_nodes)} 个纯净节点。")
+    print(f"已修复节点格式并保存。共 {len(final_nodes)} 个节点。")
 
 if __name__ == "__main__":
     main()
