@@ -16,50 +16,45 @@ CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "
 MAX_PAGES = 20
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
-# --- 核心优化：物理参数指纹提取 ---
-
 def get_dedupe_fingerprint(config):
     """
-    通过提取核心指纹实现物理去重。
-    逻辑：如果 ID、端口和关键加密混淆参数一致，即便服务器 IP 不同也视为同一个节点。
+    极致物理去重：通过提取核心身份指纹，彻底忽略 IP/域名变动。
     """
     try:
-        # 预处理：去掉备注名和多余空格
+        # 1. 基础清理
         config = config.split('#')[0].split('\t')[0].strip()
         parsed = urllib.parse.urlparse(config)
         protocol = parsed.scheme.lower()
 
-        # 1. 针对 Hysteria2 / Vless / Trojan / Tuic 的深度去重
+        # 2. 针对 Vless / Trojan / Hysteria2 / Tuic
         if protocol in ['vless', 'trojan', 'hysteria2', 'hysteria', 'tuic']:
             user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
             query = urllib.parse.parse_qs(parsed.query)
             
-            # 关键：指纹不包含 hostname (服务器地址)，实现同账号多IP强制去重
+            # 核心指纹：协议 + 用户ID + 端口 + SNI + PBK
+            # 故意不包含 hostname，这样同 ID 的不同 IP 节点会被强行归为同一个
             sni = query.get('sni', [''])[0]
             pbk = query.get('pbk', [''])[0]
-            path = query.get('path', [''])[0]
             
-            fingerprint = f"{protocol}|{user_info}|{parsed.port}|{sni}|{pbk}|{path}"
+            fingerprint = f"{protocol}|{user_info}|{parsed.port}|{sni}|{pbk}"
             return fingerprint, config
 
-        # 2. 针对 VMess 的 JSON 深度去重
+        # 3. 针对 VMess (深度解包去重)
         elif protocol == 'vmess':
-            try:
-                content = config.split('://')[1]
-                padding = len(content) % 4
-                if padding: content += "=" * (4 - padding)
-                data = json.loads(base64.b64decode(content).decode('utf-8'))
-                
-                # 指纹不包含 'add' 字段
-                fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}|{data.get('host')}"
-                
-                # 清洗数据：抹除备注和地址，让 NekoBox 识别更纯净
-                clean_data = {k: v for k, v in data.items() if k not in ['ps', 'add']}
-                new_conf = f"vmess://{base64.b64encode(json.dumps(clean_data).encode()).decode()}"
-                return fingerprint, new_conf
-            except: pass
+            content = config.split('://')[1]
+            padding = len(content) % 4
+            if padding: content += "=" * (4 - padding)
+            data = json.loads(base64.b64decode(content).decode('utf-8'))
+            
+            # 指纹：用户ID + 端口 + 路径 + 主机
+            fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}|{data.get('host')}"
+            
+            # 重构纯净版：抹除所有可能导致重复的备注(ps)和地址(add)
+            clean_data = {k: v for k, v in data.items() if k not in ['ps', 'add']}
+            new_conf = f"vmess://{base64.b64encode(json.dumps(clean_data).encode()).decode()}"
+            return fingerprint, new_conf
 
-        # 3. 针对 Shadowsocks (ss)
+        # 4. 针对 Shadowsocks
         elif protocol == 'ss':
             user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
             fingerprint = f"ss|{user_info}|{parsed.port}"
@@ -68,8 +63,6 @@ def get_dedupe_fingerprint(config):
         return hashlib.md5(config.encode()).hexdigest(), config
     except:
         return hashlib.md5(config.encode()).hexdigest(), config
-
-# --- 抓取、统计与归档逻辑 ---
 
 async def fetch_channel(session, channel_id):
     configs = []
@@ -110,36 +103,36 @@ async def main():
     total_raw = 0
 
     for cid, configs in results:
-        raw_len = len(configs)
-        total_raw += raw_len
-        stats_log.append([date_str.split()[0], cid, raw_len])
+        raw_count = len(configs)
+        total_raw += raw_count
+        stats_log.append([date_str.split()[0], cid, raw_count])
         for c in configs:
             fingerprint, clean_url = get_dedupe_fingerprint(c)
-            # 只有当物理指纹（ID+端口等）未出现过时才保留
+            # 只有当此物理指纹从未出现过时，才保留抓到的第一个链接
             if fingerprint not in unique_nodes:
                 unique_nodes[fingerprint] = clean_url
 
     final_nodes = sorted(list(unique_nodes.values()))
     total_final = len(final_nodes)
 
-    # 3. 写入抓取统计 CSV
+    # 3. 写入抓取统计 CSV (功能不变)
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         if not file_exists: writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # 4. 更新 README.md
+    # 4. 更新 README.md (功能不变)
     with open("README.md", "w", encoding="utf-8") as rm:
         rm.write(f"# 自动更新节点列表\n\n最后更新时间: `{date_str}` (上海时间)\n\n")
         rm.write(f"本次去重后有效节点: **{total_final}** 个 (原始总数: {total_raw})\n\n")
         rm.write(f"### 节点内容 (纯净无名版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
-    # 5. 更新根目录 nodes_list.txt
+    # 5. 更新根目录 nodes_list.txt (功能不变)
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
 
-    # 6. 按年月归档备份
+    # 6. 按年月归档备份 (功能不变)
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
