@@ -1,0 +1,62 @@
+name: 节点真测速筛选
+
+on:
+  # 1. 监听脚本或工作流文件的变动
+  push:
+    paths:
+      - 'tester_v2.py'
+      - '.github/workflows/speedtest.yml'
+      - 'nodes_list.txt' # 如果原始节点列表变动也触发
+  
+  # 2. 监听抓取工作流的完成（请确保抓取工作流的 name 匹配）
+  workflow_run:
+    workflows: ["自动抓取节点"] # 这里填写你抓取脚本 YML 的 name 字段
+    types: [completed]
+
+  # 3. 支持手动点击运行
+  workflow_dispatch:
+
+jobs:
+  speedtest:
+    # 只有当抓取工作流成功完成，或者是手动/推送触发时才执行
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: 安装依赖
+        run: pip install maxminddb
+
+      - name: 下载测速工具与数据库
+        run: |
+          # 下载最新的二进制测速工具 (linux-amd64)
+          wget https://github.com/xxf001/lite-speedtest/releases/download/v0.15.0/lite-speedtest-linux-amd64.tar.gz
+          tar -zxvf lite-speedtest-linux-amd64.tar.gz
+          chmod +x lite-speedtest
+          # 下载官方维护的 GeoIP 数据库镜像
+          wget -O GeoLite2-Country.mmdb https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb
+
+      - name: 执行二进制真测速
+        run: |
+          # -test 指定输入文件，-out 指定 JSON 结果输出路径
+          # -timeout 设定连接超时，-num 设定并发数（50-100较为稳定）
+          ./lite-speedtest -test nodes_list.txt -out out.json -timeout 5 -num 100
+
+      - name: 运行重命名与筛选脚本
+        run: python tester_v2.py
+
+      - name: 提交并推送优质节点
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
+          # 提交筛选后并重命名的最终 nodes_list.txt
+          git add nodes_list.txt
+          git commit -m "Speedtest: 自动筛选高速节点并归档" || exit 0
+          git push
