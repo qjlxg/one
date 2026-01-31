@@ -1,12 +1,3 @@
-# 深度物理去重节点库
-
-- **更新时间**: `2026-01-31 13:57:57` (上海时间)
-- **爬取深度**: 每频道 `20` 页
-- **原始链接总数**: `4779`
-- **物理指纹去重后**: **3334** (已抹除别名与广告)
-
-### 纯净节点列表
-```text
 hysteria2://28a8a4d0-3e02-11eb-a8bf-f23c91cfbbc9@1ee38495-t6t0g0-t94bdb-mrtr.hk1.hyhuawei.com:443/?insecure=1&sni=1ee38495-t6t0g0-t94bdb-mrtr.hk1.hyhuawei.com
 hysteria2://S1XZDIaoUX@193.108.112.6:50163?security=tls&obfs=salamander&obfs-password=Parsashonam&insecure=1
 hysteria2://Telegram--%3E%40Ln2Ray@206.71.158.23:45000/?insecure=1&obfs=salamander&obfs-password=Telegram--%3E%40Ln2Ray&sni=gavazn.55994421.xyz
@@ -3341,4 +3332,3 @@ vmess://eyJhaWQiOiAwLCAiaWQiOiAiZGI2OWQ1YmMtZDM2Yy00OTAzLWY0NzEtNzRiOThjNWNlZmU1
 vmess://eyJhaWQiOiAyLCAiaG9zdCI6ICJ2MTAuaGVkdWlhbi5saW5rIiwgImlkIjogImNiYjNmODc3LWQxZmItMzQ0Yy04N2E5LWQxNTNiZmZkNTQ4NCIsICJuZXQiOiAid3MiLCAicGF0aCI6ICIvb29vbyIsICJwb3J0IjogMzA4MDcsICJzZWN1cml0eSI6ICJhdXRvIiwgInNraXAtY2VydC12ZXJpZnkiOiBmYWxzZSwgInNuaSI6ICJiYWlkdS5jb20iLCAidGxzIjogIiIsICJ0eXBlIjogImF1dG8ifQ==
 vmess://eyJhbHBuIjogImgyLGh0dHAvMS4xIiwgImZwIjogImNocm9tZSIsICJob3N0IjogIm5sLWNkbi5uaWd0Z2Vtc2hvcG5ldy5vcmciLCAiaWQiOiAiMzFiN2ZiYjQtMjUxMS00ZTk2LTg0NjEtYmU1YWU3YjZjNTZhIiwgIm5ldCI6ICJ3cyIsICJwYXRoIjogIi8iLCAicG9ydCI6IDQ0MywgInNjeSI6ICJhdXRvIiwgInNuaSI6ICJubC1jZG4ubmlndGdlbXNob3BuZXcub3JnIiwgInRscyI6ICJ0bHMiLCAidiI6ICIyIn0=
 vmess://f3d4167e-b15e-4e46-82e9-9286ef93fda7@85.195.101.122:40878?encryption=auto&security=none&type=tcp#%E2%99%82%EF%B8%8F60@oneclickvpnkeys
-```
