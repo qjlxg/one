@@ -3,8 +3,6 @@ import re
 import requests
 import html
 import csv
-import base64
-import json
 from datetime import datetime
 import pytz
 from concurrent.futures import ThreadPoolExecutor
@@ -13,74 +11,35 @@ from concurrent.futures import ThreadPoolExecutor
 CHANNELS = [
     "v2ray_configs_pool", "oneclickvpnkeys", "free_v2ray_full_speed", 
     "v2ray_free_conf", "v2ray_vless_trojan_ss", "v2ray_vless_hysteria",
-    "ShadowSocksShare", "SS_V2ray_Trojan", "v2ray_footprint", "V2list"
+    "ShadowSocksShare", "SS_V2ray_Trojan", "v2ray_footprint", "V2list",
+    "v2free66", "clash_node_share", "proxies_sharing"
 ]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
-MIN_NODE_THRESHOLD = 5 
-
-def is_valid_proxy(node_url):
-    """
-    深度检测是否为真实代理链接
-    """
-    try:
-        # 1. 基础检查
-        if not node_url or len(node_url) < 20: return False
-        
-        # 排除电报内部跳转和广告域名
-        blacklist = ('t.me/', 'tg://', 'bit.ly', 'shorturl', 'google.com', 'github.com')
-        if any(item in node_url.lower() for item in blacklist): return False
-
-        # 2. 协议分发检测
-        if node_url.startswith('vmess://'):
-            # 校验 vmess 是否为合法的 Base64 JSON
-            payload = node_url.split("://")[1]
-            # 自动补全 Base64 填充符
-            payload += "=" * ((4 - len(payload) % 4) % 4)
-            try:
-                decoded = base64.b64decode(payload).decode('utf-8')
-                data = json.loads(decoded)
-                return 'add' in data and 'port' in data # 核心字段存在即视为有效
-            except:
-                return False
-        
-        # 3. 其他协议 (vless/ss/trojan/hysteria) 必须包含 @ 符号或特定的结构
-        # 排除掉只有协议头没有内容的垃圾数据
-        if '://' in node_url:
-            body = node_url.split("://")[1]
-            if len(body) > 10: return True
-            
-        return False
-    except:
-        return False
 
 def fetch_single_channel(channel_id):
-    """改进的抓取函数：解决内容为 0 的问题"""
+    """抓取并统计频道内所有节点"""
     url = f"https://t.me/s/{channel_id}"
     try:
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept-Language': 'zh-CN,zh;q=0.9'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         }
+        # 增加流式传输和超时，提高稳定性
         response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
         
-        # --- 修复关键点 1：必须先反转义 HTML ---
-        raw_content = html.unescape(response.text)
+        # --- 关键步骤：先反转义 HTML，还原所有被转义的 & 和参数 ---
+        raw_text = html.unescape(response.text)
         
-        # --- 修复关键点 2：更具包容性的正则 ---
-        # 匹配协议开头，直到遇到引号、尖括号、空格或反斜杠
+        # --- 正则匹配：匹配主流协议，直到遇到 HTML 标签或空白符 ---
         pattern = r'(?:ss|vmess|vless|trojan|hysteria|tuic|socks5)://[^\s<"\'\\]+'
-        found = re.findall(pattern, raw_content)
+        nodes = re.findall(pattern, raw_text)
         
-        valid_nodes = []
-        for n in found:
-            # 清洗节点末尾可能存在的干扰符
-            clean_node = n.strip().split('#')[0] # 暂时去掉备注以防干扰检测，或保留
-            if is_valid_proxy(n): 
-                valid_nodes.append(n)
+        # 过滤掉明显的非节点（如只有协议头或太短的误报）
+        clean_nodes = [n.strip().split('<')[0] for n in nodes if len(n) > 15]
         
-        return channel_id, valid_nodes
-    except Exception as e:
+        return channel_id, clean_nodes
+    except Exception:
+        # 抓取失败返回空列表，确保统计时该频道标记为 0 而不是崩溃
         return channel_id, []
 
 def main():
@@ -89,17 +48,22 @@ def main():
     all_nodes = []
     stats_log = []
 
-    print(f"[*] 正在扫描 {len(CHANNELS)} 个渠道...")
+    print(f"[*] 任务启动: {date_str}")
 
+    # 并行抓取
     with ThreadPoolExecutor(max_workers=5) as executor:
+        # 使用 list 确保所有线程执行完毕
         results = list(executor.map(fetch_single_channel, CHANNELS))
     
+    # 遍历结果，确保每个频道只被记录一次
     for channel_id, nodes in results:
+        count = len(nodes)
         all_nodes.extend(nodes)
-        stats_log.append([date_str, channel_id, len(nodes)])
-        print(f"[+ {len(nodes):3} 节点] <- {channel_id}")
+        stats_log.append([date_str, channel_id, count])
+        # 控制台实时反馈，方便你检查
+        print(f"[+ {str(count).rjust(3)} 节点] {channel_id}")
 
-    # 保存统计数据 (CSV)
+    # --- 写入 CSV ---
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
@@ -107,20 +71,15 @@ def main():
             writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # 去重处理
+    # --- 去重并保存 txt ---
     final_nodes = list(dict.fromkeys(all_nodes))
-
-    # --- 空数据保护 ---
-    if len(final_nodes) < MIN_NODE_THRESHOLD:
-        print(f"\n[!] 警告：有效节点总数 ({len(final_nodes)}) 过低，未更新 nodes_list.txt")
-        return
-
-    # 保存结果
-    with open("nodes_list.txt", "w", encoding="utf-8") as f:
-        f.write("\n".join(final_nodes))
-
-    print(f"\n[OK] 任务结束。抓取总数: {len(all_nodes)} | 唯一有效数: {len(final_nodes)}")
-    print(f"[OK] 数据已记录至 grab_stats.csv")
+    if final_nodes:
+        with open("nodes_list.txt", 'w', encoding='utf-8') as f:
+            f.write('\n'.join(final_nodes))
+        print("-" * 30)
+        print(f"[OK] 抓取完成！总唯一节点: {len(final_nodes)}")
+    else:
+        print("\n[!] 警告：本次未能抓取到任何有效节点。")
 
 if __name__ == "__main__":
     main()
