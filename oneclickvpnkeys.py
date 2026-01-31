@@ -16,16 +16,19 @@ from bs4 import BeautifulSoup
 
 # --- 配置区 ---
 CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "VlessVpnFree", "vpnfail_vless", "v2Line", "vless_vpns","farahvpn", "bored_vpn", "empirevpn7", "V2raythekyo", "hpv2ray_official", "vmess_ir", "configfree_1", "PrivateVPNs", "Outline_Vpn", "directvpn", "m_vipv2ray", "outline_ir", "v2rayngconfings", "DigiV2ray23", "proxy_mtproto_vpns_free", "v2rayfree", "v2rayngseven", "nofiltering2", "v2_fast", "v2logy", "proxy48", "v2aryng_vpn", "siigmavpn", "disvpn", "igrsdet", "iran_access", "vpn_room", "v2rayPort", "configpluse", "customvpnserver", "v2rayng954", "Free_Internet_Iran", "mftizi", "NIM_VPN_ir", "berice_v2", "v2rayip1", "v2raytg", "V2RAY_VMESS_free", "WomanLifeFreedomVPN", "bluevpn_v2ray", "v2rayy_vpn13", "vpn_kanfik", "FalconPolV2rayNG", "ghalagyann", "iranbaxvpn", "vipvpn_v2ray", "vpncostumer", "pruoxyi", "v2ngfast", "arv2ra", "renetvpn", "v2rayngvpn_1", "v2rplus", "vpncostume", "lightning6", "hopev2ray", "arv2ray", "tehranargo", "v2raxx", "v2ryng01", "drakvpn", "sobyv2ray", "V2pedia", "v2pedia", "jiedianf", "nofilter_v2rayng", "v2rayland02", "mt_team_iran", "proxy_n1", "x4azadi", "toxicvid", "MTProto_666", "castom_v2ray", "club_vpn9", "mrvpn1403", "skivpn", "gozargah_azadi", "fastvpnorummobile", "Easy_Free_VPN", "clubvpn443", "khalaa_vpn", "servernett", "turboo_server", "virav2ray", "MsV2ray", "amirinventor2010", "black8rose", "bolbolvpn", "iranmedicalvpn", "v2rayng_81", "fhkllvjkll", "http_injector99", "SVNTEAM", "armod_iran", "artemisvpn1", "digigard_vpn", "iranvpnnet", "maxshare", "moft_vpn", "payam_nsi", "seven_ping", "svnteam", "vmess_iran", "vpn4ir_1", "yuproxytelegram", "inikotesla"]
-MAX_PAGES = 2
+MAX_PAGES = 3
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'
-TIMEOUT = 3  # TCP连接超时时间
+TIMEOUT = 5  # TCP连接超时时间
 
 # --- 核心工具 ---
 
-async def test_node(address, port, loop):
+async def test_node_smart(protocol, address, port, loop):
     """
-    并发测试核心：解析域名 + 归属地查询 + TCP可用性测试
+    并发测试核心：
+    1. 解析域名 + 归属地查询
+    2. TCP协议执行连接测试
+    3. UDP协议(Hysteria/TUIC)跳过测试直接返回可用
     """
     result = {'ip': None, 'country': "Unknown", 'alive': False}
     try:
@@ -43,16 +46,22 @@ async def test_node(address, port, loop):
                 names = data['country'].get('names', {})
                 result['country'] = names.get('zh-CN', names.get('en', 'Unknown'))
 
-        # 3. TCP 可用性测试 (Ping)
-        conn = asyncio.open_connection(ip, port)
-        try:
-            _, writer = await asyncio.wait_for(conn, timeout=TIMEOUT)
-            result['alive'] = True
-            writer.close()
-            await writer.wait_closed()
-        except:
-            result['alive'] = False
-
+        # 3. 智能可用性测试
+        # 判断是否属于 UDP 核心协议
+        is_udp_protocol = any(p in protocol.lower() for p in ['hysteria', 'tuic'])
+        
+        if is_udp_protocol:
+            result['alive'] = True  # 对 UDP 协议宽容处理，默认认为存活
+        else:
+            # 对 TCP 协议进行连接测试
+            conn = asyncio.open_connection(ip, port)
+            try:
+                _, writer = await asyncio.wait_for(conn, timeout=TIMEOUT)
+                result['alive'] = True
+                writer.close()
+                await writer.wait_closed()
+            except:
+                result['alive'] = False
     except:
         pass
     return result
@@ -70,15 +79,15 @@ def get_dedupe_fingerprint(config):
             if padding: content += "=" * (4 - padding)
             data = json.loads(base64.b64decode(content).decode('utf-8'))
             fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}|{data.get('host')}"
-            return fingerprint, {'type': 'vmess', 'data': data, 'addr': data.get('add'), 'port': int(data.get('port'))}
+            return fingerprint, {'type': 'vmess', 'data': data, 'addr': data.get('add'), 'port': int(data.get('port')), 'proto': 'vmess'}
         
-        elif protocol in ['vless', 'trojan', 'ss', 'hysteria2', 'hysteria', 'tuic']:
+        elif protocol in ['vless', 'trojan', 'ss', 'ssr', 'hysteria2', 'hysteria', 'tuic']:
             user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
             query = urllib.parse.parse_qs(parsed.query)
             sni = query.get('sni', [''])[0]
             pbk = query.get('pbk', [''])[0]
             fingerprint = f"{protocol}|{user_info}|{parsed.port}|{sni}|{pbk}"
-            return fingerprint, {'type': 'url', 'url': raw_config, 'addr': parsed.hostname, 'port': parsed.port}
+            return fingerprint, {'type': 'url', 'url': raw_config, 'addr': parsed.hostname, 'port': parsed.port, 'proto': protocol}
         return hashlib.md5(raw_config.encode()).hexdigest(), None
     except:
         return hashlib.md5(config.encode()).hexdigest(), None
@@ -144,10 +153,10 @@ async def main():
             if info and fingerprint not in unique_nodes_info:
                 unique_nodes_info[fingerprint] = info
 
-    # 并发测试位置和可用性
-    print(f"正在对 {len(unique_nodes_info)} 个节点进行可用性测试与定位...")
+    # 并发测试
+    print(f"正在对 {len(unique_nodes_info)} 个节点进行筛选定位(Hysteria/TUIC已跳过连接测试)...")
     node_items = list(unique_nodes_info.values())
-    test_tasks = [test_node(item['addr'], item['port'], loop) for item in node_items]
+    test_tasks = [test_node_smart(item['proto'], item['addr'], item['port'], loop) for item in node_items]
     test_results = await asyncio.gather(*test_tasks)
 
     # 处理命名逻辑
@@ -155,7 +164,6 @@ async def main():
     final_nodes_list = []
     
     for info, res in zip(node_items, test_results):
-        # 仅保留存活且解析成功的节点
         if res['alive'] and res['ip']:
             country = res['country']
             count = name_tracker[country]
@@ -166,7 +174,7 @@ async def main():
     final_nodes = sorted(list(filter(None, final_nodes_list)))
     total_final = len(final_nodes)
 
-    # --- 以下为你要求的固定输出逻辑 ---
+   
     # 3. 写入抓取统计 CSV
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
@@ -177,7 +185,7 @@ async def main():
     # 4. 更新 README.md
     with open("README.md", "w", encoding="utf-8") as rm:
         rm.write(f"# 自动更新节点列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
-        rm.write(f"本次去重且可用节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
+        rm.write(f"本次筛选后可用节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
         rm.write(f"### 节点内容 (地理位置重命名 & 可用性筛选版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
     # 5. 更新根目录 nodes_list.txt
@@ -191,7 +199,7 @@ async def main():
     with open(backup_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
     
-    print(f"[OK] 原始抓取: {total_raw} -> 筛选后可用: {total_final}")
+    print(f"[OK] 原始抓取: {total_raw} -> 最终保留: {total_final}")
 
 if __name__ == "__main__":
     asyncio.run(main())
