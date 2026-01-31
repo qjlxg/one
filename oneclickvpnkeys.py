@@ -8,7 +8,7 @@ import base64
 from datetime import datetime
 import pytz
 from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
 
 # --- 配置区 ---
 CHANNELS = [
@@ -17,105 +17,105 @@ CHANNELS = [
 ]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
-def normalize_node(node_url):
+def get_node_fingerprint(node_url):
     """
-    终极清洗：将节点彻底拆解并按标准字典排序重建，强制物理去重
+    提取节点的核心指纹，用于物理去重。
+    指纹包含：协议、地址、端口、用户ID、路径/SNI（不含名称和广告）
     """
     try:
-        node_url = node_url.strip()
         parsed = urlparse(node_url)
         scheme = parsed.scheme.lower()
         
-        # 1. 核心数据容器
-        core_data = {"scheme": scheme}
-
-        # 2. 针对不同协议的暴力提取
+        # 1. 处理 VMess (解包 JSON 提取核心参数)
         if scheme == 'vmess':
-            try:
-                # 兼容处理：有些 vmess 后面可能带 # 备注，先去掉
-                netloc = parsed.netloc.split('#')[0]
-                v = json.loads(base64.b64decode(netloc).decode('utf-8'))
-                # 只保留决定连接的核心键，且全部转为字符串并剔除空格
-                for key in ['add', 'port', 'id', 'net', 'type', 'host', 'path', 'tls', 'sni']:
-                    core_data[key] = str(v.get(key, '')).strip().lower()
-            except: return None
-            
-        elif scheme in ['vless', 'trojan', 'ss', 'hysteria2', 'hysteria', 'tuic']:
-            # 提取 用户信息@地址:端口 (忽略大小写和空格)
-            core_data['netloc'] = parsed.netloc.strip().lower()
-            core_data['path'] = parsed.path.strip().lower()
-            
-            # 提取关键 Query 参数并排序（去除随机生成的干扰项）
-            params = parse_qs(parsed.query.lower())
-            # 只保留对连接有意义的参数白名单
-            whitelist = ['sni', 'path', 'serviceoriginal', 'servicename', 'mode', 'type', 'security', 'alpn', 'fp', 'pbk', 'sid', 'flow']
-            clean_params = {k: sorted([v.strip() for v in vals])[0] for k, vals in params.items() if k in whitelist}
-            core_data['params'] = clean_params
-        else:
-            return None
+            v2_raw = base64.b64decode(parsed.netloc).decode('utf-8')
+            v = json.loads(v2_raw)
+            # 核心指纹：地址 + 端口 + id + 路径
+            fingerprint = f"vmess|{v.get('add')}|{v.get('port')}|{v.get('id')}|{v.get('path')}|{v.get('host')}"
+            return fingerprint, node_url # 返回指纹和原始链接用于重组
 
-        # 3. 生成唯一指纹（序列化字典，确保顺序一致）
-        fingerprint = json.dumps(core_data, sort_keys=True)
+        # 2. 处理 VLESS / Trojan / SS / Hysteria
+        # 提取核心：协议 + 用户信息(uuid) + 地址 + 端口 + 关键路径参数
+        params = parse_qs(parsed.query)
+        # 排除无意义参数，保留核心转发参数
+        core_query = {k: v for k, v in params.items() if k in ['path', 'sni', 'serviceName', 'pid']}
         
-        # 4. 根据核心数据重建“无名”节点链接
-        if scheme == 'vmess':
-            # 这里的 ps 为空，确保软件导入时没有名字
-            v_rebuilt = {**core_data, "v": "2", "ps": ""}
-            del v_rebuilt['scheme'] # 移除内部使用的标记
-            new_v = base64.b64encode(json.dumps(v_rebuilt).encode('utf-8')).decode('utf-8')
-            return fingerprint, f"vmess://{new_v}"
-        else:
-            # 重组 query 字符串
-            from urllib.parse import urlencode
-            q_str = urlencode(core_data.get('params', {}))
-            new_url = f"{scheme}://{core_data['netloc']}{core_data['path']}?{q_str}"
-            return fingerprint, new_url
+        # 构造指纹字符串
+        fingerprint = f"{scheme}|{parsed.netloc}|{parsed.path}|{urlencode(core_query, doseq=True)}"
+        return fingerprint, node_url
+    except:
+        return node_url, node_url # 出错则按原样处理
 
-    except Exception:
-        return None
+def rebuild_clean_node(node_url):
+    """
+    基于指纹逻辑重新构建一个绝对纯净的链接
+    """
+    try:
+        parsed = urlparse(node_url)
+        scheme = parsed.scheme.lower()
+
+        if scheme == 'vmess':
+            v = json.loads(base64.b64decode(parsed.netloc).decode('utf-8'))
+            clean_v = {
+                "v": "2", "ps": "", "add": v.get('add'), "port": v.get('port'),
+                "id": v.get('id'), "aid": v.get('aid', "0"), "net": v.get('net'),
+                "type": v.get('type'), "host": v.get('host'), "path": v.get('path'),
+                "tls": v.get('tls'), "sni": v.get('sni'), "alpn": v.get('alpn')
+            }
+            new_netloc = base64.b64encode(json.dumps(clean_v).encode('utf-8')).decode('utf-8')
+            return f"vmess://{new_netloc}"
+
+        # 通用处理：抹除 fragment (#之后的内容)
+        return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, parsed.query, ''))
+    except:
+        return node_url
 
 def fetch_single_channel(channel_id):
     url = f"https://t.me/s/{channel_id}"
     try:
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+        headers = {'User-Agent': 'Mozilla/5.0...'}
         response = requests.get(url, headers=headers, timeout=15)
         raw_text = html.unescape(response.text)
-        # 修正正则，确保能抓到带特殊字符的完整链接
-        pattern = r'(?:ss|vmess|vless|trojan|hysteria2|hysteria|tuic)://[^\s<"\'#]+(?:#[^\s<"\'#]+)?'
+        pattern = r'(?:ss|vmess|vless|trojan|hysteria2|hysteria|tuic)://[^\s<"\'#]+'
         nodes = re.findall(pattern, raw_text)
-        return channel_id, nodes
+        return channel_id, [n.rstrip('.,;)]') for n in nodes]
     except:
         return channel_id, []
 
 def main():
     now = datetime.now(SHANGHAI_TZ)
     date_str = now.strftime('%Y-%m-%d %H:%M:%S')
-    
-    print(f"[*] 任务开始: {date_str}")
+    all_raw_nodes = []
+
+    # 1. 抓取
     with ThreadPoolExecutor(max_workers=5) as executor:
         results = list(executor.map(fetch_single_channel, CHANNELS))
     
-    # 使用字典指纹去重
-    unique_nodes = {} # {fingerprint: final_url}
-    raw_count = 0
-
     for _, nodes in results:
-        for n in nodes:
-            raw_count += 1
-            result = normalize_node(n)
-            if result:
-                fp, clean_url = result
-                # 如果指纹重复，后面的会覆盖前面的，达到去重效果
-                unique_nodes[fp] = clean_url
+        all_raw_nodes.extend(nodes)
 
-    final_list = sorted(list(unique_nodes.values()))
+    # 2. 【核心改进】基于指纹的物理去重
+    fingerprint_map = {} # 用于存放 {指纹: 节点链接}
     
-    # 写入文件
+    for raw_url in all_raw_nodes:
+        fp, _ = get_node_fingerprint(raw_url)
+        # 如果指纹没出现过，或者当前的链接比已有的更完整（可选），则保留
+        if fp not in fingerprint_map:
+            # 存入前进行最后的链接清洗（去名）
+            fingerprint_map[fp] = rebuild_clean_node(raw_url)
+
+    final_nodes = sorted(list(fingerprint_map.values()))
+    
+    print(f"[*] 原始: {len(all_raw_nodes)} -> 物理去重后: {len(final_nodes)}")
+
+    # 3. 写入文件 (保持原有逻辑)
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
-        f.write('\n'.join(final_list))
-        
-    print(f"[*] 原始节点: {raw_count} | 物理去重后: {len(final_list)}")
-    print(f"[OK] 已经剔除所有名称和广告参数，仅保留连接核心。")
+        f.write('\n'.join(final_nodes))
+    
+    with open("README.md", "w", encoding="utf-8") as rm:
+        rm.write(f"# 物理级去重节点库\n最后更新: `{date_str}`\n有效节点: **{len(final_nodes)}**\n\n```text\n")
+        rm.write('\n'.join(final_nodes))
+        rm.write("\n```\n")
 
 if __name__ == "__main__":
     main()
