@@ -7,39 +7,37 @@ from datetime import datetime
 import pytz
 from concurrent.futures import ThreadPoolExecutor
 
-# 配置
+# 配置：只保留产出稳定的频道
 CHANNELS = [
-    "v2ray_configs_pool", "oneclickvpnkeys", "free_v2ray_full_speed", 
-    "v2ray_free_conf", "v2ray_vless_trojan_ss", "v2ray_vless_hysteria",
-    "ShadowSocksShare", "SS_V2ray_Trojan", "v2ray_footprint", "V2list",
-    "v2free66", "clash_node_share", "proxies_sharing"
+    "oneclickvpnkeys",      # 你的稳定源
+    "v2ray_free_conf",      # 你的稳定源
+    "v2ray_configs_pool",   # 观察是否能恢复
+    "v2ray_footprint",      # 备选
+    "V2list"                # 备选
 ]
+
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
 def fetch_single_channel(channel_id):
-    """抓取并统计频道内所有节点"""
+    """最简抓取：只要是代理链接就计数"""
     url = f"https://t.me/s/{channel_id}"
     try:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         }
-        # 增加流式传输和超时，提高稳定性
-        response = requests.get(url, headers=headers, timeout=15)
+        # 增加超时和简单的重试逻辑
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
         
-        # --- 关键步骤：先反转义 HTML，还原所有被转义的 & 和参数 ---
+        # 彻底解码 HTML，防止 &amp; 截断链接
         raw_text = html.unescape(response.text)
         
-        # --- 正则匹配：匹配主流协议，直到遇到 HTML 标签或空白符 ---
-        pattern = r'(?:ss|vmess|vless|trojan|hysteria|tuic|socks5)://[^\s<"\'\\]+'
+        # 匹配协议链接
+        pattern = r'(?:ss|vmess|vless|trojan|hysteria|tuic|socks5)://[^\s<"\'#]+'
         nodes = re.findall(pattern, raw_text)
         
-        # 过滤掉明显的非节点（如只有协议头或太短的误报）
-        clean_nodes = [n.strip().split('<')[0] for n in nodes if len(n) > 15]
-        
-        return channel_id, clean_nodes
+        return channel_id, nodes
     except Exception:
-        # 抓取失败返回空列表，确保统计时该频道标记为 0 而不是崩溃
         return channel_id, []
 
 def main():
@@ -48,22 +46,19 @@ def main():
     all_nodes = []
     stats_log = []
 
-    print(f"[*] 任务启动: {date_str}")
+    print(f"[*] 正在统计频道节点产量... {date_str}")
 
-    # 并行抓取
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        # 使用 list 确保所有线程执行完毕
+    with ThreadPoolExecutor(max_workers=3) as executor:
         results = list(executor.map(fetch_single_channel, CHANNELS))
     
-    # 遍历结果，确保每个频道只被记录一次
     for channel_id, nodes in results:
         count = len(nodes)
         all_nodes.extend(nodes)
+        # 只记录每个频道的产出总量
         stats_log.append([date_str, channel_id, count])
-        # 控制台实时反馈，方便你检查
         print(f"[+ {str(count).rjust(3)} 节点] {channel_id}")
 
-    # --- 写入 CSV ---
+    # 写入 CSV (你的股票数据风格)
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
@@ -71,15 +66,12 @@ def main():
             writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # --- 去重并保存 txt ---
+    # 去重保存
     final_nodes = list(dict.fromkeys(all_nodes))
     if final_nodes:
         with open("nodes_list.txt", 'w', encoding='utf-8') as f:
             f.write('\n'.join(final_nodes))
-        print("-" * 30)
-        print(f"[OK] 抓取完成！总唯一节点: {len(final_nodes)}")
-    else:
-        print("\n[!] 警告：本次未能抓取到任何有效节点。")
+        print(f"统计完成，唯一节点总数: {len(final_nodes)}")
 
 if __name__ == "__main__":
     main()
