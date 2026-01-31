@@ -16,7 +16,7 @@ CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "
 MAX_PAGES = 20
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
-# --- 核心优化：多维度去重算法 ---
+# --- 核心优化：物理参数指纹提取 ---
 
 def get_dedupe_fingerprint(config):
     """
@@ -34,8 +34,7 @@ def get_dedupe_fingerprint(config):
             user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
             query = urllib.parse.parse_qs(parsed.query)
             
-            # 提取关键指纹参数 (忽略地址 add)
-            # 指纹 = 协议 + 用户ID + 端口 + 混淆密码/SNI
+            # 关键：指纹不包含 hostname (服务器地址)，实现同账号多IP强制去重
             sni = query.get('sni', [''])[0]
             pbk = query.get('pbk', [''])[0]
             path = query.get('path', [''])[0]
@@ -51,10 +50,10 @@ def get_dedupe_fingerprint(config):
                 if padding: content += "=" * (4 - padding)
                 data = json.loads(base64.b64decode(content).decode('utf-8'))
                 
-                # 指纹 = 用户ID + 端口 + 路径 (忽略 ps 别名和 add 地址)
-                fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}"
+                # 指纹不包含 'add' 字段
+                fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}|{data.get('host')}"
                 
-                # 清洗数据：抹除备注，让 NekoBox 识别更纯净
+                # 清洗数据：抹除备注和地址，让 NekoBox 识别更纯净
                 clean_data = {k: v for k, v in data.items() if k not in ['ps', 'add']}
                 new_conf = f"vmess://{base64.b64encode(json.dumps(clean_data).encode()).decode()}"
                 return fingerprint, new_conf
@@ -62,17 +61,15 @@ def get_dedupe_fingerprint(config):
 
         # 3. 针对 Shadowsocks (ss)
         elif protocol == 'ss':
-            # 指纹 = 加密方法+密码 + 端口
             user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
             fingerprint = f"ss|{user_info}|{parsed.port}"
             return fingerprint, config
 
-        # 通用兜底
         return hashlib.md5(config.encode()).hexdigest(), config
     except:
         return hashlib.md5(config.encode()).hexdigest(), config
 
-# --- 抓取与保存逻辑 ---
+# --- 抓取、统计与归档逻辑 ---
 
 async def fetch_channel(session, channel_id):
     configs = []
@@ -118,6 +115,7 @@ async def main():
         stats_log.append([date_str.split()[0], cid, raw_len])
         for c in configs:
             fingerprint, clean_url = get_dedupe_fingerprint(c)
+            # 只有当物理指纹（ID+端口等）未出现过时才保留
             if fingerprint not in unique_nodes:
                 unique_nodes[fingerprint] = clean_url
 
@@ -137,18 +135,18 @@ async def main():
         rm.write(f"本次去重后有效节点: **{total_final}** 个 (原始总数: {total_raw})\n\n")
         rm.write(f"### 节点内容 (纯净无名版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
-    # 5. 更新 nodes_list.txt
+    # 5. 更新根目录 nodes_list.txt
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
 
-    # 6. 归档备份
+    # 6. 按年月归档备份
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
     with open(backup_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
     
-    print(f"完成！去重后节点：{total_final}")
+    print(f"[OK] 原始: {total_raw} -> 物理去重后: {total_final}")
 
 if __name__ == "__main__":
     asyncio.run(main())
