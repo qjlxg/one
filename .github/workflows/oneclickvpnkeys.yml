@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'oneclickvpnkeys.py'
+      - 'GeoLite2-Country.mmdb'
       - '.github/workflows/oneclickvpnkeys.yml'
   schedule:
     - cron: '0 10 * * *' # 可选：每天北京时间18点运行一次 (UTC 10:00)
