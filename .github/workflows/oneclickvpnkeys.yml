@@ -25,7 +25,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests pytz aiohttp
+        run: pip install aiohttp beautifulsoup4 pytz
 
       - name: Run parallel script
         run: python oneclickvpnkeys.py
