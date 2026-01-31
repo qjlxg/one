@@ -1,4 +1,4 @@
-name: 节点真测速筛选
+name: 节点真测速筛选-轻量版
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'tester_v2.py'
       - '.github/workflows/speedtest.yml'
   workflow_run:
-    workflows: ["您的抓取工作流名称"] # 确保这里和抓取脚本的 YML name 一致
+    workflows: ["自动抓取节点"] # 确保与抓取脚本的 YML name 匹配
     types: [completed]
   workflow_dispatch:
 
@@ -19,32 +19,31 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 安装 Python 依赖
-        run: pip install maxminddb
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
       - name: 下载测速二进制工具
         run: |
-          # 使用 lite-map 维护的最新 Go 版本，这是目前最稳的
-          wget https://github.com/lite-map/lite-speedtest-go/releases/download/v0.17.0/lite-speedtest-go_linux_amd64.tar.gz
-          tar -zxvf lite-speedtest-go_linux_amd64.tar.gz
-          chmod +x lite-speedtest-go
-          # 下载 GeoIP 数据库用于定位
-          wget -O GeoLite2-Country.mmdb https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb
+          # 使用 Stilleshan 维护的可直接运行版本
+          wget -q https://github.com/stilleshan/lite-speedtest-docker/raw/main/lite-speedtest
+          chmod +x lite-speedtest
 
-      - name: 执行真实下载测速
+      - name: 执行二进制真测速
         run: |
-          # -test: 指定输入文件 (你上传的 nodes_list.txt)
-          # -out: 指定输出结果为 out.json
-          # -num: 100个并发（Actions性能足够）
-          ./lite-speedtest-go -test nodes_list.txt -out out.json -timeout 8 -num 100
+          # 直接读取 nodes_list.txt 进行下载测速
+          # -timeout 5: 5秒连不上就判定为死节点
+          # -num 100: 并发100个提高速度
+          ./lite-speedtest -test nodes_list.txt -out out.json -timeout 5 -num 100
 
-      - name: 运行 Python 筛选与改名
+      - name: 运行 Python 筛选
         run: python tester_v2.py
 
-      - name: 推送优质节点到仓库
+      - name: 推送结果
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
           git add nodes_list.txt
-          git commit -m "Speedtest: 自动剔除低速节点，仅保留流畅线路" || exit 0
+          git commit -m "Speedtest: 剔除死节点和低速节点" || exit 0
           git push
