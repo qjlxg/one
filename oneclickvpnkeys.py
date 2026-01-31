@@ -19,7 +19,7 @@ CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "
 MAX_PAGES = 3
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'
-TIMEOUT = 5  # TCP连接超时时间
+TIMEOUT = 2  # TCP连接超时时间
 
 # --- 核心工具 ---
 
