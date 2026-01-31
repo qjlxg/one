@@ -7,7 +7,10 @@ import aiohttp
 import hashlib
 import urllib.parse
 import csv
+import socket
+import maxminddb
 from datetime import datetime
+from collections import defaultdict
 import pytz
 from bs4 import BeautifulSoup
 
@@ -15,54 +18,84 @@ from bs4 import BeautifulSoup
 CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "VlessVpnFree", "vpnfail_vless", "v2Line", "vless_vpns","farahvpn", "bored_vpn", "empirevpn7", "V2raythekyo", "hpv2ray_official", "vmess_ir", "configfree_1", "PrivateVPNs", "Outline_Vpn", "directvpn", "m_vipv2ray", "outline_ir", "v2rayngconfings", "DigiV2ray23", "proxy_mtproto_vpns_free", "v2rayfree", "v2rayngseven", "nofiltering2", "v2_fast", "v2logy", "proxy48", "v2aryng_vpn", "siigmavpn", "disvpn", "igrsdet", "iran_access", "vpn_room", "v2rayPort", "configpluse", "customvpnserver", "v2rayng954", "Free_Internet_Iran", "mftizi", "NIM_VPN_ir", "berice_v2", "v2rayip1", "v2raytg", "V2RAY_VMESS_free", "WomanLifeFreedomVPN", "bluevpn_v2ray", "v2rayy_vpn13", "vpn_kanfik", "FalconPolV2rayNG", "ghalagyann", "iranbaxvpn", "vipvpn_v2ray", "vpncostumer", "pruoxyi", "v2ngfast", "arv2ra", "renetvpn", "v2rayngvpn_1", "v2rplus", "vpncostume", "lightning6", "hopev2ray", "arv2ray", "tehranargo", "v2raxx", "v2ryng01", "drakvpn", "sobyv2ray", "V2pedia", "v2pedia", "jiedianf", "nofilter_v2rayng", "v2rayland02", "mt_team_iran", "proxy_n1", "x4azadi", "toxicvid", "MTProto_666", "castom_v2ray", "club_vpn9", "mrvpn1403", "skivpn", "gozargah_azadi", "fastvpnorummobile", "Easy_Free_VPN", "clubvpn443", "khalaa_vpn", "servernett", "turboo_server", "virav2ray", "MsV2ray", "amirinventor2010", "black8rose", "bolbolvpn", "iranmedicalvpn", "v2rayng_81", "fhkllvjkll", "http_injector99", "SVNTEAM", "armod_iran", "artemisvpn1", "digigard_vpn", "iranvpnnet", "maxshare", "moft_vpn", "payam_nsi", "seven_ping", "svnteam", "vmess_iran", "vpn4ir_1", "yuproxytelegram", "inikotesla"]
 MAX_PAGES = 2
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
+DB_PATH = 'GeoLite2-Country.mmdb'
+TIMEOUT = 3  # TCP连接超时时间
+
+# --- 核心工具 ---
+
+async def test_node(address, port, loop):
+    """
+    并发测试核心：解析域名 + 归属地查询 + TCP可用性测试
+    """
+    result = {'ip': None, 'country': "Unknown", 'alive': False}
+    try:
+        # 1. 域名解析
+        if not re.match(r"^\d{1,3}(\.\d{1,3}){3}$", address):
+            ip = await loop.run_in_executor(None, lambda: socket.gethostbyname(address))
+        else:
+            ip = address
+        result['ip'] = ip
+
+        # 2. 地理位置查询
+        with maxminddb.open_database(DB_PATH) as reader:
+            data = reader.get(ip)
+            if data and 'country' in data:
+                names = data['country'].get('names', {})
+                result['country'] = names.get('zh-CN', names.get('en', 'Unknown'))
+
+        # 3. TCP 可用性测试 (Ping)
+        conn = asyncio.open_connection(ip, port)
+        try:
+            _, writer = await asyncio.wait_for(conn, timeout=TIMEOUT)
+            result['alive'] = True
+            writer.close()
+            await writer.wait_closed()
+        except:
+            result['alive'] = False
+
+    except:
+        pass
+    return result
 
 def get_dedupe_fingerprint(config):
-    """
-    去重：通过提取核心身份指纹，彻底忽略 IP/域名变动。
-    """
+    """提取指纹及节点元数据"""
     try:
-        # 1. 基础清理
-        config = config.split('#')[0].split('\t')[0].strip()
-        parsed = urllib.parse.urlparse(config)
+        raw_config = config.split('#')[0].split('\t')[0].strip()
+        parsed = urllib.parse.urlparse(raw_config)
         protocol = parsed.scheme.lower()
-
-        # 2. 针对 Vless / Trojan / Hysteria2 / Tuic
-        if protocol in ['vless', 'trojan', 'hysteria2', 'hysteria', 'tuic']:
-            user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
-            query = urllib.parse.parse_qs(parsed.query)
-            
-            # 核心指纹：协议 + 用户ID + 端口 + SNI + PBK
-            # 故意不包含 hostname，这样同 ID 的不同 IP 节点会被强行归为同一个
-            sni = query.get('sni', [''])[0]
-            pbk = query.get('pbk', [''])[0]
-            
-            fingerprint = f"{protocol}|{user_info}|{parsed.port}|{sni}|{pbk}"
-            return fingerprint, config
-
-        # 3. 针对 VMess (深度解包去重)
-        elif protocol == 'vmess':
-            content = config.split('://')[1]
+        
+        if protocol == 'vmess':
+            content = raw_config.split('://')[1]
             padding = len(content) % 4
             if padding: content += "=" * (4 - padding)
             data = json.loads(base64.b64decode(content).decode('utf-8'))
-            
-            # 指纹：用户ID + 端口 + 路径 + 主机
             fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}|{data.get('host')}"
-            
-            # 重构：抹除所有可能导致重复的备注(ps)和地址(add)
-            clean_data = {k: v for k, v in data.items() if k not in ['ps', 'add']}
-            new_conf = f"vmess://{base64.b64encode(json.dumps(clean_data).encode()).decode()}"
-            return fingerprint, new_conf
-
-        # 4. 针对 Shadowsocks
-        elif protocol == 'ss':
+            return fingerprint, {'type': 'vmess', 'data': data, 'addr': data.get('add'), 'port': int(data.get('port'))}
+        
+        elif protocol in ['vless', 'trojan', 'ss', 'hysteria2', 'hysteria', 'tuic']:
             user_info = parsed.netloc.split('@')[0] if '@' in parsed.netloc else ""
-            fingerprint = f"ss|{user_info}|{parsed.port}"
-            return fingerprint, config
-
-        return hashlib.md5(config.encode()).hexdigest(), config
+            query = urllib.parse.parse_qs(parsed.query)
+            sni = query.get('sni', [''])[0]
+            pbk = query.get('pbk', [''])[0]
+            fingerprint = f"{protocol}|{user_info}|{parsed.port}|{sni}|{pbk}"
+            return fingerprint, {'type': 'url', 'url': raw_config, 'addr': parsed.hostname, 'port': parsed.port}
+        return hashlib.md5(raw_config.encode()).hexdigest(), None
     except:
-        return hashlib.md5(config.encode()).hexdigest(), config
+        return hashlib.md5(config.encode()).hexdigest(), None
+
+def apply_new_name(node_info, new_name):
+    """重命名逻辑"""
+    try:
+        if node_info['type'] == 'vmess':
+            data = node_info['data']
+            data['ps'] = new_name
+            return f"vmess://{base64.b64encode(json.dumps(data).encode()).decode()}"
+        else:
+            url_parts = list(urllib.parse.urlparse(node_info['url']))
+            url_parts[5] = urllib.parse.quote(new_name)
+            return urllib.parse.urlunparse(url_parts)
+    except:
+        return ""
 
 async def fetch_channel(session, channel_id):
     configs = []
@@ -79,12 +112,11 @@ async def fetch_channel(session, channel_id):
                 pattern = r'(?:vless|vmess|trojan|ss|ssr|hysteria2|hysteria|tuic)://[^\s<"\'#\t]+(?:#[^\s<"\'#\t]*)?'
                 for m in msgs:
                     configs.extend(re.findall(pattern, m.get_text(separator='\n', strip=True)))
-                
                 msgs_divs = soup.find_all('div', class_='tgme_widget_message', attrs={'data-post': True})
                 if msgs_divs:
                     current_url = f"{base_url}?before={msgs_divs[0].get('data-post').split('/')[-1]}"
                     page_count += 1
-                    await asyncio.sleep(0.2)
+                    await asyncio.sleep(0.1)
                     continue
                 break
         except: break
@@ -93,12 +125,13 @@ async def fetch_channel(session, channel_id):
 async def main():
     now = datetime.now(SHANGHAI_TZ)
     date_str = now.strftime('%Y-%m-%d %H:%M:%S')
+    loop = asyncio.get_event_loop()
     
     async with aiohttp.ClientSession(headers={'User-Agent': 'Mozilla/5.0...'}) as session:
         tasks = [fetch_channel(session, cid) for cid in CHANNELS]
         results = await asyncio.gather(*tasks)
 
-    unique_nodes = {}
+    unique_nodes_info = {}
     stats_log = []
     total_raw = 0
 
@@ -107,39 +140,58 @@ async def main():
         total_raw += raw_count
         stats_log.append([date_str.split()[0], cid, raw_count])
         for c in configs:
-            fingerprint, clean_url = get_dedupe_fingerprint(c)
-            # 只有当此物理指纹从未出现过时，才保留抓到的第一个链接
-            if fingerprint not in unique_nodes:
-                unique_nodes[fingerprint] = clean_url
+            fingerprint, info = get_dedupe_fingerprint(c)
+            if info and fingerprint not in unique_nodes_info:
+                unique_nodes_info[fingerprint] = info
 
-    final_nodes = sorted(list(unique_nodes.values()))
+    # 并发测试位置和可用性
+    print(f"正在对 {len(unique_nodes_info)} 个节点进行可用性测试与定位...")
+    node_items = list(unique_nodes_info.values())
+    test_tasks = [test_node(item['addr'], item['port'], loop) for item in node_items]
+    test_results = await asyncio.gather(*test_tasks)
+
+    # 处理命名逻辑
+    name_tracker = defaultdict(int)
+    final_nodes_list = []
+    
+    for info, res in zip(node_items, test_results):
+        # 仅保留存活且解析成功的节点
+        if res['alive'] and res['ip']:
+            country = res['country']
+            count = name_tracker[country]
+            display_name = country if count == 0 else f"{country} {count}"
+            name_tracker[country] += 1
+            final_nodes_list.append(apply_new_name(info, display_name))
+
+    final_nodes = sorted(list(filter(None, final_nodes_list)))
     total_final = len(final_nodes)
 
-    # 3. 写入抓取统计 CSV 
+    # --- 以下为你要求的固定输出逻辑 ---
+    # 3. 写入抓取统计 CSV
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         if not file_exists: writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # 4. 更新 README.md 
+    # 4. 更新 README.md
     with open("README.md", "w", encoding="utf-8") as rm:
         rm.write(f"# 自动更新节点列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
-        rm.write(f"本次去重后节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
-        rm.write(f"### 节点内容 (重复较少版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
+        rm.write(f"本次去重且可用节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
+        rm.write(f"### 节点内容 (地理位置重命名 & 可用性筛选版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
-    # 5. 更新根目录 nodes_list.txt 
+    # 5. 更新根目录 nodes_list.txt
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
 
-    # 6. 按年月归档备份 
+    # 6. 按年月归档备份
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
     with open(backup_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
     
-    print(f"[OK] 原始: {total_raw} -> 去重后: {total_final}")
+    print(f"[OK] 原始抓取: {total_raw} -> 筛选后可用: {total_final}")
 
 if __name__ == "__main__":
     asyncio.run(main())
