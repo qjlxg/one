@@ -1,0 +1,7 @@
+proxies: []
+proxy-groups:
+- name: Proxy
+  proxies: []
+  type: select
+rules:
+- MATCH,Proxy
