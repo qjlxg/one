@@ -11,7 +11,12 @@ from concurrent.futures import ThreadPoolExecutor
 CHANNELS = [
     "oneclickvpnkeys", 
     "v2ray_free_conf",
-    "ip_cf_config"
+    "ip_cf_config",
+    "vlesskeys",
+    "VlessVpnFree",
+    "vpnfail_vless",
+    "v2Line",
+    "vless_vpns"
 ]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
