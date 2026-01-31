@@ -1,61 +1,79 @@
-name: ClashForge
+name: ClashForge 深度筛选
 
 on:
   push:
     paths-ignore:
       - '**'
-  workflow_dispatch:
+  workflow_dispatch: # 支持手动点击运行
 
 jobs:
-  run_demo_actions:
+  run_clash_forge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: 检出代码
         uses: actions/checkout@v4
         with:
+          # 使用你设置的秘密 BOT Token，确保有推送权限
           token: ${{ secrets.BOT }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v4 # 建议升级到 v4
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10.10'
 
-      - name: Install requirements.txt
+      - name: 安装 Python 依赖
         run: |
-          # 如果没有 requirements.txt，可以直接安装脚本需要的库
           pip install requests pyyaml httpx requests-html aiohttp
 
-      - name: 启动 Mihomo 内核
+      - name: 准备并启动 Mihomo 内核
         run: |
-          # 1. 解压你上传的内核文件
+          # 1. 解压仓库中的内核文件
           gunzip -c mihomo-linux-amd64-v1.18.9.gz > mihomo
           chmod +x mihomo
           
-          # 2. 创建一个最简单的基础配置，否则内核启动会报错
+          # 2. 创建基础配置文件，确保 Mihomo 能正常启动 API 端口
           echo "external-controller: 127.0.0.1:9090
+          external-ui: ui
           secret: ''
           allow-lan: true
-          mode: rule" > config.yaml
+          mode: rule
+          dns:
+            enable: true
+            nameserver:
+              - 114.114.114.114
+          proxies:
+            - {name: 'DEFAULT', type: ss, server: 1.2.3.4, port: 443, cipher: aes-128-gcm, password: 'test'}
+          proxy-groups:
+            - {name: 'Proxy', type: select, proxies: ['DEFAULT']}
+          rules:
+            - MATCH,Proxy" > config.yaml
           
-          # 3. 后台启动并将日志导出（方便报错时查看）
+          # 3. 后台运行内核
           ./mihomo -f config.yaml > mihomo.log 2>&1 &
           
-          # 4. 给内核一点启动时间
-          sleep 5
-          # 检查内核是否启动成功
-          curl http://127.0.0.1:9090 || (cat mihomo.log && exit 1)
+          # 4. 关键：等待内核启动完成，并验证 API 是否可用
+          echo "正在等待内核启动..."
+          sleep 10
+          curl -s http://127.0.0.1:9090 || (cat mihomo.log && exit 1)
+          echo "Mihomo 内核已就绪！"
 
-      - name: Run ClashForge.py
+      - name: 执行 ClashForge 测速筛选
         run: |
- 
-
+          # 预先创建一个空文件，防止脚本崩溃导致后续 git 步骤报错
+          touch clash_config.yaml
+          # 运行优化后的脚本
           python ClashForge.py
 
-      - name: Commit and push file
+      - name: 提交并推送优质配置
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 脚本运行后会生成 clash_config.yaml
-          git add clash_config.yaml
-          git commit -m "update config $(date)" || echo "No changes to commit"
-          git push
+          
+          # 检查文件是否存在且不为空
+          if [ -s clash_config.yaml ]; then
+            git add clash_config.yaml
+            git commit -m "自动更新：筛选后的优质节点 $(date +'%Y-%m-%d %H:%M')"
+            git push https://${{ secrets.BOT }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git
+          else
+            echo "没有筛选到有效节点，跳过提交。"
+          fi
