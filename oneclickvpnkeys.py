@@ -28,7 +28,7 @@ def fetch_single_channel(channel_id):
         raw_text = html.unescape(response.text)
         
         # 匹配协议链接
-        pattern = r'(?:ss|vmess|vless|trojan|hysteria|tuic|socks5)://[^\s<"\'#]+'
+        pattern = r'(?:ss|vmess|vless|trojan|hysteria2|hysteria|tuic)://[^\s<"\'#]+'
         nodes = re.findall(pattern, raw_text)
         
         return channel_id, [n.rstrip('.,;)]') for n in nodes]
