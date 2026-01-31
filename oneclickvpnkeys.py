@@ -18,7 +18,7 @@ SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
 def get_dedupe_fingerprint(config):
     """
-    极致物理去重：通过提取核心身份指纹，彻底忽略 IP/域名变动。
+    去重：通过提取核心身份指纹，彻底忽略 IP/域名变动。
     """
     try:
         # 1. 基础清理
@@ -49,7 +49,7 @@ def get_dedupe_fingerprint(config):
             # 指纹：用户ID + 端口 + 路径 + 主机
             fingerprint = f"vmess|{data.get('id')}|{data.get('port')}|{data.get('path')}|{data.get('host')}"
             
-            # 重构纯净版：抹除所有可能导致重复的备注(ps)和地址(add)
+            # 重构：抹除所有可能导致重复的备注(ps)和地址(add)
             clean_data = {k: v for k, v in data.items() if k not in ['ps', 'add']}
             new_conf = f"vmess://{base64.b64encode(json.dumps(clean_data).encode()).decode()}"
             return fingerprint, new_conf
@@ -115,31 +115,31 @@ async def main():
     final_nodes = sorted(list(unique_nodes.values()))
     total_final = len(final_nodes)
 
-    # 3. 写入抓取统计 CSV (功能不变)
+    # 3. 写入抓取统计 CSV 
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         if not file_exists: writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # 4. 更新 README.md (功能不变)
+    # 4. 更新 README.md 
     with open("README.md", "w", encoding="utf-8") as rm:
-        rm.write(f"# 自动更新节点列表\n\n最后更新时间: `{date_str}` (上海时间)\n\n")
-        rm.write(f"本次去重后有效节点: **{total_final}** 个 (原始总数: {total_raw})\n\n")
-        rm.write(f"### 节点内容 (纯净无名版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
+        rm.write(f"# 自动更新节点列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
+        rm.write(f"本次去重后节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
+        rm.write(f"### 节点内容 (重复较少版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
-    # 5. 更新根目录 nodes_list.txt (功能不变)
+    # 5. 更新根目录 nodes_list.txt 
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
 
-    # 6. 按年月归档备份 (功能不变)
+    # 6. 按年月归档备份 
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
     with open(backup_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
     
-    print(f"[OK] 原始: {total_raw} -> 物理去重后: {total_final}")
+    print(f"[OK] 原始: {total_raw} -> 去重后: {total_final}")
 
 if __name__ == "__main__":
     asyncio.run(main())
