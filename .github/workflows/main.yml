@@ -1,8 +1,6 @@
 name: ClashForge
 
 on:
-  #schedule:
-   #- cron: '30 21 * * *'
   push:
     paths-ignore:
       - '**'
@@ -15,26 +13,49 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # 转到 Settings > Secrets and variables > Actions
-          # 点击 New repository secret，添加 Secret，名称为 BOT，输入你的token
           token: ${{ secrets.BOT }}
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4 # 建议升级到 v4
         with:
           python-version: '3.10.10'
 
       - name: Install requirements.txt
         run: |
-          pip install -r ./requirements.txt
+          # 如果没有 requirements.txt，可以直接安装脚本需要的库
+          pip install requests pyyaml httpx requests-html aiohttp
+
+      - name: 启动 Mihomo 内核
+        run: |
+          # 1. 解压你上传的内核文件
+          gunzip -c mihomo-linux-amd64-v1.18.9.gz > mihomo
+          chmod +x mihomo
+          
+          # 2. 创建一个最简单的基础配置，否则内核启动会报错
+          echo "external-controller: 127.0.0.1:9090
+          secret: ''
+          allow-lan: true
+          mode: rule" > config.yaml
+          
+          # 3. 后台启动并将日志导出（方便报错时查看）
+          ./mihomo -f config.yaml > mihomo.log 2>&1 &
+          
+          # 4. 给内核一点启动时间
+          sleep 5
+          # 检查内核是否启动成功
+          curl http://127.0.0.1:9090 || (cat mihomo.log && exit 1)
 
       - name: Run ClashForge.py
-        run: python ClashForge.py
+        run: |
+ 
+
+          python ClashForge.py
 
       - name: Commit and push file
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 脚本运行后会生成 clash_config.yaml
           git add clash_config.yaml
-          git commit -m "update" || echo "No changes to commit"
-          git push https://${{ secrets.BOT }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git
+          git commit -m "update config $(date)" || echo "No changes to commit"
+          git push
