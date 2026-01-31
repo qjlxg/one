@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 # --- 配置区 ---
 CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "VlessVpnFree", "vpnfail_vless", "v2Line", "vless_vpns"]
-MAX_PAGES = 20
+MAX_PAGES = 2
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
 def get_dedupe_fingerprint(config):
