@@ -184,9 +184,9 @@ async def main():
 
     # 4. 更新 README.md
     with open("README.md", "w", encoding="utf-8") as rm:
-        rm.write(f"# 自动更新节点列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
+        rm.write(f"# 列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
         rm.write(f"本次筛选后可用节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
-        rm.write(f"### 节点内容 (地理位置重命名 & 可用性筛选版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
+        rm.write(f"### 节点内容 (少量重复版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
     # 5. 更新根目录 nodes_list.txt
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
