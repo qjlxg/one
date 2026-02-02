@@ -1,15 +1,14 @@
 name: speed_test
 
 on:
-  workflow_dispatch: # 支持手动运行
+  workflow_dispatch:
   push:
     paths:
       - 'speed_test.py'
       - '.github/workflows/speed_test.yml'
-      - 'nodes_list.txt'
 
 jobs:
-  test_and_report:
+  run-speed-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -20,20 +19,22 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          pip install requests pyyaml pytz
+      - name: Install dependencies
+        run: pip install pyyaml requests pytz
 
-      - name: Run Speed Test
-        run: |
-         
-          python speed_test.py
+      - name: Run Speed Test Script
+        run: python speed_test.py
 
-      - name: Commit and Push
+      - name: Commit and Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          # 添加新生成的文件和变动的文件
           git add nodes_list_fast.txt README.md YYYY/MM/*.txt
-          
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto: Update Speed Test Report $(date +'%Y-%m-%d %H:%M')"
-          git push
+          # 仅在有变动时提交
+          if git diff --staged --quiet; then
+            echo "没有发现变动，跳过提交"
+          else
+            git commit -m "Auto: 更新测速精选列表 $(date +'%Y-%m-%d %H:%M')"
+            git push
+          fi
