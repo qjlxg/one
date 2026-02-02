@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install PyYAML aiohttp pytz
+          pip install requests pyyaml pytz
 
       - name: Run Speed Test
         run: |
