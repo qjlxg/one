@@ -42,7 +42,7 @@ def switch_node(name):
     """切换 Mihomo 节点"""
     try:
         requests.put(f"{CLASH_API}/proxies/GLOBAL", json={"name": name}, timeout=5)
-        time.sleep(1) # 必须等待，给内核握手时间
+        time.sleep(5) # 必须等待，给内核握手时间
         return True
     except: return False
 
@@ -55,7 +55,7 @@ def test_speed(name):
         with requests.get(DOWNLOAD_URL, stream=True, proxies={"http": PROXY_ADDR, "https": PROXY_ADDR}, timeout=5) as r:
             for chunk in r.iter_content(chunk_size=1024*256):
                 total_data += len(chunk)
-                if time.time() - start_time > 3: # 测试3秒
+                if time.time() - start_time > 5: # 测试5秒
                     break
         duration = time.time() - start_time
         mb_speed = (total_data / duration) / (1024 * 1024)
