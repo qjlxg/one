@@ -15,17 +15,16 @@ import pytz
 from bs4 import BeautifulSoup
 
 # --- 配置区 ---
-#CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf", "ip_cf_config", "vlesskeys", "VlessVpnFree", "vpnfail_vless", "v2Line", "vless_vpns","farahvpn", "bored_vpn", "empirevpn7", "V2raythekyo", "hpv2ray_official", "vmess_ir", "configfree_1", "PrivateVPNs", "Outline_Vpn", "directvpn", "m_vipv2ray", "outline_ir", "v2rayngconfings", "DigiV2ray23", "proxy_mtproto_vpns_free", "v2rayfree", "v2rayngseven", "nofiltering2", "v2_fast", "v2logy", "proxy48", "v2aryng_vpn", "siigmavpn", "disvpn", "igrsdet", "iran_access", "vpn_room", "v2rayPort", "configpluse", "customvpnserver", "v2rayng954", "Free_Internet_Iran", "mftizi", "NIM_VPN_ir", "berice_v2", "v2rayip1", "v2raytg", "V2RAY_VMESS_free", "WomanLifeFreedomVPN", "bluevpn_v2ray", "v2rayy_vpn13", "vpn_kanfik", "FalconPolV2rayNG", "ghalagyann", "iranbaxvpn", "vipvpn_v2ray", "vpncostumer", "pruoxyi", "v2ngfast", "arv2ra", "renetvpn", "v2rayngvpn_1", "v2rplus", "vpncostume", "lightning6", "hopev2ray", "arv2ray", "tehranargo", "v2raxx", "v2ryng01", "drakvpn", "sobyv2ray", "V2pedia", "v2pedia", "jiedianf", "nofilter_v2rayng", "v2rayland02", "mt_team_iran", "proxy_n1", "x4azadi", "toxicvid", "MTProto_666", "castom_v2ray", "club_vpn9", "mrvpn1403", "skivpn", "gozargah_azadi", "fastvpnorummobile", "Easy_Free_VPN", "clubvpn443", "khalaa_vpn", "servernett", "turboo_server", "virav2ray", "MsV2ray", "amirinventor2010", "black8rose", "bolbolvpn", "iranmedicalvpn", "v2rayng_81", "fhkllvjkll", "http_injector99", "SVNTEAM", "armod_iran", "artemisvpn1", "digigard_vpn", "iranvpnnet", "maxshare", "moft_vpn", "payam_nsi", "seven_ping", "svnteam", "vmess_iran", "vpn4ir_1", "yuproxytelegram", "inikotesla"]
-# --- 配置区 ---
 CHANNELS = ["oneclickvpnkeys"]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'
-TIMEOUT = 2  # TCP连接超时时间
-MAX_PAGES = 5 # 抓取的最大页数
+TIMEOUT = 2      # TCP连接超时时间
+MAX_PAGES = 5    # 每个频道向后抓取的最大页数
+# --- 配置区 ---
 
 # --- 核心工具 ---
 
-async def test_node_smart(protocol, address, port, loop):
+async def test_node_smart(protocol, address, port, loop, geo_reader):
     """
     并发测试核心：
     1. 解析域名 + 归属地查询
@@ -36,35 +35,41 @@ async def test_node_smart(protocol, address, port, loop):
     try:
         # 1. 域名解析
         if not re.match(r"^\d{1,3}(\.\d{1,3}){3}$", address):
-            ip = await loop.run_in_executor(None, lambda: socket.gethostbyname(address))
+            try:
+                ip = await loop.run_in_executor(None, lambda: socket.gethostbyname(address))
+            except:
+                print(f"[!] 域名解析失败: {address}")
+                return result
         else:
             ip = address
         result['ip'] = ip
 
-        # 2. 地理位置查询
-        with maxminddb.open_database(DB_PATH) as reader:
-            data = reader.get(ip)
+        # 2. 地理位置查询 (优化：使用外部传入的 reader 避免频繁磁盘 I/O)
+        if geo_reader:
+            data = geo_reader.get(ip)
             if data and 'country' in data:
                 names = data['country'].get('names', {})
                 result['country'] = names.get('zh-CN', names.get('en', 'Unknown'))
 
         # 3. 智能可用性测试
-        # 判断是否属于 UDP 核心协议
         is_udp_protocol = any(p in protocol.lower() for p in ['hysteria', 'tuic'])
         
         if is_udp_protocol:
-            result['alive'] = True  # 对 UDP 协议宽容处理，默认认为存活
+            result['alive'] = True  
+            print(f"[*] {address}:{port} [{result['country']}] - UDP协议(默认放行)")
         else:
             # 对 TCP 协议进行连接测试
-            conn = asyncio.open_connection(ip, port)
             try:
+                conn = asyncio.open_connection(ip, port)
                 _, writer = await asyncio.wait_for(conn, timeout=TIMEOUT)
                 result['alive'] = True
                 writer.close()
                 await writer.wait_closed()
+                print(f"[+] {address}:{port} [{result['country']}] - 连接成功")
             except:
+                # print(f"[-] {address}:{port} - 连接超时/拒绝") # 如果觉得日志太多可以注释掉失败输出
                 result['alive'] = False
-    except:
+    except Exception as e:
         pass
     return result
 
@@ -113,6 +118,7 @@ async def fetch_channel(session, channel_id):
     base_url = f"https://t.me/s/{channel_id}"
     current_url = base_url
     page_count = 0
+    print(f"[>] 正在从频道抓取: {channel_id}")
     while current_url and page_count < MAX_PAGES:
         try:
             async with session.get(current_url, timeout=15) as resp:
@@ -138,7 +144,14 @@ async def main():
     date_str = now.strftime('%Y-%m-%d %H:%M:%S')
     loop = asyncio.get_event_loop()
     
-    async with aiohttp.ClientSession(headers={'User-Agent': 'Mozilla/5.0...'}) as session:
+    # 1. 预先加载 GeoIP 数据库 (优化点)
+    geo_reader = None
+    if os.path.exists(DB_PATH):
+        geo_reader = maxminddb.open_database(DB_PATH)
+    else:
+        print(f"[!] 警告: 未找到 {DB_PATH}, 将无法识别国家信息")
+
+    async with aiohttp.ClientSession(headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}) as session:
         tasks = [fetch_channel(session, cid) for cid in CHANNELS]
         results = await asyncio.gather(*tasks)
 
@@ -155,13 +168,19 @@ async def main():
             if info and fingerprint not in unique_nodes_info:
                 unique_nodes_info[fingerprint] = info
 
-    # 并发测试
-    print(f"正在对 {len(unique_nodes_info)} 个节点进行筛选定位(Hysteria/TUIC已跳过连接测试)...")
+    # 2. 并发测试
+    print(f"\n[+] 原始节点总数: {total_raw} | 去重后待测: {len(unique_nodes_info)}")
+    print(f"正在开始可用性筛选 (超时设为 {TIMEOUT}s)...")
+    
     node_items = list(unique_nodes_info.values())
-    test_tasks = [test_node_smart(item['proto'], item['addr'], item['port'], loop) for item in node_items]
+    # 将 geo_reader 传入测试函数
+    test_tasks = [test_node_smart(item['proto'], item['addr'], item['port'], loop, geo_reader) for item in node_items]
     test_results = await asyncio.gather(*test_tasks)
 
-    # 处理命名逻辑
+    # 关闭数据库
+    if geo_reader: geo_reader.close()
+
+    # 3. 处理命名逻辑
     name_tracker = defaultdict(int)
     final_nodes_list = []
     
@@ -169,6 +188,7 @@ async def main():
         if res['alive'] and res['ip']:
             country = res['country']
             count = name_tracker[country]
+            # 命名格式: 中国、中国 1、中国 2...
             display_name = country if count == 0 else f"{country} {count}"
             name_tracker[country] += 1
             final_nodes_list.append(apply_new_name(info, display_name))
@@ -176,32 +196,35 @@ async def main():
     final_nodes = sorted(list(filter(None, final_nodes_list)))
     total_final = len(final_nodes)
 
-   
-    # 3. 写入抓取统计 CSV
+    # 4. 写入抓取统计 CSV
     file_exists = os.path.isfile('grab_stats.csv')
     with open('grab_stats.csv', 'a', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         if not file_exists: writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # 4. 更新 README.md
+    # 5. 更新 README.md
     with open("README.md", "w", encoding="utf-8") as rm:
         rm.write(f"# 列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
         rm.write(f"本次筛选后可用节点数: **{total_final}** 个 (原始总数: {total_raw})\n\n")
         rm.write(f"### 节点内容 (少量重复版)\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
-    # 5. 更新根目录 nodes_list.txt
+    # 6. 更新根目录 nodes_list.txt
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
 
-    # 6. 按年月归档备份
+    # 7. 按年月归档备份
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
     with open(backup_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
     
-    print(f"[OK] 原始抓取: {total_raw} -> 最终保留: {total_final}")
+    print(f"\n[OK] 流程结束!")
+    print(f"统计: 原始抓取 {total_raw} -> 最终保留 {total_final}")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
