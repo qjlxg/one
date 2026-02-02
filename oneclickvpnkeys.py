@@ -21,6 +21,7 @@ CHANNELS = ["oneclickvpnkeys"]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'
 TIMEOUT = 2  # TCP连接超时时间
+MAX_PAGES = 5 # 抓取的最大页数
 
 # --- 核心工具 ---
 
