@@ -15,7 +15,11 @@ import pytz
 from bs4 import BeautifulSoup
 
 # --- 配置区 ---
-CHANNELS = ["oneclickvpnkeys"]
+CHANNELS = [
+    "v2ray_configs_pool", "oneclickvpnkeys", "free_v2ray_full_speed", 
+    "v2ray_free_conf", "v2ray_vless_trojan_ss", "v2ray_vless_hysteria",
+    "ShadowSocksShare", "SS_V2ray_Trojan", "v2ray_footprint", "V2list"
+]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'
 TIMEOUT = 2      # TCP连接超时时间
