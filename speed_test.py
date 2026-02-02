@@ -1,79 +1,101 @@
 import os
 import re
 import json
-import yaml
 import time
 import subprocess
-import shutil
-import asyncio
-import aiohttp
+import requests
 from datetime import datetime
 import pytz
 
 # --- 配置 ---
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 NODES_FILE = "nodes_list.txt"
-TEST_URL = "http://cp.cloudflare.com/generate_204" # 连通性测试
-SPEED_URL = "https://cachefly.cachefly.net/10mb.test" # 测速文件 (10MB)
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
+SUB_API = "http://127.0.0.1:25500/sub?target=clash&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini&url="
+TEST_URL = "https://cachefly.cachefly.net/10mb.test" # 测速文件
+TIMEOUT = 10 # 每个节点下载限时
 
-def setup_mihomo():
-    if not os.path.exists("mihomo"):
-        print("正在解压 Mihomo 内核...")
-        os.system(f"gunzip -c {MIHOMO_GZ} > mihomo")
-        os.chmod("mihomo", 0o755)
+def setup_env():
+    """准备二进制环境"""
+    print("[1/4] 准备内核环境...")
+    # 解压 mihomo
+    os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
+    
+    # 下载并准备 subconverter (用于链接转配置)
+    if not os.path.exists("subconverter"):
+        print("下载 subconverter 二进制...")
+        os.system("wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz")
+        os.system("tar -xzf subconverter_linux64.tar.gz")
+        os.chmod("subconverter/subconverter", 0o755)
 
-def create_config(proxy_str, port=10086):
-    """简单构造一个只含单个节点的 mihomo 配置文件"""
-    config = {
-        "mode": "rule",
-        "mixed-port": port,
-        "allow-left": True,
-        "log-level": "silent",
-        "proxies": [proxy_str],
-        "rules": ["MATCH,DIRECT"]
-    }
-    # 注意：这里的 proxy_str 需要是标准 clash/mihomo 格式
-    # 实际应用中建议使用外部转换工具，此处假设 nodes_list.txt 已是可解析格式或手动处理
-    # 为了演示，这里直接通过 clash 订阅转换 API 或简单解析逻辑进行转换
-    pass
-
-async def test_node_speed(node_url):
-    """
-    由于节点格式多样（vmess/vless/h2），
-    在 GitHub Actions 环境下最稳妥的方法是使用一个外部转换后端将链接转为 Mihomo 配置。
-    """
-    # 这里模拟核心逻辑：
-    # 1. 启动 mihomo -f temp_config.yaml
-    # 2. curl -x http://127.0.0.1:10086
-    # 3. 记录时间并计算速度
-    return {"name": "节点名称", "speed": "1.2 MB/s", "latency": "150ms"}
-
-def main():
-    setup_mihomo()
+def run_speed_test():
+    setup_env()
     now = datetime.now(SHANGHAI_TZ)
-    timestamp = now.strftime("%Y%m%d_%H%M%S")
-    output_file = f"speed_test_{timestamp}.txt"
+    report_name = f"speed_test_{now.strftime('%Y%m%d_%H%M%S')}.txt"
     
-    with open(NODES_FILE, 'r', encoding='utf-8') as f:
-        nodes = [line.strip() for line in f if line.strip()]
+    # 1. 启动 subconverter (后台)
+    sub_proc = subprocess.Popen(["./subconverter/subconverter"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(2)
 
-    print(f"开始测试 {len(nodes)} 个节点...")
+    # 2. 读取并转换节点
+    with open(NODES_FILE, 'r') as f:
+        raw_links = "|".join([line.strip() for line in f if line.strip()])
     
-    # 简单实现：由于完整构建测速环境较复杂，这里采用核心逻辑演示
-    # 实际运行建议配合 'subconverter' 本地二进制进行格式转换
-    results = []
-    with open(output_file, 'w', encoding='utf-8') as f_out:
-        f_out.write(f"测试时间: {now.strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f_out.write("-" * 50 + "\n")
+    try:
+        print("[2/4] 转换节点格式...")
+        encoded_links = requests.utils.quote(raw_links)
+        r = requests.get(f"{SUB_API}{encoded_links}", timeout=30)
+        with open("config.yaml", "w") as f:
+            f.write(r.text)
+    except Exception as e:
+        print(f"转换失败: {e}")
+        sub_proc.terminate()
+        return
+
+    # 3. 启动 Mihomo (后台)
+    print("[3/4] 启动测试内核...")
+    mihomo_proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL)
+    time.sleep(5) # 等待内核完全启动
+
+    # 4. 循环测速
+    print("[4/4] 开始测速...")
+    try:
+        # 获取所有节点名称 (通过 Mihomo API)
+        proxies = requests.get("http://127.0.0.1:9090/proxies").json()['proxies']
+        # 过滤出真实节点
+        target_nodes = [n for n in proxies.keys() if proxies[n]['type'] not in ['Selector', 'Direct', 'Reject', 'URLTest']]
         
-        for idx, node in enumerate(nodes):
-            # 简化版逻辑：这里你可以加入具体的测速二进制调用
-            print(f"正在测试 [{idx+1}/{len(nodes)}]...")
-            # 模拟结果写入
-            f_out.write(f"节点: {node[:30]}... | 状态: 已测试 | 结果: 详情见日志\n")
+        results = []
+        for name in target_nodes:
+            # 切换节点
+            requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": name})
+            
+            # 测试下载
+            start_time = time.time()
+            try:
+                # 使用 curl 通过代理测试，获取下载速度 (单位: byte/s)
+                cmd = f"curl -m {TIMEOUT} -x http://127.0.0.1:7890 -o /dev/null -s -w '%{{speed_download}}' {TEST_URL}"
+                speed_bytes = float(subprocess.check_output(cmd, shell=True).decode())
+                speed_mb = round(speed_bytes / 1024 / 1024, 2)
+                status = "✅ 可用" if speed_mb > 0 else "❌ 连通失败"
+            except:
+                speed_mb = 0
+                status = "❌ 异常"
 
-    print(f"测试完成，结果保存至: {output_file}")
+            print(f"节点: {name[:20]}... | 速度: {speed_mb} MB/s")
+            results.append(f"{status} | {speed_mb} MB/s | {name}")
+
+        # 写入文件
+        with open(report_name, "w", encoding="utf-8") as f:
+            f.write(f"测试时间: {now.strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"测试文件: {TEST_URL}\n")
+            f.write("-" * 60 + "\n")
+            f.write("\n".join(results))
+            
+    finally:
+        mihomo_proc.terminate()
+        sub_proc.terminate()
+        print(f"测试完成，报告已生成: {report_name}")
 
 if __name__ == "__main__":
-    main()
+    run_speed_test()
