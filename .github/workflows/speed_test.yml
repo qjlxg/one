@@ -6,6 +6,7 @@ on:
     paths:
       - 'speed_test.py'
       - '.github/workflows/speed_test.yml'
+      - 'nodes_list.txt'
 
 jobs:
   run-speed-test:
@@ -29,12 +30,11 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          # 添加新生成的文件和变动的文件
-          git add nodes_list_fast.txt README.md YYYY/MM/*.txt
-          # 仅在有变动时提交
+          
+          git add nodes_list_fast.txt README.md 20*/*/*.txt
           if git diff --staged --quiet; then
-            echo "没有发现变动，跳过提交"
+            echo "No changes"
           else
-            git commit -m "Auto: 更新测速精选列表 $(date +'%Y-%m-%d %H:%M')"
+            git commit -m "Auto: Update fast nodes with speed tag"
             git push
           fi
