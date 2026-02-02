@@ -26,14 +26,14 @@ jobs:
 
       - name: Run Speed Test
         run: |
-          # 确保内核有执行权限（虽然脚本里有写，但这里更稳妥）
+         
           python speed_test.py
 
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add speed_test_*.txt
-          # 只有在有新文件生成时才 commit，防止报错
+          git add nodes_list_fast.txt README.md YYYY/MM/*.txt
+          
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto: Update Speed Test Report $(date +'%Y-%m-%d %H:%M')"
           git push
