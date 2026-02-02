@@ -1,0 +1,39 @@
+name: speed_test
+
+on:
+  workflow_dispatch: # 支持手动运行
+  push:
+    paths:
+      - 'speed_test.py'
+      - '.github/workflows/speed_test.yml'
+      - 'nodes_list.txt'
+
+jobs:
+  test_and_report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install PyYAML aiohttp pytz
+
+      - name: Run Speed Test
+        run: |
+          # 确保内核有执行权限（虽然脚本里有写，但这里更稳妥）
+          python speed_test.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add speed_test_*.txt
+          # 只有在有新文件生成时才 commit，防止报错
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto: Update Speed Test Report $(date +'%Y-%m-%d %H:%M')"
+          git push
