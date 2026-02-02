@@ -1,79 +1,40 @@
-name: ClashForge 深度筛选
+name: ClashForge
 
 on:
+  #schedule:
+   #- cron: '30 21 * * *'
   push:
     paths-ignore:
       - '**'
-  workflow_dispatch: # 支持手动点击运行
+  workflow_dispatch:
 
 jobs:
-  run_clash_forge:
+  run_demo_actions:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出代码
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # 使用你设置的秘密 BOT Token，确保有推送权限
+          # 转到 Settings > Secrets and variables > Actions
+          # 点击 New repository secret，添加 Secret，名称为 BOT，输入你的token
           token: ${{ secrets.BOT }}
 
-      - name: 设置 Python 环境
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
           python-version: '3.10.10'
 
-      - name: 安装 Python 依赖
+      - name: Install requirements.txt
         run: |
-          pip install requests pyyaml httpx requests-html aiohttp
+          pip install -r ./requirements.txt
 
-      - name: 准备并启动 Mihomo 内核
-        run: |
-          # 1. 解压仓库中的内核文件
-          gunzip -c mihomo-linux-amd64-v1.18.9.gz > mihomo
-          chmod +x mihomo
-          
-          # 2. 创建基础配置文件，确保 Mihomo 能正常启动 API 端口
-          echo "external-controller: 127.0.0.1:9090
-          external-ui: ui
-          secret: ''
-          allow-lan: true
-          mode: rule
-          dns:
-            enable: true
-            nameserver:
-              - 114.114.114.114
-          proxies:
-            - {name: 'DEFAULT', type: ss, server: 1.2.3.4, port: 443, cipher: aes-128-gcm, password: 'test'}
-          proxy-groups:
-            - {name: 'Proxy', type: select, proxies: ['DEFAULT']}
-          rules:
-            - MATCH,Proxy" > config.yaml
-          
-          # 3. 后台运行内核
-          ./mihomo -f config.yaml > mihomo.log 2>&1 &
-          
-          # 4. 关键：等待内核启动完成，并验证 API 是否可用
-          echo "正在等待内核启动..."
-          sleep 10
-          curl -s http://127.0.0.1:9090 || (cat mihomo.log && exit 1)
-          echo "Mihomo 内核已就绪！"
+      - name: Run ClashForge.py
+        run: python ClashForge.py
 
-      - name: 执行 ClashForge 测速筛选
-        run: |
-          # 预先创建一个空文件，防止脚本崩溃导致后续 git 步骤报错
-          touch clash_config.yaml
-          # 运行优化后的脚本
-          python ClashForge.py
-
-      - name: 提交并推送优质配置
+      - name: Commit and push file
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # 检查文件是否存在且不为空
-          if [ -s clash_config.yaml ]; then
-            git add clash_config.yaml
-            git commit -m "自动更新：筛选后的优质节点 $(date +'%Y-%m-%d %H:%M')"
-            git push https://${{ secrets.BOT }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git
-          else
-            echo "没有筛选到有效节点，跳过提交。"
-          fi
+          git add clash_config.yaml
+          git commit -m "update" || echo "No changes to commit"
+          git push https://${{ secrets.BOT }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git
