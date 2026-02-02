@@ -1,0 +1,32 @@
+测试报告 - 2026-02-02 13:49:24
+==================================================
+✅ 92.26 Mbps | COMPATIBLE
+✅ 162.42 Mbps | PASS
+✅ 208.33 Mbps | REJECT-DROP
+❌ 失败 | Unknown
+❌ 失败 | Unknown 1
+❌ 失败 | Unknown 10
+❌ 失败 | Unknown 11
+❌ 失败 | Unknown 13
+❌ 失败 | Unknown 15
+❌ 失败 | Unknown 16
+❌ 失败 | Unknown 17
+❌ 失败 | Unknown 18
+❌ 失败 | Unknown 19
+❌ 失败 | Unknown 2
+❌ 失败 | Unknown 21
+❌ 失败 | Unknown 22
+❌ 失败 | Unknown 23
+❌ 失败 | Unknown 26
+❌ 失败 | Unknown 3
+❌ 失败 | Unknown 6
+❌ 失败 | Unknown 7
+❌ 失败 | Unknown 8
+❌ 失败 | Unknown 9
+✅ 70.2 Mbps | 丹麦
+❌ 失败 | 乌克兰
+✅ 190.7 Mbps | 伊拉克
+❌ 失败 | 伊朗
+❌ 失败 | 俄罗斯联邦
+❌ 失败 | 俄罗斯联邦 1
+❌ 失败 | 俄罗斯联邦 10
