@@ -12,7 +12,7 @@ import os
 CLASH_API = "http://127.0.0.1:9090"
 PROXY_ADDR = "http://127.0.0.1:7890"
 DOWNLOAD_URL = "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-SPEED_TEST_LIMIT = 100  # 测前100个
+SPEED_TEST_LIMIT = 1000  # 测前100个
 MIN_SPEED_MB = 0.5      # 至少 0.5MB/s 才保留
 INPUT_FILE = "nodes_list.txt"
 OUTPUT_FILE = "clash_config.yaml"
