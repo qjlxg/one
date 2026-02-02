@@ -105,7 +105,7 @@ def run_speed_test():
     valid_results = []
     try:
         resp = requests.get("http://127.0.0.1:9090/proxies", timeout=5).json()
-        all_names = [p['name'] for p in proxies][:50]
+        all_names = [p['name'] for p in proxies][:500]
         
         for name in all_names:
             requests.put("http://127.0.0.1:9090/proxies/GLOBAL", json={"name": name})
