@@ -15,13 +15,14 @@ import pytz
 from bs4 import BeautifulSoup
 
 # --- 配置区 ---
-CHANNELS = ["oneclickvpnkeys"]
+CHANNELS = [
+   "oneclickvpnkeys", 
+   "v2ray_free_conf"
+]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'
 TIMEOUT = 2      # TCP连接超时时间
-MAX_PAGES = 5    # 每个频道向后抓取的最大页数
-# --- 配置区 ---
-
+MAX_PAGES = 8    # 每个频道向后抓取的最大页数
 # --- 核心工具 ---
 
 async def test_node_smart(protocol, address, port, loop, geo_reader):
