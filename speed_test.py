@@ -9,29 +9,40 @@ import requests
 from datetime import datetime
 import pytz
 from urllib.parse import urlparse, unquote, parse_qs, urlunparse
+import geoip2.database
 
 # --- 配置 ---
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
-# 支持多个来源文件，写在列表里即可
-INPUT_NODES = ["nodes_list.txt", "latest_nodes.txt"]  
-OUTPUT_FAST = "nodes_list_fast.txt" 
+INPUT_NODES = ["nodes_list.txt", "latest_nodes.txt"]
+OUTPUT_FAST = "nodes_list_fast.txt"
+GEOIP_DB = "GeoLite2-Country.mmdb"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 TEST_URL = "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-TEST_DURATION = 5  
+TEST_DURATION = 5
 
 def setup_mihomo():
     if not os.path.exists("mihomo"):
-        print("[1/4] 准备内核...")
-        # 假设当前目录下有该 gz 文件
+        print("[1/5] 准备内核...")
         os.system(f"gunzip -c {MIHOMO_GZ} > mihomo")
         os.chmod("mihomo", 0o755)
 
-def update_link_name(raw_link, speed_str):
-    """修改原始链接的 # 后面部分，加上速度"""
+def get_country(ip):
+    """根据IP获取国家名称"""
+    try:
+        if not os.path.exists(GEOIP_DB):
+            return "Unknown"
+        with geoip2.database.Reader(GEOIP_DB) as reader:
+            response = reader.country(ip)
+            # 返回中文名，如果没有则返回英文名
+            return response.country.names.get('zh-CN', response.country.name)
+    except:
+        return "Unknown"
+
+def update_link_full(raw_link, country, speed_str, index):
+    """重构链接名称: [国家][速度] 编号"""
     try:
         url = urlparse(raw_link)
-        old_name = unquote(url.fragment) if url.fragment else "Node"
-        new_name = f"[{speed_str}] {old_name}"
+        new_name = f"[{country}][{speed_str}] {index}"
         url = url._replace(fragment=new_name)
         return urlunparse(url)
     except:
@@ -45,6 +56,7 @@ def parse_link(link):
         name = unquote(url.fragment) if url.fragment else f"{url.scheme}_{url.hostname}"
         node_config = None
         
+        # 提取核心配置用于测速
         if url.scheme == 'vmess':
             b64_data = link[8:].split('#')[0]
             missing_padding = len(b64_data) % 4
@@ -79,42 +91,45 @@ def parse_link(link):
     except: pass
     return None, None, None
 
+def update_readme(links):
+    """更新 README.md，将节点放在代码块中方便复制"""
+    now_str = datetime.now(SHANGHAI_TZ).strftime('%Y-%m-%d %H:%M:%S')
+    content = [
+        "# Speed Test Results\n",
+        f"最后更新时间: `{now_str} (CST)`\n",
+        "## 快速复制节点\n",
+        "```text\n"
+    ]
+    content.extend([l + "\n" for l in links])
+    content.append("```\n")
+    
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.writelines(content)
+
 def run_speed_test():
     setup_mihomo()
     now = datetime.now(SHANGHAI_TZ)
-    
     name_to_link = {}
     proxies = []
-    seen_links = set() # 用于去重
+    seen_links = set()
 
-    print(f"[2/4] 正在读取节点来源: {INPUT_NODES}...")
-    
+    print("[2/5] 读取节点并准备测速...")
     for file_path in INPUT_NODES:
-        if not os.path.exists(file_path):
-            print(f"   - 跳过不存在的文件: {file_path}")
-            continue
-            
+        if not os.path.exists(file_path): continue
         with open(file_path, 'r', encoding='utf-8') as f:
-            count = 0
             for line in f:
                 line = line.strip()
                 if not line or line in seen_links: continue
-                
                 name, config, raw_link = parse_link(line)
                 if name and config:
-                    unique_name = f"{name}_{len(proxies)}"
+                    unique_name = f"node_{len(proxies)}"
                     config['name'] = unique_name
                     proxies.append(config)
                     name_to_link[unique_name] = raw_link
                     seen_links.add(line)
-                    count += 1
-            print(f"   - 从 {file_path} 加载了 {count} 个新节点")
 
-    if not proxies:
-        print("❌ 未发现有效节点，任务结束。")
-        return
+    if not proxies: return
 
-    # 生成临时配置文件
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump({
             "mixed-port": 7890, 
@@ -123,60 +138,66 @@ def run_speed_test():
             "proxy-groups": [{"name": "GLOBAL", "type": "select", "proxies": [p['name'] for p in proxies]}]
         }, f)
     
-    print("[3/4] 启动 Mihomo 内核测速...")
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(10) # 等待内核启动和节点初始化
+    time.sleep(8)
 
     valid_results = []
+    country_counter = {} # 用于国家重名计数
+
     try:
-        # 只测试前 500 个节点，避免时间过长
+        # 测速逻辑
         all_names = [p['name'] for p in proxies][:500]
-        
         for name in all_names:
-            # 切换 GLOBAL 代理节点
             requests.put("http://127.0.0.1:9090/proxies/GLOBAL", json={"name": name})
-            
             start_time = time.time()
             total_bytes = 0
             try:
-                # 测速请求
-                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890"}, timeout=8) as r:
+                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890"}, timeout=7) as r:
                     for chunk in r.iter_content(chunk_size=512*1024):
                         total_bytes += len(chunk)
-                        if time.time() - start_time >= TEST_DURATION: 
-                            break
+                        if time.time() - start_time >= TEST_DURATION: break
                 
-                duration = time.time() - start_time
-                speed = (total_bytes * 8) / (duration * 1024 * 1024) # Mbps
-                
-                if speed > 0.5:  # 过滤掉低于 0.5Mbps 的废节点
+                speed = (total_bytes * 8) / ((time.time() - start_time) * 1024 * 1024)
+                if speed > 0.8:
+                    # 关键修改：获取地理位置
+                    server_ip = next((p['server'] for p in proxies if p['name'] == name), "")
+                    # 如果是域名，尝试解析IP（简单处理，如果GeoIP不支持域名）
+                    country = get_country(server_ip)
+                    
                     speed_label = f"{round(speed, 1)}Mbps"
-                    new_link = update_link_name(name_to_link[name], speed_label)
-                    valid_results.append((speed, new_link))
-                    print(f"   ✅ {speed_label.ljust(10)} | {name}")
-            except Exception:
-                pass 
+                    valid_results.append({
+                        "speed": speed,
+                        "country": country,
+                        "label": speed_label,
+                        "raw_link": name_to_link[name]
+                    })
+                    print(f"   ✅ [{country}] {speed_label}")
+            except: pass
     finally:
         proc.terminate()
-        print("[4/4] 测速完成，正在保存结果...")
 
-    # 按速度降序排列
-    valid_results.sort(key=lambda x: x[0], reverse=True)
-    final_links = [item[1] for item in valid_results]
+    # 排序并重命名
+    valid_results.sort(key=lambda x: x['speed'], reverse=True)
+    
+    final_links = []
+    for item in valid_results:
+        c = item['country']
+        country_counter[c] = country_counter.get(c, 0) + 1
+        new_link = update_link_full(item['raw_link'], c, item['label'], country_counter[c])
+        final_links.append(new_link)
 
-    # 保存到当前结果
+    # 保存结果
     with open(OUTPUT_FAST, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_links))
 
-    # 归档备份
+    # 更新 README
+    update_readme(final_links)
+
+    # 备份
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
-    archive_file = os.path.join(dir_path, f"fast_{now.strftime('%d_%H%M%S')}.txt")
-    with open(archive_file, 'w', encoding='utf-8') as f:
+    with open(os.path.join(dir_path, f"fast_{now.strftime('%d_%H%M%S')}.txt"), 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_links))
-    
-    print(f"🎉 任务成功！共筛选出 {len(final_links)} 个优质节点。")
-    print(f"📁 结果已保存至: {OUTPUT_FAST} 和 {archive_file}")
 
 if __name__ == "__main__":
     run_speed_test()
