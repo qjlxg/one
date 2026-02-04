@@ -18,7 +18,7 @@ OUTPUT_FAST = "nodes_list_fast.txt"
 GEOIP_DB = "GeoLite2-Country.mmdb"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 TEST_URL = "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-TEST_DURATION = 5
+TEST_DURATION = 10
 
 def setup_mihomo():
     if not os.path.exists("mihomo"):
