@@ -12,7 +12,8 @@ from urllib.parse import urlparse, unquote, parse_qs, urlunparse
 
 # --- 配置 ---
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
-INPUT_NODES = "nodes_list.txt"     
+# 支持多个来源文件，写在列表里即可
+INPUT_NODES = ["nodes_list.txt", "latest_nodes.txt"]  
 OUTPUT_FAST = "nodes_list_fast.txt" 
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 TEST_URL = "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
@@ -21,6 +22,7 @@ TEST_DURATION = 5
 def setup_mihomo():
     if not os.path.exists("mihomo"):
         print("[1/4] 准备内核...")
+        # 假设当前目录下有该 gz 文件
         os.system(f"gunzip -c {MIHOMO_GZ} > mihomo")
         os.chmod("mihomo", 0o755)
 
@@ -29,9 +31,7 @@ def update_link_name(raw_link, speed_str):
     try:
         url = urlparse(raw_link)
         old_name = unquote(url.fragment) if url.fragment else "Node"
-        # 新名称格式：[速度] 原名称
         new_name = f"[{speed_str}] {old_name}"
-        # 重新构建链接
         url = url._replace(fragment=new_name)
         return urlunparse(url)
     except:
@@ -40,6 +40,7 @@ def update_link_name(raw_link, speed_str):
 def parse_link(link):
     try:
         link = link.strip()
+        if not link: return None, None, None
         url = urlparse(link)
         name = unquote(url.fragment) if url.fragment else f"{url.scheme}_{url.hostname}"
         node_config = None
@@ -84,61 +85,98 @@ def run_speed_test():
     
     name_to_link = {}
     proxies = []
-    with open(INPUT_NODES, 'r', encoding='utf-8') as f:
-        for line in f:
-            name, config, raw_link = parse_link(line)
-            if name and config:
-                unique_name = f"{name}_{len(proxies)}"
-                config['name'] = unique_name
-                proxies.append(config)
-                name_to_link[unique_name] = raw_link
+    seen_links = set() # 用于去重
 
-    if not proxies: return
-
-    with open("config.yaml", "w", encoding="utf-8") as f:
-        yaml.dump({"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "proxies": proxies, 
-                   "proxy-groups": [{"name": "GLOBAL", "type": "select", "proxies": [p['name'] for p in proxies]}]}, f)
+    print(f"[2/4] 正在读取节点来源: {INPUT_NODES}...")
     
+    for file_path in INPUT_NODES:
+        if not os.path.exists(file_path):
+            print(f"   - 跳过不存在的文件: {file_path}")
+            continue
+            
+        with open(file_path, 'r', encoding='utf-8') as f:
+            count = 0
+            for line in f:
+                line = line.strip()
+                if not line or line in seen_links: continue
+                
+                name, config, raw_link = parse_link(line)
+                if name and config:
+                    unique_name = f"{name}_{len(proxies)}"
+                    config['name'] = unique_name
+                    proxies.append(config)
+                    name_to_link[unique_name] = raw_link
+                    seen_links.add(line)
+                    count += 1
+            print(f"   - 从 {file_path} 加载了 {count} 个新节点")
+
+    if not proxies:
+        print("❌ 未发现有效节点，任务结束。")
+        return
+
+    # 生成临时配置文件
+    with open("config.yaml", "w", encoding="utf-8") as f:
+        yaml.dump({
+            "mixed-port": 7890, 
+            "external-controller": "127.0.0.1:9090", 
+            "proxies": proxies, 
+            "proxy-groups": [{"name": "GLOBAL", "type": "select", "proxies": [p['name'] for p in proxies]}]
+        }, f)
+    
+    print("[3/4] 启动 Mihomo 内核测速...")
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(10)
+    time.sleep(10) # 等待内核启动和节点初始化
 
     valid_results = []
     try:
-        resp = requests.get("http://127.0.0.1:9090/proxies", timeout=5).json()
+        # 只测试前 500 个节点，避免时间过长
         all_names = [p['name'] for p in proxies][:500]
         
         for name in all_names:
+            # 切换 GLOBAL 代理节点
             requests.put("http://127.0.0.1:9090/proxies/GLOBAL", json={"name": name})
+            
             start_time = time.time()
             total_bytes = 0
             try:
-                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890"}, timeout=10) as r:
-                    for chunk in r.iter_content(chunk_size=256*1024):
+                # 测速请求
+                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890"}, timeout=8) as r:
+                    for chunk in r.iter_content(chunk_size=512*1024):
                         total_bytes += len(chunk)
-                        if time.time() - start_time >= TEST_DURATION: break
+                        if time.time() - start_time >= TEST_DURATION: 
+                            break
                 
-                speed = (total_bytes * 8) / ((time.time() - start_time) * 1024 * 1024)
-                if speed > 1.0: 
+                duration = time.time() - start_time
+                speed = (total_bytes * 8) / (duration * 1024 * 1024) # Mbps
+                
+                if speed > 0.5:  # 过滤掉低于 0.5Mbps 的废节点
                     speed_label = f"{round(speed, 1)}Mbps"
-                    # 修改原始链接名
                     new_link = update_link_name(name_to_link[name], speed_label)
                     valid_results.append((speed, new_link))
-                    print(f"✅ {speed_label} | {name}")
-            except: pass
+                    print(f"   ✅ {speed_label.ljust(10)} | {name}")
+            except Exception:
+                pass 
     finally:
         proc.terminate()
+        print("[4/4] 测速完成，正在保存结果...")
 
+    # 按速度降序排列
     valid_results.sort(key=lambda x: x[0], reverse=True)
     final_links = [item[1] for item in valid_results]
 
+    # 保存到当前结果
     with open(OUTPUT_FAST, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_links))
 
-    # 备份
+    # 归档备份
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
-    with open(os.path.join(dir_path, f"fast_{now.strftime('%d_%H%M%S')}.txt"), 'w', encoding='utf-8') as f:
+    archive_file = os.path.join(dir_path, f"fast_{now.strftime('%d_%H%M%S')}.txt")
+    with open(archive_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_links))
+    
+    print(f"🎉 任务成功！共筛选出 {len(final_links)} 个优质节点。")
+    print(f"📁 结果已保存至: {OUTPUT_FAST} 和 {archive_file}")
 
 if __name__ == "__main__":
     run_speed_test()
