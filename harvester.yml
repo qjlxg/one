@@ -1,0 +1,39 @@
+name: node_aggregator
+
+on:
+  push:
+    paths:
+      - 'node_aggregator.py'
+      - '.github/workflows/harvester.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */8 * * *' # 每 8 小时全自动收割一次
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install requests pyyaml geoip2
+      - run: sudo timedatectl set-timezone Asia/Shanghai
+
+      - name: 执行收割
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        run: python node_aggregator.py
+
+      - name: 提交
+        run: |
+          git config --local user.email "bot@github.com"
+          git config --local user.name "Node-Aggregator-Bot"
+          git add nodes.txt source_stats.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "💎 发现新活节点: $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
