@@ -13,7 +13,7 @@ import geoip2.database
 
 # --- 配置 ---
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
-INPUT_NODES = ["nodes_list.txt", "latest_nodes.txt","nodes_2.txt"]
+INPUT_NODES = ["nodes.txt"]
 OUTPUT_FAST = "nodes_list_fast.txt"
 GEOIP_DB = "GeoLite2-Country.mmdb"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
