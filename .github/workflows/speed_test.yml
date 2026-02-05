@@ -8,12 +8,24 @@ on:
       - '.github/workflows/speed_test.yml'
       - 'nodes.txt'
 
+# 防止多个 workflow 同时运行导致推送冲突
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   run-speed-test:
     runs-on: ubuntu-latest
+    # 授予写入权限，确保 Action 有权 Push 代码
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          # 取回所有历史记录，防止 rebase 失败
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,10 +43,20 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
+          # 暂存所有相关文件的变动
           git add nodes_list_fast.txt README.md 20*/*/*.txt
+          
+          # 检查是否有文件更改，避免空提交报错
           if git diff --staged --quiet; then
-            echo "No changes"
+            echo "No changes to commit"
           else
             git commit -m "Auto: Update fast nodes with speed tag"
-            git push
+            
+            # 【关键修复】
+            # 使用 --rebase 模式拉取远程最新代码，将你的本地修改“接到”远程提交之后
+            # 这能有效解决 "fetch first" 导致的冲突
+            git pull --rebase origin main
+            
+            # 推送到远程
+            git push origin main
           fi
