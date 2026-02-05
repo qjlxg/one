@@ -237,11 +237,11 @@ async def main():
         f.write('\n'.join(final_nodes))
 
     # 8. 按年月归档备份
-    dir_path = now.strftime('%Y/%m')
-    os.makedirs(dir_path, exist_ok=True)
-    backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
-    with open(backup_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(final_nodes))
+   # dir_path = now.strftime('%Y/%m')
+   # os.makedirs(dir_path, exist_ok=True)
+   # backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
+   # with open(backup_path, 'w', encoding='utf-8') as f:
+   #     f.write('\n'.join(final_nodes))
     
     print(f"[OK] 处理完成！可用节点: {total_final}")
 
