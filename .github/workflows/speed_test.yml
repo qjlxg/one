@@ -6,7 +6,7 @@ on:
     paths:
       - 'speed_test.py'
       - '.github/workflows/speed_test.yml'
-      - 'nodes_list.txt'
+      - 'nodes.txt'
 
 jobs:
   run-speed-test:
