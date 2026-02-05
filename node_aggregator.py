@@ -34,7 +34,7 @@ RAW_NODE_SOURCES = [
 # --- 工具函数 ---
 
 def auto_decode_base64(text):
-    """鲁棒性 Base64 解码"""
+    """ Base64 解码"""
     text = text.strip()
     if "://" in text and len(text) > 60: return text
     try:
@@ -140,7 +140,7 @@ class NodeAggregator:
 
     def run(self):
         start_time = datetime.now()
-        print(f"[{start_time.strftime('%H:%M:%S')}] 🚀 启动全功能收割流...")
+        print(f"[{start_time.strftime('%H:%M:%S')}] 🚀 启动流...")
 
         # 1. 并发抓取
         with ThreadPoolExecutor(max_workers=10) as executor:

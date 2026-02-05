@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 # --- 1. 配置区 ---
 CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf"]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
-DB_PATH = 'GeoLite2-Country.mmdb'  # 请确保根目录下有此文件，否则国家识别将显示 Unknown
+DB_PATH = 'GeoLite2-Country.mmdb'  
 TIMEOUT = 3      # 端口检测超时时间
 MAX_PAGES = 8    # 每个频道回溯抓取的页数
 

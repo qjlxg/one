@@ -7,7 +7,7 @@ on:
       - '.github/workflows/harvester.yml'
   workflow_dispatch:
   schedule:
-    - cron: '0 */8 * * *' # 每 8 小时全自动收割一次
+    - cron: '0 */8 * * *' 
 
 jobs:
   harvest:
@@ -23,7 +23,7 @@ jobs:
       - run: pip install requests pyyaml geoip2
       - run: sudo timedatectl set-timezone Asia/Shanghai
 
-      - name: 执行收割
+      - name: 执行
         env:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: python node_aggregator.py
@@ -34,6 +34,6 @@ jobs:
           git config --local user.name "Node-Aggregator-Bot"
           git add nodes.txt source_stats.csv
           if ! git diff --cached --quiet; then
-            git commit -m "💎 发现新活节点: $(date +'%Y-%m-%d %H:%M:%S')"
+            git commit -m "💎 新节点: $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           fi
