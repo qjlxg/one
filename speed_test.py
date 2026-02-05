@@ -6,6 +6,7 @@ import time
 import subprocess
 import yaml
 import requests
+import socket
 from datetime import datetime
 import pytz
 from urllib.parse import urlparse, unquote, parse_qs, urlunparse
@@ -17,8 +18,10 @@ INPUT_NODES = ["nodes.txt"]
 OUTPUT_FAST = "nodes_list_fast.txt"
 GEOIP_DB = "GeoLite2-Country.mmdb"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
-TEST_URL = "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-TEST_DURATION = 10
+
+# 使用 Debian 官方镜像，更能反映真实公网带宽
+TEST_URL = "https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/debian-testing-amd64-netinst.iso"
+TEST_DURATION = 8  # 持续 8 秒足以获得稳定的物理带宽数据
 
 def setup_mihomo():
     if not os.path.exists("mihomo"):
@@ -31,9 +34,15 @@ def get_country(ip):
     try:
         if not os.path.exists(GEOIP_DB):
             return "Unknown"
+        # 尝试解析域名为IP
+        if not re.match(r"^\d+\.\d+\.\d+\.\d+$", ip):
+            try:
+                ip = socket.gethostbyname(ip)
+            except:
+                pass
+        
         with geoip2.database.Reader(GEOIP_DB) as reader:
             response = reader.country(ip)
-            # 返回中文名，如果没有则返回英文名
             return response.country.names.get('zh-CN', response.country.name)
     except:
         return "Unknown"
@@ -142,27 +151,29 @@ def run_speed_test():
     time.sleep(8)
 
     valid_results = []
-    country_counter = {} # 用于国家重名计数
+    country_counter = {}
 
     try:
-        # 测速逻辑
+        print(f"[3/5] 开始公网测速 (目标: Debian 镜像站)...")
         all_names = [p['name'] for p in proxies][:500]
         for name in all_names:
             requests.put("http://127.0.0.1:9090/proxies/GLOBAL", json={"name": name})
             start_time = time.time()
             total_bytes = 0
             try:
-                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890"}, timeout=7) as r:
-                    for chunk in r.iter_content(chunk_size=512*1024):
+                # 增加更严谨的超时机制
+                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890"}, timeout=(5, 12)) as r:
+                    r.raise_for_status()
+                    for chunk in r.iter_content(chunk_size=1024*1024): # 1MB 块大小
                         total_bytes += len(chunk)
                         if time.time() - start_time >= TEST_DURATION: break
                 
-                speed = (total_bytes * 8) / ((time.time() - start_time) * 1024 * 1024)
-                if speed > 0.8:
-                    # 关键修改：获取地理位置
-                    server_ip = next((p['server'] for p in proxies if p['name'] == name), "")
-                    # 如果是域名，尝试解析IP（简单处理，如果GeoIP不支持域名）
-                    country = get_country(server_ip)
+                duration = time.time() - start_time
+                speed = (total_bytes * 8) / (duration * 1024 * 1024)
+                
+                if speed > 2.0: # 剔除公网表现极差的节点
+                    server_val = next((p['server'] for p in proxies if p['name'] == name), "")
+                    country = get_country(server_val)
                     
                     speed_label = f"{round(speed, 1)}Mbps"
                     valid_results.append({
@@ -172,7 +183,8 @@ def run_speed_test():
                         "raw_link": name_to_link[name]
                     })
                     print(f"   ✅ [{country}] {speed_label}")
-            except: pass
+            except:
+                pass
     finally:
         proc.terminate()
 
@@ -187,6 +199,7 @@ def run_speed_test():
         final_links.append(new_link)
 
     # 保存结果
+    print(f"[4/5] 保存结果至 {OUTPUT_FAST}...")
     with open(OUTPUT_FAST, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_links))
 
@@ -194,6 +207,7 @@ def run_speed_test():
     update_readme(final_links)
 
     # 备份
+    print("[5/5] 归档备份...")
     dir_path = now.strftime('%Y/%m')
     os.makedirs(dir_path, exist_ok=True)
     with open(os.path.join(dir_path, f"fast_{now.strftime('%d_%H%M%S')}.txt"), 'w', encoding='utf-8') as f:
