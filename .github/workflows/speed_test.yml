@@ -2,6 +2,11 @@ name: speed_test
 
 on:
   workflow_dispatch:
+  # 添加定时触发
+  schedule:
+    # 每 3 小时的第 0 分钟运行一次 (UTC 时间)
+    # 注意：GitHub Actions 的定时任务可能由于服务器负载会有 15-30 分钟左右的延迟
+    - cron: '0 */3 * * *'
   push:
     paths:
       - 'speed_test.py'
@@ -52,9 +57,7 @@ jobs:
           else
             git commit -m "Auto: Update fast nodes with speed tag"
             
-            # 【关键修复】
-            # 使用 --rebase 模式拉取远程最新代码，将你的本地修改“接到”远程提交之后
-            # 这能有效解决 "fetch first" 导致的冲突
+            # 使用 --rebase 模式处理冲突
             git pull --rebase origin main
             
             # 推送到远程
