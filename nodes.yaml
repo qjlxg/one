@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 185.220.238.77:10443'
+  type: trojan
+  server: 185.220.238.77
+  port: 10443
+  password: HutaoCloud
+  tls: true
+  skip-cert-verify: false
+  sni: jp1.hutaonode.top
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -2312,5 +2321,5 @@ proxies:
   tls: true
   servername: apple.com
   skip-cert-verify: false
-update_time: 2026-02-06 09:10:00 UTC
+update_time: 2026-02-06 13:01:01 UTC
 source: auto-fetched

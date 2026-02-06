@@ -1,4 +1,5 @@
-# Updated at 2026-02-06 09:10:00 UTC
+# Updated at 2026-02-06 13:01:01 UTC
+trojan://HutaoCloud@185.220.238.77:10443?sni=jp1.hutaonode.top#%5BTROJAN%5D%20185.220.238.77%3A10443
 trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
 trojan://qmBSKnAl6LYi9%3Dz23Rs.Z@37.235.49.209:28099?sni=celestialcorset.crystalhamster.click#%5BTROJAN%5D%2037.235.49.209%3A28099
 trojan://M7v%25w11Se%2A@amanm.wsone.icu:443?sni=amanm.wsone.icu#%5BTROJAN%5D%20amanm.wsone.icu%3A443
