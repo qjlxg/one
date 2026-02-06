@@ -148,7 +148,7 @@ def run_speed_test():
         }, f)
     
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(8)
+    time.sleep(88)
 
     valid_results = []
     country_counter = {}
