@@ -9,7 +9,7 @@ on:
       - 'fetch_nodes.py'
       - 'fetch-nodes.yml'
       - '.github/workflows/fetch-nodes.yml'
-      - 'requirements2.txt' 
+      - 'requirements.txt' 
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements2.txt
+          pip install -r requirements.txt
 
       - name: Run Fetch Nodes Script
         run: python fetch_nodes.py
