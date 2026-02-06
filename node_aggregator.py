@@ -28,6 +28,7 @@ RAW_NODE_SOURCES = [
     "https://raw.githubusercontent.com/qjlxg/aggregator/refs/heads/main/data/clash.yaml",
     "https://raw.githubusercontent.com/qjlxg/aggregator/refs/heads/main/data/520.yaml",
     "https://raw.githubusercontent.com/qjlxg/one/refs/heads/main/nodes_list.txt",
+    "https://github.com/SoliSpirit/v2ray-configs/raw/refs/heads/main/all_configs.txt",
     "https://raw.githubusercontent.com/qjlxg/one/refs/heads/main/latest_nodes.txt"
 ]
 
