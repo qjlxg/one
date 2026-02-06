@@ -17,7 +17,7 @@ GITHUB_TOKEN = os.getenv("MY_GITHUB_TOKEN")
 OUTPUT_DIR = "."
 GEOIP_DB_PATH = "GeoLite2-Country.mmdb"
 STATS_CSV_PATH = "source_stats.csv"
-MAX_WORKERS = 80  # 提高并发数，加快检测速度
+MAX_WORKERS = 180  # 提高并发数，加快检测速度
 
 # 排除关键词
 EXCLUDE_KEYWORDS = ["127.0.0.1", "localhost", "0.0.0.0", "google.com", "github.com"]
@@ -25,12 +25,11 @@ EXCLUDE_KEYWORDS = ["127.0.0.1", "localhost", "0.0.0.0", "google.com", "github.c
 NODE_PATTERN = r'(?:vmess|vless|ss|ssr|trojan|tuic|hysteria2|hysteria)://[a-zA-Z0-9%@\[\]\._\-\?&=\+#/:]+'
 
 RAW_NODE_SOURCES = [
-    # --- 第一波及原有链接 ---
+   
     "https://raw.githubusercontent.com/qjlxg/aggregator/refs/heads/main/data/clash.yaml",
     "https://raw.githubusercontent.com/qjlxg/aggregator/refs/heads/main/data/520.yaml",
     "https://raw.githubusercontent.com/qjlxg/one/refs/heads/main/nodes_list.txt",
     "https://raw.githubusercontent.com/ImMyron/V2ray/main/Telegram",
-    "https://rentry.co/mohammad885/raw",
     "https://raw.githubusercontent.com/ShatakVPN/ConfigForge/main/configs/all.txt",
     "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge.txt",
     "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/all",
@@ -82,8 +81,6 @@ RAW_NODE_SOURCES = [
     "https://raw.githubusercontent.com/SamanGho/v2ray_collector/refs/heads/main/v2tel_links1.txt",
     "https://raw.githubusercontent.com/SamanGho/v2ray_collector/refs/heads/main/v2tel_links2.txt",
     "https://raw.githubusercontent.com/anaer/Sub/refs/heads/main/clash.yaml",
-
-    # --- 第二波新增链接 ---
     "https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml",
     "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash",
     "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
@@ -114,7 +111,6 @@ RAW_NODE_SOURCES = [
 # --- 工具函数 ---
 
 def auto_decode_base64(text):
-    """ Base64 解码"""
     text = text.strip()
     if "://" in text and len(text) > 60: return text
     try:
@@ -126,10 +122,8 @@ def auto_decode_base64(text):
         return text
 
 def parse_yaml_to_links(content):
-    """解析 Clash YAML 格式并转换为标准链接"""
     links = []
     try:
-        # 预处理：防止有些 YAML 开头有非标准字符
         if "proxies:" not in content: return []
         data = yaml.safe_load(content)
         if not data or 'proxies' not in data: return []
@@ -151,31 +145,32 @@ def parse_yaml_to_links(content):
                     pw = p.get('password')
                     links.append(f"trojan://{pw}@{server}:{port}#{name}")
                 elif t == 'ss':
-                    # SS 格式较复杂，这里做简化处理，进入去重逻辑
                     links.append(f"ss://{server}:{port}#{name}")
             except: continue
     except: pass
     return links
 
 def extract_host_port(node_url):
-    """从节点链接中提取 IP/Host 和端口"""
+    """优化后的 host/port 提取，支持 IPv6"""
     try:
         if node_url.startswith("vmess://"):
             v2_raw = base64.b64decode(node_url[8:]).decode('utf-8')
             v2_json = json.loads(v2_raw)
             return str(v2_json.get('add')).strip(), str(v2_json.get('port')).strip()
+        
         parsed = urlparse(node_url)
         netloc = parsed.netloc
         if "@" in netloc: netloc = netloc.split("@")[-1]
+        
+        # 使用 rsplit 兼容 IPv6
         if ":" in netloc:
-            host, port = netloc.split(":")
-            return host.strip(), port.strip()
+            host, port = netloc.rsplit(":", 1)
+            return host.strip("[] "), port.strip()
         return netloc.strip(), "0"
     except:
         return None, None
 
 def check_alive(host, port):
-    """TCP 端口存活检测"""
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.settimeout(2.5)
@@ -202,17 +197,13 @@ class NodeAggregator:
         except: return "UN"
 
     def fetch_source(self, url):
-        """抓取逻辑：兼容正规链接和 YAML"""
         try:
             res = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
             if res.status_code == 200:
                 text = res.text
-                # 尝试正则
                 found = re.findall(NODE_PATTERN, auto_decode_base64(text), re.IGNORECASE)
-                # 尝试 YAML (如果正则没发现或包含 YAML 特征)
                 if "proxies:" in text:
                     found.extend(parse_yaml_to_links(text))
-                
                 return url, found, 200
             return url, [], res.status_code
         except Exception as e:
@@ -222,7 +213,6 @@ class NodeAggregator:
         start_time = datetime.now()
         print(f"[{start_time.strftime('%H:%M:%S')}] 🚀 启动流...")
 
-        # 1. 并发抓取
         with ThreadPoolExecutor(max_workers=10) as executor:
             futures = [executor.submit(self.fetch_source, url) for url in RAW_NODE_SOURCES]
             for f in as_completed(futures):
@@ -235,10 +225,8 @@ class NodeAggregator:
                     "status": status
                 })
 
-        # 保存统计 CSV (L1 级)
         self.save_stats()
 
-        # 2. 三级去重 (L1: set, L2: identity, L3: refine)
         unique_pool = {}
         for node in self.raw_nodes:
             if len(node) < 15 or any(kw in node.lower() for kw in EXCLUDE_KEYWORDS):
@@ -247,22 +235,24 @@ class NodeAggregator:
             host, port = extract_host_port(node)
             if host and port:
                 protocol = node.split("://")[0].lower()
-                identity = f"{protocol}://{host}:{port}" # L2 去重特征
+                identity = f"{protocol}://{host}:{port}" 
                 if identity not in unique_pool:
-                    # L3 清洗：去除原有备注
                     unique_pool[identity] = node.split("#")[0] if "#" in node else node
 
-        # 3. 存活检测与归属地识别
         print(f"⚡ 正在检测 {len(unique_pool)} 个独特节点...")
         results_by_country = {}
         
         def process_node(item):
             identity, url = item
-            protocol = identity.split("://")[0]
-            host, port = identity.split("://")[-1].split(":")
-            if check_alive(host, port):
-                country = self.get_country(host)
-                return country, f"{url}#{country}_{protocol}_{host}"
+            try:
+                # 修复核心：使用 rsplit 处理身份标识
+                protocol, address = identity.split("://", 1)
+                if ":" in address:
+                    host, port = address.rsplit(":", 1)
+                    if check_alive(host, port):
+                        country = self.get_country(host)
+                        return country, f"{url}#{country}_{protocol}_{host}"
+            except: pass
             return None, None
 
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -273,7 +263,6 @@ class NodeAggregator:
                     if country not in results_by_country: results_by_country[country] = []
                     results_by_country[country].append(labeled_node)
 
-        # 4. 保存 nodes.txt
         self.save_nodes(results_by_country)
 
         print(f"---")
