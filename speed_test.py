@@ -15,7 +15,7 @@ import geoip2.database
 # --- 配置 ---
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 INPUT_NODES = ["nodes.txt"]
-OUTPUT_FAST = "nodes_list_fast.txt"
+OUTPUT_FAST = "latest_nodes.txt"
 GEOIP_DB = "GeoLite2-Country.mmdb"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
@@ -148,7 +148,7 @@ def run_speed_test():
         }, f)
     
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(388)
+    time.sleep(13)
 
     valid_results = []
     country_counter = {}
