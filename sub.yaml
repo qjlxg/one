@@ -1,0 +1,133 @@
+# ========================
+# 基础配置
+# 订阅生成时间: 2026-02-07 10:50
+# ========================
+mixed-port: 7890
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+ipv6: false
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver-policy:
+    "geosite:cn": 223.5.5.5
+
+# ========================
+# 代理集合 (5个订阅源整合)
+# ========================
+proxy-providers:
+  Sub_A:
+    type: http
+    url: "https://api02.aaasub.com/api/v1/client/subscribe?token=d2e810e7f74159a1ea19a8befeb30413"
+    interval: 3600
+    path: ./proxies/sub_a.yaml
+    health-check: {enable: true, interval: 600, url: http://www.gstatic.com/generate_204}
+
+  Sub_B:
+    type: http
+    url: "https://47.242.128.61:2000/api/v1/client/subscribe?token=c2e83fbd566066ef74b9aa6401478e22"
+    interval: 3600
+    path: ./proxies/sub_b.yaml
+    health-check: {enable: true, interval: 600, url: http://www.gstatic.com/generate_204}
+
+  Sub_C: # 新增 VMess 订阅
+    type: http
+    url: "http://154.21.86.232:8000/api/v1/client/subscribe?token=0d7466bed403ee8f855ed21f3398b54e"
+    interval: 3600
+    path: ./proxies/sub_c.yaml
+    health-check: {enable: true, interval: 600, url: http://www.gstatic.com/generate_204}
+
+  Sub_D: # 新增订阅
+    type: http
+    url: "https://sub.xlxlsub.pro/api/v1/client/subscribe?token=59a43fad06de4b04e4acadc4f5972299"
+    interval: 3600
+    path: ./proxies/sub_d.yaml
+    health-check: {enable: true, interval: 600, url: http://www.gstatic.com/generate_204}
+
+  Sub_E: # 新增 YToo 转换订阅
+    type: http
+    url: "https://7b9a20c2cdfb.qtt-163cdn.com/sub?target=clash&new_name=true&emoji=true&clash.doh=true&filename=YToo_SS&udp=false&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D127119%26token%3DI8rMXQRnlHGx5SYvKAQc%26sip002%3D1"
+    interval: 3600
+    path: ./proxies/sub_e.yaml
+    health-check: {enable: true, interval: 600, url: http://www.gstatic.com/generate_204}
+
+# ========================
+# 策略组 (已关联所有订阅)
+# ========================
+proxy-groups:
+  - name: 🐟 final
+    type: select
+    proxies: [🎥 其他国外流媒体, DIRECT, ♻️ 故障切换]
+
+  - name: 🤖 AI Platforms
+    type: select
+    proxies: [🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, ♻️ 故障切换]
+
+  - name: 🎥 其他国外流媒体
+    type: select
+    proxies: [♻️ 故障切换, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇭🇰 香港节点, 🇸🇬 狮城节点, DIRECT]
+
+  # 区域自动选路
+  - name: 🇺🇸 美国节点
+    type: url-test
+    use: [Sub_A, Sub_B, Sub_C, Sub_D, Sub_E]
+    filter: "(?i)(美国|🇺🇸|USA|US)"
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    use: [Sub_A, Sub_B, Sub_C, Sub_D, Sub_E]
+    filter: "(?i)(日本|🇯🇵|JP|Japan)"
+
+  - name: 🇭🇰 香港节点
+    type: url-test
+    use: [Sub_A, Sub_B, Sub_C, Sub_D, Sub_E]
+    filter: "(?i)(香港|🇭🇰|HK|HongKong)"
+
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    use: [Sub_A, Sub_B, Sub_C, Sub_D, Sub_E]
+    filter: "(?i)(新加坡|SG|Singapore|狮城)"
+
+  - name: ♻️ 故障切换
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use: [Sub_A, Sub_B, Sub_C, Sub_D, Sub_E]
+    filter: "(?i)^(?!.*(过期|剩余|流量|官网)).*"
+
+  - name: 🛑 广告拦截
+    type: select
+    proxies: [REJECT, DIRECT]
+
+# ========================
+# 规则集合 (引用外部 Rule Providers)
+# ========================
+rule-providers:
+  RP_Adblock:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml"
+    path: ./ruleset/ad_lite.yaml
+    interval: 86400
+  RP_OpenAI:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./ruleset/openai.yaml
+    interval: 86400
+
+# ========================
+# 路由规则
+# ========================
+rules:
+  - RULE-SET,RP_Adblock,🛑 广告拦截
+  - RULE-SET,RP_OpenAI,🤖 AI Platforms
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 final
