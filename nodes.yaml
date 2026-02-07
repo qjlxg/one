@@ -2205,5 +2205,5 @@ proxies:
   tls: true
   servername: fit.jojack.ru
   skip-cert-verify: false
-update_time: 2026-02-07 12:50:51 UTC
+update_time: 2026-02-07 15:26:40 UTC
 source: auto-fetched
