@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 185.220.238.77:10443'
-  type: trojan
-  server: 185.220.238.77
-  port: 10443
-  password: HutaoCloud
-  tls: true
-  skip-cert-verify: false
-  sni: jp1.hutaonode.top
-  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -16,6 +7,24 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
+  udp: true
+- name: '[TROJAN] 160.16.63.16:3423'
+  type: trojan
+  server: 160.16.63.16
+  port: 3423
+  password: 5fb072e0ddd631cf66cf752b09210480
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
+- name: '[TROJAN] 185.220.238.77:10443'
+  type: trojan
+  server: 185.220.238.77
+  port: 10443
+  password: HutaoCloud
+  tls: true
+  skip-cert-verify: false
+  sni: jp1.hutaonode.top
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2196,5 +2205,5 @@ proxies:
   tls: true
   servername: fit.jojack.ru
   skip-cert-verify: false
-update_time: 2026-02-07 09:31:36 UTC
+update_time: 2026-02-07 12:50:51 UTC
 source: auto-fetched
