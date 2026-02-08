@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 167.17.185.228:10889'
+  type: trojan
+  server: 167.17.185.228
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: web.max
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -2257,5 +2266,5 @@ proxies:
   tls: true
   servername: fit.jojack.ru
   skip-cert-verify: false
-update_time: 2026-02-08 12:52:00 UTC
+update_time: 2026-02-08 15:27:54 UTC
 source: auto-fetched
