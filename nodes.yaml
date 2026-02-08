@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.30.167:443'
+  type: trojan
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  tls: true
+  skip-cert-verify: false
+  sni: 3y.2032.pp.ua
+  udp: true
 - name: '[TROJAN] 167.17.185.228:10889'
   type: trojan
   server: 167.17.185.228
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: jp1.hutaonode.top
-  udp: true
-- name: '[TROJAN] 104.21.30.167:443'
-  type: trojan
-  server: 104.21.30.167
-  port: 443
-  password: 2fec7227-9abe-46f2-af18-78302b836c45
-  tls: true
-  skip-cert-verify: false
-  sni: 3y.2032.pp.ua
   udp: true
 - name: '[TROJAN] 160.16.63.16:3423'
   type: trojan
@@ -2266,5 +2266,5 @@ proxies:
   tls: true
   servername: fit.jojack.ru
   skip-cert-verify: false
-update_time: 2026-02-08 18:37:41 UTC
+update_time: 2026-02-08 21:27:42 UTC
 source: auto-fetched
