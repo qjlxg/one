@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 160.16.85.33:127'
+  type: trojan
+  server: 160.16.85.33
+  port: 127
+  password: 5fb072e0ddd631cf66cf752b09210480
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -2161,5 +2170,5 @@ proxies:
   tls: true
   servername: neti1.wizard2shop.com
   skip-cert-verify: false
-update_time: 2026-02-09 13:10:44 UTC
+update_time: 2026-02-09 15:57:06 UTC
 source: auto-fetched
