@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 43.198.233.56:381'
+  type: trojan
+  server: 43.198.233.56
+  port: 381
+  password: BxceQaOe
+  tls: true
+  skip-cert-verify: false
+  sni: t.me%25252Fripaojiedian
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -2161,5 +2170,5 @@ proxies:
   tls: true
   servername: neti1.wizard2shop.com
   skip-cert-verify: false
-update_time: 2026-02-09 02:14:05 UTC
+update_time: 2026-02-09 05:00:43 UTC
 source: auto-fetched
