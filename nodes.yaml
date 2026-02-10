@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: 37.235.49.209
   udp: true
-- name: '[TROJAN] 43.198.233.56:381'
-  type: trojan
-  server: 43.198.233.56
-  port: 381
-  password: BxceQaOe
-  tls: true
-  skip-cert-verify: false
-  sni: t.me%25252Fripaojiedian
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -124,6 +115,13 @@ proxies:
   password: 5fb072e0ddd631cf66cf752b09210480
   sni: www.nintendogames.net
   skip-cert-verify: false
+- name: '[TROJAN] 43.198.233.56:381'
+  server: 43.198.233.56
+  port: 381
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
 - name: '[TROJAN] 54.250.24.198:127'
   server: 54.250.24.198
   port: 127
@@ -2200,5 +2198,5 @@ proxies:
       Host: dev.twistsparrow.xyz
   servername: dev.twistsparrow.xyz
   skip-cert-verify: false
-update_time: 2026-02-10 10:01:39 UTC
+update_time: 2026-02-10 13:15:20 UTC
 source: auto-fetched
