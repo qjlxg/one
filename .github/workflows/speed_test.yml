@@ -2,10 +2,7 @@ name: speed_test
 
 on:
   workflow_dispatch:
-  # 添加定时触发
   schedule:
-    # 每 3 小时的第 0 分钟运行一次 (UTC 时间)
-    # 注意：GitHub Actions 的定时任务可能由于服务器负载会有 15-30 分钟左右的延迟
     - cron: '0 */3 * * *'
   push:
     paths:
@@ -13,15 +10,11 @@ on:
       - '.github/workflows/speed_test.yml'
       - 'nodes.txt'
 
-# 防止多个 workflow 同时运行导致推送冲突
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+
 
 jobs:
   run-speed-test:
     runs-on: ubuntu-latest
-    # 授予写入权限，确保 Action 有权 Push 代码
     permissions:
       contents: write
       
@@ -29,8 +22,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          # 取回所有历史记录，防止 rebase 失败
-          fetch-depth: 0
+          fetch-depth: 0 # 获取完整历史，这对 rebase 至关重要
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,28 +30,33 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install pyyaml requests pytz geoip2
+        run: |
+          pip install pyyaml requests pytz geoip2
 
       - name: Run Speed Test Script
         run: python speed_test.py
 
       - name: Commit and Push Changes
         run: |
+          # 1. 配置身份信息
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 暂存所有相关文件的变动
-          git add nodes_list_fast.txt README.md 20*/*/*.txt
+          # 2. 暂存所有变动（解决 "unstaged changes" 报错的核心）
+          # 使用 . 会包含新创建的日期文件夹和所有修改
+          git add .
           
-          # 检查是否有文件更改，避免空提交报错
+          # 3. 检查是否有真正需要提交的内容
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes to commit, skipping push."
           else
-            git commit -m "Auto: Update fast nodes with speed tag"
+            git commit -m "Auto: Update fast nodes $(date '+%Y-%m-%d %H:%M:%S')"
             
-            # 使用 --rebase 模式处理冲突
+            # 4. 稳健的推送逻辑
+            # --rebase 会把你的本地提交提到远程最新提交之后
+            # 如果 rebase 失败，通常是因为文件冲突，这里强制拉取最新状态
             git pull --rebase origin main
             
-            # 推送到远程
+            # 5. 推送
             git push origin main
           fi
