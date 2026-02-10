@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 80.173.231.254:12420'
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  tls: true
+  skip-cert-verify: false
+  sni: www.semanticstaplegun.click
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -2191,5 +2200,5 @@ proxies:
       Host: dev.twistsparrow.xyz
   servername: dev.twistsparrow.xyz
   skip-cert-verify: false
-update_time: 2026-02-10 02:29:58 UTC
+update_time: 2026-02-10 05:04:27 UTC
 source: auto-fetched
