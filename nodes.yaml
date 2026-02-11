@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 37.235.49.209:28099'
+  type: trojan
+  server: 37.235.49.209
+  port: 28099
+  password: qmBSKnAl6LYi9%3Dz23Rs.Z
+  tls: true
+  skip-cert-verify: false
+  sni: celestialcorset.crystalhamster.click
+  udp: true
 - name: '[TROJAN] 80.173.231.254:12420'
   type: trojan
   server: 80.173.231.254
@@ -254,15 +263,6 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: ''
-- name: '[TROJAN] 37.235.49.209:28099'
-  type: trojan
-  server: 37.235.49.209
-  port: 28099
-  password: qmBSKnAl6LYi9=z23Rs.Z
-  tls: true
-  skip-cert-verify: false
-  sni: celestialcorset.crystalhamster.click
-  udp: true
 - name: '[TROJAN] 3.77.68.129:22223'
   type: trojan
   server: 3.77.68.129
@@ -2128,5 +2128,5 @@ proxies:
   uuid: ff8ed07c-f05e-4343-9307-6dbb644d2ce5
   udp: true
   tls: false
-update_time: 2026-02-11 05:03:18 UTC
+update_time: 2026-02-11 07:02:16 UTC
 source: auto-fetched
