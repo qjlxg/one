@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
-  udp: true
 - name: '[TROJAN] 37.235.49.209:28099'
   type: trojan
   server: 37.235.49.209
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: celestialcorset.crystalhamster.click
+  udp: true
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
   udp: true
 - name: '[TROJAN] 80.173.231.254:12420'
   type: trojan
@@ -2137,5 +2137,5 @@ proxies:
   uuid: ff8ed07c-f05e-4343-9307-6dbb644d2ce5
   udp: true
   tls: false
-update_time: 2026-02-11 19:04:08 UTC
+update_time: 2026-02-11 21:34:05 UTC
 source: auto-fetched
