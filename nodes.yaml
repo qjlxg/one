@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 203.198.123.162:443'
+  type: trojan
+  server: 203.198.123.162
+  port: 443
+  password: BxceQaOe
+  tls: true
+  skip-cert-verify: false
+  sni: t.me%2Fripaojiedian
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -131,13 +140,6 @@ proxies:
   type: trojan
   password: 5fb072e0ddd631cf66cf752b09210480
   sni: www.nintendogames.net
-  skip-cert-verify: true
-- name: '[TROJAN] 203.198.123.162:443'
-  server: 203.198.123.162
-  port: 443
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
   skip-cert-verify: true
 - name: '[TROJAN] 58.152.18.130:443'
   server: 58.152.18.130
@@ -2137,5 +2139,5 @@ proxies:
   tls: true
   servername: yahoo.com
   skip-cert-verify: false
-update_time: 2026-02-12 07:02:22 UTC
+update_time: 2026-02-12 09:51:44 UTC
 source: auto-fetched
