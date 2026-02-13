@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[TROJAN] 203.198.123.162:443'
   type: trojan
   server: 203.198.123.162
@@ -25,24 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
-  udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
-  udp: true
-- name: '[TROJAN] 37.235.49.209:28099'
-  type: trojan
-  server: 37.235.49.209
-  port: 28099
-  password: qmBSKnAl6LYi9%3Dz23Rs.Z
-  tls: true
-  skip-cert-verify: false
-  sni: celestialcorset.crystalhamster.click
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1164,6 +1155,15 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: ''
+- name: '[TROJAN] 37.235.49.209:28099'
+  type: trojan
+  server: 37.235.49.209
+  port: 28099
+  password: qmBSKnAl6LYi9=z23Rs.Z
+  tls: true
+  skip-cert-verify: false
+  sni: celestialcorset.crystalhamster.click
+  udp: true
 - name: '[VLESS] 3.122.189.42:22224'
   type: vless
   server: 3.122.189.42
@@ -2271,5 +2271,5 @@ proxies:
   tls: true
   servername: u729804uf0f5s52.okgg.top
   skip-cert-verify: false
-update_time: 2026-02-13 04:53:19 UTC
+update_time: 2026-02-13 06:59:58 UTC
 source: auto-fetched
