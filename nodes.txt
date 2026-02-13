@@ -1,4 +1,5 @@
-# Updated at 2026-02-13 18:52:02 UTC
+# Updated at 2026-02-13 21:35:48 UTC
+trojan://qmBSKnAl6LYi9=z23Rs.Z@37.235.49.209:28099?sni=37.235.49.209#%5BTROJAN%5D%2037.235.49.209%3A28099
 trojan://9372cb81c7b0ad903f91f2f8a4d3f02b@160.16.57.238:400?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.57.238%3A400
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://BxceQaOe@203.198.123.162:443?sni=203.198.123.162#%5BTROJAN%5D%20203.198.123.162%3A443
@@ -128,7 +129,6 @@ vless://fef4a93d-eb4f-4657-b56b-32a0dc060045@nodejs.org:443?security=tls&sni=dev
 vless://ff6fb512-147d-419a-9672-e131133f7189@lt-cherry-01.com:8443?security=tls&sni=tradingview.com#%5BVLESS%5D%20lt-cherry-01.com%3A8443
 trojan://T9BpZIVMNv@v1.dabache.top:8443?sni=sweden.vmaxpanel.com&type=ws&path=/amd&host=sweden.vmaxpanel.com#%5BTROJAN%5D%20v1.dabache.top%3A8443
 trojan://iWnFtzMiac@205.185.115.223:19258?sni=cloudflare.com#%5BTROJAN%5D%20205.185.115.223%3A19258
-trojan://qmBSKnAl6LYi9=z23Rs.Z@37.235.49.209:28099?sni=celestialcorset.crystalhamster.click#%5BTROJAN%5D%2037.235.49.209%3A28099
 vless://05519058-d2ac-4f28-9e4a-2b2a1386749e@3.122.189.42:22224?security=tls&sni=trojan.burgerip.co.uk&type=ws&path=/telegram-channel-vlessconfig&host=3.122.189.42#%5BVLESS%5D%203.122.189.42%3A22224
 vless://05dc09d5-5c56-454b-a34e-6ef743d91e1a@czech.boot-lee.ru:8443?security=tls&sni=m.vk.com#%5BVLESS%5D%20czech.boot-lee.ru%3A8443
 vless://05dc09d5-5c56-454b-a34e-6ef743d91e1a@switzerland.boot-lee.ru:8443?security=tls&sni=m.vk.com#%5BVLESS%5D%20switzerland.boot-lee.ru%3A8443
