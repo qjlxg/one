@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 160.16.57.238:400'
+  type: trojan
+  server: 160.16.57.238
+  port: 400
+  password: 9372cb81c7b0ad903f91f2f8a4d3f02b
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -2271,5 +2280,5 @@ proxies:
   tls: true
   servername: u729804uf0f5s52.okgg.top
   skip-cert-verify: false
-update_time: 2026-02-13 09:44:36 UTC
+update_time: 2026-02-13 13:01:07 UTC
 source: auto-fetched

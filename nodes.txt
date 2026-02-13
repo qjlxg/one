@@ -1,4 +1,5 @@
-# Updated at 2026-02-13 09:44:36 UTC
+# Updated at 2026-02-13 13:01:07 UTC
+trojan://9372cb81c7b0ad903f91f2f8a4d3f02b@160.16.57.238:400?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.57.238%3A400
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://BxceQaOe@203.198.123.162:443?sni=203.198.123.162#%5BTROJAN%5D%20203.198.123.162%3A443
 trojan://9372cb81c7b0ad903f91f2f8a4d3f02b@153.121.65.107:1281?sni=www.nintendogames.net#%5BTROJAN%5D%20153.121.65.107%3A1281
