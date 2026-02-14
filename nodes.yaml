@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: www.nintendogames.net
   udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1490,5 +1481,5 @@ proxies:
       Host: us1-us1.aiopen.sbs
   servername: us1-us1.aiopen.sbs
   skip-cert-verify: false
-update_time: 2026-02-14 15:26:16 UTC
+update_time: 2026-02-14 18:36:23 UTC
 source: auto-fetched
