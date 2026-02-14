@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] 203.198.123.162:443'
-  type: trojan
-  server: 203.198.123.162
-  port: 443
-  password: BxceQaOe
-  tls: true
-  skip-cert-verify: false
-  sni: 203.198.123.162
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -215,6 +206,15 @@ proxies:
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
+- name: '[TROJAN] 203.198.123.162:443'
+  type: trojan
+  server: 203.198.123.162
+  port: 443
+  password: BxceQaOe
+  tls: true
+  skip-cert-verify: false
+  sni: 203.198.123.162
+  udp: true
 - name: '[TROJAN] 18.198.110.94:22223'
   type: trojan
   server: 18.198.110.94
@@ -1481,5 +1481,5 @@ proxies:
       Host: us1-us1.aiopen.sbs
   servername: us1-us1.aiopen.sbs
   skip-cert-verify: false
-update_time: 2026-02-14 09:31:59 UTC
+update_time: 2026-02-14 12:50:48 UTC
 source: auto-fetched
