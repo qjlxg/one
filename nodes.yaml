@@ -53,15 +53,6 @@ proxies:
   skip-cert-verify: false
   sni: 203.198.123.162
   udp: true
-- name: '[TROJAN] 153.121.65.107:1281'
-  type: trojan
-  server: 153.121.65.107
-  port: 1281
-  password: 9372cb81c7b0ad903f91f2f8a4d3f02b
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -205,6 +196,13 @@ proxies:
   skip-cert-verify: true
 - name: '[TROJAN] 52.194.245.221:1281'
   server: 52.194.245.221
+  port: 1281
+  type: trojan
+  password: 9372cb81c7b0ad903f91f2f8a4d3f02b
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 153.121.65.107:1281'
+  server: 153.121.65.107
   port: 1281
   type: trojan
   password: 9372cb81c7b0ad903f91f2f8a4d3f02b
@@ -1483,5 +1481,5 @@ proxies:
       Host: us1-us1.aiopen.sbs
   servername: us1-us1.aiopen.sbs
   skip-cert-verify: false
-update_time: 2026-02-14 02:04:31 UTC
+update_time: 2026-02-14 04:41:30 UTC
 source: auto-fetched
