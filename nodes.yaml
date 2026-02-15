@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 212.193.18.144:36158'
+  type: trojan
+  server: 212.193.18.144
+  port: 36158
+  password: ZblhWr0mqMakCPg.N
+  tls: true
+  skip-cert-verify: false
+  sni: ya.ru
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -34,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: jp1.hutaonode.top
-  udp: true
-- name: '[TROJAN] 104.21.80.1:443'
-  type: trojan
-  server: 104.21.80.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: PSYchO.SueX12.Ir
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1551,5 +1551,5 @@ proxies:
       Host: dev.nestandneighbours.com
   servername: dev.nestandneighbours.com
   skip-cert-verify: true
-update_time: 2026-02-15 12:52:52 UTC
+update_time: 2026-02-15 15:26:34 UTC
 source: auto-fetched
