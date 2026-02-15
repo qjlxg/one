@@ -1,4 +1,4 @@
-# Updated at 2026-02-15 04:54:33 UTC
+# Updated at 2026-02-15 06:53:43 UTC
 trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
 trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click#%5BTROJAN%5D%2080.173.231.254%3A12420
 trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
