@@ -1401,5 +1401,5 @@ proxies:
   tls: true
   servername: sun6-21.userapi.com
   skip-cert-verify: false
-update_time: 2026-02-17 02:08:47 UTC
+update_time: 2026-02-17 04:52:20 UTC
 source: auto-fetched
