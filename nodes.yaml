@@ -1270,5 +1270,5 @@ proxies:
   tls: true
   servername: 185.242.234.252
   skip-cert-verify: false
-update_time: 2026-02-20 04:47:06 UTC
+update_time: 2026-02-20 06:57:56 UTC
 source: auto-fetched
