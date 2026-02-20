@@ -11,8 +11,18 @@ proxies:
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts: null
-- cipher: auto
+- alterId: 0
+  cipher: auto
   name: node_1
+  network: tcp
+  port: 10001
+  server: 27.44.141.89
+  tls: false
+  type: vmess
+  uuid: 0e4e55e2-eca1-48ad-8669-da0440006556
+  ws-opts: null
+- cipher: auto
+  name: node_2
   port: 2345
   server: go.adslimit.info
   servername: go.adslimit.info
@@ -21,18 +31,9 @@ proxies:
   udp: true
   uuid: 0331b690-79fc-49d5-85f0-54faa4eff89f
 - cipher: auto
-  name: node_2
-  port: 443
-  server: 159.195.4.83
-  servername: live.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 03695e31-89d2-4cce-9d7e-3e61d9d80f22
-- cipher: auto
   name: node_3
   port: 22224
-  server: 35.156.151.126
+  server: 13.36.129.164
   servername: trojan.burgerip.co.uk
   tls: true
   type: vless
@@ -40,24 +41,6 @@ proxies:
   uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
 - cipher: auto
   name: node_4
-  port: 22224
-  server: 35.180.167.247
-  servername: trojan.burgerip.co.uk
-  tls: true
-  type: vless
-  udp: true
-  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
-- cipher: auto
-  name: node_5
-  port: 4444
-  server: 85.239.49.92
-  servername: github.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0622bdcf-1927-4750-afe4-0fa78ff502a8
-- cipher: auto
-  name: node_6
   port: 2053
   server: 178.17.59.73
   servername: www.ibm.com
@@ -66,34 +49,70 @@ proxies:
   udp: true
   uuid: 07cd9dbe-21ac-4871-817d-c772687e4b7c
 - cipher: auto
+  name: node_5
+  port: 2053
+  server: 89.106.89.112
+  servername: www.ibm.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 07cd9dbe-21ac-4871-817d-c772687e4b7c
+- cipher: auto
+  name: node_6
+  port: 443
+  server: fr.1323.world
+  servername: b12a6eea4807ca4e.1323.world
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0e90f352-e9bc-4834-8ff6-49ba887eded4
+- cipher: auto
   name: node_7
   port: 443
-  server: 94.103.15.110
-  servername: cdnjs.com
+  server: uk.1323.world
+  servername: 1323.world
   tls: true
   type: vless
   udp: true
-  uuid: 0c57c801-c2e2-4af0-8dd5-05e0d080a5e8
+  uuid: 0e90f352-e9bc-4834-8ff6-49ba887eded4
 - cipher: auto
   name: node_8
-  port: 443
-  server: 144.24.97.225
-  servername: osxapps.itunes.apple.com
+  port: 31421
+  server: 135.181.205.220
+  servername: ''
   tls: true
   type: vless
   udp: true
-  uuid: 1834316d-2b59-4239-970d-c764218bcdf2
+  uuid: 0fd6389a-acb9-48b4-8d2c-63edc5dbc4ba
 - cipher: auto
   name: node_9
   port: 443
-  server: best.pineappled.org
-  servername: google.com
+  server: 85.17.145.169
+  servername: www.samsung.com
   tls: true
   type: vless
   udp: true
-  uuid: 18f72be7-0651-4037-928b-8a309d685796
+  uuid: 2143c858-cdf6-4971-a240-98dedc815723
 - cipher: auto
   name: node_10
+  port: 51102
+  server: 158.160.105.121
+  servername: yandex.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: 225f5dd9-d885-49ad-8e7f-c0900bbc2230
+- cipher: auto
+  name: node_11
+  port: 2083
+  server: ip.shakhle.ir
+  servername: ipv4.yasharteam.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 260f19e2-41c2-4f0c-870f-ab7e28e72ef6
+- cipher: auto
+  name: node_12
   port: 443
   server: 176.120.67.169
   servername: wikimedia.org
@@ -102,7 +121,16 @@ proxies:
   udp: true
   uuid: 2749534e-8bd1-45cf-8b17-c28bed9236c0
 - cipher: auto
-  name: node_11
+  name: node_13
+  port: 20299
+  server: 74.48.142.49
+  servername: apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2e0c37cf-d746-4264-89c6-76df8995218f
+- cipher: auto
+  name: node_14
   port: 443
   server: 45.134.218.222
   servername: stats.vk-portal.net
@@ -111,59 +139,32 @@ proxies:
   udp: true
   uuid: 30c04389-bbcb-431f-9d47-a8ad24406bd4
 - cipher: auto
-  name: node_12
-  port: 443
-  server: nl.roblugo.su
-  servername: nl.roblugo.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: 32561144-434f-4752-a731-f35cd191ba4a
-- cipher: auto
-  name: node_13
-  port: 443
-  server: spb.roblugo.su
-  servername: spb.roblugo.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: 32561144-434f-4752-a731-f35cd191ba4a
-- cipher: auto
-  name: node_14
-  port: 443
-  server: download.riferoser.icu
-  servername: www.foxsports.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 3495557c-8550-429f-83b6-a47d63a1ecfd
-- cipher: auto
   name: node_15
-  port: 443
-  server: pl-modx.webedg.net
-  servername: pl-modx.webedg.net
+  port: 2096
+  server: betty.ns.cloudflare.com
+  servername: hetz.x-smm.com
   tls: true
   type: vless
   udp: true
-  uuid: 3bf002f8-b951-4dd5-b372-8d46ccd5f24b
+  uuid: 3f0f36f5-f091-45c5-88c9-4bcc545b922c
 - cipher: auto
   name: node_16
-  port: 2096
-  server: 108.162.194.176
-  servername: hetz.x-smm.com
+  port: 11777
+  server: 77.83.245.193
+  servername: yandex.ru
   tls: true
   type: vless
   udp: true
-  uuid: 3f0f36f5-f091-45c5-88c9-4bcc545b922c
+  uuid: 40a7f95c-f861-4f04-9a6e-55d624c7582c
 - cipher: auto
   name: node_17
-  port: 2096
-  server: www.speedtest.net
-  servername: hetz.x-smm.com
+  port: 443
+  server: chatgpt.com
+  servername: ''
   tls: true
   type: vless
   udp: true
-  uuid: 3f0f36f5-f091-45c5-88c9-4bcc545b922c
+  uuid: 425ef0c5-4e79-4aa5-bf9e-b847a0f73601
 - cipher: auto
   name: node_18
   port: 8443
@@ -175,6 +176,15 @@ proxies:
   uuid: 453c3861-eaf4-4c60-94e0-e57a2c9d2fcf
 - cipher: auto
   name: node_19
+  port: 443
+  server: staging.lastilhame.monster
+  servername: www.microsoft.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 455cfdc6-9abf-4e40-863f-5ff6cc63457c
+- cipher: auto
+  name: node_20
   port: 23576
   server: 15.204.97.219
   servername: fuck.rkn
@@ -183,7 +193,7 @@ proxies:
   udp: true
   uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
 - cipher: auto
-  name: node_20
+  name: node_21
   port: 23576
   server: 51.158.206.86
   servername: fuck.rkn
@@ -192,7 +202,7 @@ proxies:
   udp: true
   uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
 - cipher: auto
-  name: node_21
+  name: node_22
   port: 23576
   server: 51.158.206.97
   servername: fuck.rkn
@@ -201,23 +211,14 @@ proxies:
   udp: true
   uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
 - cipher: auto
-  name: node_22
-  port: 2053
-  server: 37.16.74.19
-  servername: www.ibm.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 490ecb4b-8ee1-4d33-9d6d-b034899a1039
-- cipher: auto
   name: node_23
-  port: 8443
-  server: 84.252.136.245
-  servername: yandex.ru
+  port: 443
+  server: 142.248.80.157
+  servername: apple.com
   tls: true
   type: vless
   udp: true
-  uuid: 525e49c0-8396-4dac-bb2d-36412723e5cb
+  uuid: 4aff5de5-83dc-43c9-a33e-10e6fdb90ed2
 - cipher: auto
   name: node_24
   port: 443
@@ -238,27 +239,27 @@ proxies:
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
 - cipher: auto
   name: node_26
-  port: 443
-  server: 5.161.50.246
-  servername: sni.111000.v6.navy
+  port: 48484
+  server: 194.9.6.32
+  servername: sni.111000.indevs.in
   tls: true
   type: vless
   udp: true
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
 - cipher: auto
   name: node_27
-  port: 38666
-  server: 82.25.145.95
-  servername: 82.25.145.95
+  port: 443
+  server: 5.161.50.246
+  servername: ''
   tls: true
   type: vless
   udp: true
-  uuid: 65d8bfbf-f625-4d35-9a1c-2b19a55e58e2
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
 - cipher: auto
   name: node_28
   port: 2096
-  server: 104.21.227.134
-  servername: ca.adobe-connect.top
+  server: 104.18.185.26
+  servername: ''
   tls: true
   type: vless
   udp: true
@@ -267,7 +268,7 @@ proxies:
   name: node_29
   port: 2096
   server: chatgpt.com
-  servername: ca.adobe-connect.top
+  servername: ''
   tls: true
   type: vless
   udp: true
@@ -275,554 +276,32 @@ proxies:
 - cipher: auto
   name: node_30
   port: 26480
-  server: s9.daneshvardost.com
-  servername: ''
+  server: s5.daneshvardost.com
+  servername: s5.daneshvardost.com
   tls: true
   type: vless
   udp: true
   uuid: 6919e588-cff3-4c1b-b7a3-3ca0ada5fb69
 - cipher: auto
   name: node_31
+  port: 443
+  server: 103.27.158.56
+  servername: gmail.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6a175b1f-fcdf-4dd6-9303-c34875209bc6
+- cipher: auto
+  name: node_32
   port: 2345
   server: wolf2.adslimit.info
-  servername: wolf2.adslimit.info
+  servername: ''
   tls: true
   type: vless
   udp: true
   uuid: 7007111a-c28b-4ab1-8d28-bc7b42681028
 - cipher: auto
-  name: node_32
-  port: 37463
-  server: 82.115.17.71
-  servername: ''
-  tls: true
-  type: vless
-  udp: true
-  uuid: 7228d8dc-cc98-4bc0-a953-bf89e54f689b
-- cipher: auto
   name: node_33
-  port: 50
-  server: dd.openaccessnode.com
-  servername: dd.openaccessnode.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 75193bef-8d8f-e823-41e0-2dd083dc1399
-- cipher: auto
-  name: node_34
-  port: 443
-  server: 51.250.86.102
-  servername: api-maps.yandex.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: 7cacb8f2-37d0-4bed-a41c-1d3f246a3ffd
-- cipher: auto
-  name: node_35
-  port: 80
-  server: z.ssl.fastly.net
-  servername: z.ssl.fastly.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 837b6716-6901-4b4d-a49f-2b6ac9306aa3
-- cipher: auto
-  name: node_36
-  port: 50855
-  server: tes1.api-tel.xyz
-  servername: ea.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 853d23ee-38c6-41bb-a51c-8aea6a25b0bd
-- cipher: auto
-  name: node_37
-  port: 443
-  server: br.pineappled.org
-  servername: google.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8a77b19a-36be-43ff-ace0-bc322aa4f1e3
-- cipher: auto
-  name: node_38
-  port: 51114
-  server: 90.156.255.198
-  servername: yahoo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8b575b35-3c7c-42b0-ac80-2aa6b0d7717c
-- cipher: auto
-  name: node_39
-  port: 8880
-  server: 45.82.251.115
-  servername: 45.82.251.115
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-- cipher: auto
-  name: node_40
-  port: 2051
-  server: 5.255.126.160
-  servername: yahoo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8e28baed-b7da-29a3-cb89-cb7e4878c011
-- cipher: auto
-  name: node_41
-  port: 443
-  server: 146.185.208.206
-  servername: 146.185.208.206
-  tls: true
-  type: vless
-  udp: true
-  uuid: 914b0493-7094-4840-b94d-8ec3e92e9c43
-- cipher: auto
-  name: node_42
-  port: 443
-  server: 95.214.55.16
-  servername: uspehudacha.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 91cc050c-2866-4760-b72f-510f1a8a0165
-- cipher: auto
-  name: node_43
-  port: 27414
-  server: 77.83.245.189
-  servername: yandex.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: 94712dd9-17d8-4813-a118-cc487fadd137
-- cipher: auto
-  name: node_44
-  port: 443
-  server: 64.188.73.12
-  servername: www.intel.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 99bd2791-8e27-435b-a1e2-c9b625101af9
-- cipher: auto
-  name: node_45
-  port: 443
-  server: chatgpt.com
-  servername: hotchoclate.graphapp.ir
-  tls: true
-  type: vless
-  udp: true
-  uuid: a992c7a6-832b-4243-a294-d34783d0294c
-- cipher: auto
-  name: node_46
-  port: 443
-  server: 57.128.191.90
-  servername: dl.google.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: ac754349-a3d5-4eca-990e-1119c0cff4d5
-- cipher: auto
-  name: node_47
-  port: 8443
-  server: 91.84.103.69
-  servername: yahoo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: b1f45225-4f7c-4b13-a7ee-1a9afa48216e
-- cipher: auto
-  name: node_48
-  port: 18521
-  server: 65.109.203.5
-  servername: 65.109.203.5
-  tls: true
-  type: vless
-  udp: true
-  uuid: bbb0d738-975d-41c5-ebfe-164f8cdc914f
-- cipher: auto
-  name: node_49
-  port: 45703
-  server: zone.jp.fx2hub.ir
-  servername: zone.jp.fx2hub.ir
-  tls: true
-  type: vless
-  udp: true
-  uuid: bdf97c06-ae1f-47e9-b47a-9d9ff47b5820
-- cipher: auto
-  name: node_50
-  port: 47880
-  server: zone.kr.lopzo.ir
-  servername: zone.kr.lopzo.ir
-  tls: true
-  type: vless
-  udp: true
-  uuid: bdf97c06-ae1f-47e9-b47a-9d9ff47b5820
-- cipher: auto
-  name: node_51
-  port: 443
-  server: 144.31.3.30
-  servername: poland.scroogethebest.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-- cipher: auto
-  name: node_52
-  port: 443
-  server: 144.31.3.35
-  servername: poland.scroogethebest.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-- cipher: auto
-  name: node_53
-  port: 443
-  server: 152.53.46.3
-  servername: au1.scroogethebest.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-- cipher: auto
-  name: node_54
-  port: 443
-  server: fran.scroogethebest.com
-  servername: fran.scroogethebest.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-- cipher: auto
-  name: node_55
-  port: 8104
-  server: 45.144.53.156
-  servername: tradingview.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: db27262a-4151-4c36-8e5f-2cf7fd387a0f
-- cipher: auto
-  name: node_56
-  port: 443
-  server: auths.microsrotfonline.com
-  servername: auths.microsrotfonline.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: dc2c7fb0-6482-4977-945b-ce0e3be94a9d
-- cipher: auto
-  name: node_57
-  port: 443
-  server: 5.129.232.153
-  servername: github.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: df339397-a631-4e68-a23f-05fa5d614243
-- cipher: auto
-  name: node_58
-  port: 42642
-  server: 94.131.100.42
-  servername: stats.vk-portal.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: e04f764c-6009-45aa-b033-97a90024634b
-- cipher: auto
-  name: node_59
-  port: 443
-  server: s1.plansv.tech
-  servername: s1.plansv.tech
-  tls: true
-  type: vless
-  udp: true
-  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
-- cipher: auto
-  name: node_60
-  port: 443
-  server: s2.plansv.tech
-  servername: s2.plansv.tech
-  tls: true
-  type: vless
-  udp: true
-  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
-- cipher: auto
-  name: node_61
-  port: 443
-  server: s4.plansv.tech
-  servername: s4.plansv.tech
-  tls: true
-  type: vless
-  udp: true
-  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
-- cipher: auto
-  name: node_62
-  port: 443
-  server: yandex.plansv.tech
-  servername: yandex.plansv.tech
-  tls: true
-  type: vless
-  udp: true
-  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
-- cipher: auto
-  name: node_63
-  port: 443
-  server: 185.254.98.164
-  servername: de.cdn.stun.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_64
-  port: 443
-  server: 217.13.104.148
-  servername: hu.jojack.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_65
-  port: 443
-  server: 78.159.131.210
-  servername: al.cdn.stun.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_66
-  port: 443
-  server: ae.cdn.stun.su
-  servername: ae.cdn.stun.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_67
-  port: 443
-  server: at.jojack.ru
-  servername: at.jojack.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_68
-  port: 443
-  server: nyc.cdn.stun.su
-  servername: nyc.cdn.stun.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_69
-  port: 443
-  server: 217.154.194.55
-  servername: azure.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: f0b15f64-db59-438c-b1b6-f1b83db52240
-- cipher: auto
-  name: node_70
-  port: 14201
-  server: 185.242.234.252
-  servername: 185.242.234.252
-  tls: true
-  type: vless
-  udp: true
-  uuid: f1fc0a00-c9cc-45ef-97c3-7014d9f94b8a
-- cipher: auto
-  name: node_71
-  port: 443
-  server: 87.242.103.184
-  servername: ya.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: f5a8e5fb-baa8-48cb-a62a-930c97c29eb2
-- cipher: auto
-  name: node_72
-  port: 2053
-  server: 89.106.89.112
-  servername: www.ibm.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 07cd9dbe-21ac-4871-817d-c772687e4b7c
-- cipher: auto
-  name: node_73
-  port: 8443
-  server: rus3.worldunlocked.org
-  servername: rus3.worldunlocked.org
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0e4865bf-811e-44e8-90ce-233ecf209b0b
-- cipher: auto
-  name: node_74
-  port: 1517
-  server: mail.mizban-r.site
-  servername: ''
-  tls: true
-  type: vless
-  udp: true
-  uuid: 10371edf-4e5a-46a5-bd19-c301ce371d14
-- cipher: auto
-  name: node_75
-  port: 1517
-  server: mail.norton-v.cfd
-  servername: mail.norton-v.cfd
-  tls: true
-  type: vless
-  udp: true
-  uuid: 10371edf-4e5a-46a5-bd19-c301ce371d14
-- cipher: auto
-  name: node_76
-  port: 443
-  server: 45.157.232.144
-  servername: google.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 18f72be7-0651-4037-928b-8a309d685796
-- cipher: auto
-  name: node_77
-  port: 443
-  server: de3.pineappled.org
-  servername: google.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 18f72be7-0651-4037-928b-8a309d685796
-- cipher: auto
-  name: node_78
-  port: 8080
-  server: av.nexconnx.com
-  servername: av.nexconnx.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 19a1e5b1-6289-4fe6-9aad-be285510942d
-- cipher: auto
-  name: node_79
-  port: 443
-  server: 31.13.208.89
-  servername: ads.x5.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: 30c04389-bbcb-431f-9d47-a8ad24406bd4
-- cipher: auto
-  name: node_80
-  port: 443
-  server: 45.134.217.212
-  servername: stats.vk-portal.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 30c04389-bbcb-431f-9d47-a8ad24406bd4
-- cipher: auto
-  name: node_81
-  port: 11777
-  server: 77.83.245.193
-  servername: yandex.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: 40a7f95c-f861-4f04-9a6e-55d624c7582c
-- cipher: auto
-  name: node_82
-  port: 2087
-  server: 172.64.145.38
-  servername: digikala.sorza.ir
-  tls: true
-  type: vless
-  udp: true
-  uuid: 41c55d8d-44dd-4437-90ff-4c1eb869a67c
-- cipher: auto
-  name: node_83
-  port: 443
-  server: 144.31.221.8
-  servername: test.spectrum.vu
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4bc7d558-1943-44de-bd82-56920bc9383e
-- cipher: auto
-  name: node_84
-  port: 443
-  server: 85.192.32.30
-  servername: eh.vk.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 50b95deb-6394-46c5-b88a-583e5b3ca7ee
-- cipher: auto
-  name: node_85
-  port: 2053
-  server: 199.119.137.95
-  servername: sni.111000.indevs.in
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-- cipher: auto
-  name: node_86
-  port: 8443
-  server: 45.144.112.52
-  servername: sni.111000.indevs.in
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-- cipher: auto
-  name: node_87
-  port: 2053
-  server: 64.227.174.213
-  servername: sni.111000.indevs.in
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-- cipher: auto
-  name: node_88
-  port: 443
-  server: es.pineappled.org
-  servername: google.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 64b5d863-81d6-48ea-9222-82030616fa63
-- cipher: auto
-  name: node_89
-  port: 26480
-  server: s3.daneshvardost.com
-  servername: s3.daneshvardost.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6919e588-cff3-4c1b-b7a3-3ca0ada5fb69
-- cipher: auto
-  name: node_90
-  port: 26480
-  server: s7.daneshvardost.com
-  servername: s7.daneshvardost.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6919e588-cff3-4c1b-b7a3-3ca0ada5fb69
-- cipher: auto
-  name: node_91
   port: 47997
   server: 31.170.22.193
   servername: apple.com
@@ -831,133 +310,214 @@ proxies:
   udp: true
   uuid: 7177f5c4-f26a-4ab5-820f-62cb6ba649f7
 - cipher: auto
-  name: node_92
+  name: node_34
+  port: 50
+  server: dd.openaccessnode.com
+  servername: dd.openaccessnode.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 75193bef-8d8f-e823-41e0-2dd083dc1399
+- cipher: auto
+  name: node_35
+  port: 1001
+  server: 91.107.169.16
+  servername: 91.107.169.16
+  tls: true
+  type: vless
+  udp: true
+  uuid: 8038f7de-9bba-4ebd-8352-556bc7316c11
+- cipher: auto
+  name: node_36
+  port: 80
+  server: z.ssl.fastly.net
+  servername: z.ssl.fastly.net
+  tls: true
+  type: vless
+  udp: true
+  uuid: 837b6716-6901-4b4d-a49f-2b6ac9306aa3
+- cipher: auto
+  name: node_37
+  port: 50855
+  server: tes1.api-tel.xyz
+  servername: ea.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 853d23ee-38c6-41bb-a51c-8aea6a25b0bd
+- cipher: auto
+  name: node_38
   port: 443
-  server: frserv.zaubex.online
-  servername: frserv.zaubex.online
+  server: br.pineappled.org
+  servername: google.com
   tls: true
   type: vless
   udp: true
-  uuid: 77da92aa-12ad-4370-b9be-25a86bc58c39
+  uuid: 8a77b19a-36be-43ff-ace0-bc322aa4f1e3
 - cipher: auto
-  name: node_93
-  port: 1488
-  server: 109.120.191.92
-  servername: ads.x5.ru
+  name: node_39
+  port: 51114
+  server: 90.156.255.198
+  servername: yahoo.com
   tls: true
   type: vless
   udp: true
-  uuid: 7bc30425-1c2f-4823-b629-90f599a4cbfe
+  uuid: 8b575b35-3c7c-42b0-ac80-2aa6b0d7717c
 - cipher: auto
-  name: node_94
-  port: 1488
-  server: 5.188.140.115
-  servername: ads.x5.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: 7bc30425-1c2f-4823-b629-90f599a4cbfe
-- cipher: auto
-  name: node_95
+  name: node_40
   port: 8880
-  server: yesok42v1.ip4exordir.shop
-  servername: ''
+  server: 45.82.251.115
+  servername: 45.82.251.115
   tls: true
   type: vless
   udp: true
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
 - cipher: auto
-  name: node_96
-  port: 8443
-  server: 178.17.50.66
-  servername: yandex.net
+  name: node_41
+  port: 443
+  server: 45.139.26.213
+  servername: www.yandex.ru
   tls: true
   type: vless
   udp: true
-  uuid: 8e1d0e1d-65f7-454a-862b-90a75e1c27b7
+  uuid: 8ff544c5-303c-46f4-80fe-8e8e166fd981
 - cipher: auto
-  name: node_97
+  name: node_42
   port: 443
-  server: lvcdn4.suio.me
-  servername: lvcdn4.suio.me
+  server: 146.185.208.206
+  servername: yandex.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: 914b0493-7094-4840-b94d-8ec3e92e9c43
+- cipher: auto
+  name: node_43
+  port: 443
+  server: 95.214.55.16
+  servername: uspehudacha.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 91cc050c-2866-4760-b72f-510f1a8a0165
+- cipher: auto
+  name: node_44
+  port: 27414
+  server: 77.83.245.189
+  servername: yandex.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: 94712dd9-17d8-4813-a118-cc487fadd137
+- cipher: auto
+  name: node_45
+  port: 443
+  server: 144.31.4.67
+  servername: plcdn14.suio.me
   tls: true
   type: vless
   udp: true
   uuid: 94a03e9a-74d5-4036-95e9-563cc19355de
 - cipher: auto
-  name: node_98
-  port: 10002
-  server: lv1.vpnjantit.com
-  servername: lv1.vpnjantit.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 9ddcc700-0688-11f1-81b6-43ab7c0441e4
-- cipher: auto
-  name: node_99
+  name: node_46
   port: 443
-  server: 46.29.166.193
-  servername: rutube.ru
+  server: 62.133.60.50
+  servername: decdn12.suio.me
   tls: true
   type: vless
   udp: true
-  uuid: 9fdd70da-b710-48b7-945a-642fe8937861
+  uuid: 94a03e9a-74d5-4036-95e9-563cc19355de
 - cipher: auto
-  name: node_100
+  name: node_47
   port: 443
-  server: ru02-vlr01.tcp-reset-club.net
-  servername: hls-svod.itunes.apple.com
+  server: 64.188.73.12
+  servername: www.intel.com
   tls: true
   type: vless
   udp: true
-  uuid: 9fdd70da-b710-48b7-945a-642fe8937861
+  uuid: 99bd2791-8e27-435b-a1e2-c9b625101af9
 - cipher: auto
-  name: node_101
-  port: 58128
-  server: 85.133.249.38
-  servername: 85.133.249.38
+  name: node_48
+  port: 8443
+  server: 62.182.196.134
+  servername: retn.net
   tls: true
   type: vless
   udp: true
-  uuid: a98dfd2a-b021-607c-af2d-362ae38c9478
+  uuid: 9a63b59c-5e54-437a-b7a1-2788780a7c13
 - cipher: auto
-  name: node_102
+  name: node_49
   port: 443
-  server: 185.238.228.46
-  servername: ''
+  server: 84.32.151.60
+  servername: yahoo.com
   tls: true
   type: vless
   udp: true
-  uuid: a992c7a6-832b-4243-a294-d34783d0294c
+  uuid: 9b5dffa2-8ab0-4e7c-af62-725a320957cc
 - cipher: auto
-  name: node_103
+  name: node_50
   port: 443
-  server: 37.221.125.34
-  servername: hls-svod.itunes.apple.com
+  server: 80.211.141.177
+  servername: gmail.com
   tls: true
   type: vless
   udp: true
-  uuid: ba77276e-9939-4c6c-a73e-90e02b6faf13
+  uuid: c2d73a71-923a-4a53-bc4b-dfb47db20527
 - cipher: auto
-  name: node_104
-  port: 45703
-  server: zone.jp.f2zone.ir
-  servername: zone.jp.f2zone.ir
+  name: node_51
+  port: 33895
+  server: 62.60.233.57
+  servername: yandex.ru
   tls: true
   type: vless
   udp: true
-  uuid: bdf97c06-ae1f-47e9-b47a-9d9ff47b5820
+  uuid: c5434982-3de9-4358-ad50-1d66b11f3354
 - cipher: auto
-  name: node_105
-  port: 43800
-  server: zone.sg.zopli.ir
-  servername: zone.sg.zopli.ir
+  name: node_52
+  port: 443
+  server: 144.31.3.30
+  servername: poland.scroogethebest.com
   tls: true
   type: vless
   udp: true
-  uuid: bdf97c06-ae1f-47e9-b47a-9d9ff47b5820
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
 - cipher: auto
-  name: node_106
+  name: node_53
+  port: 443
+  server: 144.31.3.35
+  servername: poland.scroogethebest.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+- cipher: auto
+  name: node_54
+  port: 443
+  server: 152.53.46.3
+  servername: au1.scroogethebest.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+- cipher: auto
+  name: node_55
+  port: 443
+  server: fran.scroogethebest.com
+  servername: fran.scroogethebest.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+- cipher: auto
+  name: node_56
+  port: 443
+  server: spb.scroogethebest.com
+  servername: spb.scroogethebest.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+- cipher: auto
+  name: node_57
   port: 51164
   server: 47.82.6.36
   servername: 47.82.6.36
@@ -966,25 +526,34 @@ proxies:
   udp: true
   uuid: d29a7cee-acd1-4821-adbf-517f8681040e
 - cipher: auto
-  name: node_107
-  port: 39771
-  server: 45.145.163.115
-  servername: yahoo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: e5bd3d75-06b3-490e-9651-930b1dc29cdb
-- cipher: auto
-  name: node_108
+  name: node_58
   port: 443
-  server: 91.107.208.24
-  servername: ''
+  server: 45.12.144.89
+  servername: cdnjs.com
   tls: true
   type: vless
   udp: true
-  uuid: e6cf712c-7c48-466c-aaed-4154b276a4a4
+  uuid: d94c383d-cb22-4182-a0c0-ec2bc047996e
 - cipher: auto
-  name: node_109
+  name: node_59
+  port: 11163
+  server: 107.174.85.183
+  servername: apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: d9fbc365-bf98-4ff6-a66d-523cc217d56e
+- cipher: auto
+  name: node_60
+  port: 8104
+  server: 45.144.53.156
+  servername: tradingview.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: db27262a-4151-4c36-8e5f-2cf7fd387a0f
+- cipher: auto
+  name: node_61
   port: 443
   server: 77.110.125.83
   servername: web.max.ru
@@ -993,34 +562,25 @@ proxies:
   udp: true
   uuid: ea8eaf21-76f8-4ef2-8397-aa1d693487a3
 - cipher: auto
-  name: node_110
+  name: node_62
   port: 443
-  server: 144.31.128.129
+  server: 78.159.131.210
+  servername: al.cdn.stun.su
+  tls: true
+  type: vless
+  udp: true
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+- cipher: auto
+  name: node_63
+  port: 443
+  server: ae.cdn.stun.su
   servername: ae.cdn.stun.su
   tls: true
   type: vless
   udp: true
   uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
 - cipher: auto
-  name: node_111
-  port: 443
-  server: 193.46.81.207
-  servername: de.cdn.stun.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_112
-  port: 443
-  server: 195.3.223.143
-  servername: 195.3.223.143
-  tls: true
-  type: vless
-  udp: true
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-- cipher: auto
-  name: node_113
+  name: node_64
   port: 443
   server: nl.jojack.ru
   servername: nl.jojack.ru
@@ -1029,41 +589,374 @@ proxies:
   udp: true
   uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
 - cipher: auto
-  name: node_114
+  name: node_65
   port: 443
-  server: pl.jojack.ru
-  servername: pl.jojack.ru
+  server: nyc.cdn.stun.su
+  servername: nyc.cdn.stun.su
   tls: true
   type: vless
   udp: true
   uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
 - cipher: auto
-  name: node_115
+  name: node_66
   port: 443
-  server: 45.145.40.4
-  servername: www.vk.com
+  server: 217.154.194.55
+  servername: azure.com
   tls: true
   type: vless
   udp: true
-  uuid: ed2fe66e-e2ce-4bc9-9284-a2b2b7c3cbea
+  uuid: f0b15f64-db59-438c-b1b6-f1b83db52240
 - cipher: auto
-  name: node_116
-  port: 8080
-  server: 91.196.35.96
-  servername: help.max.ru
+  name: node_67
+  port: 25998
+  server: 91.84.105.61
+  servername: yahoo.com
   tls: true
   type: vless
   udp: true
-  uuid: f3c95705-8a7b-4566-9086-d19c2f34b675
+  uuid: f3bf8732-4040-4132-b68a-2c137b75bbf3
 - cipher: auto
-  name: node_117
-  port: 2087
-  server: 1234.wordpresscrt.ir
-  servername: mehdi-cd.wordpresscrt.ir
+  name: node_68
+  port: 443
+  server: 87.242.103.184
+  servername: ya.ru
   tls: true
   type: vless
   udp: true
-  uuid: ff9fef0b-b3cd-4583-8841-b7ef1843880f
+  uuid: f5a8e5fb-baa8-48cb-a62a-930c97c29eb2
+- cipher: auto
+  name: node_69
+  port: 443
+  server: 159.195.4.83
+  servername: live.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 03695e31-89d2-4cce-9d7e-3e61d9d80f22
+- cipher: auto
+  name: node_70
+  port: 22224
+  server: 35.156.151.126
+  servername: trojan.burgerip.co.uk
+  tls: true
+  type: vless
+  udp: true
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+- cipher: auto
+  name: node_71
+  port: 22224
+  server: 35.180.167.247
+  servername: trojan.burgerip.co.uk
+  tls: true
+  type: vless
+  udp: true
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+- cipher: auto
+  name: node_72
+  port: 4444
+  server: 85.239.49.92
+  servername: github.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0622bdcf-1927-4750-afe4-0fa78ff502a8
+- cipher: auto
+  name: node_73
+  port: 443
+  server: 94.103.15.110
+  servername: cdnjs.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0c57c801-c2e2-4af0-8dd5-05e0d080a5e8
+- cipher: auto
+  name: node_74
+  port: 443
+  server: 144.24.97.225
+  servername: osxapps.itunes.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 1834316d-2b59-4239-970d-c764218bcdf2
+- cipher: auto
+  name: node_75
+  port: 443
+  server: best.pineappled.org
+  servername: google.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 18f72be7-0651-4037-928b-8a309d685796
+- cipher: auto
+  name: node_76
+  port: 443
+  server: nl.roblugo.su
+  servername: nl.roblugo.su
+  tls: true
+  type: vless
+  udp: true
+  uuid: 32561144-434f-4752-a731-f35cd191ba4a
+- cipher: auto
+  name: node_77
+  port: 443
+  server: spb.roblugo.su
+  servername: spb.roblugo.su
+  tls: true
+  type: vless
+  udp: true
+  uuid: 32561144-434f-4752-a731-f35cd191ba4a
+- cipher: auto
+  name: node_78
+  port: 443
+  server: download.riferoser.icu
+  servername: www.foxsports.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3495557c-8550-429f-83b6-a47d63a1ecfd
+- cipher: auto
+  name: node_79
+  port: 443
+  server: pl-modx.webedg.net
+  servername: pl-modx.webedg.net
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3bf002f8-b951-4dd5-b372-8d46ccd5f24b
+- cipher: auto
+  name: node_80
+  port: 2096
+  server: 108.162.194.176
+  servername: hetz.x-smm.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3f0f36f5-f091-45c5-88c9-4bcc545b922c
+- cipher: auto
+  name: node_81
+  port: 2096
+  server: www.speedtest.net
+  servername: hetz.x-smm.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3f0f36f5-f091-45c5-88c9-4bcc545b922c
+- cipher: auto
+  name: node_82
+  port: 2053
+  server: 37.16.74.19
+  servername: www.ibm.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 490ecb4b-8ee1-4d33-9d6d-b034899a1039
+- cipher: auto
+  name: node_83
+  port: 8443
+  server: 84.252.136.245
+  servername: yandex.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: 525e49c0-8396-4dac-bb2d-36412723e5cb
+- cipher: auto
+  name: node_84
+  port: 38666
+  server: 82.25.145.95
+  servername: 82.25.145.95
+  tls: true
+  type: vless
+  udp: true
+  uuid: 65d8bfbf-f625-4d35-9a1c-2b19a55e58e2
+- cipher: auto
+  name: node_85
+  port: 2096
+  server: 104.21.227.134
+  servername: ca.adobe-connect.top
+  tls: true
+  type: vless
+  udp: true
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
+- cipher: auto
+  name: node_86
+  port: 26480
+  server: s9.daneshvardost.com
+  servername: ''
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6919e588-cff3-4c1b-b7a3-3ca0ada5fb69
+- cipher: auto
+  name: node_87
+  port: 37463
+  server: 82.115.17.71
+  servername: ''
+  tls: true
+  type: vless
+  udp: true
+  uuid: 7228d8dc-cc98-4bc0-a953-bf89e54f689b
+- cipher: auto
+  name: node_88
+  port: 443
+  server: 51.250.86.102
+  servername: api-maps.yandex.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: 7cacb8f2-37d0-4bed-a41c-1d3f246a3ffd
+- cipher: auto
+  name: node_89
+  port: 2051
+  server: 5.255.126.160
+  servername: yahoo.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 8e28baed-b7da-29a3-cb89-cb7e4878c011
+- cipher: auto
+  name: node_90
+  port: 443
+  server: 57.128.191.90
+  servername: dl.google.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ac754349-a3d5-4eca-990e-1119c0cff4d5
+- cipher: auto
+  name: node_91
+  port: 8443
+  server: 91.84.103.69
+  servername: yahoo.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: b1f45225-4f7c-4b13-a7ee-1a9afa48216e
+- cipher: auto
+  name: node_92
+  port: 18521
+  server: 65.109.203.5
+  servername: 65.109.203.5
+  tls: true
+  type: vless
+  udp: true
+  uuid: bbb0d738-975d-41c5-ebfe-164f8cdc914f
+- cipher: auto
+  name: node_93
+  port: 45703
+  server: zone.jp.fx2hub.ir
+  servername: zone.jp.fx2hub.ir
+  tls: true
+  type: vless
+  udp: true
+  uuid: bdf97c06-ae1f-47e9-b47a-9d9ff47b5820
+- cipher: auto
+  name: node_94
+  port: 47880
+  server: zone.kr.lopzo.ir
+  servername: zone.kr.lopzo.ir
+  tls: true
+  type: vless
+  udp: true
+  uuid: bdf97c06-ae1f-47e9-b47a-9d9ff47b5820
+- cipher: auto
+  name: node_95
+  port: 443
+  server: auths.microsrotfonline.com
+  servername: auths.microsrotfonline.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: dc2c7fb0-6482-4977-945b-ce0e3be94a9d
+- cipher: auto
+  name: node_96
+  port: 443
+  server: 5.129.232.153
+  servername: github.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: df339397-a631-4e68-a23f-05fa5d614243
+- cipher: auto
+  name: node_97
+  port: 42642
+  server: 94.131.100.42
+  servername: stats.vk-portal.net
+  tls: true
+  type: vless
+  udp: true
+  uuid: e04f764c-6009-45aa-b033-97a90024634b
+- cipher: auto
+  name: node_98
+  port: 443
+  server: s1.plansv.tech
+  servername: s1.plansv.tech
+  tls: true
+  type: vless
+  udp: true
+  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
+- cipher: auto
+  name: node_99
+  port: 443
+  server: s2.plansv.tech
+  servername: s2.plansv.tech
+  tls: true
+  type: vless
+  udp: true
+  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
+- cipher: auto
+  name: node_100
+  port: 443
+  server: s4.plansv.tech
+  servername: s4.plansv.tech
+  tls: true
+  type: vless
+  udp: true
+  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
+- cipher: auto
+  name: node_101
+  port: 443
+  server: yandex.plansv.tech
+  servername: yandex.plansv.tech
+  tls: true
+  type: vless
+  udp: true
+  uuid: e5ef4914-5a87-46c1-a62b-0b8dfb3dbcb8
+- cipher: auto
+  name: node_102
+  port: 443
+  server: 185.254.98.164
+  servername: de.cdn.stun.su
+  tls: true
+  type: vless
+  udp: true
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+- cipher: auto
+  name: node_103
+  port: 443
+  server: 217.13.104.148
+  servername: hu.jojack.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+- cipher: auto
+  name: node_104
+  port: 443
+  server: at.jojack.ru
+  servername: at.jojack.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+- cipher: auto
+  name: node_105
+  port: 14201
+  server: 185.242.234.252
+  servername: 185.242.234.252
+  tls: true
+  type: vless
+  udp: true
+  uuid: f1fc0a00-c9cc-45ef-97c3-7014d9f94b8a
 proxy-groups:
 - name: GLOBAL
   proxies:
@@ -1173,16 +1066,4 @@ proxy-groups:
   - node_103
   - node_104
   - node_105
-  - node_106
-  - node_107
-  - node_108
-  - node_109
-  - node_110
-  - node_111
-  - node_112
-  - node_113
-  - node_114
-  - node_115
-  - node_116
-  - node_117
   type: select
