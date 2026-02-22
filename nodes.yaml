@@ -1468,5 +1468,5 @@ proxies:
   tls: true
   servername: help.max.ru
   skip-cert-verify: false
-update_time: 2026-02-22 12:51:44 UTC
+update_time: 2026-02-22 15:26:38 UTC
 source: auto-fetched
