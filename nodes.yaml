@@ -1,4 +1,31 @@
 proxies:
+- name: '[TROJAN] 104.21.30.167:443'
+  type: trojan
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  tls: true
+  skip-cert-verify: false
+  sni: 3y.2032.pp.ua
+  udp: true
+- name: '[TROJAN] 212.193.18.144:36158'
+  type: trojan
+  server: 212.193.18.144
+  port: 36158
+  password: ZblhWr0mqMakCPg.N
+  tls: true
+  skip-cert-verify: false
+  sni: ya.ru
+  udp: true
+- name: '[TROJAN] 80.173.231.254:12420'
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  tls: true
+  skip-cert-verify: false
+  sni: www.semanticstaplegun.click
+  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1328,5 +1355,5 @@ proxies:
   tls: true
   servername: 170.64.238.91
   skip-cert-verify: false
-update_time: 2026-02-23 02:12:10 UTC
+update_time: 2026-02-23 04:58:35 UTC
 source: auto-fetched
