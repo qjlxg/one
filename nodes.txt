@@ -1,4 +1,4 @@
-# Updated at 2026-02-23 19:03:43 UTC
+# Updated at 2026-02-23 21:45:25 UTC
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
 trojan://ZblhWr0mqMakCPg.N@212.193.18.144:36158?sni=ya.ru#%5BTROJAN%5D%20212.193.18.144%3A36158
