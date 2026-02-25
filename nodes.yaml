@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 160.16.132.38:3419'
-  type: trojan
-  server: 160.16.132.38
-  port: 3419
-  password: 64a59181551b5773e390bd717a7b7c06
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
+  udp: true
+- name: '[TROJAN] 160.16.132.38:3419'
+  type: trojan
+  server: 160.16.132.38
+  port: 3419
+  password: 64a59181551b5773e390bd717a7b7c06
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1627,5 +1627,5 @@ proxies:
   tls: true
   servername: u708330u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-02-25 07:03:07 UTC
+update_time: 2026-02-25 09:55:27 UTC
 source: auto-fetched
