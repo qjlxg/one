@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[TROJAN] 153.121.65.107:4920'
   type: trojan
   server: 153.121.65.107
@@ -1443,5 +1452,5 @@ proxies:
   tls: true
   servername: azure.com
   skip-cert-verify: false
-update_time: 2026-02-26 09:51:29 UTC
+update_time: 2026-02-26 13:07:42 UTC
 source: auto-fetched
