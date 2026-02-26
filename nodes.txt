@@ -1,4 +1,4 @@
-# Updated at 2026-02-26 02:06:27 UTC
+# Updated at 2026-02-26 04:51:03 UTC
 trojan://26635779-8ce6-4c07-ae5d-f3769ec95ddd@green2.cdntencentmusic.com:35502?sni=green2.cdntencentmusic.com#%5BTROJAN%5D%20green2.cdntencentmusic.com%3A35502
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
 trojan://64a59181551b5773e390bd717a7b7c06@160.16.132.38:3419?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.132.38%3A3419
