@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] green2.cdntencentmusic.com:35502'
+  type: trojan
+  server: green2.cdntencentmusic.com
+  port: 35502
+  password: 26635779-8ce6-4c07-ae5d-f3769ec95ddd
+  tls: true
+  skip-cert-verify: false
+  sni: green2.cdntencentmusic.com
+  udp: true
+- name: '[TROJAN] 104.21.80.1:443'
+  type: trojan
+  server: 104.21.80.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: PSYchO.SueX12.Ir
+  udp: true
 - name: '[TROJAN] 160.16.132.38:3419'
   type: trojan
   server: 160.16.132.38
@@ -29,6 +47,99 @@ proxies:
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+- name: '[TROJAN] 13.114.51.135:4856'
+  server: 13.114.51.135
+  port: 4856
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 16.162.118.238:504'
+  server: 16.162.118.238
+  port: 504
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 43.198.185.201:3292'
+  server: 43.198.185.201
+  port: 3292
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 3.112.214.167:2595'
+  server: 3.112.214.167
+  port: 2595
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 160.16.138.24:193'
+  server: 160.16.138.24
+  port: 193
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 43.207.87.46:3423'
+  server: 43.207.87.46
+  port: 3423
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 57.181.39.159:3901'
+  server: 57.181.39.159
+  port: 3901
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.85.33:3419'
+  server: 160.16.85.33
+  port: 3419
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 43.198.17.4:52951'
+  server: 43.198.17.4
+  port: 52951
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 160.16.68.250:1281'
+  server: 160.16.68.250
+  port: 1281
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 13.231.123.180:4920'
+  server: 13.231.123.180
+  port: 4920
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 16.162.118.238:45285'
+  server: 16.162.118.238
+  port: 45285
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[VMESS] board-01.ddnskunlun.com:11929'
+  server: board-01.ddnskunlun.com
+  port: 11929
+  type: vmess
+  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
+  alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
@@ -127,115 +238,6 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-- name: '[TROJAN] 13.112.42.244:4856'
-  server: 13.112.42.244
-  port: 4856
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 54.150.211.34:1491'
-  server: 54.150.211.34
-  port: 1491
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 13.113.247.215:2399'
-  server: 13.113.247.215
-  port: 2399
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 54.150.211.34:26378'
-  server: 54.150.211.34
-  port: 26378
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 160.16.63.16:3423'
-  server: 160.16.63.16
-  port: 3423
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 160.16.214.104:3423'
-  server: 160.16.214.104
-  port: 3423
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 52.193.253.196:3901'
-  server: 52.193.253.196
-  port: 3901
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 3.113.29.187:3901'
-  server: 3.113.29.187
-  port: 3901
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 57.180.245.83:381'
-  server: 57.180.245.83
-  port: 381
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 160.16.89.176:1281'
-  server: 160.16.89.176
-  port: 1281
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 52.192.108.21:4920'
-  server: 52.192.108.21
-  port: 4920
-  type: trojan
-  password: 64a59181551b5773e390bd717a7b7c06
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.199.42.6:23287'
-  server: 43.199.42.6
-  port: 23287
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[VMESS] board-02.ddnskunlun.com:11971'
-  server: board-02.ddnskunlun.com
-  port: 11971
-  type: vmess
-  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-- name: '[VMESS] ipv6-tw03.cnddns.com:16811'
-  server: ipv6-tw03.cnddns.com
-  port: 16811
-  type: vmess
-  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-- name: '[TROJAN] 05.tokyometropolis.kiev.ua:2053'
-  server: 05.tokyometropolis.kiev.ua
-  port: 2053
-  type: trojan
-  password: 736cd94d-7b94-3e44-8106-3419f64eaf09
-  sni: 45.32.28.232
-  skip-cert-verify: false
 - name: '[TROJAN] 188.116.22.217:2083'
   type: trojan
   server: 188.116.22.217
@@ -250,15 +252,6 @@ proxies:
     path: /trojan-ws
     headers:
       Host: xo.e0f.cx
-- name: '[TROJAN] 5.34.222.4:43642'
-  type: trojan
-  server: 5.34.222.4
-  port: 43642
-  password: 347ca311-8fc2-499c-8fe1-bd0ecb50f1b3
-  tls: true
-  skip-cert-verify: false
-  sni: 5.34.222.4
-  udp: true
 - name: '[TROJAN] 58.152.53.227:443'
   type: trojan
   server: 58.152.53.227
@@ -267,6 +260,774 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
+  udp: true
+- name: '[TROJAN] ca05.oportal.cc:443'
+  type: trojan
+  server: ca05.oportal.cc
+  port: 443
+  password: adb13850-7e70-492e-85b2-01184801d587
+  tls: true
+  skip-cert-verify: false
+  sni: ca05.oportal.cc
+  udp: true
+- name: '[TROJAN] us08.oportal.cc:443'
+  type: trojan
+  server: us08.oportal.cc
+  port: 443
+  password: adb13850-7e70-492e-85b2-01184801d587
+  tls: true
+  skip-cert-verify: false
+  sni: us08.oportal.cc
+  udp: true
+- name: '[TROJAN] free-de-2.undef.network:443'
+  type: trojan
+  server: free-de-2.undef.network
+  port: 443
+  password: pYIoKUPGpWeTYXEx3HjR7s97B
+  tls: true
+  skip-cert-verify: false
+  sni: free-de-2.undef.network
+  udp: true
+- name: '[TROJAN] 194.150.166.151:52047'
+  type: trojan
+  server: 194.150.166.151
+  port: 52047
+  password: zp630tdUuD
+  tls: true
+  skip-cert-verify: false
+  sni: aws.amazon.com
+  udp: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ''
+- name: '[VLESS] 185.120.59.126:8443'
+  type: vless
+  server: 185.120.59.126
+  port: 8443
+  uuid: 010c8bf7-0a43-404f-a6c5-2427acb4d476
+  udp: true
+  tls: true
+  servername: sun6-21.userapi.com
+  skip-cert-verify: false
+- name: '[VLESS] go.adslimit.info:2345'
+  type: vless
+  server: go.adslimit.info
+  port: 2345
+  uuid: 0331b690-79fc-49d5-85f0-54faa4eff89f
+  udp: true
+  tls: false
+- name: '[VLESS] 89.106.89.112:2053'
+  type: vless
+  server: 89.106.89.112
+  port: 2053
+  uuid: 07cd9dbe-21ac-4871-817d-c772687e4b7c
+  udp: true
+  tls: true
+  servername: www.ibm.com
+  skip-cert-verify: false
+- name: '[VLESS] 45.141.234.196:51472'
+  type: vless
+  server: 45.141.234.196
+  port: 51472
+  uuid: 0c49f1d8-3d34-473b-bebf-9d9a4811db62
+  udp: true
+  tls: true
+  servername: yandex.ru
+  skip-cert-verify: false
+- name: '[VLESS] germ-node.genadata.online:2040'
+  type: vless
+  server: germ-node.genadata.online
+  port: 2040
+  uuid: 14818654-7689-453a-9a1f-4c72f89782d5
+  udp: true
+  tls: true
+  servername: tradingview.com
+  skip-cert-verify: false
+- name: '[VLESS] riga-node.genadata.online:2040'
+  type: vless
+  server: riga-node.genadata.online
+  port: 2040
+  uuid: 14818654-7689-453a-9a1f-4c72f89782d5
+  udp: true
+  tls: true
+  servername: tradingview.com
+  skip-cert-verify: false
+- name: '[VLESS] 188.40.210.8:1083'
+  type: vless
+  server: 188.40.210.8
+  port: 1083
+  uuid: 179ddf63-c263-40ff-98a1-f53708573059
+  udp: true
+  tls: false
+- name: '[VLESS] 57.128.159.109:2345'
+  type: vless
+  server: 57.128.159.109
+  port: 2345
+  uuid: 20adc847-4159-4f39-b79f-d563b660945f
+  udp: true
+  tls: true
+  servername: 57.128.159.109
+  skip-cert-verify: false
+- name: '[VLESS] 158.62.198.132:443'
+  type: vless
+  server: 158.62.198.132
+  port: 443
+  uuid: 213325c6-ef4b-4cdb-850b-24a06f2865c8
+  udp: true
+  tls: true
+  servername: www.hp.com
+  skip-cert-verify: false
+- name: '[VLESS] 188.132.183.140:443'
+  type: vless
+  server: 188.132.183.140
+  port: 443
+  uuid: 213325c6-ef4b-4cdb-850b-24a06f2865c8
+  udp: true
+  tls: true
+  servername: 2gis.kz
+  skip-cert-verify: false
+- name: '[VLESS] 95.214.181.51:443'
+  type: vless
+  server: 95.214.181.51
+  port: 443
+  uuid: 213325c6-ef4b-4cdb-850b-24a06f2865c8
+  udp: true
+  tls: true
+  servername: www.debian.org
+  skip-cert-verify: false
+- name: '[VLESS] 144.217.133.97:30238'
+  type: vless
+  server: 144.217.133.97
+  port: 30238
+  uuid: 27b6068a-e1e6-4675-ab14-87143c690390
+  udp: true
+  tls: false
+- name: '[VLESS] 74.48.142.49:20299'
+  type: vless
+  server: 74.48.142.49
+  port: 20299
+  uuid: 2e0c37cf-d746-4264-89c6-76df8995218f
+  udp: true
+  tls: true
+  servername: apple.com
+  skip-cert-verify: false
+- name: '[VLESS] 45.134.218.222:443'
+  type: vless
+  server: 45.134.218.222
+  port: 443
+  uuid: 30c04389-bbcb-431f-9d47-a8ad24406bd4
+  udp: true
+  tls: true
+  servername: stats.vk-portal.net
+  skip-cert-verify: false
+- name: '[VLESS] 72.56.108.252:443'
+  type: vless
+  server: 72.56.108.252
+  port: 443
+  uuid: 38707963-acf6-4e72-8db6-94faba4b5844
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 103.113.70.21:443'
+  type: vless
+  server: 103.113.70.21
+  port: 443
+  uuid: 3b9ff760-6b22-467b-a54f-e25a82a40908
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 15.204.97.195:23576'
+  type: vless
+  server: 15.204.97.195
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  servername: fuck.rkn
+  skip-cert-verify: false
+- name: '[VLESS] 15.204.97.206:23576'
+  type: vless
+  server: 15.204.97.206
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  servername: fuck.rkn
+  skip-cert-verify: false
+- name: '[VLESS] 15.204.97.216:23576'
+  type: vless
+  server: 15.204.97.216
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  servername: fuck.rkn
+  skip-cert-verify: false
+- name: '[VLESS] 15.204.97.219:23576'
+  type: vless
+  server: 15.204.97.219
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  servername: fuck.rkn
+  skip-cert-verify: false
+- name: '[VLESS] 51.158.206.86:23576'
+  type: vless
+  server: 51.158.206.86
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  servername: fuck.rkn
+  skip-cert-verify: false
+- name: '[VLESS] 51.158.206.97:23576'
+  type: vless
+  server: 51.158.206.97
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  servername: fuck.rkn
+  skip-cert-verify: false
+- name: '[VLESS] 104.18.38.47:2052'
+  type: vless
+  server: 104.18.38.47
+  port: 2052
+  uuid: 5e62ddcf-78c9-4b15-803a-436c8c839ddc
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: oBEDiENt-noiseqJf5ja18yF.wIndLer.CO.UK
+  servername: 104.18.38.47
+  skip-cert-verify: false
+- name: '[VLESS] 109.172.55.232:13760'
+  type: vless
+  server: 109.172.55.232
+  port: 13760
+  uuid: 5fad3ad2-1a94-40d0-85bb-51eb83f5c7df
+  udp: true
+  tls: true
+  servername: 109.172.55.232
+  skip-cert-verify: false
+- name: '[VLESS] 150.136.254.79:443'
+  type: vless
+  server: 150.136.254.79
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.111000.indevs.in
+  servername: sni.111000.indevs.in
+  skip-cert-verify: false
+- name: '[VLESS] 37.32.43.252:15717'
+  type: vless
+  server: 37.32.43.252
+  port: 15717
+  uuid: 665b51bb-b60b-4653-dab5-cc7fc3125380
+  udp: true
+  tls: false
+- name: '[VLESS] vip2.kaixincloud.top:2096'
+  type: vless
+  server: vip2.kaixincloud.top
+  port: 2096
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.adobe-connect.top
+  servername: ca.adobe-connect.top
+  skip-cert-verify: false
+- name: '[VLESS] wolf2.adslimit.info:2345'
+  type: vless
+  server: wolf2.adslimit.info
+  port: 2345
+  uuid: 7007111a-c28b-4ab1-8d28-bc7b42681028
+  udp: true
+  tls: true
+  servername: wolf2.adslimit.info
+  skip-cert-verify: false
+- name: '[VLESS] 31.170.22.193:47997'
+  type: vless
+  server: 31.170.22.193
+  port: 47997
+  uuid: 7177f5c4-f26a-4ab5-820f-62cb6ba649f7
+  udp: true
+  tls: true
+  servername: apple.com
+  skip-cert-verify: false
+- name: '[VLESS] dd.openaccessnode.com:50'
+  type: vless
+  server: dd.openaccessnode.com
+  port: 50
+  uuid: 75193bef-8d8f-e823-41e0-2dd083dc1399
+  udp: true
+  tls: true
+  servername: dd.openaccessnode.com
+  skip-cert-verify: false
+- name: '[VLESS] 45.136.128.184:443'
+  type: vless
+  server: 45.136.128.184
+  port: 443
+  uuid: 77d18334-3ce5-442f-8bba-d4aa0a53f051
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 185.227.149.123:443'
+  type: vless
+  server: 185.227.149.123
+  port: 443
+  uuid: 7c3f08c8-7b3b-4028-91d8-378a18c2b62a
+  udp: true
+  tls: true
+  servername: mycatcollection.com
+  skip-cert-verify: false
+- name: '[VLESS] 93.115.25.177:443'
+  type: vless
+  server: 93.115.25.177
+  port: 443
+  uuid: 7c3f08c8-7b3b-4028-91d8-378a18c2b62a
+  udp: true
+  tls: true
+  servername: mycatcollection.com
+  skip-cert-verify: false
+- name: '[VLESS] tes1.api-tel.xyz:50855'
+  type: vless
+  server: tes1.api-tel.xyz
+  port: 50855
+  uuid: 853d23ee-38c6-41bb-a51c-8aea6a25b0bd
+  udp: true
+  tls: true
+  servername: ea.com
+  skip-cert-verify: false
+- name: '[VLESS] 144.31.197.124:443'
+  type: vless
+  server: 144.31.197.124
+  port: 443
+  uuid: 8880a102-7c54-40fb-8508-88d7b28b2014
+  udp: true
+  tls: true
+  servername: www.microsoft.com
+  skip-cert-verify: false
+- name: '[VLESS] br.pineappled.org:443'
+  type: vless
+  server: br.pineappled.org
+  port: 443
+  uuid: 8a77b19a-36be-43ff-ace0-bc322aa4f1e3
+  udp: true
+  tls: true
+  servername: google.com
+  skip-cert-verify: false
+- name: '[VLESS] 90.156.255.198:51114'
+  type: vless
+  server: 90.156.255.198
+  port: 51114
+  uuid: 8b575b35-3c7c-42b0-ac80-2aa6b0d7717c
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 45.82.251.115:8880'
+  type: vless
+  server: 45.82.251.115
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  udp: true
+  tls: true
+  servername: 45.82.251.115
+  skip-cert-verify: false
+- name: '[VLESS] pqh18v7.viripdirect.shop:8880'
+  type: vless
+  server: pqh18v7.viripdirect.shop
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  udp: true
+  tls: true
+  servername: pqh18v7.viripdirect.shop
+  skip-cert-verify: false
+- name: '[VLESS] 77.83.245.189:27414'
+  type: vless
+  server: 77.83.245.189
+  port: 27414
+  uuid: 94712dd9-17d8-4813-a118-cc487fadd137
+  udp: true
+  tls: true
+  servername: yandex.ru
+  skip-cert-verify: false
+- name: '[VLESS] 144.31.4.67:443'
+  type: vless
+  server: 144.31.4.67
+  port: 443
+  uuid: 94a03e9a-74d5-4036-95e9-563cc19355de
+  udp: true
+  tls: true
+  servername: plcdn14.suio.me
+  skip-cert-verify: false
+- name: '[VLESS] 62.133.60.50:443'
+  type: vless
+  server: 62.133.60.50
+  port: 443
+  uuid: 94a03e9a-74d5-4036-95e9-563cc19355de
+  udp: true
+  tls: true
+  servername: decdn12.suio.me
+  skip-cert-verify: false
+- name: '[VLESS] 91.99.8.3:2083'
+  type: vless
+  server: 91.99.8.3
+  port: 2083
+  uuid: 9748d6dc-d7a8-45cd-b4df-00476cac75f8
+  udp: true
+  tls: true
+  servername: www.yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 64.188.73.12:443'
+  type: vless
+  server: 64.188.73.12
+  port: 443
+  uuid: 99bd2791-8e27-435b-a1e2-c9b625101af9
+  udp: true
+  tls: true
+  servername: www.intel.com
+  skip-cert-verify: false
+- name: '[VLESS] 62.182.196.134:8443'
+  type: vless
+  server: 62.182.196.134
+  port: 8443
+  uuid: 9a63b59c-5e54-437a-b7a1-2788780a7c13
+  udp: true
+  tls: true
+  servername: retn.net
+  skip-cert-verify: false
+- name: '[VLESS] 5.180.97.139:443'
+  type: vless
+  server: 5.180.97.139
+  port: 443
+  uuid: a384c715-aeb5-45e8-859b-f687ca6c083f
+  udp: true
+  tls: true
+  servername: google.com
+  skip-cert-verify: false
+- name: '[VLESS] 93.94.51.13:25451'
+  type: vless
+  server: 93.94.51.13
+  port: 25451
+  uuid: a90f4742-2f30-47b5-9f17-b6ab04cc98e8
+  udp: true
+  tls: true
+  servername: yandex.ru
+  skip-cert-verify: false
+- name: '[VLESS] nodejs.org:443'
+  type: vless
+  server: nodejs.org
+  port: 443
+  uuid: aaaaaabb-4ddd-4eee-9fff-ffffffffffff
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /146.235.18.248=45137
+    headers:
+      Host: afrcloud22.mmv.kr
+  servername: afrcloud22.mmv.kr
+  skip-cert-verify: false
+- name: '[VLESS] glob.thisiswe.uno:8443'
+  type: vless
+  server: glob.thisiswe.uno
+  port: 8443
+  uuid: aab1a536-7a2c-4357-a0e0-8cdde41845c6
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: nobitex.sylu.net
+  servername: nobitex.sylu.net
+  skip-cert-verify: false
+- name: '[VLESS] 81.19.141.190:51529'
+  type: vless
+  server: 81.19.141.190
+  port: 51529
+  uuid: ad2879c1-7f77-4a4c-ba50-c24dd5ceffa4
+  udp: true
+  tls: true
+  servername: yandex.ru
+  skip-cert-verify: false
+- name: '[VLESS] 93.94.51.11:53320'
+  type: vless
+  server: 93.94.51.11
+  port: 53320
+  uuid: c1e66fa3-951b-436c-a95a-b2abbaecb195
+  udp: true
+  tls: true
+  servername: yandex.ru
+  skip-cert-verify: false
+- name: '[VLESS] 103.231.75.185:443'
+  type: vless
+  server: 103.231.75.185
+  port: 443
+  uuid: c4e055e5-c9dd-44ae-8daf-2f0f344dcbdb
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 45.13.119.38:443'
+  type: vless
+  server: 45.13.119.38
+  port: 443
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+  udp: true
+  tls: true
+  servername: fran.scroogethebest.com
+  skip-cert-verify: false
+- name: '[VLESS] 5.254.85.151:443'
+  type: vless
+  server: 5.254.85.151
+  port: 443
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+  udp: true
+  tls: true
+  servername: germany.scroogethebest.com
+  skip-cert-verify: false
+- name: '[VLESS] 5.254.85.152:443'
+  type: vless
+  server: 5.254.85.152
+  port: 443
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+  udp: true
+  tls: true
+  servername: germany.scroogethebest.com
+  skip-cert-verify: false
+- name: '[VLESS] fran.scroogethebest.com:443'
+  type: vless
+  server: fran.scroogethebest.com
+  port: 443
+  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
+  udp: true
+  tls: true
+  servername: fran.scroogethebest.com
+  skip-cert-verify: false
+- name: '[VLESS] zyro.adslimit.info:2345'
+  type: vless
+  server: zyro.adslimit.info
+  port: 2345
+  uuid: d3b5fdf3-bdcb-4dec-b46b-c06b5d828f73
+  udp: true
+  tls: true
+  servername: zyro.adslimit.info
+  skip-cert-verify: false
+- name: '[VLESS] 185.234.57.216:443'
+  type: vless
+  server: 185.234.57.216
+  port: 443
+  uuid: d50ef9ea-7adf-4b45-977a-16bca0f11584
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] vb27.homianco.ir:2096'
+  type: vless
+  server: vb27.homianco.ir
+  port: 2096
+  uuid: d5f2b8ad-5ee4-41fe-95e9-7adc1acb0549
+  udp: true
+  tls: true
+  servername: vb27.homianco.ir
+  skip-cert-verify: false
+- name: '[VLESS] 107.174.85.183:11163'
+  type: vless
+  server: 107.174.85.183
+  port: 11163
+  uuid: d9fbc365-bf98-4ff6-a66d-523cc217d56e
+  udp: true
+  tls: true
+  servername: apple.com
+  skip-cert-verify: false
+- name: '[VLESS] 45.136.149.145:443'
+  type: vless
+  server: 45.136.149.145
+  port: 443
+  uuid: ddb913e5-492f-42e8-baec-93c9c5d333d6
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] all.tellmethetrue.shop:443'
+  type: vless
+  server: all.tellmethetrue.shop
+  port: 443
+  uuid: e4824193-4f54-453b-d037-88368e85ef0e
+  udp: true
+  tls: true
+  servername: pqh36v3.carwashipdir.shop
+  skip-cert-verify: false
+- name: '[VLESS] 194.85.249.173:433'
+  type: vless
+  server: 194.85.249.173
+  port: 433
+  uuid: e81a36d5-b3c3-48e0-bf08-d8938a247391
+  udp: true
+  tls: true
+  servername: www.google.com
+  skip-cert-verify: false
+- name: '[VLESS] 152.53.46.200:443'
+  type: vless
+  server: 152.53.46.200
+  port: 443
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+  udp: true
+  tls: true
+  servername: at.jojack.ru
+  skip-cert-verify: false
+- name: '[VLESS] 185.254.98.164:443'
+  type: vless
+  server: 185.254.98.164
+  port: 443
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+  udp: true
+  tls: true
+  servername: de.cdn.stun.su
+  skip-cert-verify: false
+- name: '[VLESS] 45.145.40.26:443'
+  type: vless
+  server: 45.145.40.26
+  port: 443
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+  udp: true
+  tls: true
+  servername: de.cdn.stun.su
+  skip-cert-verify: false
+- name: '[VLESS] by.cdn.titun.su:443'
+  type: vless
+  server: by.cdn.titun.su
+  port: 443
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+  udp: true
+  tls: true
+  servername: by.cdn.titun.su
+  skip-cert-verify: false
+- name: '[VLESS] de.cdn.stun.su:443'
+  type: vless
+  server: de.cdn.stun.su
+  port: 443
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+  udp: true
+  tls: true
+  servername: de.cdn.stun.su
+  skip-cert-verify: false
+- name: '[VLESS] nl.jojack.ru:443'
+  type: vless
+  server: nl.jojack.ru
+  port: 443
+  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+  udp: true
+  tls: true
+  servername: nl.jojack.ru
+  skip-cert-verify: false
+- name: '[VLESS] 45.130.125.198:2053'
+  type: vless
+  server: 45.130.125.198
+  port: 2053
+  uuid: ee9b0614-50ec-41b6-951b-e1d5d755fa4b
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: kaja.thisiswe.uno
+  servername: kaja.thisiswe.uno
+  skip-cert-verify: true
+- name: '[VLESS] glob.thisiswe.uno:2053'
+  type: vless
+  server: glob.thisiswe.uno
+  port: 2053
+  uuid: ee9b0614-50ec-41b6-951b-e1d5d755fa4b
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: p1.thisiswe.uno
+  servername: p1.thisiswe.uno
+  skip-cert-verify: true
+- name: '[VLESS] germ2.vpnhub.shop:8081'
+  type: vless
+  server: germ2.vpnhub.shop
+  port: 8081
+  uuid: f1449968-0329-468b-b56b-1c573ac2a767
+  udp: true
+  tls: true
+  servername: www.apple.com
+  skip-cert-verify: false
+- name: '[VLESS] 87.242.103.184:443'
+  type: vless
+  server: 87.242.103.184
+  port: 443
+  uuid: f5a8e5fb-baa8-48cb-a62a-930c97c29eb2
+  udp: true
+  tls: true
+  servername: ya.ru
+  skip-cert-verify: false
+- name: '[VLESS] 45.43.79.73:443'
+  type: vless
+  server: 45.43.79.73
+  port: 443
+  uuid: f79d200c-ac04-45a8-98a7-031d629f705c
+  udp: true
+  tls: true
+  servername: google.com
+  skip-cert-verify: false
+- name: '[VLESS] 109.172.55.157:19547'
+  type: vless
+  server: 109.172.55.157
+  port: 19547
+  uuid: f9cdb2e1-939c-4470-b322-14b7313dec48
+  udp: true
+  tls: true
+  servername: yandex.ru
+  skip-cert-verify: false
+- name: '[VLESS] 104.128.134.181:34816'
+  type: vless
+  server: 104.128.134.181
+  port: 34816
+  uuid: fd058cd3-55fa-43ce-a634-1920b7d12c45
+  udp: true
+  tls: true
+  servername: 104.128.134.181
+  skip-cert-verify: false
+- name: '[VLESS] 91.132.51.160:443'
+  type: vless
+  server: 91.132.51.160
+  port: 443
+  uuid: fed05faf-401f-3412-b658-5c96f3095dd0
+  udp: true
+  tls: true
+  servername: www.refersion.com
+  skip-cert-verify: false
+- name: '[TROJAN] 5.34.222.4:43642'
+  type: trojan
+  server: 5.34.222.4
+  port: 43642
+  password: 347ca311-8fc2-499c-8fe1-bd0ecb50f1b3
+  tls: true
+  skip-cert-verify: false
+  sni: 5.34.222.4
   udp: true
 - name: '[TROJAN] hl-freedom-2.undef.network:443'
   type: trojan
@@ -282,15 +1043,6 @@ proxies:
     path: /f2fc2a1f
     headers:
       Host: hl-freedom-2.undef.network
-- name: '[TROJAN] ca05.oportal.cc:443'
-  type: trojan
-  server: ca05.oportal.cc
-  port: 443
-  password: adb13850-7e70-492e-85b2-01184801d587
-  tls: true
-  skip-cert-verify: false
-  sni: ca05.oportal.cc
-  udp: true
 - name: '[TROJAN] 3.76.141.128:22223'
   type: trojan
   server: 3.76.141.128
@@ -354,15 +1106,6 @@ proxies:
   tls: true
   servername: sun6-21.userapi.com
   skip-cert-verify: false
-- name: '[VLESS] go.adslimit.info:2345'
-  type: vless
-  server: go.adslimit.info
-  port: 2345
-  uuid: 0331b690-79fc-49d5-85f0-54faa4eff89f
-  udp: true
-  tls: true
-  servername: go.adslimit.info
-  skip-cert-verify: false
 - name: '[VLESS] 77.110.114.1:443'
   type: vless
   server: 77.110.114.1
@@ -389,24 +1132,6 @@ proxies:
   udp: true
   tls: true
   servername: tradingview.com
-  skip-cert-verify: false
-- name: '[VLESS] germ-node.genadata.online:2040'
-  type: vless
-  server: germ-node.genadata.online
-  port: 2040
-  uuid: 14818654-7689-453a-9a1f-4c72f89782d5
-  udp: true
-  tls: true
-  servername: tradingview.com
-  skip-cert-verify: false
-- name: '[VLESS] 188.40.210.8:1083'
-  type: vless
-  server: 188.40.210.8
-  port: 1083
-  uuid: 179ddf63-c263-40ff-98a1-f53708573059
-  udp: true
-  tls: true
-  servername: 188.40.210.8
   skip-cert-verify: false
 - name: '[VLESS] 194.107.126.157:443'
   type: vless
@@ -453,33 +1178,6 @@ proxies:
   tls: true
   servername: simurgh.adslimit.info
   skip-cert-verify: false
-- name: '[VLESS] 158.62.198.132:443'
-  type: vless
-  server: 158.62.198.132
-  port: 443
-  uuid: 213325c6-ef4b-4cdb-850b-24a06f2865c8
-  udp: true
-  tls: true
-  servername: 158.62.198.132
-  skip-cert-verify: false
-- name: '[VLESS] 188.132.183.140:443'
-  type: vless
-  server: 188.132.183.140
-  port: 443
-  uuid: 213325c6-ef4b-4cdb-850b-24a06f2865c8
-  udp: true
-  tls: true
-  servername: 188.132.183.140
-  skip-cert-verify: false
-- name: '[VLESS] 95.214.181.51:443'
-  type: vless
-  server: 95.214.181.51
-  port: 443
-  uuid: 213325c6-ef4b-4cdb-850b-24a06f2865c8
-  udp: true
-  tls: true
-  servername: 95.214.181.51
-  skip-cert-verify: false
 - name: '[VLESS] 91.107.253.99:33133'
   type: vless
   server: 91.107.253.99
@@ -487,51 +1185,6 @@ proxies:
   uuid: 22470ee7-74b2-4b23-b164-bc87930d7e96
   udp: true
   tls: false
-- name: '[VLESS] 144.217.133.97:30238'
-  type: vless
-  server: 144.217.133.97
-  port: 30238
-  uuid: 27b6068a-e1e6-4675-ab14-87143c690390
-  udp: true
-  tls: true
-  servername: 144.217.133.97
-  skip-cert-verify: false
-- name: '[VLESS] 74.48.142.49:20299'
-  type: vless
-  server: 74.48.142.49
-  port: 20299
-  uuid: 2e0c37cf-d746-4264-89c6-76df8995218f
-  udp: true
-  tls: true
-  servername: apple.com
-  skip-cert-verify: false
-- name: '[VLESS] 45.134.218.222:443'
-  type: vless
-  server: 45.134.218.222
-  port: 443
-  uuid: 30c04389-bbcb-431f-9d47-a8ad24406bd4
-  udp: true
-  tls: true
-  servername: stats.vk-portal.net
-  skip-cert-verify: false
-- name: '[VLESS] 72.56.108.252:443'
-  type: vless
-  server: 72.56.108.252
-  port: 443
-  uuid: 38707963-acf6-4e72-8db6-94faba4b5844
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] 103.113.70.21:443'
-  type: vless
-  server: 103.113.70.21
-  port: 443
-  uuid: 3b9ff760-6b22-467b-a54f-e25a82a40908
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
 - name: '[VLESS] wolfb24.servers1mart.ir:2096'
   type: vless
   server: wolfb24.servers1mart.ir
@@ -540,42 +1193,6 @@ proxies:
   udp: true
   tls: true
   servername: play.google.com
-  skip-cert-verify: false
-- name: '[VLESS] 15.204.97.195:23576'
-  type: vless
-  server: 15.204.97.195
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  udp: true
-  tls: true
-  servername: fuck.rkn
-  skip-cert-verify: false
-- name: '[VLESS] 15.204.97.216:23576'
-  type: vless
-  server: 15.204.97.216
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  udp: true
-  tls: true
-  servername: fuck.rkn
-  skip-cert-verify: false
-- name: '[VLESS] 15.204.97.219:23576'
-  type: vless
-  server: 15.204.97.219
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  udp: true
-  tls: true
-  servername: fuck.rkn
-  skip-cert-verify: false
-- name: '[VLESS] 51.158.206.86:23576'
-  type: vless
-  server: 51.158.206.86
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  udp: true
-  tls: true
-  servername: fuck.rkn
   skip-cert-verify: false
 - name: '[VLESS] 142.248.80.157:443'
   type: vless
@@ -598,15 +1215,6 @@ proxies:
     path: /
     headers:
       Host: oBEDiENt-noiseqJf5ja18yF.wIndLer.CO.UK.
-- name: '[VLESS] 109.172.55.232:13760'
-  type: vless
-  server: 109.172.55.232
-  port: 13760
-  uuid: 5fad3ad2-1a94-40d0-85bb-51eb83f5c7df
-  udp: true
-  tls: true
-  servername: 109.172.55.232
-  skip-cert-verify: false
 - name: '[VLESS] chatgpt.com:2096'
   type: vless
   server: chatgpt.com
@@ -644,24 +1252,6 @@ proxies:
   tls: true
   servername: www.cybo.com
   skip-cert-verify: false
-- name: '[VLESS] wolf2.adslimit.info:2345'
-  type: vless
-  server: wolf2.adslimit.info
-  port: 2345
-  uuid: 7007111a-c28b-4ab1-8d28-bc7b42681028
-  udp: true
-  tls: true
-  servername: wolf2.adslimit.info
-  skip-cert-verify: false
-- name: '[VLESS] 31.170.22.193:47997'
-  type: vless
-  server: 31.170.22.193
-  port: 47997
-  uuid: 7177f5c4-f26a-4ab5-820f-62cb6ba649f7
-  udp: true
-  tls: true
-  servername: apple.com
-  skip-cert-verify: false
 - name: '[VLESS] dd.openaccessnode.com:2197'
   type: vless
   server: dd.openaccessnode.com
@@ -680,24 +1270,6 @@ proxies:
   tls: true
   servername: www.techradar.com
   skip-cert-verify: false
-- name: '[VLESS] 185.227.149.123:443'
-  type: vless
-  server: 185.227.149.123
-  port: 443
-  uuid: 7c3f08c8-7b3b-4028-91d8-378a18c2b62a
-  udp: true
-  tls: true
-  servername: mycatcollection.com
-  skip-cert-verify: false
-- name: '[VLESS] 93.115.25.177:443'
-  type: vless
-  server: 93.115.25.177
-  port: 443
-  uuid: 7c3f08c8-7b3b-4028-91d8-378a18c2b62a
-  udp: true
-  tls: true
-  servername: mycatcollection.com
-  skip-cert-verify: false
 - name: '[VLESS] 77.91.85.109:443'
   type: vless
   server: 77.91.85.109
@@ -706,42 +1278,6 @@ proxies:
   udp: true
   tls: true
   servername: 77.91.85.109
-  skip-cert-verify: false
-- name: '[VLESS] tes1.api-tel.xyz:50855'
-  type: vless
-  server: tes1.api-tel.xyz
-  port: 50855
-  uuid: 853d23ee-38c6-41bb-a51c-8aea6a25b0bd
-  udp: true
-  tls: true
-  servername: ea.com
-  skip-cert-verify: false
-- name: '[VLESS] br.pineappled.org:443'
-  type: vless
-  server: br.pineappled.org
-  port: 443
-  uuid: 8a77b19a-36be-43ff-ace0-bc322aa4f1e3
-  udp: true
-  tls: true
-  servername: google.com
-  skip-cert-verify: false
-- name: '[VLESS] pqh18v7.viripdirect.shop:8880'
-  type: vless
-  server: pqh18v7.viripdirect.shop
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  udp: true
-  tls: true
-  servername: pqh18v7.viripdirect.shop
-  skip-cert-verify: false
-- name: '[VLESS] 77.83.245.189:27414'
-  type: vless
-  server: 77.83.245.189
-  port: 27414
-  uuid: 94712dd9-17d8-4813-a118-cc487fadd137
-  udp: true
-  tls: true
-  servername: yandex.ru
   skip-cert-verify: false
 - name: '[VLESS] 144.31.2.126:443'
   type: vless
@@ -761,51 +1297,6 @@ proxies:
   tls: true
   servername: plcdn13.suio.me
   skip-cert-verify: true
-- name: '[VLESS] 144.31.4.67:443'
-  type: vless
-  server: 144.31.4.67
-  port: 443
-  uuid: 94a03e9a-74d5-4036-95e9-563cc19355de
-  udp: true
-  tls: true
-  servername: plcdn14.suio.me
-  skip-cert-verify: false
-- name: '[VLESS] 62.133.60.50:443'
-  type: vless
-  server: 62.133.60.50
-  port: 443
-  uuid: 94a03e9a-74d5-4036-95e9-563cc19355de
-  udp: true
-  tls: true
-  servername: decdn12.suio.me
-  skip-cert-verify: true
-- name: '[VLESS] 91.99.8.3:2083'
-  type: vless
-  server: 91.99.8.3
-  port: 2083
-  uuid: 9748d6dc-d7a8-45cd-b4df-00476cac75f8
-  udp: true
-  tls: true
-  servername: 91.99.8.3
-  skip-cert-verify: false
-- name: '[VLESS] 64.188.73.12:443'
-  type: vless
-  server: 64.188.73.12
-  port: 443
-  uuid: 99bd2791-8e27-435b-a1e2-c9b625101af9
-  udp: true
-  tls: true
-  servername: www.intel.com
-  skip-cert-verify: false
-- name: '[VLESS] 62.182.196.134:8443'
-  type: vless
-  server: 62.182.196.134
-  port: 8443
-  uuid: 9a63b59c-5e54-437a-b7a1-2788780a7c13
-  udp: true
-  tls: true
-  servername: retn.net
-  skip-cert-verify: false
 - name: '[VLESS] 142.111.162.39:443'
   type: vless
   server: 142.111.162.39
@@ -814,47 +1305,6 @@ proxies:
   udp: true
   tls: true
   servername: www.mozilla.org
-  skip-cert-verify: false
-- name: '[VLESS] 5.180.97.139:443'
-  type: vless
-  server: 5.180.97.139
-  port: 443
-  uuid: a384c715-aeb5-45e8-859b-f687ca6c083f
-  udp: true
-  tls: true
-  servername: google.com
-  skip-cert-verify: false
-- name: '[VLESS] 93.94.51.13:25451'
-  type: vless
-  server: 93.94.51.13
-  port: 25451
-  uuid: a90f4742-2f30-47b5-9f17-b6ab04cc98e8
-  udp: true
-  tls: true
-  servername: yandex.ru
-  skip-cert-verify: false
-- name: '[VLESS] glob.thisiswe.uno:8443'
-  type: vless
-  server: glob.thisiswe.uno
-  port: 8443
-  uuid: aab1a536-7a2c-4357-a0e0-8cdde41845c6
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: nobitex.sylu.net
-  servername: nobitex.sylu.net
-  skip-cert-verify: false
-- name: '[VLESS] 81.19.141.190:51529'
-  type: vless
-  server: 81.19.141.190
-  port: 51529
-  uuid: ad2879c1-7f77-4a4c-ba50-c24dd5ceffa4
-  udp: true
-  tls: true
-  servername: yandex.ru
   skip-cert-verify: false
 - name: '[VLESS] ip-data.turkserver.ir:2087'
   type: vless
@@ -878,15 +1328,6 @@ proxies:
   udp: true
   tls: true
   servername: www.microsoft.com
-  skip-cert-verify: false
-- name: '[VLESS] 93.94.51.11:53320'
-  type: vless
-  server: 93.94.51.11
-  port: 53320
-  uuid: c1e66fa3-951b-436c-a95a-b2abbaecb195
-  udp: true
-  tls: true
-  servername: yandex.ru
   skip-cert-verify: false
 - name: '[VLESS] 80.211.141.177:443'
   type: vless
@@ -934,33 +1375,6 @@ proxies:
   tls: true
   servername: deu469.unboundworld.org
   skip-cert-verify: false
-- name: '[VLESS] 45.13.119.38:443'
-  type: vless
-  server: 45.13.119.38
-  port: 443
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-  udp: true
-  tls: true
-  servername: fran.scroogethebest.com
-  skip-cert-verify: false
-- name: '[VLESS] 5.254.85.152:443'
-  type: vless
-  server: 5.254.85.152
-  port: 443
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-  udp: true
-  tls: true
-  servername: germany.scroogethebest.com
-  skip-cert-verify: false
-- name: '[VLESS] fran.scroogethebest.com:443'
-  type: vless
-  server: fran.scroogethebest.com
-  port: 443
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-  udp: true
-  tls: true
-  servername: fran.scroogethebest.com
-  skip-cert-verify: false
 - name: '[VLESS] 47.82.6.36:51164'
   type: vless
   server: 47.82.6.36
@@ -970,15 +1384,6 @@ proxies:
   tls: true
   servername: 47.82.6.36
   skip-cert-verify: false
-- name: '[VLESS] zyro.adslimit.info:2345'
-  type: vless
-  server: zyro.adslimit.info
-  port: 2345
-  uuid: d3b5fdf3-bdcb-4dec-b46b-c06b5d828f73
-  udp: true
-  tls: true
-  servername: zyro.adslimit.info
-  skip-cert-verify: false
 - name: '[VLESS] 62.60.237.240:443'
   type: vless
   server: 62.60.237.240
@@ -987,15 +1392,6 @@ proxies:
   udp: true
   tls: true
   servername: logggg.nammknammknammknammknammkb2.ir
-  skip-cert-verify: false
-- name: '[VLESS] 107.174.85.183:11163'
-  type: vless
-  server: 107.174.85.183
-  port: 11163
-  uuid: d9fbc365-bf98-4ff6-a66d-523cc217d56e
-  udp: true
-  tls: true
-  servername: apple.com
   skip-cert-verify: false
 - name: '[VLESS] 144.31.2.20:443'
   type: vless
@@ -1029,47 +1425,6 @@ proxies:
       Host: jafarservices.jafarghasemiturk.ir
   servername: jafarservices.jafarghasemiturk.ir
   skip-cert-verify: false
-- name: '[VLESS] by.cdn.titun.su:443'
-  type: vless
-  server: by.cdn.titun.su
-  port: 443
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-  udp: true
-  tls: true
-  servername: by.cdn.titun.su
-  skip-cert-verify: false
-- name: '[VLESS] nl.jojack.ru:443'
-  type: vless
-  server: nl.jojack.ru
-  port: 443
-  uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
-  udp: true
-  tls: true
-  servername: nl.jojack.ru
-  skip-cert-verify: false
-- name: '[VLESS] 45.130.125.198:2053'
-  type: vless
-  server: 45.130.125.198
-  port: 2053
-  uuid: ee9b0614-50ec-41b6-951b-e1d5d755fa4b
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: kaja.thisiswe.uno
-  servername: kaja.thisiswe.uno
-  skip-cert-verify: true
-- name: '[VLESS] 103.231.75.185:443'
-  type: vless
-  server: 103.231.75.185
-  port: 443
-  uuid: f078abea-a480-44c7-a785-4436c767835a
-  udp: true
-  tls: true
-  servername: 103.231.75.185
-  skip-cert-verify: false
 - name: '[VLESS] 217.154.194.55:443'
   type: vless
   server: 217.154.194.55
@@ -1079,553 +1434,5 @@ proxies:
   tls: true
   servername: azure.com
   skip-cert-verify: false
-- name: '[VLESS] 87.242.103.184:443'
-  type: vless
-  server: 87.242.103.184
-  port: 443
-  uuid: f5a8e5fb-baa8-48cb-a62a-930c97c29eb2
-  udp: true
-  tls: true
-  servername: ya.ru
-  skip-cert-verify: false
-- name: '[VLESS] 109.172.55.157:19547'
-  type: vless
-  server: 109.172.55.157
-  port: 19547
-  uuid: f9cdb2e1-939c-4470-b322-14b7313dec48
-  udp: true
-  tls: true
-  servername: 109.172.55.157
-  skip-cert-verify: false
-- name: '[VLESS] 104.128.134.181:34816'
-  type: vless
-  server: 104.128.134.181
-  port: 34816
-  uuid: fd058cd3-55fa-43ce-a634-1920b7d12c45
-  udp: true
-  tls: true
-  servername: 104.128.134.181
-  skip-cert-verify: false
-- name: '[VLESS] 91.132.51.160:443'
-  type: vless
-  server: 91.132.51.160
-  port: 443
-  uuid: fed05faf-401f-3412-b658-5c96f3095dd0
-  udp: true
-  tls: true
-  servername: www.refersion.com
-  skip-cert-verify: false
-- name: '[TROJAN] www.calmlunch.com:443'
-  type: trojan
-  server: www.calmlunch.com
-  port: 443
-  password: humanity
-  tls: true
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  udp: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: '[TROJAN] 63.181.24.193:22223'
-  type: trojan
-  server: 63.181.24.193
-  port: 22223
-  password: telegram-id-directvpn
-  tls: true
-  skip-cert-verify: false
-  sni: trojan.burgerip.co.uk
-  udp: true
-- name: '[TROJAN] 18.196.6.7:22222'
-  type: trojan
-  server: 18.196.6.7
-  port: 22222
-  password: telegram-id-privatevpns
-  tls: true
-  skip-cert-verify: false
-  sni: trojan.burgerip.co.uk
-  udp: true
-- name: '[VLESS] fr.prod.n7.homes:8443'
-  type: vless
-  server: fr.prod.n7.homes
-  port: 8443
-  uuid: 010c8bf7-0a43-404f-a6c5-2427acb4d476
-  udp: true
-  tls: true
-  servername: sun6-21.userapi.com
-  skip-cert-verify: false
-- name: '[VLESS] 15.188.162.245:22224'
-  type: vless
-  server: 15.188.162.245
-  port: 22224
-  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /telegram-channel-vlessconfig
-    headers:
-      Host: 15.188.162.245
-  servername: trojan.burgerip.co.uk
-  skip-cert-verify: false
-- name: '[VLESS] nl-amst-node.genadata.online:2040'
-  type: vless
-  server: nl-amst-node.genadata.online
-  port: 2040
-  uuid: 14818654-7689-453a-9a1f-4c72f89782d5
-  udp: true
-  tls: true
-  servername: tradingview.com
-  skip-cert-verify: false
-- name: '[VLESS] riga-node.genadata.online:2040'
-  type: vless
-  server: riga-node.genadata.online
-  port: 2040
-  uuid: 14818654-7689-453a-9a1f-4c72f89782d5
-  udp: true
-  tls: true
-  servername: tradingview.com
-  skip-cert-verify: false
-- name: '[VLESS] sgskb.osaip.net:25055'
-  type: vless
-  server: sgskb.osaip.net
-  port: 25055
-  uuid: 18d6752a-47b8-423f-9428-c9020761cd88
-  udp: true
-  tls: true
-  servername: sgskb.osaip.net
-  skip-cert-verify: false
-- name: '[VLESS] 144.31.24.84:443'
-  type: vless
-  server: 144.31.24.84
-  port: 443
-  uuid: 1d6705da-0790-49bf-bf47-b166d2e945cf
-  udp: true
-  tls: true
-  servername: st.okcdn.ru
-  skip-cert-verify: false
-- name: '[VLESS] 152.53.116.71:443'
-  type: vless
-  server: 152.53.116.71
-  port: 443
-  uuid: 1e878456-0f00-4a85-99a6-1d69bdc62e3d
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] 57.128.159.109:2345'
-  type: vless
-  server: 57.128.159.109
-  port: 2345
-  uuid: 20adc847-4159-4f39-b79f-d563b660945f
-  udp: true
-  tls: false
-- name: '[VLESS] 217.154.38.156:443'
-  type: vless
-  server: 217.154.38.156
-  port: 443
-  uuid: 2a8391ef-383c-4321-ac25-89b50973ab73
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] 5.160.144.77:443'
-  type: vless
-  server: 5.160.144.77
-  port: 443
-  uuid: 2b0e561e-d8ab-45f8-becb-09692e2d4bf0
-  udp: true
-  tls: false
-- name: '[VLESS] 45.248.37.51:443'
-  type: vless
-  server: 45.248.37.51
-  port: 443
-  uuid: 324e174b-fe3d-41fc-97c0-6fb7492cb015
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] 212.227.95.106:443'
-  type: vless
-  server: 212.227.95.106
-  port: 443
-  uuid: 38e0568d-d405-440d-8041-0e6c923a803d
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] trurk-plus.iranman.shop:4301'
-  type: vless
-  server: trurk-plus.iranman.shop
-  port: 4301
-  uuid: 6280bb8e-8486-4129-a98e-0d227ddc5410
-  udp: true
-  tls: true
-  servername: trurk-plus.iranman.shop
-  skip-cert-verify: false
-- name: '[VLESS] 45.94.213.126:8093'
-  type: vless
-  server: 45.94.213.126
-  port: 8093
-  uuid: 7a71bac7-5789-4c0b-b10d-49bc3f8d08d2
-  udp: true
-  tls: true
-  servername: 45.94.213.126
-  skip-cert-verify: false
-- name: '[VLESS] 85.133.204.179:59036'
-  type: vless
-  server: 85.133.204.179
-  port: 59036
-  uuid: 8c26c19d-123d-454d-9529-ff737d0450f6
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 85.133.204.179
-  servername: 85.133.204.179
-  skip-cert-verify: false
-- name: '[VLESS] 141.98.7.134:1377'
-  type: vless
-  server: 141.98.7.134
-  port: 1377
-  uuid: 96bfdf79-336c-4f1a-a217-87f8a8510a25
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] de.voxyvpn.ru:8443'
-  type: vless
-  server: de.voxyvpn.ru
-  port: 8443
-  uuid: 9ada8158-d7be-4ee3-a0ae-ff185efc08d9
-  udp: true
-  tls: true
-  servername: apple.com
-  skip-cert-verify: false
-- name: '[VLESS] spb.scroogethebest.com:443'
-  type: vless
-  server: spb.scroogethebest.com
-  port: 443
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-  udp: true
-  tls: true
-  servername: spb.scroogethebest.com
-  skip-cert-verify: false
-- name: '[VLESS] 217.25.90.152:443'
-  type: vless
-  server: 217.25.90.152
-  port: 443
-  uuid: e1c3f008-34e1-4fc4-a4bd-ed7c00c2add8
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] ae-rlt.hexo-music.ir:2087'
-  type: vless
-  server: ae-rlt.hexo-music.ir
-  port: 2087
-  uuid: e96b31ba-7120-45a0-abfc-c5611049af75
-  udp: true
-  tls: true
-  servername: play.google.com
-  skip-cert-verify: false
-- name: '[VLESS] glob.thisiswe.uno:2053'
-  type: vless
-  server: glob.thisiswe.uno
-  port: 2053
-  uuid: ee9b0614-50ec-41b6-951b-e1d5d755fa4b
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: '/?=Telegram : @ - Telegram : @ - Telegram : @ -Telegram : @turbov2box -
-      Telegram : @trbov2box - Telegram : @turbov2box?ed=512'
-    headers:
-      Host: cd11.thisiswe.uno
-  servername: cd11.thisiswe.uno
-  skip-cert-verify: false
-- name: '[VLESS] 169.40.2.234:22750'
-  type: vless
-  server: 169.40.2.234
-  port: 22750
-  uuid: fbc6ffba-5161-4983-88de-7c814d1b692b
-  udp: true
-  tls: true
-  servername: 169.40.2.234
-  skip-cert-verify: false
-- name: '[VLESS] s348.ccgfw.top:443'
-  type: vless
-  server: s348.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u57e3s348.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s481.ccgfw.top:443'
-  type: vless
-  server: s481.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330uad0es481.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s527.okgg.top:443'
-  type: vless
-  server: s527.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u52d0s527.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s229.okgg.top:443'
-  type: vless
-  server: s229.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330ub8e9s229.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s169.ayxj.top:443'
-  type: vless
-  server: s169.ayxj.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330ua013s169.ayxj.top
-  skip-cert-verify: false
-- name: '[VLESS] s531.ccgfw.top:443'
-  type: vless
-  server: s531.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u9042s531.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s844.ccgfw.top:443'
-  type: vless
-  server: s844.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330ub869s844.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s678.ccgfw.top:443'
-  type: vless
-  server: s678.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u6ad7s678.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] ipv6s372.ccgfw.top:443'
-  type: vless
-  server: ipv6s372.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330ue01bipv6s372.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s504.okgg.top:443'
-  type: vless
-  server: s504.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u649as504.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s570.okgfw.top:443'
-  type: vless
-  server: s570.okgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330uaa85s570.okgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s721.okgfw.top:443'
-  type: vless
-  server: s721.okgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u4ce8s721.okgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s133.ayxj.top:443'
-  type: vless
-  server: s133.ayxj.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u8661s133.ayxj.top
-  skip-cert-verify: false
-- name: '[VLESS] s393.ccgfw.top:443'
-  type: vless
-  server: s393.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u5903s393.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] ipv6s513.okgg.top:443'
-  type: vless
-  server: ipv6s513.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330ua81eipv6s513.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s503.okgg.top:443'
-  type: vless
-  server: s503.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u2550s503.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s843.ccgfw.top:443'
-  type: vless
-  server: s843.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u2076s843.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] 69.12.83.251:443'
-  type: vless
-  server: 69.12.83.251
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u1d55s473.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] ipv6s514.okgg.top:443'
-  type: vless
-  server: ipv6s514.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u0cffipv6s514.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s501.ccgfw.top:443'
-  type: vless
-  server: s501.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u05c4s501.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s523.okgg.top:443'
-  type: vless
-  server: s523.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330uac82s523.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s526.okgg.top:443'
-  type: vless
-  server: s526.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u3fcbs526.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s226.okgg.top:443'
-  type: vless
-  server: s226.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u3491s226.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s502.okgg.top:443'
-  type: vless
-  server: s502.okgg.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330uc21fs502.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s719.okgfw.top:443'
-  type: vless
-  server: s719.okgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u9530s719.okgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s842.ccgfw.top:443'
-  type: vless
-  server: s842.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u0378s842.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s112.ayxj.top:443'
-  type: vless
-  server: s112.ayxj.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u1799s112.ayxj.top
-  skip-cert-verify: false
-- name: '[VLESS] s677.ccgfw.top:443'
-  type: vless
-  server: s677.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u070as677.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s392.ccgfw.top:443'
-  type: vless
-  server: s392.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u635fs392.ccgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] 158.51.99.69:443'
-  type: vless
-  server: 158.51.99.69
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  udp: true
-  tls: true
-  servername: u708330u85f7s394.ccgfw.top
-  skip-cert-verify: false
-update_time: 2026-02-25 21:35:15 UTC
+update_time: 2026-02-26 02:06:27 UTC
 source: auto-fetched
