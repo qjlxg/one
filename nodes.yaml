@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 153.121.65.107:4920'
+  type: trojan
+  server: 153.121.65.107
+  port: 4920
+  password: 262f1d150049457ac1d6e66b020fa980
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] green2.cdntencentmusic.com:35502'
   type: trojan
   server: green2.cdntencentmusic.com
@@ -1434,5 +1443,5 @@ proxies:
   tls: true
   servername: azure.com
   skip-cert-verify: false
-update_time: 2026-02-26 04:51:03 UTC
+update_time: 2026-02-26 07:01:00 UTC
 source: auto-fetched
