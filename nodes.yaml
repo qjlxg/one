@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 153.121.65.107:1281'
+  type: trojan
+  server: 153.121.65.107
+  port: 1281
+  password: 262f1d150049457ac1d6e66b020fa980
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -16,15 +25,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.semanticstaplegun.click
-  udp: true
-- name: '[TROJAN] 37.235.49.209:28099'
-  type: trojan
-  server: 37.235.49.209
-  port: 28099
-  password: qmBSKnAl6LYi9%3Dz23Rs.Z
-  tls: true
-  skip-cert-verify: false
-  sni: celestialcorset.crystalhamster.click
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -107,13 +107,6 @@ proxies:
 - name: '[TROJAN] 153.121.65.107:4920'
   server: 153.121.65.107
   port: 4920
-  type: trojan
-  password: 262f1d150049457ac1d6e66b020fa980
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 153.121.65.107:1281'
-  server: 153.121.65.107
-  port: 1281
   type: trojan
   password: 262f1d150049457ac1d6e66b020fa980
   sni: www.nintendogames.net
@@ -287,6 +280,15 @@ proxies:
     path: /f2fc2a1f
     headers:
       Host: hl-freedom-2.undef.network
+- name: '[TROJAN] 37.235.49.209:28099'
+  type: trojan
+  server: 37.235.49.209
+  port: 28099
+  password: qmBSKnAl6LYi9=z23Rs.Z
+  tls: true
+  skip-cert-verify: false
+  sni: celestialcorset.crystalhamster.click
+  udp: true
 - name: '[VLESS] 37.16.74.19:2053'
   type: vless
   server: 37.16.74.19
@@ -1426,5 +1428,5 @@ proxies:
   tls: true
   servername: google.com
   skip-cert-verify: false
-update_time: 2026-02-27 18:43:40 UTC
+update_time: 2026-02-27 21:30:10 UTC
 source: auto-fetched
