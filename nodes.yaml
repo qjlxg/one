@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 80.173.231.254:12420'
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  tls: true
-  skip-cert-verify: false
-  sni: www.semanticstaplegun.click
-  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
+- name: '[TROJAN] 80.173.231.254:12420'
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  tls: true
+  skip-cert-verify: false
+  sni: www.semanticstaplegun.click
+  udp: true
 - name: '[TROJAN] 37.235.49.209:28099'
   type: trojan
   server: 37.235.49.209
@@ -25,24 +25,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: celestialcorset.crystalhamster.click
-  udp: true
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
-  udp: true
-- name: '[TROJAN] 153.121.65.107:4920'
-  type: trojan
-  server: 153.121.65.107
-  port: 4920
-  password: 262f1d150049457ac1d6e66b020fa980
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -122,6 +104,13 @@ proxies:
   password: BxceQaOe
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
+- name: '[TROJAN] 153.121.65.107:4920'
+  server: 153.121.65.107
+  port: 4920
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
 - name: '[TROJAN] 153.121.65.107:1281'
   server: 153.121.65.107
   port: 1281
@@ -1437,5 +1426,5 @@ proxies:
   tls: true
   servername: google.com
   skip-cert-verify: false
-update_time: 2026-02-27 06:55:32 UTC
+update_time: 2026-02-27 09:41:19 UTC
 source: auto-fetched
