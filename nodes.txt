@@ -1,4 +1,4 @@
-# Updated at 2026-02-28 04:15:45 UTC
+# Updated at 2026-02-28 06:39:29 UTC
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://262f1d150049457ac1d6e66b020fa980@153.121.65.107:1281?sni=www.nintendogames.net#%5BTROJAN%5D%20153.121.65.107%3A1281
 trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click#%5BTROJAN%5D%2080.173.231.254%3A12420
