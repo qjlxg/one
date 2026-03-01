@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: www.nintendogames.net
   udp: true
-- name: '[TROJAN] 80.173.231.254:12420'
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  tls: true
-  skip-cert-verify: false
-  sni: www.semanticstaplegun.click
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1464,5 +1455,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-01 15:24:04 UTC
+update_time: 2026-03-01 18:34:46 UTC
 source: auto-fetched
