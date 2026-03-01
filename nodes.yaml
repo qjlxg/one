@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 160.16.70.180:2001'
+  type: trojan
+  server: 160.16.70.180
+  port: 2001
+  password: 262f1d150049457ac1d6e66b020fa980
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.semanticstaplegun.click
-  udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1464,5 +1464,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-01 09:30:39 UTC
+update_time: 2026-03-01 12:50:29 UTC
 source: auto-fetched
