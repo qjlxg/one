@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 160.16.72.33:4920'
-  type: trojan
-  server: 160.16.72.33
-  port: 4920
-  password: 262f1d150049457ac1d6e66b020fa980
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
+  udp: true
+- name: '[TROJAN] 160.16.72.33:4920'
+  type: trojan
+  server: 160.16.72.33
+  port: 4920
+  password: 262f1d150049457ac1d6e66b020fa980
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
   udp: true
 - name: '[TROJAN] 80.173.231.254:12420'
   type: trojan
@@ -34,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
-  udp: true
-- name: '[TROJAN] 153.121.65.107:1281'
-  type: trojan
-  server: 153.121.65.107
-  port: 1281
-  password: 262f1d150049457ac1d6e66b020fa980
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1473,5 +1464,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-01 06:48:18 UTC
+update_time: 2026-03-01 09:30:39 UTC
 source: auto-fetched
