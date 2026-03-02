@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: www.nintendogames.net
   udp: true
-- name: '[TROJAN] 160.16.72.33:4920'
-  type: trojan
-  server: 160.16.72.33
-  port: 4920
-  password: 262f1d150049457ac1d6e66b020fa980
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -202,6 +193,13 @@ proxies:
 - name: '[TROJAN] 52.195.185.238:1281'
   server: 52.195.185.238
   port: 1281
+  type: trojan
+  password: 262f1d150049457ac1d6e66b020fa980
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.72.33:4920'
+  server: 160.16.72.33
+  port: 4920
   type: trojan
   password: 262f1d150049457ac1d6e66b020fa980
   sni: www.nintendogames.net
@@ -1357,5 +1355,5 @@ proxies:
   tls: true
   servername: google.com
   skip-cert-verify: false
-update_time: 2026-03-02 06:59:11 UTC
+update_time: 2026-03-02 09:51:47 UTC
 source: auto-fetched
