@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 185.220.238.77:10443'
+  type: trojan
+  server: 185.220.238.77
+  port: 10443
+  password: HutaoCloud
+  tls: true
+  skip-cert-verify: false
+  sni: jp1.hutaonode.top
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
-  udp: true
-- name: '[TROJAN] 185.220.238.77:10443'
-  type: trojan
-  server: 185.220.238.77
-  port: 10443
-  password: HutaoCloud
-  tls: true
-  skip-cert-verify: false
-  sni: jp1.hutaonode.top
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1497,5 +1497,5 @@ proxies:
   tls: true
   servername: www.microsoft.com
   skip-cert-verify: false
-update_time: 2026-03-03 12:59:12 UTC
+update_time: 2026-03-03 15:51:22 UTC
 source: auto-fetched
