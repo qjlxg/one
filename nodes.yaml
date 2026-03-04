@@ -1602,5 +1602,5 @@ proxies:
   tls: true
   servername: nl.reality.tv123.ru
   skip-cert-verify: false
-update_time: 2026-03-04 18:52:57 UTC
+update_time: 2026-03-04 21:35:10 UTC
 source: auto-fetched
