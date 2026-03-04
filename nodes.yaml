@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 160.16.214.104:2001'
+  type: trojan
+  server: 160.16.214.104
+  port: 2001
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -72,13 +81,6 @@ proxies:
 - name: '[TROJAN] 52.68.27.2:34818'
   server: 52.68.27.2
   port: 34818
-  type: trojan
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 160.16.214.104:2001'
-  server: 160.16.214.104
-  port: 2001
   type: trojan
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
   sni: www.nintendogames.net
@@ -1600,5 +1602,5 @@ proxies:
   tls: true
   servername: nl.reality.tv123.ru
   skip-cert-verify: false
-update_time: 2026-03-04 15:41:35 UTC
+update_time: 2026-03-04 18:52:57 UTC
 source: auto-fetched
