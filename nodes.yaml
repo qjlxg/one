@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 37.235.49.209:28099'
-  type: trojan
-  server: 37.235.49.209
-  port: 28099
-  password: qmBSKnAl6LYi9%3Dz23Rs.Z
-  tls: true
-  skip-cert-verify: false
-  sni: celestialcorset.crystalhamster.click
-  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
+  udp: true
+- name: '[TROJAN] 37.235.49.209:28099'
+  type: trojan
+  server: 37.235.49.209
+  port: 28099
+  password: qmBSKnAl6LYi9%3Dz23Rs.Z
+  tls: true
+  skip-cert-verify: false
+  sni: celestialcorset.crystalhamster.click
   udp: true
 - name: '[TROJAN] 185.220.238.77:10443'
   type: trojan
@@ -1609,5 +1609,5 @@ proxies:
   tls: true
   servername: nl.reality.tv123.ru
   skip-cert-verify: false
-update_time: 2026-03-04 09:41:04 UTC
+update_time: 2026-03-04 12:58:11 UTC
 source: auto-fetched
