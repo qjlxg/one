@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] 167.17.185.228:10889'
+  type: trojan
+  server: 167.17.185.228
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: web.max
+  udp: true
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[TROJAN] 185.220.238.77:10443'
   type: trojan
   server: 185.220.238.77
@@ -25,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
-  udp: true
-- name: '[TROJAN] 37.235.49.209:28099'
-  type: trojan
-  server: 37.235.49.209
-  port: 28099
-  password: qmBSKnAl6LYi9%3Dz23Rs.Z
-  tls: true
-  skip-cert-verify: false
-  sni: celestialcorset.crystalhamster.click
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1387,5 +1396,5 @@ proxies:
   tls: true
   servername: google.com
   skip-cert-verify: false
-update_time: 2026-03-05 15:51:57 UTC
+update_time: 2026-03-05 19:16:39 UTC
 source: auto-fetched
