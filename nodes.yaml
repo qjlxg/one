@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] green2.cdntencentmusic.com:31102'
+  type: trojan
+  server: green2.cdntencentmusic.com
+  port: 31102
+  password: 5f6ded93-4ab8-4a99-9c84-b19b9993f27c
+  tls: true
+  skip-cert-verify: false
+  sni: green2.cdntencentmusic.com
+  udp: true
 - name: '[TROJAN] 167.17.185.228:10889'
   type: trojan
   server: 167.17.185.228
@@ -1396,5 +1405,5 @@ proxies:
   tls: true
   servername: google.com
   skip-cert-verify: false
-update_time: 2026-03-05 19:16:39 UTC
+update_time: 2026-03-05 21:36:36 UTC
 source: auto-fetched
