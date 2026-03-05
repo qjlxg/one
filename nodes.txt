@@ -1,4 +1,4 @@
-# Updated at 2026-03-05 13:01:42 UTC
+# Updated at 2026-03-05 15:51:57 UTC
 trojan://HutaoCloud@185.220.238.77:10443?sni=jp1.hutaonode.top#%5BTROJAN%5D%20185.220.238.77%3A10443
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@160.16.214.104:2001?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.214.104%3A2001
