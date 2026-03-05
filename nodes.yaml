@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 160.16.214.104:2001'
-  type: trojan
-  server: 160.16.214.104
-  port: 2001
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
+- name: '[TROJAN] 160.16.214.104:2001'
+  type: trojan
+  server: 160.16.214.104
+  port: 2001
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 37.235.49.209:28099'
   type: trojan
   server: 37.235.49.209
@@ -25,15 +25,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: celestialcorset.crystalhamster.click
-  udp: true
-- name: '[TROJAN] 185.220.238.77:10443'
-  type: trojan
-  server: 185.220.238.77
-  port: 10443
-  password: HutaoCloud
-  tls: true
-  skip-cert-verify: false
-  sni: jp1.hutaonode.top
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1387,5 +1378,5 @@ proxies:
   tls: true
   servername: google.com
   skip-cert-verify: false
-update_time: 2026-03-05 02:07:35 UTC
+update_time: 2026-03-05 04:45:06 UTC
 source: auto-fetched
