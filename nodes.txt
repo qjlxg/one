@@ -1,4 +1,5 @@
-# Updated at 2026-03-06 18:47:20 UTC
+# Updated at 2026-03-06 21:30:01 UTC
+trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@58.152.18.189:443?sni=www.nintendogames.net#%5BTROJAN%5D%2058.152.18.189%3A443
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.172:10889?sni=web.max.ru#%5BTROJAN%5D%20167.17.185.172%3A10889
 trojan://5f6ded93-4ab8-4a99-9c84-b19b9993f27c@green2.cdntencentmusic.com:31102?sni=green2.cdntencentmusic.com#%5BTROJAN%5D%20green2.cdntencentmusic.com%3A31102

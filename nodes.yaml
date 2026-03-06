@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 58.152.18.189:443'
+  type: trojan
+  server: 58.152.18.189
+  port: 443
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -1716,5 +1725,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-06 18:47:20 UTC
+update_time: 2026-03-06 21:30:01 UTC
 source: auto-fetched
