@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
   udp: true
-- name: '[TROJAN] 185.220.238.77:10443'
-  type: trojan
-  server: 185.220.238.77
-  port: 10443
-  password: HutaoCloud
-  tls: true
-  skip-cert-verify: false
-  sni: jp1.hutaonode.top
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1725,5 +1716,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-06 15:37:57 UTC
+update_time: 2026-03-06 18:47:20 UTC
 source: auto-fetched
