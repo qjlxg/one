@@ -1,9 +1,4 @@
-# Updated at 2026-03-06 04:42:27 UTC
-trojan://5f6ded93-4ab8-4a99-9c84-b19b9993f27c@green2.cdntencentmusic.com:31102?sni=green2.cdntencentmusic.com#%5BTROJAN%5D%20green2.cdntencentmusic.com%3A31102
-trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.228:10889?sni=web.max#%5BTROJAN%5D%20167.17.185.228%3A10889
-trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
-trojan://HutaoCloud@185.220.238.77:10443?sni=jp1.hutaonode.top#%5BTROJAN%5D%20185.220.238.77%3A10443
-trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
+# Updated at 2026-03-06 06:51:51 UTC
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@63.180.254.10:443#[SS] 63.180.254.10:443
 vmess://eyJ2IjogIjIiLCAicHMiOiAiW1ZNRVNTXSB2MTAuaGRhY2QuY29tOjMwODA3IiwgImFkZCI6ICJ2MTAuaGRhY2QuY29tIiwgInBvcnQiOiAiMzA4MDciLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgImFpZCI6IDIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIifQ==
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@3.112.130.96:331?sni=www.nintendogames.net#%5BTROJAN%5D%203.112.130.96%3A331
@@ -155,32 +150,3 @@ vless://f81b7cb0-70c6-3d1a-9b30-c95b1227f6ed@s701.okgfw.top:443?security=tls&sni
 vless://f81b7cb0-70c6-3d1a-9b30-c95b1227f6ed@s686.okgfw.top:443?security=tls&sni=u710297u8672s686.okgfw.top#%5BVLESS%5D%20s686.okgfw.top%3A443
 vless://f81b7cb0-70c6-3d1a-9b30-c95b1227f6ed@s185.ayxj.top:443?security=tls&sni=u710297u63d7s185.ayxj.top#%5BVLESS%5D%20s185.ayxj.top%3A443
 vless://f81b7cb0-70c6-3d1a-9b30-c95b1227f6ed@s839.ccgfw.top:443?security=tls&sni=u710297u1486s839.ccgfw.top#%5BVLESS%5D%20s839.ccgfw.top%3A443
-trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@18.183.167.108:331?sni=www.nintendogames.net#%5BTROJAN%5D%2018.183.167.108%3A331
-trojan://humanity@104.18.32.47:443?sni=www.calmlunch.com&type=ws&path=/assignment&host=www.calmlunch.com#%5BTROJAN%5D%20104.18.32.47%3A443
-vless://07cd9dbe-21ac-4871-817d-c772687e4b7c@178.17.59.73:2053?security=tls&sni=www.ibm.com#%5BVLESS%5D%20178.17.59.73%3A2053
-vless://07cd9dbe-21ac-4871-817d-c772687e4b7c@37.16.74.19:2053?security=tls&sni=www.ibm.com#%5BVLESS%5D%2037.16.74.19%3A2053
-vless://080556c0-0117-0bb8-b1d9-3708fa8ab8c4@109.120.188.156:443?security=tls&sni=max.ru#%5BVLESS%5D%20109.120.188.156%3A443
-vless://09825436-5781-496b-83bd-b992f7b6ef0f@104.18.32.47:8443?security=tls&sni=xpb.parsfast.ir&type=ws&path=/&host=xpb.parsfast.ir#%5BVLESS%5D%20104.18.32.47%3A8443
-vless://14818654-7689-453a-9a1f-4c72f89782d5@94.131.104.229:2040?security=tls&sni=tradingview.com#%5BVLESS%5D%2094.131.104.229%3A2040
-vless://1b2c91ab-f6c9-42f8-b2c6-8de0ac133d63@brenna.ns.cloudflare.com:443?security=tls&sni=terazhediii.info&allowInsecure=1&type=ws&path=/sghiyws&host=terazhediii.info#%5BVLESS%5D%20brenna.ns.cloudflare.com%3A443
-vless://28f9da30-cd81-4726-86a9-d2e17b14decc@38.244.215.124:443?security=tls&sni=google.com#%5BVLESS%5D%2038.244.215.124%3A443
-vless://3f0f36f5-f091-45c5-88c9-4bcc545b922c@108.162.193.91:2096?security=tls&sni=hetz.x-smm.com&type=ws&path=/45.76.183.217=49292&host=hetz.x-smm.com#%5BVLESS%5D%20108.162.193.91%3A2096
-vless://421a5536-c3c8-45ab-aa36-2ff032c6d44e@vpn.nnet.online:80?security=tls&sni=vpn.nnet.online&type=ws&path=/vless-ntls&host=nnet.online#%5BVLESS%5D%20vpn.nnet.online%3A80
-vless://42a7df85-0739-4760-a248-32a491abfa2a@am01-vlr01.tcp-reset-club.net:21443?security=tls&sni=hls-svod.itunes.apple.com#%5BVLESS%5D%20am01-vlr01.tcp-reset-club.net%3A21443
-vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?security=tls&sni=fuck.rkn#%5BVLESS%5D%2015.204.97.195%3A23576
-vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?security=tls&sni=fuck.rkn#%5BVLESS%5D%2015.204.97.216%3A23576
-vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?security=tls&sni=fuck.rkn#%5BVLESS%5D%2015.204.97.219%3A23576
-vless://4bc7d558-1943-44de-bd82-56920bc9383e@150.241.94.142:7443?security=tls&sni=www.google.com#%5BVLESS%5D%20150.241.94.142%3A7443
-vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80?security=tls&sni=www.ptnk.sry-vpn.com&type=ws&path=/vless&host=www.ptnk.sry-vpn.com#%5BVLESS%5D%20www.ptnk.sry-vpn.com%3A80
-vless://642e5ad8-bd76-07d0-8b5c-b4d0628f07bc@212.193.157.118:443?security=tls&sni=lk-cdn.deploy-assure.ru&type=ws&path=//&host=lk-cdn.deploy-assure.ru#%5BVLESS%5D%20212.193.157.118%3A443
-vless://6dfbef3b-f718-4053-806f-c9657e2fd943@91.108.254.75:11220?security=tls&sni=python.org#%5BVLESS%5D%2091.108.254.75%3A11220
-vless://853d23ee-38c6-41bb-a51c-8aea6a25b0bd@tes1.api-tel.xyz:50855?security=tls&sni=ea.com#%5BVLESS%5D%20tes1.api-tel.xyz%3A50855
-vless://8b575b35-3c7c-42b0-ac80-2aa6b0d7717c@90.156.255.198:51114?security=tls&sni=yahoo.com#%5BVLESS%5D%2090.156.255.198%3A51114
-vless://8b648e4c-ac38-4809-951b-e1c8862b13d1@45.149.115.148:443?security=tls&sni=google.com#%5BVLESS%5D%2045.149.115.148%3A443
-vless://c6be0a05-6105-4c0a-8af5-3e227f10735f@cid.wlrus.lol:37016?security=tls&sni=www.nvidia.com#%5BVLESS%5D%20cid.wlrus.lol%3A37016
-vless://cc976b15-418b-4f0b-89ce-cd685ffbaf20@62.141.42.201:443?security=tls&sni=google.com#%5BVLESS%5D%2062.141.42.201%3A443
-vless://cca053d5-7123-4a87-83d6-babe4e9c8115@103.245.237.124:58202?security=tls&sni=103.245.237.124&type=ws&path=/&host=103.245.237.124#%5BVLESS%5D%20103.245.237.124%3A58202
-vless://e384913f-8863-47b4-8858-a84b68abb4a6@7.cdnconn.com:23335?security=tls&sni=icloud.com#%5BVLESS%5D%207.cdnconn.com%3A23335
-vless://e999db7a-1b17-4da6-bc37-c9fa24af2e93@gyeisv.aloiacs.shop:2087?security=tls&sni=Y6lGfTpXg7.TrAmVoKeLi.InFo&allowInsecure=1#%5BVLESS%5D%20gyeisv.aloiacs.shop%3A2087
-vless://eb071647-72a6-46be-8e89-ff3d228d52f6@152.53.66.46:443?security=tls&sni=at.jojack.ru#%5BVLESS%5D%20152.53.66.46%3A443
-vless://edc9daf2-fc2e-435b-a87b-8427020b1d40@217.16.25.94:8443?security=tls&sni=max.ru#%5BVLESS%5D%20217.16.25.94%3A8443
