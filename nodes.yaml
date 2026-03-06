@@ -1716,5 +1716,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-06 02:06:30 UTC
+update_time: 2026-03-06 04:42:27 UTC
 source: auto-fetched

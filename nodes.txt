@@ -1,4 +1,4 @@
-# Updated at 2026-03-06 02:06:30 UTC
+# Updated at 2026-03-06 04:42:27 UTC
 trojan://5f6ded93-4ab8-4a99-9c84-b19b9993f27c@green2.cdntencentmusic.com:31102?sni=green2.cdntencentmusic.com#%5BTROJAN%5D%20green2.cdntencentmusic.com%3A31102
 trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.228:10889?sni=web.max#%5BTROJAN%5D%20167.17.185.228%3A10889
 trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
