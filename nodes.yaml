@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[TROJAN] 167.17.185.152:10889'
   type: trojan
   server: 167.17.185.152
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
-  udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1752,5 +1752,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-07 15:23:55 UTC
+update_time: 2026-03-07 18:34:59 UTC
 source: auto-fetched
