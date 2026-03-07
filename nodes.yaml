@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 167.17.185.152:10889'
+  type: trojan
+  server: 167.17.185.152
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: ozon.ru
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -34,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: web.max.ru
-  udp: true
-- name: '[TROJAN] green2.cdntencentmusic.com:31102'
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 5f6ded93-4ab8-4a99-9c84-b19b9993f27c
-  tls: true
-  skip-cert-verify: false
-  sni: green2.cdntencentmusic.com
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1761,5 +1761,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-07 09:29:24 UTC
+update_time: 2026-03-07 12:48:38 UTC
 source: auto-fetched
