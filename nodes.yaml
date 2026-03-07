@@ -35,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] 167.17.185.172:10889'
-  type: trojan
-  server: 167.17.185.172
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  tls: true
-  skip-cert-verify: false
-  sni: web.max.ru
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1761,5 +1752,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-07 12:48:38 UTC
+update_time: 2026-03-07 15:23:55 UTC
 source: auto-fetched
