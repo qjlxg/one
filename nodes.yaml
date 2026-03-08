@@ -35,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: www.nintendogames.net
   udp: true
-- name: '[TROJAN] 167.17.185.152:10889'
-  type: trojan
-  server: 167.17.185.152
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  tls: true
-  skip-cert-verify: false
-  sni: ozon.ru
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1866,5 +1857,5 @@ proxies:
   tls: true
   servername: u710297u3374s249.okgfw.top
   skip-cert-verify: false
-update_time: 2026-03-08 15:24:25 UTC
+update_time: 2026-03-08 18:35:25 UTC
 source: auto-fetched
