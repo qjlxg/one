@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] 167.17.185.172:10889'
+  type: trojan
+  server: 167.17.185.172
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: web.max.ru
+  udp: true
+- name: '[TROJAN] 153.121.65.107:3419'
+  type: trojan
+  server: 153.121.65.107
+  port: 3419
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -25,24 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: ozon.ru
-  udp: true
-- name: '[TROJAN] 104.21.30.167:443'
-  type: trojan
-  server: 104.21.30.167
-  port: 443
-  password: 2fec7227-9abe-46f2-af18-78302b836c45
-  tls: true
-  skip-cert-verify: false
-  sni: 3y.2032.pp.ua
-  udp: true
-- name: '[TROJAN] 58.152.18.189:443'
-  type: trojan
-  server: 58.152.18.189
-  port: 443
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -101,13 +101,6 @@ proxies:
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
   sni: www.nintendogames.net
   skip-cert-verify: false
-- name: '[TROJAN] 153.121.65.107:3419'
-  server: 153.121.65.107
-  port: 3419
-  type: trojan
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  sni: www.nintendogames.net
-  skip-cert-verify: false
 - name: '[TROJAN] 95.40.88.242:52951'
   server: 95.40.88.242
   port: 52951
@@ -136,6 +129,13 @@ proxies:
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
+- name: '[TROJAN] 58.152.18.189:443'
+  server: 58.152.18.189
+  port: 443
+  type: trojan
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  sni: www.nintendogames.net
+  skip-cert-verify: false
 - name: '[TROJAN] 43.198.203.251:38301'
   server: 43.198.203.251
   port: 38301
@@ -1866,5 +1866,5 @@ proxies:
   tls: true
   servername: u710297u3374s249.okgfw.top
   skip-cert-verify: false
-update_time: 2026-03-08 09:30:09 UTC
+update_time: 2026-03-08 12:50:46 UTC
 source: auto-fetched

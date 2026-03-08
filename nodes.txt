@@ -1,9 +1,9 @@
-# Updated at 2026-03-08 09:30:09 UTC
+# Updated at 2026-03-08 12:50:46 UTC
+trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.172:10889?sni=web.max.ru#%5BTROJAN%5D%20167.17.185.172%3A10889
+trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@153.121.65.107:3419?sni=www.nintendogames.net#%5BTROJAN%5D%20153.121.65.107%3A3419
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@160.16.124.17:3419?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.124.17%3A3419
 trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.152:10889?sni=ozon.ru#%5BTROJAN%5D%20167.17.185.152%3A10889
-trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
-trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@58.152.18.189:443?sni=www.nintendogames.net#%5BTROJAN%5D%2058.152.18.189%3A443
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@63.180.254.10:443#[SS] 63.180.254.10:443
 vmess://eyJ2IjogIjIiLCAicHMiOiAiW1ZNRVNTXSB2MTAuaGRhY2QuY29tOjMwODA3IiwgImFkZCI6ICJ2MTAuaGRhY2QuY29tIiwgInBvcnQiOiAiMzA4MDciLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgImFpZCI6IDIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIifQ==
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@54.250.4.226:921?sni=www.nintendogames.net#%5BTROJAN%5D%2054.250.4.226%3A921
@@ -12,11 +12,11 @@ trojan://BxceQaOe@13.112.192.191:6313?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2013.
 trojan://BxceQaOe@57.180.10.241:4945?sni=t.me%252Fripaojiedian#%5BTROJAN%5D%2057.180.10.241%3A4945
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@153.121.65.107:4937?sni=www.nintendogames.net#%5BTROJAN%5D%20153.121.65.107%3A4937
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@153.121.65.107:34818?sni=www.nintendogames.net#%5BTROJAN%5D%20153.121.65.107%3A34818
-trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@153.121.65.107:3419?sni=www.nintendogames.net#%5BTROJAN%5D%20153.121.65.107%3A3419
 trojan://BxceQaOe@95.40.88.242:52951?sni=t.me%252Fripaojiedian#%5BTROJAN%5D%2095.40.88.242%3A52951
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@54.199.149.138:4920?sni=www.nintendogames.net#%5BTROJAN%5D%2054.199.149.138%3A4920
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@160.16.130.21:4019?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.130.21%3A4019
 trojan://BxceQaOe@43.198.86.230:2960?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2043.198.86.230%3A2960
+trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@58.152.18.189:443?sni=www.nintendogames.net#%5BTROJAN%5D%2058.152.18.189%3A443
 trojan://BxceQaOe@43.198.203.251:38301?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2043.198.203.251%3A38301
 trojan://BxceQaOe@43.199.159.207:38301?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2043.199.159.207%3A38301
 trojan://BxceQaOe@13.192.170.234:3022?sni=t.me%252Fripaojiedian#%5BTROJAN%5D%2013.192.170.234%3A3022
