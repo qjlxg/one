@@ -1,4 +1,4 @@
-# Updated at 2026-03-08 04:43:14 UTC
+# Updated at 2026-03-08 06:43:20 UTC
 trojan://f7dbed8b1ca85124e793ba6c0bcfd0db@160.16.124.17:3419?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.124.17%3A3419
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.152:10889?sni=ozon.ru#%5BTROJAN%5D%20167.17.185.152%3A10889
