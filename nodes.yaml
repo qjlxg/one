@@ -1,12 +1,12 @@
 proxies:
-- name: '[TROJAN] 167.17.185.152:10889'
+- name: '[TROJAN] 104.21.30.167:443'
   type: trojan
-  server: 167.17.185.152
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
   tls: true
   skip-cert-verify: false
-  sni: ozon.ru
+  sni: 3y.2032.pp.ua
   udp: true
 - name: '[TROJAN] 8443.golden-cards.me:443'
   type: trojan
@@ -17,14 +17,14 @@ proxies:
   skip-cert-verify: false
   sni: 8443.golden-cards.me
   udp: true
-- name: '[TROJAN] 104.21.30.167:443'
+- name: '[TROJAN] 167.17.185.152:10889'
   type: trojan
-  server: 104.21.30.167
-  port: 443
-  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  server: 167.17.185.152
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
   tls: true
   skip-cert-verify: false
-  sni: 3y.2032.pp.ua
+  sni: ozon.ru
   udp: true
 - name: '[TROJAN] 167.17.185.172:10889'
   type: trojan
@@ -43,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
-  udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1826,5 +1817,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-09 13:04:49 UTC
+update_time: 2026-03-09 15:58:53 UTC
 source: auto-fetched
