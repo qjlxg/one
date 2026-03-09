@@ -1,4 +1,4 @@
-# Updated at 2026-03-09 09:52:50 UTC
+# Updated at 2026-03-09 13:04:49 UTC
 trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.152:10889?sni=ozon.ru#%5BTROJAN%5D%20167.17.185.152%3A10889
 trojan://q2GRUM1-odJBWq_KV6xv2fuNvu8ed-@8443.golden-cards.me:443?sni=8443.golden-cards.me#%5BTROJAN%5D%208443.golden-cards.me%3A443
 trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
