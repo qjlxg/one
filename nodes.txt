@@ -1,4 +1,4 @@
-# Updated at 2026-03-09 02:10:24 UTC
+# Updated at 2026-03-09 04:51:44 UTC
 trojan://q2GRUM1-odJBWq_KV6xv2fuNvu8ed-@8443.golden-cards.me:443?sni=8443.golden-cards.me#%5BTROJAN%5D%208443.golden-cards.me%3A443
 trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
 trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.172:10889?sni=web.max.ru#%5BTROJAN%5D%20167.17.185.172%3A10889
