@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 167.17.185.172:10889'
+  type: trojan
+  server: 167.17.185.172
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: 167.17.185.172
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -2233,5 +2242,5 @@ proxies:
   tls: true
   servername: u710297u1486s839.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-10 06:52:12 UTC
+update_time: 2026-03-10 09:44:11 UTC
 source: auto-fetched
