@@ -1,4 +1,58 @@
 proxies:
+- name: '[TROJAN] 160.16.106.99:3057'
+  type: trojan
+  server: 160.16.106.99
+  port: 3057
+  password: f389ed926e512e15f382dc3804029474
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
+- name: '[TROJAN] 167.17.185.172:10889'
+  type: trojan
+  server: 167.17.185.172
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: 167.17.185.172
+  udp: true
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
+- name: '[TROJAN] 13.230.222.150:21508'
+  type: trojan
+  server: 13.230.222.150
+  port: 21508
+  password: BxceQaOe
+  tls: true
+  skip-cert-verify: false
+  sni: t.me%25252Fripaojiedian
+  udp: true
+- name: '[TROJAN] 104.21.30.167:443'
+  type: trojan
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  tls: true
+  skip-cert-verify: false
+  sni: 3y.2032.pp.ua
+  udp: true
+- name: '[TROJAN] 8443.golden-cards.me:443'
+  type: trojan
+  server: 8443.golden-cards.me
+  port: 443
+  password: q2GRUM1-odJBWq_KV6xv2fuNvu8ed-
+  tls: true
+  skip-cert-verify: false
+  sni: 8443.golden-cards.me
+  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -224,15 +278,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
-  udp: true
-- name: '[TROJAN] 8443.golden-cards.me:443'
-  type: trojan
-  server: 8443.golden-cards.me
-  port: 443
-  password: q2GRUM1-odJBWq_KV6xv2fuNvu8ed-
-  tls: true
-  skip-cert-verify: false
-  sni: 8443.golden-cards.me
   udp: true
 - name: '[VLESS] 185.248.33.27:443'
   type: vless
@@ -2197,5 +2242,5 @@ proxies:
   tls: true
   servername: u710297u1486s839.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-10 16:00:13 UTC
+update_time: 2026-03-10 18:50:11 UTC
 source: auto-fetched
