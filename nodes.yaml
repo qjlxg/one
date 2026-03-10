@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[TROJAN] 13.230.222.150:21508'
   type: trojan
   server: 13.230.222.150
@@ -2224,5 +2233,5 @@ proxies:
   tls: true
   servername: u710297u1486s839.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-10 04:42:02 UTC
+update_time: 2026-03-10 06:52:12 UTC
 source: auto-fetched
