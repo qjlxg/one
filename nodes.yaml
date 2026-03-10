@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 13.230.222.150:21508'
+  type: trojan
+  server: 13.230.222.150
+  port: 21508
+  password: BxceQaOe
+  tls: true
+  skip-cert-verify: false
+  sni: t.me%25252Fripaojiedian
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -2215,5 +2224,5 @@ proxies:
   tls: true
   servername: u710297u1486s839.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-10 02:02:48 UTC
+update_time: 2026-03-10 04:42:02 UTC
 source: auto-fetched
