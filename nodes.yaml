@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 58.152.18.2:443'
+  type: trojan
+  server: 58.152.18.2
+  port: 443
+  password: f389ed926e512e15f382dc3804029474
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -35,24 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: t.me%25252Fripaojiedian
   udp: true
-- name: '[TROJAN] 104.21.30.167:443'
-  type: trojan
-  server: 104.21.30.167
-  port: 443
-  password: 2fec7227-9abe-46f2-af18-78302b836c45
-  tls: true
-  skip-cert-verify: false
-  sni: 3y.2032.pp.ua
-  udp: true
-- name: '[TROJAN] 8443.golden-cards.me:443'
-  type: trojan
-  server: 8443.golden-cards.me
-  port: 443
-  password: q2GRUM1-odJBWq_KV6xv2fuNvu8ed-
-  tls: true
-  skip-cert-verify: false
-  sni: 8443.golden-cards.me
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -67,13 +58,6 @@ proxies:
   alterId: 2
   cipher: auto
   tls: false
-  skip-cert-verify: false
-- name: '[TROJAN] 58.152.18.2:443'
-  server: 58.152.18.2
-  port: 443
-  type: trojan
-  password: f389ed926e512e15f382dc3804029474
-  sni: www.nintendogames.net
   skip-cert-verify: false
 - name: '[TROJAN] 16.163.107.16:5823'
   server: 16.163.107.16
@@ -255,6 +239,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
+  udp: true
+- name: '[TROJAN] 8443.golden-cards.me:443'
+  type: trojan
+  server: 8443.golden-cards.me
+  port: 443
+  password: q2GRUM1-odJBWq_KV6xv2fuNvu8ed-
+  tls: true
+  skip-cert-verify: false
+  sni: 8443.golden-cards.me
   udp: true
 - name: '[VLESS] nr-01.opsvpnvless.ru:443'
   type: vless
@@ -1954,5 +1947,5 @@ proxies:
   tls: true
   servername: max.ru
   skip-cert-verify: false
-update_time: 2026-03-11 02:02:39 UTC
+update_time: 2026-03-11 04:43:45 UTC
 source: auto-fetched
