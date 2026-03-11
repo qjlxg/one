@@ -1,4 +1,4 @@
-# Updated at 2026-03-11 13:01:37 UTC
+# Updated at 2026-03-11 15:50:15 UTC
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://f389ed926e512e15f382dc3804029474@58.152.18.2:443?sni=www.nintendogames.net#%5BTROJAN%5D%2058.152.18.2%3A443
 trojan://f389ed926e512e15f382dc3804029474@160.16.106.99:3057?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.106.99%3A3057
