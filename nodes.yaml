@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 160.16.214.104:4674'
+  type: trojan
+  server: 160.16.214.104
+  port: 4674
+  password: f389ed926e512e15f382dc3804029474
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -97,13 +106,6 @@ proxies:
   port: 3419
   type: trojan
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 160.16.214.104:4674'
-  server: 160.16.214.104
-  port: 4674
-  type: trojan
-  password: f389ed926e512e15f382dc3804029474
   sni: www.nintendogames.net
   skip-cert-verify: false
 - name: '[TROJAN] 16.162.45.163:52951'
@@ -1933,5 +1935,5 @@ proxies:
       Host: gr5.vpnjantit.com
   servername: gr5.vpnjantit.com
   skip-cert-verify: true
-update_time: 2026-03-12 04:47:26 UTC
+update_time: 2026-03-12 06:56:38 UTC
 source: auto-fetched
