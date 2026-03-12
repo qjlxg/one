@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] 167.17.185.169:10889'
+  type: trojan
+  server: 167.17.185.169
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  tls: true
+  skip-cert-verify: false
+  sni: ya.ru
+  udp: true
+- name: '[TROJAN] 104.21.30.167:443'
+  type: trojan
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  tls: true
+  skip-cert-verify: false
+  sni: 3y.2032.pp.ua
+  udp: true
 - name: '[TROJAN] 160.16.214.104:4674'
   type: trojan
   server: 160.16.214.104
@@ -1935,5 +1953,5 @@ proxies:
       Host: gr5.vpnjantit.com
   servername: gr5.vpnjantit.com
   skip-cert-verify: true
-update_time: 2026-03-12 18:55:13 UTC
+update_time: 2026-03-12 21:33:09 UTC
 source: auto-fetched
