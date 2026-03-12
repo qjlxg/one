@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.80.1:443'
+  type: trojan
+  server: 104.21.80.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: PSYchO.SueX12.Ir
+  udp: true
 - name: '[TROJAN] 167.17.185.172:10889'
   type: trojan
   server: 167.17.185.172
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
-  udp: true
-- name: '[TROJAN] 160.16.106.99:3057'
-  type: trojan
-  server: 160.16.106.99
-  port: 3057
-  password: f389ed926e512e15f382dc3804029474
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -185,6 +185,13 @@ proxies:
   skip-cert-verify: true
 - name: '[TROJAN] 160.16.72.205:3057'
   server: 160.16.72.205
+  port: 3057
+  type: trojan
+  password: f389ed926e512e15f382dc3804029474
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.106.99:3057'
+  server: 160.16.106.99
   port: 3057
   type: trojan
   password: f389ed926e512e15f382dc3804029474
@@ -1926,5 +1933,5 @@ proxies:
       Host: gr5.vpnjantit.com
   servername: gr5.vpnjantit.com
   skip-cert-verify: true
-update_time: 2026-03-12 02:08:45 UTC
+update_time: 2026-03-12 04:47:26 UTC
 source: auto-fetched
