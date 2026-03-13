@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.80.1:443'
+  type: trojan
+  server: 104.21.80.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: PSYchO.SueX12.Ir
+  udp: true
 - name: '[TROJAN] 153.121.45.139:4674'
   type: trojan
   server: 153.121.45.139
@@ -43,24 +52,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.nintendogames.net
-  udp: true
-- name: '[TROJAN] 104.21.80.1:443'
-  type: trojan
-  server: 104.21.80.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: PSYchO.SueX12.Ir
-  udp: true
-- name: '[TROJAN] 167.17.185.172:10889'
-  type: trojan
-  server: 167.17.185.172
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  tls: true
-  skip-cert-verify: false
-  sni: web.max.ru
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2077,5 +2068,5 @@ proxies:
   tls: true
   servername: u710948uf74eipv6s116.okgfw.top
   skip-cert-verify: false
-update_time: 2026-03-13 09:38:55 UTC
+update_time: 2026-03-13 12:59:39 UTC
 source: auto-fetched
