@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
   udp: true
-- name: '[TROJAN] 160.16.214.104:4674'
-  type: trojan
-  server: 160.16.214.104
-  port: 4674
-  password: f389ed926e512e15f382dc3804029474
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -205,6 +196,13 @@ proxies:
   port: 3419
   type: trojan
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.214.104:4674'
+  server: 160.16.214.104
+  port: 4674
+  type: trojan
+  password: f389ed926e512e15f382dc3804029474
   sni: www.nintendogames.net
   skip-cert-verify: false
 - name: '[TROJAN] 16.162.45.163:52951'
@@ -2068,5 +2066,5 @@ proxies:
   tls: true
   servername: u710948uf74eipv6s116.okgfw.top
   skip-cert-verify: false
-update_time: 2026-03-13 18:42:46 UTC
+update_time: 2026-03-13 21:33:39 UTC
 source: auto-fetched
