@@ -1,4 +1,5 @@
 # Updated at 2026-03-14 12:53:03 UTC
+trojan://00ba580b-61ca-4888-b27b-2dae22d494ce@sssfffsss-svr.ffnode.net:53645?security=tls&allowInsecure=1&type=tcp#%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC%20JP-05
 trojan://MeaDiUmPlkWbZJ2BON8tz@78.159.131.12:28259?sni=ads.x5.ru#%5BTROJAN%5D%2078.159.131.12%3A28259
 trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
 trojan://f389ed926e512e15f382dc3804029474@160.16.85.33:4674?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.85.33%3A4674
