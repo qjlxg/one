@@ -5,7 +5,7 @@ mode: global
 proxies:
 - cipher: auto
   flow: xtls-rprx-vision
-  name: N_000_vless
+  name: N_000
   network: tcp
   port: 30000
   server: sg1.ap221.com
@@ -17,7 +17,7 @@ proxies:
   uuid: 4ed4005d-86fe-428c-824d-83eb244b13dd
 - cipher: auto
   flow: xtls-rprx-vision
-  name: N_001_vless
+  name: N_001
   network: tcp
   port: 8086
   reality-opts:
@@ -32,7 +32,7 @@ proxies:
   uuid: 4760540b-acd6-4c63-8c88-17cbde38ee8a
 - cipher: auto
   flow: null
-  name: N_002_vless
+  name: N_002
   network: tcp
   port: 1006
   reality-opts:
@@ -47,7 +47,7 @@ proxies:
   uuid: 89a30277-65f0-42d5-9ec0-3365eebe4a3c
 - cipher: auto
   flow: null
-  name: N_003_vless
+  name: N_003
   network: tcp
   port: 1002
   reality-opts:
@@ -62,7 +62,7 @@ proxies:
   uuid: 89a30277-65f0-42d5-9ec0-3365eebe4a3c
 - cipher: auto
   flow: xtls-rprx-vision
-  name: N_004_vless
+  name: N_004
   network: tcp
   port: 8087
   reality-opts:
@@ -77,7 +77,7 @@ proxies:
   uuid: 4760540b-acd6-4c63-8c88-17cbde38ee8a
 - cipher: auto
   flow: null
-  name: N_005_vless
+  name: N_005
   network: tcp
   port: 1010
   reality-opts:
@@ -93,7 +93,7 @@ proxies:
 - alpn:
   - h3
   congestion-controller: bbr
-  name: N_006_tuic
+  name: N_006
   password: b1be3c3c-5cb7-4b5b-8dbc-a407eb0d63b7
   port: 1443
   server: 87.229.95.140
@@ -102,7 +102,7 @@ proxies:
   type: tuic
   udp: true
   uuid: b1be3c3c-5cb7-4b5b-8dbc-a407eb0d63b7
-- name: N_007_hysteria2
+- name: N_007
   obfs: null
   obfs-password: null
   password: 3e813e48-d0f2-43bb-9e26-45d41382a99e
@@ -112,7 +112,7 @@ proxies:
   sni: hanguo.iptk123.com
   type: hysteria2
   udp: true
-- name: N_008_hysteria2
+- name: N_008
   obfs: null
   obfs-password: null
   password: 3a6e30e9-013d-4117-9a5b-372b2f5ecb33
@@ -122,7 +122,7 @@ proxies:
   sni: cn.cremedelamer.com
   type: hysteria2
   udp: true
-- name: N_009_hysteria2
+- name: N_009
   obfs: null
   obfs-password: null
   password: 3e813e48-d0f2-43bb-9e26-45d41382a99e
@@ -132,7 +132,7 @@ proxies:
   sni: xinjiapo.iptk123.com
   type: hysteria2
   udp: true
-- name: N_010_hysteria2
+- name: N_010
   obfs: null
   obfs-password: null
   password: 3e813e48-d0f2-43bb-9e26-45d41382a99e
@@ -142,7 +142,7 @@ proxies:
   sni: aodaliya.iptk123.com
   type: hysteria2
   udp: true
-- name: N_011_hysteria2
+- name: N_011
   obfs: null
   obfs-password: null
   password: 3a6e30e9-013d-4117-9a5b-372b2f5ecb33
@@ -152,7 +152,7 @@ proxies:
   sni: cn.cremedelamer.com
   type: hysteria2
   udp: true
-- name: N_012_hysteria2
+- name: N_012
   obfs: null
   obfs-password: null
   password: 3a6e30e9-013d-4117-9a5b-372b2f5ecb33
@@ -162,7 +162,7 @@ proxies:
   sni: cn.cremedelamer.com
   type: hysteria2
   udp: true
-- name: N_013_hysteria2
+- name: N_013
   obfs: null
   obfs-password: null
   password: 0c9183ed-80d0-4768-8901-7179d3b54be3
@@ -172,7 +172,7 @@ proxies:
   sni: bing.com
   type: hysteria2
   udp: true
-- name: N_014_hysteria2
+- name: N_014
   obfs: null
   obfs-password: null
   password: 3a6e30e9-013d-4117-9a5b-372b2f5ecb33
@@ -182,7 +182,7 @@ proxies:
   sni: cn.cremedelamer.com
   type: hysteria2
   udp: true
-- name: N_015_hysteria2
+- name: N_015
   obfs: null
   obfs-password: null
   password: 3a6e30e9-013d-4117-9a5b-372b2f5ecb33
