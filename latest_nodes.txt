@@ -1,11 +1,10 @@
-hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@129.146.215.233:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#美国 063 ✅ 230ms
-tuic://b1be3c3c-5cb7-4b5b-8dbc-a407eb0d63b7:b1be3c3c-5cb7-4b5b-8dbc-a407eb0d63b7@87.229.95.140:1443?congestion_control=bbr&alpn=h3&sni=dk1.587458.xyz&udp_relay_mode=native#tuic_87.229.95.140_1443 ✅ 282ms
-hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@168.75.68.172:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#BR 005 ✅ 521ms
-hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@144.22.197.28:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#BR 003 ✅ 522ms
-hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@140.245.27.220:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#印度 001 ✅ 824ms
-hy2://3e813e48-d0f2-43bb-9e26-45d41382a99e@hanguo.iptk123.com:443?sni=hanguo.iptk123.com#韩国|HYSTERIA2 ✅ 914ms
-hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@192.9.165.40:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#澳大利亚 002 ✅ 921ms
-hy2://3e813e48-d0f2-43bb-9e26-45d41382a99e@aodaliya.iptk123.com:443?sni=aodaliya.iptk123.com#澳大利亚|HYSTERIA2 ✅ 971ms
-hy2://3e813e48-d0f2-43bb-9e26-45d41382a99e@xinjiapo.iptk123.com:443?sni=xinjiapo.iptk123.com#新加坡|HYSTERIA2 ✅ 1009ms
-hy2://0c9183ed-80d0-4768-8901-7179d3b54be3@gby5e0ay2oyx2.accccggggdns.top:41234?insecure=1&sni=bing.com#台湾|HYSTERIA2 ✅ 1215ms
-vless://4ed4005d-86fe-428c-824d-83eb244b13dd@sg1.ap221.com:30000?security=tls&sni=sg.ap221.com&fp=chrome&type=tcp&flow=xtls-rprx-vision&encryption=none#新加坡|VLESS ✅ 1249ms
+hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@129.146.215.233:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#美国 063 ✅ 220ms
+hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@168.75.68.172:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#BR 005 ✅ 591ms
+hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@144.22.197.28:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#BR 003 ✅ 591ms
+hy2://3e813e48-d0f2-43bb-9e26-45d41382a99e@hanguo.iptk123.com:443?sni=hanguo.iptk123.com#韩国|HYSTERIA2 ✅ 739ms
+hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@140.245.27.220:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#印度 001 ✅ 803ms
+hy2://3a6e30e9-013d-4117-9a5b-372b2f5ecb33@192.9.165.40:51000?mport=51000-53000&insecure=1&sni=cn.cremedelamer.com#澳大利亚 002 ✅ 878ms
+hy2://3e813e48-d0f2-43bb-9e26-45d41382a99e@xinjiapo.iptk123.com:443?sni=xinjiapo.iptk123.com#新加坡|HYSTERIA2 ✅ 943ms
+hy2://3e813e48-d0f2-43bb-9e26-45d41382a99e@aodaliya.iptk123.com:443?sni=aodaliya.iptk123.com#澳大利亚|HYSTERIA2 ✅ 951ms
+vless://4ed4005d-86fe-428c-824d-83eb244b13dd@sg1.ap221.com:30000?security=tls&sni=sg.ap221.com&fp=chrome&type=tcp&flow=xtls-rprx-vision&encryption=none#新加坡|VLESS ✅ 1262ms
+hy2://0c9183ed-80d0-4768-8901-7179d3b54be3@gby5e0ay2oyx2.accccggggdns.top:41234?insecure=1&sni=bing.com#台湾|HYSTERIA2 ✅ 2131ms
