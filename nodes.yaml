@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 78.159.131.12:28259'
+  type: trojan
+  server: 78.159.131.12
+  port: 28259
+  password: MeaDiUmPlkWbZJ2BON8tz
+  tls: true
+  skip-cert-verify: false
+  sni: ads.x5.ru
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -238,15 +247,6 @@ proxies:
     path: /trojan-ws
     headers:
       Host: ubu.okaoclax.me
-- name: '[TROJAN] 78.159.131.12:28259'
-  type: trojan
-  server: 78.159.131.12
-  port: 28259
-  password: MeaDiUmPlkWbZJ2BON8tz
-  tls: true
-  skip-cert-verify: false
-  sni: ads.x5.ru
-  udp: true
 - name: '[TROJAN] my01.jsylianjie6.com:45720'
   type: trojan
   server: my01.jsylianjie6.com
@@ -2032,5 +2032,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-14 09:33:49 UTC
+update_time: 2026-03-14 12:53:03 UTC
 source: auto-fetched
