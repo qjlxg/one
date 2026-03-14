@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 78.159.131.12:28259'
-  type: trojan
-  server: 78.159.131.12
-  port: 28259
-  password: MeaDiUmPlkWbZJ2BON8tz
-  tls: true
-  skip-cert-verify: false
-  sni: ads.x5.ru
-  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
+  udp: true
+- name: '[TROJAN] 78.159.131.12:28259'
+  type: trojan
+  server: 78.159.131.12
+  port: 28259
+  password: MeaDiUmPlkWbZJ2BON8tz
+  tls: true
+  skip-cert-verify: false
+  sni: ads.x5.ru
   udp: true
 - name: '[TROJAN] 160.16.85.33:4674'
   type: trojan
@@ -34,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: PSYchO.SueX12.Ir
-  udp: true
-- name: '[TROJAN] 153.121.45.139:4674'
-  type: trojan
-  server: 153.121.45.139
-  port: 4674
-  password: f389ed926e512e15f382dc3804029474
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -189,6 +180,14 @@ proxies:
   port: 3419
   type: trojan
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+  tfo: false
+- name: '[TROJAN] 153.121.45.139:4674'
+  server: 153.121.45.139
+  port: 4674
+  type: trojan
+  password: f389ed926e512e15f382dc3804029474
   sni: www.nintendogames.net
   skip-cert-verify: false
   tfo: false
@@ -2023,5 +2022,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-14 15:28:59 UTC
+update_time: 2026-03-14 21:27:13 UTC
 source: auto-fetched
