@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 # ================= 配置区 =================
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
-# 本地文件和远程 URL 均可放入此列表
+# 自动合并本地与远程节点源
 NODE_SOURCES = [
     "nodes.txt",
     "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_nodes.txt",
@@ -18,11 +18,11 @@ SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 LATENCY_URL = "https://www.google.com/generate_204"
 TIMEOUT = 5       # 单次连接超时
 MAX_RETRIES = 2   
-MAX_WORKERS = 10  # 并发测试的线程数，增加此值可提速
+MAX_WORKERS = 15  # 并发线程数，推荐 10-20 之间
 # ==========================================
 
 def parse_link(link):
-    """全协议深度解析引擎"""
+    """全协议深度解析引擎 (保持原逻辑不变)"""
     try:
         link = link.strip()
         if not link or len(link) < 5: return None, None, None
@@ -31,7 +31,7 @@ def parse_link(link):
         query = {k: v[0] for k, v in parse_qs(url.query).items()}
         
         node = {
-            "name": "", # 后面统一编号
+            "name": "", 
             "server": url.hostname,
             "port": int(url.port or 443),
             "udp": True,
@@ -81,59 +81,62 @@ def parse_link(link):
         return None, None, None
 
 def test_single_node(p, name_to_link):
-    """供线程池调用的测试函数"""
+    """并行测试核心逻辑"""
     idx_name = p['name']
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    
-    # 建立独立的 Session 避免线程干扰
-    session = requests.Session()
-    
+    # 增加尝试次数和刷新日志
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            # 通过 API 设置该线程要测试的节点为全局代理 (注意：高并发下此处可能有竞态风险，但 Mihomo 控制器处理较快)
+            # 切换内核当前节点
             requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=2)
             
             start_t = time.time()
-            r = session.get(LATENCY_URL, 
+            r = requests.get(LATENCY_URL, 
                              proxies={"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}, 
-                             headers=headers, 
                              timeout=TIMEOUT)
             if r.status_code in [200, 204]:
                 ms = int((time.time() - start_t) * 1000)
-                print(f"  ✅ {p['server']} | {ms}ms")
+                print(f"  ✅ [{p['type'].upper()}] {p['server']} | {ms}ms", flush=True)
                 return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": ms}
         except:
-            if attempt < MAX_RETRIES: time.sleep(0.5)
+            if attempt < MAX_RETRIES: 
+                time.sleep(0.5)
             continue
+    
+    print(f"  💀 [{p['type'].upper()}] {p['server']} | Failed", flush=True)
     return None
 
 def fetch_nodes():
-    """获取本地和远程节点"""
+    """获取本地和远程节点数据"""
     all_links = []
     for source in NODE_SOURCES:
         try:
             if source.startswith("http"):
-                print(f"🌐 正在下载远程源: {source}")
+                print(f"🌐 获取远程源: {source}", flush=True)
                 r = requests.get(source, timeout=10)
                 if r.status_code == 200:
-                    all_links.extend(r.text.splitlines())
+                    lines = r.text.splitlines()
+                    all_links.extend(lines)
+                    print(f"   - 找到 {len(lines)} 条链接", flush=True)
             elif os.path.exists(source):
-                print(f"📂 正在读取本地文件: {source}")
+                print(f"📂 读取本地源: {source}", flush=True)
                 with open(source, 'r', encoding='utf-8') as f:
-                    all_links.extend(f.readlines())
+                    lines = f.readlines()
+                    all_links.extend(lines)
+                    print(f"   - 找到 {len(lines)} 条链接", flush=True)
         except Exception as e:
-            print(f"⚠️ 无法加载源 {source}: {e}")
+            print(f"⚠️ 无法加载源 {source}: {e}", flush=True)
     return all_links
 
 def run_test():
+    # 1. 环境准备
     if not os.path.exists("mihomo"):
         if os.path.exists(MIHOMO_GZ):
             os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
         else:
-            print("❌ 错误: 未找到内核文件。")
+            print("❌ 错误: 未找到内核文件。", flush=True)
             return
 
-    # 解析节点
+    # 2. 节点预处理
     all_links = fetch_nodes()
     proxies, name_to_link, seen = [], {}, set()
     
@@ -147,37 +150,52 @@ def run_test():
             seen.add(raw_link)
 
     if not proxies:
-        print("⚠️ 未发现任何待测节点。")
+        print("⚠️ 没有解析到有效节点，任务结束。", flush=True)
         return
 
-    # 生成配置并启动内核
-    config_data = {"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "log-level": "silent", "proxies": proxies}
+    # 3. 启动 Mihomo 内核
+    config_data = {
+        "mixed-port": 7890, 
+        "external-controller": "127.0.0.1:9090", 
+        "mode": "global", 
+        "log-level": "silent", 
+        "proxies": proxies
+    }
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump(config_data, f)
 
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(3) 
+    print(f"⚙️  内核启动中 (PID: {proc.pid})...", flush=True)
+    time.sleep(5) # 预留充足时间确保内核就绪
 
-    print(f"🚀 开始并行测试 (线程数: {MAX_WORKERS}, 总节点: {len(proxies)})")
-    
+    # 4. 执行并发测试
+    print(f"🚀 开始并行测速 | 线程数: {MAX_WORKERS} | 节点总数: {len(proxies)}", flush=True)
     valid_results = []
-    # 并发核心
+    
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        # 提交所有测试任务
         futures = [executor.submit(test_single_node, p, name_to_link) for p in proxies]
+        # 获取结果
         for f in futures:
             res = f.result()
-            if res: valid_results.append(res)
+            if res:
+                valid_results.append(res)
 
+    # 5. 清理与保存
     proc.terminate()
+    print(f"\n📊 测试完成，正在排序结果...", flush=True)
 
     if valid_results:
         valid_results.sort(key=lambda x: x['ms'])
         final_lines = [f"{item['link'].split('#')[0]}#{item['raw_name']} ✅ {item['ms']}ms" for item in valid_results]
+        
         with open(OUTPUT_LATEST, 'w', encoding='utf-8') as f:
             f.write('\n'.join(final_lines))
-        print(f"\n✨ 任务完成！已保存 {len(final_lines)} 个有效节点到 {OUTPUT_LATEST}")
+        
+        print(f"✨ 任务成功！保存 {len(final_lines)} 个有效节点到 {OUTPUT_LATEST}", flush=True)
+        print(f"🥇 最优节点: {valid_results[0]['ms']}ms ({valid_results[0]['raw_name']})", flush=True)
     else:
-        print("\n⚠️ 未发现可用节点。")
+        print("⚠️ 本次测试未发现任何联通节点。", flush=True)
 
 if __name__ == "__main__":
     run_test()
