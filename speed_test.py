@@ -22,18 +22,18 @@ GEOIP_DB = "GeoLite2-Country.mmdb"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
 TEST_URL = "https://speed.cloudflare.com/__down?bytes=104857600"
-TEST_DURATION = 10  # 每个节点测速持续时间
-MIN_SPEED_THRESHOLD = 2.0  # 速度阈值 Mbps
+TEST_DURATION = 8  # 稍微缩短到 8 秒以加快进度
+MIN_SPEED_THRESHOLD = 2.0 
 
 def setup_mihomo():
     if not os.path.exists("mihomo"):
-        print("[1/5] 准备内核...")
+        print("[1/5] 准备内核...", flush=True)
         if os.path.exists(MIHOMO_GZ):
             os.system(f"gunzip -c {MIHOMO_GZ} > mihomo")
             os.chmod("mihomo", 0o755)
-            print("  ✅ 内核准备就绪")
+            print("  ✅ 内核准备就绪", flush=True)
         else:
-            print(f"  ❌ 错误: 找不到 {MIHOMO_GZ}")
+            print(f"  ❌ 错误: 找不到 {MIHOMO_GZ}", flush=True)
             return False
     return True
 
@@ -96,7 +96,7 @@ def run_speed_test():
     proxies = []
     seen_links = set()
 
-    print("[2/5] 扫描节点源...")
+    print("[2/5] 扫描节点源...", flush=True)
     for file_path in INPUT_NODES:
         if not os.path.exists(file_path): continue
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -111,47 +111,56 @@ def run_speed_test():
                     name_to_link[u_name] = raw_link
                     seen_links.add(line)
 
-    if not proxies: return
+    if not proxies: 
+        print("  ❌ 未找到任何有效节点", flush=True)
+        return
 
-    # --- 关键修改：强制 global 模式 ---
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump({
             "mixed-port": 7890,
             "external-controller": "127.0.0.1:9090",
-            "mode": "global", # 强制全局，不走 DIRECT 规则
+            "mode": "global",
             "log-level": "silent",
             "proxies": proxies,
             "proxy-groups": [{"name": "GLOBAL", "type": "select", "proxies": [p['name'] for p in proxies]}]
         }, f)
     
-    print("  🚀 启动内核...")
+    print("  🚀 启动 Mihomo 内核...", flush=True)
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL)
     
-    # 等待 API 就绪
-    for _ in range(10):
+    for i in range(10):
         try:
             requests.get("http://127.0.0.1:9090", timeout=1)
+            print("  ✅ 控制 API 已就绪", flush=True)
             break
         except:
+            if i == 9: 
+                print("  ❌ 内核启动失败", flush=True)
+                return
             time.sleep(1)
 
     valid_results = []
-    print(f"[3/5] 开始测速 (共 {len(proxies)} 个节点)...")
+    total_count = len(proxies)
+    print(f"[3/5] 开始测速 (共 {total_count} 个节点)...", flush=True)
 
     try:
-        for p in proxies:
+        for index, p in enumerate(proxies, 1):
             name = p['name']
-            # 切换全局代理节点
+            server_info = f"{p['server']}:{p['port']}"
+            print(f"  [{index}/{total_count}] 正在测试: {server_info} ...", end=" ", flush=True)
+            
+            # 切换节点
             try:
                 requests.put("http://127.0.0.1:9090/proxies/GLOBAL", json={"name": name}, timeout=5)
-            except:
+            except Exception as e:
+                print(f"❌ 切换失败: {e}", flush=True)
                 continue
             
             start_time = time.time()
             total_bytes = 0
             try:
-                # 测速
-                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}, timeout=(5, 15)) as r:
+                # 测速请求
+                with requests.get(TEST_URL, stream=True, proxies={"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}, timeout=(4, 12)) as r:
                     r.raise_for_status()
                     for chunk in r.iter_content(chunk_size=1024*1024):
                         total_bytes += len(chunk)
@@ -170,21 +179,26 @@ def run_speed_test():
                         "raw_link": name_to_link[name]
                     }
                     valid_results.append(res)
-                    print(f"  ✅ [{country}] {res['speed']} Mbps")
+                    print(f"✅ {res['speed']} Mbps ({country})", flush=True)
                 else:
-                    print(f"  🐌 速度过低: {round(speed, 2)} Mbps")
+                    print(f"🐌 速度太慢 ({round(speed, 2)} Mbps)", flush=True)
+            except requests.exceptions.Timeout:
+                print("💀 超时 (Timeout)", flush=True)
+            except requests.exceptions.ProxyError:
+                print("💀 代理拒绝连接 (ProxyError)", flush=True)
             except Exception as e:
-                # print(f"  ❌ {name} 失败") # 调试时可开启
-                pass
+                print(f"💀 失败 ({type(e).__name__})", flush=True)
+                
     finally:
+        print("  🛑 停止内核", flush=True)
         proc.terminate()
         proc.wait()
 
     if not valid_results:
-        print("[4/5] ⚠️ 未筛选出符合速度要求的节点。")
+        print("[4/5] ⚠️ 结果为空，没有节点达标。", flush=True)
         return
 
-    # 排序与重命名
+    # --- 结果处理逻辑 (排序/保存) ---
     valid_results.sort(key=lambda x: x['speed'], reverse=True)
     final_links = []
     country_counter = {}
@@ -199,7 +213,7 @@ def run_speed_test():
         final_links.append(new_link)
         csv_data.append([item['date'], item['country'], item['speed'], item['server']])
 
-    print(f"[4/5] 保存结果...")
+    print(f"[4/5] 正在写入文件 (筛选出 {len(final_links)} 个节点)...", flush=True)
     with open(OUTPUT_FAST, 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_links))
 
@@ -210,7 +224,7 @@ def run_speed_test():
             writer.writerow(['日期', '国家', '速度(Mbps)', '服务器地址'])
         writer.writerows(csv_data)
 
-    print(f"[5/5] 完成。")
+    print(f"[5/5] 全部任务完成。", flush=True)
 
 if __name__ == "__main__":
     run_speed_test()
