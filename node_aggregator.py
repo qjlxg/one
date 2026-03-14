@@ -25,7 +25,8 @@ EXCLUDE_KEYWORDS = ["127.0.0.1", "localhost", "0.0.0.0", "google.com", "github.c
 NODE_PATTERN = r'(?:vmess|vless|ss|ssr|trojan|tuic|hysteria2|hysteria)://[a-zA-Z0-9%@\[\]\._\-\?&=\+#/:]+'
 
 RAW_NODE_SOURCES = [
-    "https://github.com/qjlxg/http/raw/refs/heads/main/api_nodes_clear.txt"
+    "https://github.com/qjlxg/http/raw/refs/heads/main/api_nodes_clear.txt",
+    "https://github.com/qjlxg/one/raw/refs/heads/main/nodes_list.txt"
   
 ]
 
