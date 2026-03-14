@@ -8,8 +8,8 @@ from concurrent.futures import ThreadPoolExecutor
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 # 自动合并本地与远程节点源
 NODE_SOURCES = [
-    "nodes.txt"
- #   "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_nodes.txt",
+    "nodes.txt",
+    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_nodes.txt"
   #  "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
