@@ -18,7 +18,7 @@ SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 LATENCY_URL = "https://www.google.com/generate_204"
 TIMEOUT = 5       # 单次连接超时
 MAX_RETRIES = 2   
-MAX_WORKERS = 15  # 并发线程数，推荐 10-20 之间
+MAX_WORKERS = 20  # 提高并发到 20，加速处理大量节点
 # ==========================================
 
 def parse_link(link):
@@ -74,16 +74,19 @@ def parse_link(link):
                 method, password = user_info.split(':', 1)
                 node.update({"type": "ss", "cipher": method, "password": password})
         elif url.scheme == 'trojan':
-            node.update({"type": "trojan", "password": url.username, "sni": query.get('sni', url.hostname), "tls": True})
+            node.update({ "type": "trojan", "password": url.username, "sni": query.get('sni', url.hostname), "tls": True})
 
         return raw_name, node, link if node.get("type") else (None, None, None)
     except:
         return None, None, None
 
 def test_single_node(p, name_to_link):
-    """并行测试核心逻辑"""
+    """并行测试核心逻辑 - 修复 KeyError 并增强安全性"""
     idx_name = p['name']
-    # 增加尝试次数和刷新日志
+    # 使用 .get 安全获取字段，防止格式错误的节点导致崩溃
+    node_type = p.get('type', 'UNKNOWN').upper()
+    node_server = p.get('server', 'NULL')
+
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             # 切换内核当前节点
@@ -95,14 +98,14 @@ def test_single_node(p, name_to_link):
                              timeout=TIMEOUT)
             if r.status_code in [200, 204]:
                 ms = int((time.time() - start_t) * 1000)
-                print(f"  ✅ [{p['type'].upper()}] {p['server']} | {ms}ms", flush=True)
+                print(f"  ✅ [{node_type}] {node_server} | {ms}ms", flush=True)
                 return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": ms}
         except:
             if attempt < MAX_RETRIES: 
                 time.sleep(0.5)
             continue
     
-    print(f"  💀 [{p['type'].upper()}] {p['server']} | Failed", flush=True)
+    print(f"  💀 [{node_type}] {node_server} | Failed", flush=True)
     return None
 
 def fetch_nodes():
@@ -166,23 +169,30 @@ def run_test():
 
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print(f"⚙️  内核启动中 (PID: {proc.pid})...", flush=True)
-    time.sleep(5) # 预留充足时间确保内核就绪
+    time.sleep(5) 
 
     # 4. 执行并发测试
     print(f"🚀 开始并行测速 | 线程数: {MAX_WORKERS} | 节点总数: {len(proxies)}", flush=True)
     valid_results = []
     
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        # 提交所有测试任务
-        futures = [executor.submit(test_single_node, p, name_to_link) for p in proxies]
-        # 获取结果
-        for f in futures:
-            res = f.result()
-            if res:
-                valid_results.append(res)
+    # 捕获异常防止主程序崩溃
+    try:
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            futures = [executor.submit(test_single_node, p, name_to_link) for p in proxies]
+            for f in futures:
+                res = f.result()
+                if res:
+                    valid_results.append(res)
+    except Exception as e:
+        print(f"❌ 运行过程中出现错误: {e}", flush=True)
+    finally:
+        # 5. 清理与保存
+        proc.terminate()
+        try:
+            proc.wait(timeout=5)
+        except:
+            proc.kill()
 
-    # 5. 清理与保存
-    proc.terminate()
     print(f"\n📊 测试完成，正在排序结果...", flush=True)
 
     if valid_results:
