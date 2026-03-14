@@ -3,14 +3,12 @@ name: speed_test
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 */3 * * *' # 每3小时运行一次
   push:
     paths:
       - 'speed_test.py'
       - '.github/workflows/speed_test.yml'
       - 'nodes.txt'
-
-
 
 jobs:
   run-speed-test:
@@ -22,7 +20,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取完整历史，这对 rebase 至关重要
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,30 +31,41 @@ jobs:
         run: |
           pip install pyyaml requests pytz geoip2
 
+      - name: Download GeoIP Database
+        run: |
+          wget -O GeoLite2-Country.mmdb https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb
+
       - name: Run Speed Test Script
         run: python speed_test.py
 
       - name: Commit and Push Changes
         run: |
-          # 1. 配置身份信息
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 2. 暂存所有变动（解决 "unstaged changes" 报错的核心）
-          # 使用 . 会包含新创建的日期文件夹和所有修改
+          # 包含所有新生成的日期文件夹和 CSV 记录
           git add .
           
-          # 3. 检查是否有真正需要提交的内容
           if git diff --staged --quiet; then
             echo "No changes to commit, skipping push."
           else
-            git commit -m "Auto: Update fast nodes $(date '+%Y-%m-%d %H:%M:%S')"
+            # 使用上海时间作为 commit 信息
+            export TZ='Asia/Shanghai'
+            git commit -m "Auto: Update nodes & speed history $(date '+%Y-%m-%d %H:%M:%S')"
             
-            # 4. 稳健的推送逻辑
-            # --rebase 会把你的本地提交提到远程最新提交之后
-            # 如果 rebase 失败，通常是因为文件冲突，这里强制拉取最新状态
-            git pull --rebase origin main
+            # 循环尝试 rebase 以应对并发冲突
+            SUCCESS=0
+            for i in {1..5}; do
+              if git pull --rebase origin main && git push origin main; then
+                SUCCESS=1
+                break
+              fi
+              echo "Conflict detected, retrying in 5s..."
+              sleep 5
+            done
             
-            # 5. 推送
-            git push origin main
+            if [ $SUCCESS -ne 1 ]; then
+              echo "Failed to push after 5 attempts."
+              exit 1
+            fi
           fi
