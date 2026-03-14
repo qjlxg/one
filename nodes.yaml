@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: 80.173.230.196
   udp: true
-- name: '[TROJAN] 167.17.185.169:10889'
-  type: trojan
-  server: 167.17.185.169
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  tls: true
-  skip-cert-verify: false
-  sni: ya.ru
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2041,5 +2032,5 @@ proxies:
   tls: true
   servername: www.refersion.com
   skip-cert-verify: false
-update_time: 2026-03-14 06:48:37 UTC
+update_time: 2026-03-14 09:33:49 UTC
 source: auto-fetched
