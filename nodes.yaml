@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: ads.x5.ru
   udp: true
-- name: '[TROJAN] 160.16.85.33:4674'
-  type: trojan
-  server: 160.16.85.33
-  port: 4674
-  password: f389ed926e512e15f382dc3804029474
-  tls: true
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -181,6 +172,13 @@ proxies:
   port: 3419
   type: trojan
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.85.33:4674'
+  server: 160.16.85.33
+  port: 4674
+  type: trojan
+  password: f389ed926e512e15f382dc3804029474
   sni: www.nintendogames.net
   skip-cert-verify: false
 - name: '[TROJAN] 13.231.110.103:52951'
@@ -2115,5 +2113,5 @@ proxies:
   tls: true
   servername: u710948uc21fs502.okgg.top
   skip-cert-verify: false
-update_time: 2026-03-15 05:05:35 UTC
+update_time: 2026-03-15 06:57:50 UTC
 source: auto-fetched
