@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] usadt01.jumperservice.com:19001'
+  type: vless
+  server: usadt01.jumperservice.com
+  port: 19001
+  uuid: 719b17cb-004b-4029-b3fb-e98fafdb0271
+  udp: true
+  tls: true
+  servername: usadt01.jumperservice.com
+  skip-cert-verify: false
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -2122,5 +2131,5 @@ proxies:
   tls: true
   servername: u710948uc21fs502.okgg.top
   skip-cert-verify: false
-update_time: 2026-03-15 18:40:12 UTC
+update_time: 2026-03-15 21:28:10 UTC
 source: auto-fetched
