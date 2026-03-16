@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] 167.17.185.152:10889'
-  type: trojan
-  server: 167.17.185.152
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  tls: true
-  skip-cert-verify: false
-  sni: ozon.ru
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2141,5 +2132,5 @@ proxies:
       Host: 212.87.198.108
   servername: 212.87.198.108
   skip-cert-verify: false
-update_time: 2026-03-16 10:06:37 UTC
+update_time: 2026-03-16 13:13:59 UTC
 source: auto-fetched
