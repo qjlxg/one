@@ -6,23 +6,24 @@ from concurrent.futures import ThreadPoolExecutor
 # ================= 配置区 =================
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 NODE_SOURCES = [
-    "nodes.txt",
-    "nodes_list.txt",
-    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
-    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
+   # "nodes.txt",
+  #  "nodes_list.txt",
+  #  "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
+  #  "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
+     "https://github.com/qjlxg/aggregator/raw/refs/heads/main/data/v2ray.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
-CHECK_URL = "http://httpbin.org/ip" 
+# 使用更严格的测试地址
 LATENCY_URL = "https://www.google.com/generate_204"
+# 备用测试地址，防止单一地址被节点屏蔽
+BACKUP_URL = "https://www.cloudflare.com/cdn-cgi/trace"
 
-# 优化参数
-TIMEOUT = 5             # 单次请求超时
-MAX_WORKERS = 40        # 降低并发以提高 Actions 下的稳定性
-MAX_LATENCY = 1500      # 超过 1500ms 的节点直接过滤
-RETRY_COUNT = 2         # 多次采样次数
+# 核心参数微调
+TIMEOUT = 6             # 增加超时容忍，但严判后续表现
+MAX_WORKERS = 30        # 略微降低并发，防止 Actions 资源争抢导致误判
+MAX_LATENCY = 800       # 严苛门槛：云端超过 800ms 的节点本地基本无法使用
+RETRY_COUNT = 3         # 增加采样次数，确保稳定性
 # ==========================================
-
-ORIGINAL_IP = ""
 
 def log(msg):
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
@@ -41,10 +42,11 @@ def parse_link(link):
         if not link or len(link) < 10: return None, None, None
         parts = link.split('#', 1)
         base_link = parts[0]
-        raw_name = unquote(parts[1]) if len(parts) > 1 else "Unknown"
+        raw_name = unquote(parts[1]) if len(parts) > 1 else "Node"
         url = urlparse(base_link)
         scheme = url.scheme.lower()
-        # 核心优化：默认 skip-cert-verify 设为 False，过滤垃圾 TLS 节点
+        
+        # 默认禁用不安全证书跳过，强制进行 TLS 校验
         node = {"name": "", "server": url.hostname or "", "port": int(url.port or 443), "udp": True, "skip-cert-verify": False}
 
         if scheme == 'ss':
@@ -79,50 +81,43 @@ def test_single_node(p, name_to_link):
         # 1. 切换节点
         requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=2)
         
-        # 2. 多次采样测试（过滤波动大的节点）
+        # 2. 多轮延迟与连通性测试
         latencies = []
         for i in range(RETRY_COUNT):
             start_t = time.time()
-            # 增加 verify=True 强制校验证书
+            # 增加 verify=True 强制校验证书，防止 MITM 或无效节点
             res = requests.get(LATENCY_URL, proxies=proxies_config, timeout=TIMEOUT, verify=True)
             if res.status_code == 204:
                 latencies.append(int((time.time() - start_t) * 1000))
-            if i < RETRY_COUNT - 1: time.sleep(1) # 采样间隔
+            time.sleep(0.5)
 
-        if len(latencies) < RETRY_COUNT: return None # 只要有一次不通就舍弃
+        if len(latencies) < 2: return None # 至少要通 2 次
         
         avg_ms = sum(latencies) // len(latencies)
-        
-        # 3. 延迟门槛过滤
         if avg_ms > MAX_LATENCY: return None
 
-        # 4. 模拟流量（读取前 100KB 数据，防止只有握手通但无传输的情况）
-        with requests.get("https://www.cloudflare.com/cdn-cgi/trace", 
-                          proxies=proxies_config, timeout=TIMEOUT, stream=True) as r:
+        # 3. 深度内容校验（防止空包/伪装通）
+        # 尝试读取真实的网页片段，确保不是只有握手成功
+        with requests.get(BACKUP_URL, proxies=proxies_config, timeout=TIMEOUT, stream=True) as r:
             if r.status_code == 200:
-                chunk = r.raw.read(1024 * 100)
-                if len(chunk) < 10: return None # 没读到内容说明质量极差
+                chunk = r.raw.read(1024) # 读取 1KB 真实数据
+                if len(chunk) < 200: return None
+            else:
+                return None
 
-        log(f"✅ [{p['type'].upper()}] {p['server']} | {avg_ms}ms (稳定)")
+        log(f"✅ [{p['type'].upper()}] {p['server']} | {avg_ms}ms (实测通过)")
         return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": avg_ms}
     except:
         return None
 
 def run_test():
-    global ORIGINAL_IP
     log("🛠️ 环境初始化...")
     
-    try:
-        ORIGINAL_IP = requests.get(CHECK_URL, timeout=10).json().get('origin', '')
-        log(f"🏠 本地原始 IP: {ORIGINAL_IP}")
-    except Exception as e:
-        log(f"❌ 环境连接异常: {e}"); return
-
     all_links = []
     for source in NODE_SOURCES:
         try:
             if source.startswith("http"):
-                r = requests.get(source, timeout=10)
+                r = requests.get(source, timeout=15)
                 content = r.text if r.status_code == 200 else ""
             elif os.path.exists(source):
                 with open(source, 'r', encoding='utf-8') as f: content = f.read()
@@ -137,19 +132,29 @@ def run_test():
     proxies, name_to_link, seen = [], {}, set()
     for line in all_links:
         raw_name, config, raw_link = parse_link(line)
-        if config and raw_link not in seen:
+        # 去重：基于 server 地址和端口去重，防止同一个入口多个名字
+        server_key = f"{config['server']}:{config['port']}" if config else None
+        if config and server_key not in seen:
             u_name = f"N_{len(proxies):04d}"
             config['name'] = u_name
             proxies.append(config)
             name_to_link[u_name] = {"raw_name": raw_name, "link": raw_link}
-            seen.add(raw_link)
+            seen.add(server_key)
 
-    log(f"📊 待测节点总数: {len(proxies)}")
+    log(f"📊 待测独立服务器总数: {len(proxies)}")
     if not proxies: return
 
-    # 写入配置文件
+    # 写入配置文件，禁用 IPv6 匹配大多数本地环境
+    config_dict = {
+        "mixed-port": 7890,
+        "external-controller": "127.0.0.1:9090",
+        "mode": "global",
+        "ipv6": False,
+        "log-level": "silent",
+        "proxies": proxies
+    }
     with open("config.yaml", "w", encoding="utf-8") as f:
-        yaml.dump({"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "proxies": proxies}, f)
+        yaml.dump(config_dict, f)
 
     # 启动内核
     if os.path.exists(MIHOMO_GZ):
@@ -157,11 +162,10 @@ def run_test():
     
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
-    # 等待就绪
     for _ in range(15):
         try:
             requests.get("http://127.0.0.1:9090/version", timeout=1)
-            log("🚀 内核启动成功，开始高强度筛选...")
+            log("🚀 内核启动成功，执行高压筛选...")
             break
         except: time.sleep(1)
     else:
@@ -179,9 +183,9 @@ def run_test():
     if valid_results:
         valid_results.sort(key=lambda x: x['ms'])
         with open(OUTPUT_LATEST, 'w', encoding='utf-8') as f:
-            lines = [f"{item['link'].split('#')[0]}#{item['raw_name']} | 延迟: {item['ms']}ms" for item in valid_results]
+            lines = [f"{item['link'].split('#')[0]}#{item['raw_name']}" for item in valid_results]
             f.write('\n'.join(lines))
-        log(f"✨ 筛选完成！保留了 {len(valid_results)} 个高质量节点")
+        log(f"✨ 筛选完成！保留了 {len(valid_results)} 个高可靠性节点")
     else:
         log("⚠️ 没有节点通过压力测试")
 
