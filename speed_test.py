@@ -7,7 +7,8 @@ from concurrent.futures import ThreadPoolExecutor
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 # 聚合多个高频更新的订阅源，提高基数
 NODE_SOURCES = [
-    "nodes.txt"
+    "nodes.txt"，
+    "nodes_list.txt
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
 CHECK_URL = "http://httpbin.org/ip"
