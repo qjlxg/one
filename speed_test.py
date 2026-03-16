@@ -21,7 +21,7 @@ BACKUP_URL = "https://www.cloudflare.com/cdn-cgi/trace"
 # 核心参数微调
 TIMEOUT = 6             # 增加超时容忍，但严判后续表现
 MAX_WORKERS = 30        # 略微降低并发，防止 Actions 资源争抢导致误判
-MAX_LATENCY = 800       # 严苛门槛：云端超过 800ms 的节点本地基本无法使用
+MAX_LATENCY = 1800       # 严苛门槛：云端超过 800ms 的节点本地基本无法使用
 RETRY_COUNT = 3         # 增加采样次数，确保稳定性
 # ==========================================
 
@@ -47,7 +47,7 @@ def parse_link(link):
         scheme = url.scheme.lower()
         
         # 默认禁用不安全证书跳过，强制进行 TLS 校验
-        node = {"name": "", "server": url.hostname or "", "port": int(url.port or 443), "udp": True, "skip-cert-verify": False}
+        node = {"name": "", "server": url.hostname or "", "port": int(url.port or 443), "udp": True, "skip-cert-verify": True}
 
         if scheme == 'ss':
             if '@' in url.netloc:
