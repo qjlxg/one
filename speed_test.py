@@ -7,7 +7,6 @@ import os
 import subprocess
 import time
 from urllib.parse import urlparse, unquote, parse_qs
-from datetime import datetime
 
 # ================= 配置区 =================
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
@@ -16,9 +15,11 @@ NODE_SOURCES = [
 ]
 OUTPUT_FILE = "latest_nodes.txt"
 TEST_URL = "https://www.google.com/generate_204"
-CONCURRENCY_LIMIT = 30  # 异步并发数
+CONCURRENCY_LIMIT = 50  # 异步并发数，推荐 30-50
 RETRIES = 1             # 延迟抖动测试的额外请求次数
-TIMEOUT = 5
+TIMEOUT = 5             # 测速超时
+API_URL = "http://127.0.0.1:9090"
+PROXY_ADDR = "http://127.0.0.1:7890"
 # ==========================================
 
 class AsyncNodeTester:
@@ -29,31 +30,22 @@ class AsyncNodeTester:
         self.results = []
 
     def parse_link(self, link):
-        """全协议深度解析引擎 (已迁移并增强去重)"""
+        """全协议深度解析引擎"""
         try:
             link = link.strip()
             if not link or len(link) < 5: return None
             url = urlparse(link)
             
-            # 基础信息
             server = url.hostname
             port = int(url.port or 443)
-            # 深度去重：基于 服务器+端口
             endpoint_key = f"{server}:{port}"
             if endpoint_key in self.seen_endpoints: return None
 
             raw_name = unquote(url.fragment) if url.fragment else f"{url.scheme}_{server}_{port}"
             query = {k: v[0] for k, v in parse_qs(url.query).items()}
             
-            node = {
-                "name": "", 
-                "server": server,
-                "port": port,
-                "udp": True,
-                "skip-cert-verify": True
-            }
+            node = {"name": "", "server": server, "port": port, "udp": True, "skip-cert-verify": True}
 
-            # --- 协议分支 ---
             if url.scheme == 'vless':
                 node.update({
                     "type": "vless", "uuid": url.username, "cipher": "auto",
@@ -83,19 +75,10 @@ class AsyncNodeTester:
                 })
             
             elif url.scheme in ['hy2', 'hysteria2']:
-                node.update({
-                    "type": "hysteria2", "password": url.username, 
-                    "sni": query.get('sni'), "obfs": query.get('obfs'), 
-                    "obfs-password": query.get('obfs-password')
-                })
+                node.update({"type": "hysteria2", "password": url.username, "sni": query.get('sni'), "obfs": query.get('obfs'), "obfs-password": query.get('obfs-password')})
             
             elif url.scheme == 'tuic':
-                node.update({
-                    "type": "tuic", "uuid": url.username, "password": url.password, 
-                    "alpn": [query.get('alpn', 'h3')], 
-                    "congestion-controller": query.get('congestion_control', 'bbr'), 
-                    "sni": query.get('sni')
-                })
+                node.update({"type": "tuic", "uuid": url.username, "password": url.password, "alpn": [query.get('alpn', 'h3')], "congestion-controller": query.get('congestion_control', 'bbr'), "sni": query.get('sni')})
             
             elif url.scheme == 'ss':
                 if '@' in url.netloc:
@@ -107,59 +90,57 @@ class AsyncNodeTester:
                 node.update({ "type": "trojan", "password": url.username, "sni": query.get('sni', url.hostname), "tls": True})
 
             if not node.get("type"): return None
-
             self.seen_endpoints.add(endpoint_key)
             return raw_name, node, link
-
-        except Exception:
+        except:
             return None
 
-    async def test_node(self, client, node_id):
-        """异步测试单个节点"""
-        latencies = []
+    async def test_node(self, proxy_client, api_client, node_id):
+        """使用复用的 client 进行测速"""
         node_info = self.name_map[node_id]
-        
         try:
-            # 切换内核当前节点
-            async with httpx.AsyncClient() as c:
-                await c.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": node_id}, timeout=2)
+            # 1. 切换代理 (API 控制)
+            await api_client.put("/proxies/GLOBAL", json={"name": node_id})
 
+            # 2. 测速
+            latencies = []
             for _ in range(RETRIES + 1):
                 start_t = time.perf_counter()
-                r = await client.get(TEST_URL, timeout=TIMEOUT)
+                r = await proxy_client.get(TEST_URL, timeout=TIMEOUT)
                 if r.status_code in [200, 204]:
                     latencies.append((time.perf_counter() - start_t) * 1000)
             
             if latencies:
                 avg_ms = int(sum(latencies) / len(latencies))
                 jitter = int(max(latencies) - min(latencies))
-                print(f"  ✅ [{node_info['type'].upper()}] {avg_ms}ms | {node_info['raw_name'][:20]}")
+                print(f"  ✅ [{node_info['type'].upper()}] {avg_ms}ms | {node_info['raw_name'][:30]}", flush=True)
                 return {**node_info, "ms": avg_ms, "jitter": jitter}
-        except:
+        except Exception:
             pass
         return None
 
-    async def worker(self, queue, client):
+    async def worker(self, queue, proxy_client, api_client):
         while True:
             node_id = await queue.get()
-            res = await self.test_node(client, node_id)
+            res = await self.test_node(proxy_client, api_client, node_id)
             if res:
                 self.results.append(res)
             queue.task_done()
 
     def prepare_kernel(self):
-        """准备 Mihomo 内核"""
         if not os.path.exists("mihomo"):
             if os.path.exists(MIHOMO_GZ):
                 os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
             else:
-                raise FileNotFoundError("Mihomo core not found.")
+                print("❌ 找不到内核文件")
+                return False
+        return True
 
     async def run(self):
-        self.prepare_kernel()
+        if not self.prepare_kernel(): return
         
-        # 1. 获取并解析节点
-        print("🌐 正在获取远程节点并解析...")
+        # 1. 解析节点
+        print("🌐 正在抓取节点...", flush=True)
         async with httpx.AsyncClient(timeout=10) as client:
             for source in NODE_SOURCES:
                 try:
@@ -171,61 +152,43 @@ class AsyncNodeTester:
                             u_id = f"N_{len(self.proxies):04d}"
                             config['name'] = u_id
                             self.proxies.append(config)
-                            self.name_map[u_id] = {
-                                "id": u_id, "raw_name": r_name, 
-                                "raw_link": r_link, "type": config['type']
-                            }
-                except Exception as e:
-                    print(f"⚠️ 源 {source} 加载失败: {e}")
+                            self.name_map[u_id] = {"id": u_id, "raw_name": r_name, "raw_link": r_link, "type": config['type']}
+                except: continue
 
-        if not self.proxies:
-            print("❌ 未发现有效节点")
-            return
+        if not self.proxies: return
 
         # 2. 启动内核
-        config_data = {
-            "mixed-port": 7890,
-            "external-controller": "127.0.0.1:9090",
-            "mode": "global",
-            "log-level": "silent",
-            "proxies": self.proxies
-        }
+        config_data = {"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "log-level": "silent", "proxies": self.proxies}
         with open("config.yaml", "w", encoding="utf-8") as f:
             yaml.dump(config_data, f)
 
-        proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL)
-        print(f"⚙️  内核已启动 (PID: {proc.pid})，开始并发测速...")
-        await asyncio.sleep(4)
+        proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        await asyncio.sleep(5) 
 
-        # 3. 异步并发测试
+        # 3. 异步并发测试 (修复 proxy 参数)
         queue = asyncio.Queue()
-        for p in self.proxies:
-            queue.put_nowait(p['name'])
+        for p in self.proxies: queue.put_nowait(p['name'])
 
-        async with httpx.AsyncClient(proxy="http://127.0.0.1:7890") as proxy_client:
-            workers = [asyncio.create_task(self.worker(queue, proxy_client)) for _ in range(CONCURRENCY_LIMIT)]
+        limits = httpx.Limits(max_keepalive_connections=20, max_connections=CONCURRENCY_LIMIT)
+        
+        # proxy_client 走代理测速，api_client 直接连接内核控制端口
+        async with httpx.AsyncClient(proxy=PROXY_ADDR, limits=limits, follow_redirects=True) as p_client, \
+                   httpx.AsyncClient(base_url=API_URL, timeout=2) as a_client:
+            
+            workers = [asyncio.create_task(self.worker(queue, p_client, a_client)) for _ in range(CONCURRENCY_LIMIT)]
             await queue.join()
             for w in workers: w.cancel()
 
-        # 4. 清理与结果保存
+        # 4. 保存结果
         proc.terminate()
-        
         if self.results:
             self.results.sort(key=lambda x: (x['ms'], x['jitter']))
-            output = []
-            for item in self.results:
-                line = f"{item['raw_link'].split('#')[0]}#{item['raw_name']} ✅ {item['ms']}ms (±{item['jitter']}ms)"
-                output.append(line)
-            
+            final_lines = [f"{item['raw_link'].split('#')[0]}#{item['raw_name']} ✅ {item['ms']}ms" for item in self.results]
             with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-                f.write('\n'.join(output))
-            
-            print(f"\n📊 测试完成！")
-            print(f"✨ 有效节点: {len(self.results)} / {len(self.proxies)}")
-            print(f"🥇 最优节点: {self.results[0]['raw_name']} ({self.results[0]['ms']}ms)")
+                f.write('\n'.join(final_lines))
+            print(f"\n✨ 成功保存 {len(self.results)} 个节点至 {OUTPUT_FILE}")
         else:
-            print("⚠️ 未发现可用节点。")
+            print("\n⚠️ 未发现可用节点")
 
 if __name__ == "__main__":
-    tester = AsyncNodeTester()
-    asyncio.run(tester.run())
+    asyncio.run(AsyncNodeTester().run())
