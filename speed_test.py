@@ -164,7 +164,7 @@ def run_test():
 
     proc.terminate()
 
-    if valid_results:
+if valid_results:
         valid_results.sort(key=lambda x: x['ms'])
         with open(OUTPUT_LATEST, 'w', encoding='utf-8') as f:
             f.write('\n'.join([f"{item['link'].split('#')[0]}#{item['raw_name']}" for item in valid_results]))
@@ -173,3 +173,4 @@ def run_test():
         log("⚠️ 多源尝试后仍未发现高质量节点，请检查网络环境或更换源地址")
 
 if __name__ == "__main__":
+    run_test()
