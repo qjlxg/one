@@ -10,7 +10,7 @@ NODE_SOURCES = [
    # "nodes_list.txt",
    # "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
    # "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
-     "https://github.com/qjlxg/aggregator/raw/refs/heads/main/data/v2ray.txt",
+   #  "https://github.com/qjlxg/aggregator/raw/refs/heads/main/data/v2ray.txt",
      "https://github.com/qjlxg/aggregator/raw/refs/heads/main/ss.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
