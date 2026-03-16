@@ -202,7 +202,7 @@ class AsyncNodeTester:
         for p in self.proxies:
             queue.put_nowait(p['name'])
 
-        async with httpx.AsyncClient(proxies="http://127.0.0.1:7890") as proxy_client:
+        async with httpx.AsyncClient(proxy="http://127.0.0.1:7890") as proxy_client:
             workers = [asyncio.create_task(self.worker(queue, proxy_client)) for _ in range(CONCURRENCY_LIMIT)]
             await queue.join()
             for w in workers: w.cancel()
