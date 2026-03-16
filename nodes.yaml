@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.30.167:443'
+  type: trojan
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  tls: true
+  skip-cert-verify: false
+  sni: 3y.2032.pp.ua
+  udp: true
 - name: '[VLESS] usadt01.jumperservice.com:19001'
   type: vless
   server: usadt01.jumperservice.com
@@ -2132,5 +2141,5 @@ proxies:
       Host: 212.87.198.108
   servername: 212.87.198.108
   skip-cert-verify: false
-update_time: 2026-03-16 13:13:59 UTC
+update_time: 2026-03-16 16:05:42 UTC
 source: auto-fetched

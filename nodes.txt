@@ -1,4 +1,5 @@
-# Updated at 2026-03-16 13:13:59 UTC
+# Updated at 2026-03-16 16:05:42 UTC
+trojan://2fec7227-9abe-46f2-af18-78302b836c45@104.21.30.167:443?sni=3y.2032.pp.ua#%5BTROJAN%5D%20104.21.30.167%3A443
 vless://719b17cb-004b-4029-b3fb-e98fafdb0271@usadt01.jumperservice.com:19001?security=tls&sni=usadt01.jumperservice.com#%5BVLESS%5D%20usadt01.jumperservice.com%3A19001
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
