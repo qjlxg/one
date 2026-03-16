@@ -6,7 +6,10 @@ from concurrent.futures import ThreadPoolExecutor
 # ================= 配置区 =================
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 NODE_SOURCES = [
-    "nodes.txt"
+    "nodes.txt",
+    "nodes_list.txt",
+    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
+    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
 CHECK_URL = "http://httpbin.org/ip" 
