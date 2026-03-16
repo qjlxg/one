@@ -6,22 +6,25 @@ from concurrent.futures import ThreadPoolExecutor
 # ================= 配置区 =================
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 NODE_SOURCES = [
-    "https://github.com/qjlxg/aggregator/raw/refs/heads/main/data/v2ray.txt"
+   # "nodes.txt",
+   # "nodes_list.txt",
+   # "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
+   # "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
+     https://github.com/qjlxg/aggregator/raw/refs/heads/main/data/v2ray.txt",
+  # "https://github.com/qjlxg/aggregator/raw/refs/heads/main/ss.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
+CHECK_URL = "http://httpbin.org/ip" 
+LATENCY_URL = "https://www.google.com/generate_204"
 
-# 更换为对 Actions 极度友好的测速地址
-LATENCY_URL = "http://cp.cloudflare.com/generate_204"
-BACKUP_URL = "http://connectivitycheck.gstatic.com/generate_204"
-
-# 核心参数：在保持质量的同时提高通过率
-TIMEOUT = 8             # 给免费节点更多一点响应时间
-MAX_WORKERS = 25        # 进一步降低并发，防止 Actions 网络拥塞导致误判
-MAX_LATENCY = 1800      # 1.8秒，兼顾可用性与稳定性
-RETRY_COUNT = 2         # 2次采样足够排除偶然断连
+TIMEOUT = 5       
+MAX_WORKERS = 80 
 # ==========================================
 
+ORIGINAL_IP = ""
+
 def log(msg):
+    """带时间戳的强制刷新日志"""
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
 
 def safe_base64_decode(s):
@@ -33,16 +36,15 @@ def safe_base64_decode(s):
     except: return ""
 
 def parse_link(link):
+    # (此处保持之前的全协议解析逻辑不变...)
     try:
         link = link.strip()
         if not link or len(link) < 10: return None, None, None
         parts = link.split('#', 1)
         base_link = parts[0]
-        raw_name = unquote(parts[1]) if len(parts) > 1 else "Node"
+        raw_name = unquote(parts[1]) if len(parts) > 1 else "Unknown"
         url = urlparse(base_link)
         scheme = url.scheme.lower()
-        
-        # 统一允许跳过证书验证，以适应免费源
         node = {"name": "", "server": url.hostname or "", "port": int(url.port or 443), "udp": True, "skip-cert-verify": True}
 
         if scheme == 'ss':
@@ -75,47 +77,48 @@ def test_single_node(p, name_to_link):
     
     try:
         # 1. 切换节点
-        requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=3)
+        requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=2)
         
-        # 2. 延迟与连通性测试
-        latencies = []
-        for _ in range(RETRY_COUNT):
-            start_t = time.time()
-            # 【关键修改】：verify=False，不再强求证书合法性，匹配 skip-cert-verify: True
-            res = requests.get(LATENCY_URL, proxies=proxies_config, timeout=TIMEOUT, verify=False)
-            if res.status_code == 204 or res.status_code == 200:
-                latencies.append(int((time.time() - start_t) * 1000))
-            time.sleep(0.5)
-
-        if not latencies: return None
+        # 2. IP 验证（防止假阳性）
+        start_t = time.time()
+        ip_res = requests.get(CHECK_URL, proxies=proxies_config, timeout=TIMEOUT)
+        current_ip = ip_res.json().get('origin', '')
         
-        avg_ms = sum(latencies) // len(latencies)
-        if avg_ms > MAX_LATENCY: return None
+        if current_ip == ORIGINAL_IP:
+            # log(f"  ⚠️ 警告: {idx_name} 流量未经过代理 (IP 未变)") # 可选：记录跳过信息
+            return None
 
-        # 3. 流量模拟：确保能读到数据
-        with requests.get(BACKUP_URL, proxies=proxies_config, timeout=TIMEOUT, stream=True, verify=False) as r:
-            if r.status_code == 200:
-                chunk = r.raw.read(512) # 读取 512 字节确认链路通畅
-                if not chunk: return None
-            else:
-                return None
-
-        log(f"✅ [{p['type'].upper()}] {p['server']} | {avg_ms}ms")
-        return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": avg_ms}
+        # 3. 延迟测试
+        requests.get(LATENCY_URL, proxies=proxies_config, timeout=TIMEOUT)
+        ms = int((time.time() - start_t) * 1000)
+        log(f"✅ [{p['type'].upper()}] {p['server']} | IP: {current_ip} | {ms}ms")
+        return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": ms}
     except:
         return None
 
 def run_test():
+    global ORIGINAL_IP
     log("🛠️ 环境初始化...")
     
-    # 抑制 SSL 警告（因为我们开启了 verify=False）
-    requests.packages.urllib3.disable_warnings()
-    
+    # 获取原始 IP
+    try:
+        ORIGINAL_IP = requests.get(CHECK_URL, timeout=10).json().get('origin', '')
+        log(f"🏠 本地原始 IP: {ORIGINAL_IP}")
+    except Exception as e:
+        log(f"❌ 无法连接测试接口: {e}")
+        return
+
+    # 获取节点
     all_links = []
     for source in NODE_SOURCES:
         try:
-            r = requests.get(source, timeout=15)
-            content = r.text if r.status_code == 200 else ""
+            if source.startswith("http"):
+                r = requests.get(source, timeout=10)
+                content = r.text if r.status_code == 200 else ""
+            elif os.path.exists(source):
+                with open(source, 'r', encoding='utf-8') as f: content = f.read()
+            else: continue
+            
             if "://" not in content[:50] and len(content) > 20: content = safe_base64_decode(content)
             links = [l.strip() for l in content.splitlines() if '://' in l]
             log(f"🌐 源 {source}: 发现 {len(links)} 条链接")
@@ -125,42 +128,35 @@ def run_test():
     proxies, name_to_link, seen = [], {}, set()
     for line in all_links:
         raw_name, config, raw_link = parse_link(line)
-        if not config: continue
-        server_key = f"{config['server']}:{config['port']}"
-        if server_key not in seen:
+        if config and raw_link not in seen:
             u_name = f"N_{len(proxies):04d}"
             config['name'] = u_name
             proxies.append(config)
             name_to_link[u_name] = {"raw_name": raw_name, "link": raw_link}
-            seen.add(server_key)
+            seen.add(raw_link)
 
-    log(f"📊 待测独立服务器总数: {len(proxies)}")
+    log(f"📊 有效节点总数: {len(proxies)}")
     if not proxies: return
 
-    config_dict = {
-        "mixed-port": 7890,
-        "external-controller": "127.0.0.1:9090",
-        "mode": "global",
-        "ipv6": False,
-        "log-level": "silent",
-        "proxies": proxies
-    }
+    # 启动内核
     with open("config.yaml", "w", encoding="utf-8") as f:
-        yaml.dump(config_dict, f)
+        yaml.dump({"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "proxies": proxies}, f)
 
     if os.path.exists(MIHOMO_GZ):
         os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
     
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
-    for _ in range(15):
+    # 验证内核就绪
+    for _ in range(34):
         try:
             requests.get("http://127.0.0.1:9090/version", timeout=1)
-            log("🚀 内核启动成功，执行筛选...")
+            log("🚀 内核已就绪，开始测速...")
             break
         except: time.sleep(1)
     else:
-        log("❌ 内核启动失败"); proc.terminate(); return
+        log("❌ 内核 API 响应超时，请检查端口 9090")
+        proc.terminate(); return
 
     valid_results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -174,11 +170,10 @@ def run_test():
     if valid_results:
         valid_results.sort(key=lambda x: x['ms'])
         with open(OUTPUT_LATEST, 'w', encoding='utf-8') as f:
-            lines = [f"{item['link'].split('#')[0]}#{item['raw_name']}" for item in valid_results]
-            f.write('\n'.join(lines))
-        log(f"✨ 筛选完成！保留了 {len(valid_results)} 个可用节点")
+            f.write('\n'.join([f"{item['link'].split('#')[0]}#{item['raw_name']} ✅ {item['ms']}ms" for item in valid_results]))
+        log(f"✨ 成功！筛选出 {len(valid_results)} 个真实可用节点")
     else:
-        log("⚠️ 依旧没有节点通过测试，请检查源链接或 Actions 网络状况")
+        log("⚠️ 未发现可用节点")
 
 if __name__ == "__main__":
     run_test()
