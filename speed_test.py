@@ -8,12 +8,12 @@ MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 # 聚合多个高频更新的订阅源，提高基数
 NODE_SOURCES = [
     "nodes.txt"
- ]
+]
 OUTPUT_LATEST = "latest_nodes.txt"
 CHECK_URL = "http://httpbin.org/ip"
 LATENCY_URL = "http://cp.cloudflare.com/generate_204"
 
-# 核心参数：Actions 环境下建议不要太激进
+# 核心参数
 TIMEOUT = 7             # 给响应慢但稳定的节点一点机会
 MAX_WORKERS = 20        # 降低并发，确保节点切换指令被 mihomo 准确执行
 MAX_LATENCY = 1500      # 超过 1.5s 的节点本地基本无法使用
@@ -22,6 +22,7 @@ MAX_LATENCY = 1500      # 超过 1.5s 的节点本地基本无法使用
 ORIGINAL_IP = ""
 
 def log(msg):
+    """带时间戳的强制刷新日志"""
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
 
 def safe_base64_decode(s):
@@ -74,11 +75,10 @@ def test_single_node(p, name_to_link):
     try:
         # 1. 切换节点
         requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=3)
-        time.sleep(0.5) # 🟢 关键：强制等待 500ms 让 mihomo 完成 TCP 栈切换
+        time.sleep(0.5) 
         
-        # 2. IP 验证（防止流量透传到 Actions 本地）
+        # 2. IP 验证
         start_t = time.time()
-        # 加随机参数防止 HTTP 缓存
         ip_res = requests.get(f"{CHECK_URL}?cache={idx_name}", proxies=proxies_config, timeout=TIMEOUT)
         current_ip = ip_res.json().get('origin', '')
         
@@ -101,19 +101,22 @@ def run_test():
     global ORIGINAL_IP
     log("🛠️ 环境初始化...")
     
-    # 获取原始 IP
     try:
         ORIGINAL_IP = requests.get(CHECK_URL, timeout=10).json().get('origin', '')
         log(f"🏠 本地原始 IP: {ORIGINAL_IP}")
     except Exception as e:
         log(f"❌ 无法连接测速接口: {e}"); return
 
-    # 聚合节点
     all_links = []
     for source in NODE_SOURCES:
         try:
-            r = requests.get(source, timeout=15)
-            content = r.text if r.status_code == 200 else ""
+            if source.startswith("http"):
+                r = requests.get(source, timeout=15)
+                content = r.text
+            elif os.path.exists(source):
+                with open(source, 'r', encoding='utf-8') as f: content = f.read()
+            else: continue
+
             if "://" not in content[:50] and len(content) > 20: content = safe_base64_decode(content)
             links = [l.strip() for l in content.splitlines() if '://' in l]
             log(f"🌐 源 {source}: 发现 {len(links)} 条")
@@ -124,7 +127,6 @@ def run_test():
     for line in all_links:
         raw_name, config, raw_link = parse_link(line)
         if config:
-            # 去重逻辑：基于 服务器地址+端口，防止同一个出口反复测试
             server_key = f"{config['server']}:{config['port']}"
             if server_key not in seen_servers:
                 u_name = f"N_{len(proxies):04d}"
@@ -136,7 +138,6 @@ def run_test():
     log(f"📊 去重后待测总数: {len(proxies)}")
     if not proxies: return
 
-    # 准备配置
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump({"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "ipv6": False, "proxies": proxies}, f)
 
@@ -148,14 +149,13 @@ def run_test():
     for _ in range(15):
         try:
             requests.get("http://127.0.0.1:9090/version", timeout=1)
-            log("🚀 内核已就绪，开始多源深度测速...")
+            log("🚀 内核已就绪，开始测速...")
             break
         except: time.sleep(1)
     else:
         log("❌ 内核 API 响应超时"); proc.terminate(); return
 
     valid_results = []
-    # 使用较低的线程数，确保 IP 校验的准确性
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = [executor.submit(test_single_node, p, name_to_link) for p in proxies]
         for f in futures:
@@ -164,13 +164,14 @@ def run_test():
 
     proc.terminate()
 
-if valid_results:
+    # 🟢 注意：这部分现在正确地位于 run_test 函数内部
+    if valid_results:
         valid_results.sort(key=lambda x: x['ms'])
         with open(OUTPUT_LATEST, 'w', encoding='utf-8') as f:
             f.write('\n'.join([f"{item['link'].split('#')[0]}#{item['raw_name']}" for item in valid_results]))
         log(f"✨ 成功！筛选出 {len(valid_results)} 个真实可用节点，已保存至 {OUTPUT_LATEST}")
     else:
-        log("⚠️ 多源尝试后仍未发现高质量节点，请检查网络环境或更换源地址")
+        log("⚠️ 未发现高质量节点")
 
 if __name__ == "__main__":
     run_test()
