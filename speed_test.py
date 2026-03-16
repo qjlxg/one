@@ -10,9 +10,9 @@ MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 NODE_SOURCES = [
     #"nodes.txt",
     #"nodes_list.txt",
-    #"https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
+    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt"
    # "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
-   "https://github.com/qjlxg/aggregator/raw/refs/heads/main/data/v2ray.txt"
+ 
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
