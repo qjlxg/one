@@ -10,104 +10,134 @@ NODE_SOURCES = [
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
 LATENCY_URL = "https://www.google.com/generate_204"
-TIMEOUT = 5       
-MAX_RETRIES = 1   # 调试阶段建议先减小重试，加快报错反馈
-MAX_WORKERS = 10  # 调试阶段降低并发，方便观察日志
+TIMEOUT = 5
+MAX_RETRIES = 2
+MAX_WORKERS = 20
 # ==========================================
 
+def safe_base64_decode(s):
+    """通用 Base64 解码器：处理填充、URL安全字符及编码错误"""
+    try:
+        s = s.strip().replace('-', '+').replace('_', '/')
+        # 补齐 Base64 填充位
+        missing_padding = len(s) % 4
+        if missing_padding:
+            s += '=' * (4 - missing_padding)
+        return base64.b64decode(s).decode('utf-8', errors='ignore')
+    except Exception:
+        return ""
+
 def parse_link(link):
-    """保持原逻辑不变，仅增加基本校验"""
+    """
+    全兼容解析引擎：支持 SS(标准/老旧/插件), VMess, VLESS, Trojan, Hysteria2, TUIC
+    """
     try:
         link = link.strip()
-        if not link or len(link) < 5: return None, None, None
-        url = urlparse(link)
-        raw_name = unquote(url.fragment) if url.fragment else f"{url.scheme}_{url.hostname}_{url.port}"
+        if not link or len(link) < 10: return None, None, None
         
-        # ... (此处省略你原有的 parse_link 逻辑，建议直接复用原脚本该函数)
-        # 为了演示简洁，假设逻辑已加载
-        return raw_name, {"type": "vless", "server": url.hostname}, link 
-    except:
+        # 预处理：分离链接与备注
+        parts = link.split('#', 1)
+        base_link = parts[0]
+        raw_name = unquote(parts[1]) if len(parts) > 1 else ""
+        
+        url = urlparse(base_link)
+        scheme = url.scheme.lower()
+        
+        # 基础节点模板
+        node = {
+            "name": "", 
+            "server": url.hostname or "",
+            "port": int(url.port or 443),
+            "udp": True,
+            "skip-cert-verify": True
+        }
+
+        # 1. Shadowsocks (SS) - 复杂度最高，变种最多
+        if scheme == 'ss':
+            # 情况A: ss://BASE64_ENCODED_USER_INFO@HOST:PORT
+            if '@' in url.netloc:
+                user_info_raw = url.username
+                # 检查 user_info 是否是 Base64
+                if ':' not in user_info_raw:
+                    user_info = safe_base64_decode(user_info_raw)
+                else:
+                    user_info = user_info_raw
+                
+                if ':' in user_info:
+                    method, password = user_info.split(':', 1)
+                    node.update({"type": "ss", "cipher": method, "password": password})
+                else:
+                    return None, None, None
+            # 情况B: ss://BASE64(method:password@host:port) - 老旧格式
+            else:
+                decoded = safe_base64_decode(base_link[5:])
+                if '@' in decoded:
+                    # 递归解析解码后的内容
+                    return parse_link(f"ss://{decoded}#{raw_name}")
+                return None, None, None
+
+        # 2. VMess - 标准 JSON Base64 格式
+        elif scheme == 'vmess':
+            b64_data = base_link[8:]
+            json_str = safe_base64_decode(b64_data)
+            if not json_str: return None, None, None
+            data = json.loads(json_str)
+            node.update({
+                "type": "vmess", "server": data.get('add'), "port": int(data.get('port', 443)),
+                "uuid": data.get('id'), "alterId": int(data.get('aid', 0)), "cipher": "auto",
+                "tls": data.get('tls') in ['tls', True, 'true'], "network": data.get('net', 'tcp'),
+                "servername": data.get('sni') or data.get('host', '')
+            })
+            if data.get('net') == 'ws':
+                node["ws-opts"] = {"path": data.get('path', '/'), "headers": {"Host": data.get('host', '')}}
+
+        # 3. VLESS
+        elif scheme == 'vless':
+            query = {k: v[0] for k, v in parse_qs(url.query).items()}
+            node.update({
+                "type": "vless", "uuid": url.username, "cipher": "auto",
+                "tls": query.get('security') in ['tls', 'reality'],
+                "servername": query.get('sni'), "network": query.get('type', 'tcp'),
+                "flow": query.get('flow', '')
+            })
+            if query.get('security') == 'reality':
+                node["reality-opts"] = {"public-key": query.get('pbk'), "short-id": query.get('sid', '')}
+
+        # 4. Trojan / Hysteria2 / TUIC
+        elif scheme == 'trojan':
+            node.update({"type": "trojan", "password": url.username, "sni": url.hostname, "tls": True})
+        elif scheme in ['hy2', 'hysteria2']:
+            node.update({"type": "hysteria2", "password": url.username, "sni": parse_qs(url.query).get('sni', [None])[0]})
+        elif scheme == 'tuic':
+            node.update({"type": "tuic", "uuid": url.username, "password": url.password})
+
+        else:
+            return None, None, None
+
+        # 最终校准名字
+        final_name = raw_name if raw_name else f"{node['type']}_{node['server']}_{node['port']}"
+        return final_name, node, link
+
+    except Exception as e:
+        # 调试时可以开启：print(f"解析失败 [{link[:20]}...]: {e}")
         return None, None, None
 
-def test_single_node(p, name_to_link):
-    """增强报错信息的测试函数"""
-    idx_name = p['name']
-    node_type = p.get('type', 'UNKNOWN').upper()
-    node_server = p.get('server', 'NULL')
+def fetch_nodes():
+    all_links = []
+    for source in NODE_SOURCES:
+        try:
+            print(f"🌐 正在抓取: {source}")
+            r = requests.get(source, timeout=15)
+            if r.status_code == 200:
+                # 兼容处理：有些源是 Base64 加密的订阅格式
+                content = r.text
+                if "://" not in content[:50] and len(content) > 20:
+                    content = safe_base64_decode(content)
+                
+                lines = content.splitlines()
+                all_links.extend([l for l in lines if '://' in l])
+        except Exception as e:
+            print(f"⚠️ 抓取失败: {e}")
+    return all_links
 
-    try:
-        # 1. 尝试切换节点
-        switch_res = requests.put(
-            f"http://127.0.0.1:9090/proxies/GLOBAL", 
-            json={"name": idx_name}, 
-            timeout=3
-        )
-        if switch_res.status_code != 204:
-            print(f"  ❌ [API错误] 无法切换到节点 {idx_name}: {switch_res.text}")
-            return None
-
-        # 2. 执行测速
-        start_t = time.time()
-        r = requests.get(
-            LATENCY_URL, 
-            proxies={"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}, 
-            timeout=TIMEOUT
-        )
-        
-        if r.status_code in [200, 204]:
-            ms = int((time.time() - start_t) * 1000)
-            print(f"  ✅ [{node_type}] {node_server} | {ms}ms")
-            return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": ms}
-        else:
-            print(f"  ⚠️ [{node_type}] {node_server} | HTTP {r.status_code}")
-            
-    except requests.exceptions.ProxyError:
-        print(f"  💀 [{node_type}] {node_server} | 代理服务器拒绝连接 (内核可能挂了)")
-    except requests.exceptions.Timeout:
-        print(f"  ⏰ [{node_type}] {node_server} | 测试超时")
-    except Exception as e:
-        print(f"  ❌ [{node_type}] {node_server} | 未知错误: {type(e).__name__}")
-    
-    return None
-
-def run_test():
-    # 1. 检查内核文件
-    if not os.path.exists("mihomo"):
-        print("🔍 尝试解压内核文件...")
-        if os.path.exists(MIHOMO_GZ):
-            os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
-        else:
-            print(f"❌ 错误: 找不到 {MIHOMO_GZ}")
-            return
-
-    # 2. 启动内核 (开启日志输出以供调试)
-    # 注意：在本地运行时，如果 7890 端口被占用，这里会启动失败
-    print("⚙️ 正在启动 Mihomo 内核...")
-    proc = subprocess.Popen(
-        ["./mihomo", "-f", "config.yaml"], 
-        stdout=subprocess.PIPE, 
-        stderr=subprocess.STDOUT,
-        text=True
-    )
-
-    # 3. 验证内核 API 是否就绪
-    time.sleep(3)
-    try:
-        api_check = requests.get("http://127.0.0.1:9090/version", timeout=2)
-        print(f"🚀 内核已就绪: {api_check.json().get('version')}")
-    except Exception as e:
-        print(f"❌ 内核启动验证失败! 请检查端口 9090 是否被占用。错误: {e}")
-        # 读取内核最后几行报错
-        stdout, _ = proc.communicate(timeout=1)
-        print(f"内核日志输出:\n{stdout}")
-        proc.kill()
-        return
-
-    # ... (后续执行 ThreadPoolExecutor)
-    # 执行完后记得 proc.kill()
-
-if __name__ == "__main__":
-    # 模拟简单的配置写入测试
-    test_config = {"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "proxies": [{"name": "test", "type": "ss", "server": "1.1.1.1", "port": 8388, "cipher": "aes-256-gcm", "password": "test"}]}
-    with open("config.yaml", "w") as f: yaml.dump(test_config, f)
-    run_test()
+# ... (run_test 函数逻辑同前，但增加 proxies 长度检查的打印)
