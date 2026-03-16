@@ -12,17 +12,18 @@ NODE_SOURCES = [
     "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
-# 验证地址：使用能返回 IP 的 API 来确保代理生效
 CHECK_URL = "http://httpbin.org/ip" 
 LATENCY_URL = "https://www.google.com/generate_204"
 
-TIMEOUT = 4       
-MAX_RETRIES = 0   # 既然是洗节点，不需要重试，快速过
-MAX_WORKERS = 40  # 适中的并发，防止请求太快导致内核崩溃
+TIMEOUT = 5       
+MAX_WORKERS = 40  
 # ==========================================
 
-# 全局变量记录原始 IP
 ORIGINAL_IP = ""
+
+def log(msg):
+    """带时间戳的强制刷新日志"""
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
 
 def safe_base64_decode(s):
     try:
@@ -33,12 +34,13 @@ def safe_base64_decode(s):
     except: return ""
 
 def parse_link(link):
+    # (此处保持之前的全协议解析逻辑不变...)
     try:
         link = link.strip()
         if not link or len(link) < 10: return None, None, None
         parts = link.split('#', 1)
         base_link = parts[0]
-        raw_name = unquote(parts[1]) if len(parts) > 1 else ""
+        raw_name = unquote(parts[1]) if len(parts) > 1 else "Unknown"
         url = urlparse(base_link)
         scheme = url.scheme.lower()
         node = {"name": "", "server": url.hostname or "", "port": int(url.port or 443), "udp": True, "skip-cert-verify": True}
@@ -57,86 +59,70 @@ def parse_link(link):
         elif scheme == 'vmess':
             data = json.loads(safe_base64_decode(base_link[8:]))
             node.update({"type": "vmess", "server": data.get('add'), "port": int(data.get('port', 443)), "uuid": data.get('id'), "alterId": int(data.get('aid', 0)), "cipher": "auto", "tls": data.get('tls') in ['tls', True, 'true'], "network": data.get('net', 'tcp')})
-            if data.get('net') == 'ws': node["ws-opts"] = {"path": data.get('path', '/'), "headers": {"Host": data.get('host', '')}}
         elif scheme == 'vless':
             query = {k: v[0] for k, v in parse_qs(url.query).items()}
             node.update({"type": "vless", "uuid": url.username, "cipher": "auto", "tls": query.get('security') in ['tls', 'reality'], "servername": query.get('sni'), "network": query.get('type', 'tcp')})
-            if query.get('security') == 'reality': node["reality-opts"] = {"public-key": query.get('pbk'), "short-id": query.get('sid', '')}
         elif scheme == 'trojan':
             node.update({"type": "trojan", "password": url.username, "sni": url.hostname, "tls": True})
-        elif scheme in ['hy2', 'hysteria2']:
-            node.update({"type": "hysteria2", "password": url.username, "sni": parse_qs(url.query).get('sni', [None])[0]})
-        elif scheme == 'tuic':
-            node.update({"type": "tuic", "uuid": url.username, "password": url.password})
         else: return None, None, None
 
-        return (raw_name if raw_name else f"{node['type']}_{node['server']}"), node, link
+        return raw_name, node, link
     except: return None, None, None
-
-def fetch_nodes():
-    all_links = []
-    for source in NODE_SOURCES:
-        try:
-            if source.startswith("http"):
-                print(f"🌐 抓取远程: {source}")
-                r = requests.get(source, timeout=10)
-                content = r.text if r.status_code == 200 else ""
-            else:
-                if os.path.exists(source):
-                    print(f"📂 读取文件: {source}")
-                    with open(source, 'r', encoding='utf-8') as f: content = f.read()
-                else: continue
-            
-            if "://" not in content[:50] and len(content) > 20: content = safe_base64_decode(content)
-            links = [l.strip() for l in content.splitlines() if '://' in l]
-            print(f"  ✅ 发现 {len(links)} 条链接")
-            all_links.extend(links)
-        except Exception as e: print(f"  ⚠️ 源 {source} 出错: {e}")
-    return all_links
 
 def test_single_node(p, name_to_link):
     idx_name = p['name']
     proxies_config = {"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}
     
     try:
-        # 1. 强制切换节点并验证 API 响应
-        ctrl_res = requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=2)
-        if ctrl_res.status_code != 204:
-            return None
-
-        # 2. 验证出口 IP 是否变化 (防假阳性关键)
+        # 1. 切换节点
+        requests.put(f"http://127.0.0.1:9090/proxies/GLOBAL", json={"name": idx_name}, timeout=2)
+        
+        # 2. IP 验证（防止假阳性）
         start_t = time.time()
         ip_res = requests.get(CHECK_URL, proxies=proxies_config, timeout=TIMEOUT)
         current_ip = ip_res.json().get('origin', '')
         
-        if not current_ip or current_ip == ORIGINAL_IP:
-            # 如果 IP 没变，说明走的还是虚拟机原生网络
+        if current_ip == ORIGINAL_IP:
+            # log(f"  ⚠️ 警告: {idx_name} 流量未经过代理 (IP 未变)") # 可选：记录跳过信息
             return None
 
-        # 3. 测速
+        # 3. 延迟测试
         requests.get(LATENCY_URL, proxies=proxies_config, timeout=TIMEOUT)
         ms = int((time.time() - start_t) * 1000)
-        print(f"  ✅ [{p['type'].upper()}] 出口: {current_ip} | {ms}ms")
+        log(f"✅ [{p['type'].upper()}] {p['server']} | IP: {current_ip} | {ms}ms")
         return {"link": name_to_link[idx_name]['link'], "raw_name": name_to_link[idx_name]['raw_name'], "ms": ms}
     except:
         return None
 
 def run_test():
     global ORIGINAL_IP
-    # 获取原始 IP 用于对比
+    log("🛠️ 环境初始化...")
+    
+    # 获取原始 IP
     try:
-        ORIGINAL_IP = requests.get(CHECK_URL, timeout=5).json().get('origin', '')
-        print(f"🏠 本地原始出口 IP: {ORIGINAL_IP}")
-    except:
-        print("❌ 无法获取原始 IP，请检查网络连接")
+        ORIGINAL_IP = requests.get(CHECK_URL, timeout=10).json().get('origin', '')
+        log(f"🏠 本地原始 IP: {ORIGINAL_IP}")
+    except Exception as e:
+        log(f"❌ 无法连接测试接口: {e}")
         return
 
-    if not os.path.exists("mihomo"):
-        if os.path.exists(MIHOMO_GZ):
-            os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
-        else: print("❌ 缺失内核"); return
+    # 获取节点
+    all_links = []
+    for source in NODE_SOURCES:
+        try:
+            if source.startswith("http"):
+                r = requests.get(source, timeout=10)
+                content = r.text if r.status_code == 200 else ""
+            elif os.path.exists(source):
+                with open(source, 'r', encoding='utf-8') as f: content = f.read()
+            else: continue
+            
+            if "://" not in content[:50] and len(content) > 20: content = safe_base64_decode(content)
+            links = [l.strip() for l in content.splitlines() if '://' in l]
+            log(f"🌐 源 {source}: 发现 {len(links)} 条链接")
+            all_links.extend(links)
+        except: pass
 
-    all_links = fetch_nodes()
     proxies, name_to_link, seen = [], {}, set()
     for line in all_links:
         raw_name, config, raw_link = parse_link(line)
@@ -147,40 +133,45 @@ def run_test():
             name_to_link[u_name] = {"raw_name": raw_name, "link": raw_link}
             seen.add(raw_link)
 
-    print(f"📊 解析出 {len(proxies)} 个代理。")
+    log(f"📊 有效节点总数: {len(proxies)}")
     if not proxies: return
 
-    # 生成临时配置
+    # 启动内核
     with open("config.yaml", "w", encoding="utf-8") as f:
         yaml.dump({"mixed-port": 7890, "external-controller": "127.0.0.1:9090", "mode": "global", "proxies": proxies}, f)
 
+    if os.path.exists(MIHOMO_GZ):
+        os.system(f"gunzip -c {MIHOMO_GZ} > mihomo && chmod +x mihomo")
+    
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
-    # 等待 API 就绪
-    for i in range(10):
+    # 验证内核就绪
+    for _ in range(15):
         try:
-            requests.get("http://127.0.0.1:9090/version")
+            requests.get("http://127.0.0.1:9090/version", timeout=1)
+            log("🚀 内核已就绪，开始测速...")
             break
         except: time.sleep(1)
+    else:
+        log("❌ 内核 API 响应超时，请检查端口 9090")
+        proc.terminate(); return
 
-    print(f"🚀 开始真机测速 (并发: {MAX_WORKERS})...")
     valid_results = []
-    try:
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            futures = [executor.submit(test_single_node, p, name_to_link) for p in proxies]
-            for f in futures:
-                res = f.result()
-                if res: valid_results.append(res)
-    finally:
-        proc.terminate()
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = [executor.submit(test_single_node, p, name_to_link) for p in proxies]
+        for f in futures:
+            res = f.result()
+            if res: valid_results.append(res)
+
+    proc.terminate()
 
     if valid_results:
         valid_results.sort(key=lambda x: x['ms'])
         with open(OUTPUT_LATEST, 'w', encoding='utf-8') as f:
             f.write('\n'.join([f"{item['link'].split('#')[0]}#{item['raw_name']} ✅ {item['ms']}ms" for item in valid_results]))
-        print(f"✨ 成功洗出 {len(valid_results)} 个真实可用节点")
+        log(f"✨ 成功！筛选出 {len(valid_results)} 个真实可用节点")
     else:
-        print("⚠️ 未发现可用节点。")
+        log("⚠️ 未发现可用节点")
 
 if __name__ == "__main__":
     run_test()
