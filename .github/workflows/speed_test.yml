@@ -29,7 +29,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pyyaml requests pytz geoip2
+          pip install pyyaml requests pytz geoip2 httpx
 
       - name: Download GeoIP Database
         run: |
