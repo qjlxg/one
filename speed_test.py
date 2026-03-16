@@ -17,7 +17,7 @@ NODE_SOURCES = [
 OUTPUT_LATEST = "latest_nodes.txt"
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 
-LATENCY_URL = "https://www.google.com/generate_204"
+LATENCY_URL = "http://cp.cloudflare.com/"
 TIMEOUT = 5       # 单次连接超时
 MAX_RETRIES = 2   
 MAX_WORKERS = 20  # 提高并发到 20，加速处理大量节点
