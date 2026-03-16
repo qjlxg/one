@@ -148,7 +148,7 @@ def run_test():
     proc = subprocess.Popen(["./mihomo", "-f", "config.yaml"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     # 验证内核就绪
-    for _ in range(15):
+    for _ in range(358):
         try:
             requests.get("http://127.0.0.1:9090/version", timeout=1)
             log("🚀 内核已就绪，开始测速...")
