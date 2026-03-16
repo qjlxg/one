@@ -6,13 +6,16 @@ from concurrent.futures import ThreadPoolExecutor
 # ================= 配置区 =================
 MIHOMO_GZ = "mihomo-linux-amd64-compatible-v1.19.19.gz"
 NODE_SOURCES = [
+    "nodes.txt",
+    "nodes_list.txt",
+    "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/tg_collector.txt",
     "https://raw.githubusercontent.com/qjlxg/x.sub/refs/heads/main/leaked_nodes.txt"
 ]
 OUTPUT_LATEST = "latest_nodes.txt"
 LATENCY_URL = "https://www.google.com/generate_204"
-TIMEOUT = 5       
-MAX_RETRIES = 2   
-MAX_WORKERS = 20  
+TIMEOUT = 3       # 3秒不通直接放弃，不需要太慢的
+MAX_RETRIES = 0   # 不重试，死就死了，下一个更好
+MAX_WORKERS = 80  # 提高并发，全速推进
 # ==========================================
 
 def safe_base64_decode(s):
