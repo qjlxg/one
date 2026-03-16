@@ -23,7 +23,7 @@ MAX_WORKERS = 20  # 提高并发到 20，加速处理大量节点
 # ==========================================
 
 def parse_link(link):
-   
+    """全协议深度解析引擎 (保持原逻辑不变)"""
     try:
         link = link.strip()
         if not link or len(link) < 5: return None, None, None
