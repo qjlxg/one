@@ -8,15 +8,6 @@ proxies:
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
   udp: true
-- name: '[VLESS] usadt01.jumperservice.com:19001'
-  type: vless
-  server: usadt01.jumperservice.com
-  port: 19001
-  uuid: 719b17cb-004b-4029-b3fb-e98fafdb0271
-  udp: true
-  tls: true
-  servername: usadt01.jumperservice.com
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2514,5 +2505,5 @@ proxies:
   tls: true
   servername: u710948u1d55s473.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-17 16:06:38 UTC
+update_time: 2026-03-17 19:03:26 UTC
 source: auto-fetched
