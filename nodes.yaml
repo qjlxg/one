@@ -1,4 +1,12 @@
 proxies:
+- name: '[HYSTERIA2] 206.71.158.41:35000'
+  type: hysteria2
+  server: 206.71.158.41
+  port: 35000
+  password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
+  tls: true
+  skip-cert-verify: false
+  udp: true
 - name: '[TROJAN] 104.21.30.167:443'
   type: trojan
   server: 104.21.30.167
@@ -2286,5 +2294,5 @@ proxies:
   tls: true
   servername: u710948u50a8s502.okgg.top
   skip-cert-verify: false
-update_time: 2026-03-18 16:08:17 UTC
+update_time: 2026-03-18 19:00:20 UTC
 source: auto-fetched
