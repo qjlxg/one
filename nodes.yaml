@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[HYSTERIA2] 206.71.158.41:35000'
   type: hysteria2
   server: 206.71.158.41
@@ -2053,5 +2062,5 @@ proxies:
   tls: true
   servername: yandex.ru
   skip-cert-verify: false
-update_time: 2026-03-19 02:21:50 UTC
+update_time: 2026-03-19 04:55:09 UTC
 source: auto-fetched
