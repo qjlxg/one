@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.30.167:443'
+  type: trojan
+  server: 104.21.30.167
+  port: 443
+  password: 2fec7227-9abe-46f2-af18-78302b836c45
+  tls: true
+  skip-cert-verify: false
+  sni: 3y.2032.pp.ua
+  udp: true
 - name: '[HYSTERIA2] 206.71.158.41:35000'
   type: hysteria2
   server: 206.71.158.41
@@ -15,15 +24,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
-  udp: true
-- name: '[TROJAN] 104.21.30.167:443'
-  type: trojan
-  server: 104.21.30.167
-  port: 443
-  password: 2fec7227-9abe-46f2-af18-78302b836c45
-  tls: true
-  skip-cert-verify: false
-  sni: 3y.2032.pp.ua
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2062,5 +2062,5 @@ proxies:
   tls: true
   servername: yandex.ru
   skip-cert-verify: false
-update_time: 2026-03-19 18:59:39 UTC
+update_time: 2026-03-19 21:35:52 UTC
 source: auto-fetched
