@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 80.173.230.196:26279'
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  tls: true
+  skip-cert-verify: false
+  sni: 80.173.230.196
+  udp: true
 - name: '[HYSTERIA2] 206.71.158.41:35000'
   type: hysteria2
   server: 206.71.158.41
@@ -2166,5 +2175,5 @@ proxies:
   tls: true
   servername: nl1.cyphervpn.pro
   skip-cert-verify: false
-update_time: 2026-03-22 15:27:27 UTC
+update_time: 2026-03-22 18:38:33 UTC
 source: auto-fetched
