@@ -2175,5 +2175,5 @@ proxies:
   tls: true
   servername: nl1.cyphervpn.pro
   skip-cert-verify: false
-update_time: 2026-03-22 18:38:33 UTC
+update_time: 2026-03-22 21:27:38 UTC
 source: auto-fetched
