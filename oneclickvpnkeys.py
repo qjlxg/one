@@ -18,7 +18,7 @@ CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf"]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'  
 TIMEOUT = 3      # 端口检测超时时间
-MAX_PAGES = 8    # 每个频道回溯抓取的页数
+MAX_PAGES = 80000    # 每个频道回溯抓取的页数
 
 # 协议验证参数
 REQUIRED_PARAMS = {
