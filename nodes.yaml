@@ -1,4 +1,22 @@
 proxies:
+- name: '[VLESS] usadt01.jumperservice.com:19001'
+  type: vless
+  server: usadt01.jumperservice.com
+  port: 19001
+  uuid: b5be8e3f-a17d-479c-ebdb-9c3265c2cab7
+  udp: true
+  tls: true
+  servername: usadt01.jumperservice.com
+  skip-cert-verify: false
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[VLESS] 152.67.158.177:2443'
   type: vless
   server: 152.67.158.177
@@ -33,15 +51,6 @@ proxies:
   password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
   tls: true
   skip-cert-verify: false
-  udp: true
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1041,15 +1050,6 @@ proxies:
   udp: true
   tls: true
   servername: pl.sky-vault.top
-  skip-cert-verify: false
-- name: '[VLESS] usadt01.jumperservice.com:19001'
-  type: vless
-  server: usadt01.jumperservice.com
-  port: 19001
-  uuid: b5be8e3f-a17d-479c-ebdb-9c3265c2cab7
-  udp: true
-  tls: true
-  servername: www.speedtest.org
   skip-cert-verify: false
 - name: '[VLESS] 82.38.63.178:443'
   type: vless
@@ -2209,5 +2209,5 @@ proxies:
   tls: true
   servername: pqh42v8.carwashipdir.shop
   skip-cert-verify: true
-update_time: 2026-03-23 13:09:10 UTC
+update_time: 2026-03-23 16:00:48 UTC
 source: auto-fetched
