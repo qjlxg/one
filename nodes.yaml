@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 152.67.158.177:2443'
+  type: vless
+  server: 152.67.158.177
+  port: 2443
+  uuid: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
+  udp: true
+  tls: true
+  servername: 152.67.158.177
+  skip-cert-verify: false
 - name: '[TROJAN] 212.193.18.144:36158'
   type: trojan
   server: 212.193.18.144
@@ -26,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
   udp: true
-- name: '[VLESS] 152.67.158.177:2443'
-  type: vless
-  server: 152.67.158.177
-  port: 2443
-  uuid: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
-  udp: true
-  tls: true
-  servername: 152.67.158.177
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2189,5 +2189,5 @@ proxies:
   tls: true
   servername: fin2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-24 16:07:16 UTC
+update_time: 2026-03-24 19:03:58 UTC
 source: auto-fetched
