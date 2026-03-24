@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
-  udp: true
 - name: '[VLESS] usadt01.jumperservice.com:19001'
   type: vless
   server: usadt01.jumperservice.com
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: usadt01.jumperservice.com
   skip-cert-verify: false
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[VLESS] 152.67.158.177:2443'
   type: vless
   server: 152.67.158.177
@@ -26,15 +26,6 @@ proxies:
   tls: true
   servername: 152.67.158.177
   skip-cert-verify: false
-- name: '[TROJAN] 104.21.30.167:443'
-  type: trojan
-  server: 104.21.30.167
-  port: 443
-  password: 2fec7227-9abe-46f2-af18-78302b836c45
-  tls: true
-  skip-cert-verify: false
-  sni: 3y.2032.pp.ua
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2189,5 +2180,5 @@ proxies:
   tls: true
   servername: fin2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-24 07:05:05 UTC
+update_time: 2026-03-24 09:56:38 UTC
 source: auto-fetched
