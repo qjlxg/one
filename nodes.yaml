@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] usadt01.jumperservice.com:19001'
-  type: vless
-  server: usadt01.jumperservice.com
-  port: 19001
-  uuid: b5be8e3f-a17d-479c-ebdb-9c3265c2cab7
-  udp: true
-  tls: true
-  servername: usadt01.jumperservice.com
-  skip-cert-verify: false
 - name: '[TROJAN] 104.21.112.1:443'
   type: trojan
   server: 104.21.112.1
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
   udp: true
+- name: '[VLESS] usadt01.jumperservice.com:19001'
+  type: vless
+  server: usadt01.jumperservice.com
+  port: 19001
+  uuid: b5be8e3f-a17d-479c-ebdb-9c3265c2cab7
+  udp: true
+  tls: true
+  servername: usadt01.jumperservice.com
+  skip-cert-verify: false
 - name: '[VLESS] 152.67.158.177:2443'
   type: vless
   server: 152.67.158.177
@@ -2189,5 +2189,5 @@ proxies:
   tls: true
   servername: fin2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-24 04:53:42 UTC
+update_time: 2026-03-24 07:05:05 UTC
 source: auto-fetched
