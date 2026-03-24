@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 212.193.18.144:36158'
+  type: trojan
+  server: 212.193.18.144
+  port: 36158
+  password: ZblhWr0mqMakCPg.N
+  tls: true
+  skip-cert-verify: false
+  sni: 212.193.18.144
+  udp: true
 - name: '[VLESS] usadt01.jumperservice.com:19001'
   type: vless
   server: usadt01.jumperservice.com
@@ -2180,5 +2189,5 @@ proxies:
   tls: true
   servername: fin2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-24 09:56:38 UTC
+update_time: 2026-03-24 13:13:21 UTC
 source: auto-fetched
