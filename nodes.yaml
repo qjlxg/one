@@ -35,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: 3y.2032.pp.ua
   udp: true
-- name: '[TROJAN] 80.173.230.196:26279'
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  tls: true
-  skip-cert-verify: false
-  sni: 80.173.230.196
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2198,5 +2189,5 @@ proxies:
   tls: true
   servername: fin2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-24 02:07:37 UTC
+update_time: 2026-03-24 04:53:42 UTC
 source: auto-fetched
