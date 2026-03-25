@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[VLESS] 152.67.158.177:2443'
   type: vless
   server: 152.67.158.177
@@ -2043,5 +2052,5 @@ proxies:
   tls: true
   servername: yandex.ru
   skip-cert-verify: false
-update_time: 2026-03-25 13:12:00 UTC
+update_time: 2026-03-25 16:10:38 UTC
 source: auto-fetched
