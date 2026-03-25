@@ -2043,5 +2043,5 @@ proxies:
   tls: true
   servername: yandex.ru
   skip-cert-verify: false
-update_time: 2026-03-25 07:03:12 UTC
+update_time: 2026-03-25 09:54:24 UTC
 source: auto-fetched
