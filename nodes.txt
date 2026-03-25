@@ -1,24 +1,10 @@
-# Updated at 2026-03-25 18:56:24 UTC
+# Updated at 2026-03-25 21:40:03 UTC
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 vless://48b36b6a-eaa6-4843-9231-0bb8b38b5da5@152.67.158.177:2443?security=tls&sni=152.67.158.177#%5BVLESS%5D%20152.67.158.177%3A2443
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
 trojan://ZblhWr0mqMakCPg.N@212.193.18.144:36158?sni=212.193.18.144#%5BTROJAN%5D%20212.193.18.144%3A36158
-vless://b5be8e3f-a17d-479c-ebdb-9c3265c2cab7@usadt01.jumperservice.com:19001?security=tls&sni=usadt01.jumperservice.com#%5BVLESS%5D%20usadt01.jumperservice.com%3A19001
-trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@63.180.254.10:443#[SS] 63.180.254.10:443
 vmess://eyJ2IjogIjIiLCAicHMiOiAiW1ZNRVNTXSB2MTAuaGRhY2QuY29tOjMwODA3IiwgImFkZCI6ICJ2MTAuaGRhY2QuY29tIiwgInBvcnQiOiAiMzA4MDciLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgImFpZCI6IDIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIifQ==
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@3.112.44.25:921?sni=www.nintendogames.net#%5BTROJAN%5D%203.112.44.25%3A921
-trojan://BxceQaOe@54.199.36.40:6313?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2054.199.36.40%3A6313
-trojan://BxceQaOe@54.178.248.68:6313?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2054.178.248.68%3A6313
-trojan://BxceQaOe@13.192.234.119:32536?sni=t.me%252Fripaojiedian#%5BTROJAN%5D%2013.192.234.119%3A32536
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@13.231.152.178:2001?sni=www.nintendogames.net#%5BTROJAN%5D%2013.231.152.178%3A2001
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@160.16.124.17:34818?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.124.17%3A34818
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@54.199.36.40:1524?sni=www.nintendogames.net#%5BTROJAN%5D%2054.199.36.40%3A1524
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@160.16.124.17:1524?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.124.17%3A1524
-trojan://BxceQaOe@13.192.204.27:29666?sni=t.me%252Fripaojiedian#%5BTROJAN%5D%2013.192.204.27%3A29666
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@54.199.36.40:4019?sni=www.nintendogames.net#%5BTROJAN%5D%2054.199.36.40%3A4019
-trojan://6d29eb2f74293cb01a19b32cf08ad2e9@13.231.152.178:4019?sni=www.nintendogames.net#%5BTROJAN%5D%2013.231.152.178%3A4019
-trojan://BxceQaOe@13.192.204.27:23255?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2013.192.204.27%3A23255
 trojan://86e150eb21c6faee48e81d496d7f61c2@13.231.54.52:6196?sni=www.nintendogames.net#%5BTROJAN%5D%2013.231.54.52%3A6196
 trojan://BxceQaOe@18.162.133.44:51885?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2018.162.133.44%3A51885
 trojan://BxceQaOe@43.199.248.9:5823?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2043.199.248.9%3A5823
@@ -31,6 +17,8 @@ trojan://BxceQaOe@95.40.26.104:25343?sni=t.me%252Fripaojiedian#%5BTROJAN%5D%2095
 trojan://86e150eb21c6faee48e81d496d7f61c2@13.192.234.119:4920?sni=www.nintendogames.net#%5BTROJAN%5D%2013.192.234.119%3A4920
 trojan://86e150eb21c6faee48e81d496d7f61c2@13.115.190.132:4019?sni=www.nintendogames.net#%5BTROJAN%5D%2013.115.190.132%3A4019
 trojan://BxceQaOe@18.167.47.162:37223?sni=t.me%2Fripaojiedian#%5BTROJAN%5D%2018.167.47.162%3A37223
+trojan://6d29eb2f74293cb01a19b32cf08ad2e9@160.16.124.17:1524?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.124.17%3A1524
+trojan://6d29eb2f74293cb01a19b32cf08ad2e9@160.16.124.17:34818?sni=www.nintendogames.net#%5BTROJAN%5D%20160.16.124.17%3A34818
 trojan://BxceQaOe@58.152.25.253:443?sni=t.me/ripaojiedian#%5BTROJAN%5D%2058.152.25.253%3A443
 trojan://IL37892054@caring-ghoul.rooster465.autos:443?sni=caring-ghoul.rooster465.autos#%5BTROJAN%5D%20caring-ghoul.rooster465.autos%3A443
 trojan://IL37892054@enhanced-crayfish.rooster465.autos:443?sni=enhanced-crayfish.rooster465.autos#%5BTROJAN%5D%20enhanced-crayfish.rooster465.autos%3A443
@@ -99,6 +87,7 @@ vless://a487adab-0644-4f80-9643-d3036b9f17c6@144.31.221.174:8083?security=tls&sn
 vless://a487adab-0644-4f80-9643-d3036b9f17c6@169.40.3.171:465?security=tls&sni=download.docker.com#%5BVLESS%5D%20169.40.3.171%3A465
 vless://a8da758c-510d-4827-83cf-2f2b51c49c5b@download.lastilhame.monster:443?security=tls&sni=download.lastilhame.monster#%5BVLESS%5D%20download.lastilhame.monster%3A443
 vless://ab1ddafb-9514-40ab-9e4b-a3878f70931d@144.31.1.59:443?security=tls&sni=pl.sky-vault.top#%5BVLESS%5D%20144.31.1.59%3A443
+vless://b5be8e3f-a17d-479c-ebdb-9c3265c2cab7@usadt01.jumperservice.com:19001?security=tls&sni=www.speedtest.org#%5BVLESS%5D%20usadt01.jumperservice.com%3A19001
 vless://b9e5c4b7-1e9b-4ca5-82dc-43f3a440484c@45.15.125.8:8443?security=tls&sni=max.ru#%5BVLESS%5D%2045.15.125.8%3A8443
 vless://c35050ce-01ab-45a9-91b8-54cec637d0a8@elliot.ns.cloudflare.com:443?security=tls&sni=octopusss5.info&allowInsecure=1&type=ws&path=/udfyfws&host=octopusss5.info#%5BVLESS%5D%20elliot.ns.cloudflare.com%3A443
 vless://ca73d911-29f4-42d8-ada5-81dee679e96a@vps.zakir.web.id:80?security=tls&sni=vps.zakir.web.id&type=ws&path=vless&host=vps.zakir.web.id#%5BVLESS%5D%20vps.zakir.web.id%3A80
