@@ -1,4 +1,5 @@
-# Updated at 2026-03-26 02:26:37 UTC
+# Updated at 2026-03-26 05:06:39 UTC
+trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 vless://48b36b6a-eaa6-4843-9231-0bb8b38b5da5@152.67.158.177:2443?security=tls&sni=152.67.158.177#%5BVLESS%5D%20152.67.158.177%3A2443
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
