@@ -1959,5 +1959,5 @@ proxies:
   tls: true
   servername: pol2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-26 10:01:41 UTC
+update_time: 2026-03-26 13:17:12 UTC
 source: auto-fetched
