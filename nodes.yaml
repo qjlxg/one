@@ -1,4 +1,21 @@
 proxies:
+- name: '[HYSTERIA2] 181.214.99.162:35000'
+  type: hysteria2
+  server: 181.214.99.162
+  port: 35000
+  password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[TROJAN] top-goshawk.rooster465.autos:443'
   type: trojan
   server: top-goshawk.rooster465.autos
@@ -17,24 +34,6 @@ proxies:
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
   udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
-  udp: true
-- name: '[VLESS] 152.67.158.177:2443'
-  type: vless
-  server: 152.67.158.177
-  port: 2443
-  uuid: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
-  udp: true
-  tls: true
-  servername: 152.67.158.177
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1959,5 +1958,5 @@ proxies:
   tls: true
   servername: pol2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-26 19:06:50 UTC
+update_time: 2026-03-26 21:32:23 UTC
 source: auto-fetched
