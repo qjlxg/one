@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] top-goshawk.rooster465.autos:443'
+  type: trojan
+  server: top-goshawk.rooster465.autos
+  port: 443
+  password: WF42809561
+  tls: true
+  skip-cert-verify: false
+  sni: top-goshawk.rooster465.autos
+  udp: true
 - name: '[TROJAN] 104.21.112.1:443'
   type: trojan
   server: 104.21.112.1
@@ -26,15 +35,6 @@ proxies:
   tls: true
   servername: 152.67.158.177
   skip-cert-verify: false
-- name: '[TROJAN] 104.21.80.1:443'
-  type: trojan
-  server: 104.21.80.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: PSYchO.SueX12.Ir
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1959,5 +1959,5 @@ proxies:
   tls: true
   servername: pol2.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-26 05:06:39 UTC
+update_time: 2026-03-26 07:09:59 UTC
 source: auto-fetched
