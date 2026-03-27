@@ -1,4 +1,12 @@
 proxies:
+- name: '[HYSTERIA2] 181.214.99.162:35000'
+  type: hysteria2
+  server: 181.214.99.162
+  port: 35000
+  password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
+  tls: true
+  skip-cert-verify: false
+  udp: true
 - name: '[TROJAN] 104.21.112.1:443'
   type: trojan
   server: 104.21.112.1
@@ -7,14 +15,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
-  udp: true
-- name: '[HYSTERIA2] 181.214.99.162:35000'
-  type: hysteria2
-  server: 181.214.99.162
-  port: 35000
-  password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
-  tls: true
-  skip-cert-verify: false
   udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
@@ -1964,5 +1964,5 @@ proxies:
   tls: true
   servername: u710947uc81es244.ayxj.top
   skip-cert-verify: false
-update_time: 2026-03-27 15:53:24 UTC
+update_time: 2026-03-27 18:56:53 UTC
 source: auto-fetched
