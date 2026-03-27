@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[HYSTERIA2] 181.214.99.162:35000'
   type: hysteria2
   server: 181.214.99.162
@@ -24,15 +33,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: top-goshawk.rooster465.autos
-  udp: true
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1964,5 +1964,5 @@ proxies:
   tls: true
   servername: u710947uc81es244.ayxj.top
   skip-cert-verify: false
-update_time: 2026-03-27 09:55:47 UTC
+update_time: 2026-03-27 13:07:55 UTC
 source: auto-fetched
