@@ -25,15 +25,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] top-goshawk.rooster465.autos:443'
-  type: trojan
-  server: top-goshawk.rooster465.autos
-  port: 443
-  password: WF42809561
-  tls: true
-  skip-cert-verify: false
-  sni: top-goshawk.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -320,6 +311,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: funky-platypus.rooster465.autos
+  udp: true
+- name: '[TROJAN] top-goshawk.rooster465.autos:443'
+  type: trojan
+  server: top-goshawk.rooster465.autos
+  port: 443
+  password: WF42809561
+  tls: true
+  skip-cert-verify: false
+  sni: top-goshawk.rooster465.autos
   udp: true
 - name: '[TROJAN] glowing-deer.rooster465.autos:443'
   type: trojan
@@ -1964,5 +1964,5 @@ proxies:
   tls: true
   servername: u710947uc81es244.ayxj.top
   skip-cert-verify: false
-update_time: 2026-03-27 18:56:53 UTC
+update_time: 2026-03-27 21:35:20 UTC
 source: auto-fetched
