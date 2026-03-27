@@ -9,6 +9,15 @@ proxies:
   skip-cert-verify: true
   udp: true
 - name: N_0001
+  password: psycho
+  port: 443
+  server: 104.21.112.1
+  skip-cert-verify: true
+  sni: pSYcho.sUeX12.IR
+  tls: true
+  type: trojan
+  udp: true
+- name: N_0002
   obfs: null
   obfs-password: null
   password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
@@ -18,7 +27,7 @@ proxies:
   sni: null
   type: hysteria2
   udp: true
-- name: N_0002
+- name: N_0003
   password: dreDeMpIQpnv
   port: 2053
   server: 104.21.44.185
@@ -27,21 +36,12 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: N_0003
+- name: N_0004
   password: WF42809561
   port: 443
   server: top-goshawk.rooster465.autos
   skip-cert-verify: true
   sni: top-goshawk.rooster465.autos
-  tls: true
-  type: trojan
-  udp: true
-- name: N_0004
-  password: psycho
-  port: 443
-  server: 104.21.112.1
-  skip-cert-verify: true
-  sni: pSYcho.sUeX12.IR
   tls: true
   type: trojan
   udp: true
