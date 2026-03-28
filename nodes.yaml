@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 152.67.158.177:2443'
+  type: vless
+  server: 152.67.158.177
+  port: 2443
+  uuid: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
+  udp: true
+  tls: true
+  servername: 152.67.158.177
+  skip-cert-verify: false
 - name: '[HYSTERIA2] 181.214.99.162:35000'
   type: hysteria2
   server: 181.214.99.162
@@ -1930,5 +1939,5 @@ proxies:
   tls: true
   servername: nld10.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-28 15:31:18 UTC
+update_time: 2026-03-28 18:41:32 UTC
 source: auto-fetched
