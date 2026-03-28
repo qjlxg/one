@@ -1939,5 +1939,5 @@ proxies:
   tls: true
   servername: nld10.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-28 18:41:32 UTC
+update_time: 2026-03-28 21:29:54 UTC
 source: auto-fetched
