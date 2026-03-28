@@ -1,12 +1,4 @@
 proxies:
-- name: '[HYSTERIA2] 181.214.99.162:35000'
-  type: hysteria2
-  server: 181.214.99.162
-  port: 35000
-  password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
-  tls: true
-  skip-cert-verify: false
-  udp: true
 - name: '[TROJAN] 104.21.112.1:443'
   type: trojan
   server: 104.21.112.1
@@ -15,6 +7,14 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
+  udp: true
+- name: '[HYSTERIA2] 181.214.99.162:35000'
+  type: hysteria2
+  server: 181.214.99.162
+  port: 35000
+  password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
+  tls: true
+  skip-cert-verify: false
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1930,5 +1930,5 @@ proxies:
   tls: true
   servername: nld10.frostbot.ru
   skip-cert-verify: false
-update_time: 2026-03-28 02:10:54 UTC
+update_time: 2026-03-28 04:53:23 UTC
 source: auto-fetched
