@@ -17,24 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: PSYchO.SueX12.Ir
   udp: true
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
-  udp: true
-- name: '[TROJAN] n3.chateditimage.com:443'
-  type: trojan
-  server: n3.chateditimage.com
-  port: 443
-  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
-  tls: true
-  skip-cert-verify: false
-  sni: n3.chateditimage.com
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1182,6 +1164,15 @@ proxies:
   skip-cert-verify: false
   sni: model-stingray.crayfish192.xyz
   udp: true
+- name: '[TROJAN] n3.chateditimage.com:443'
+  type: trojan
+  server: n3.chateditimage.com
+  port: 443
+  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
+  tls: true
+  skip-cert-verify: false
+  sni: n3.chateditimage.com
+  udp: true
 - name: '[TROJAN] 103.231.73.181:4443'
   type: trojan
   server: 103.231.73.181
@@ -1519,5 +1510,5 @@ proxies:
   tls: true
   servername: u710947u4c78s642.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-31 16:05:30 UTC
+update_time: 2026-03-31 19:02:17 UTC
 source: auto-fetched
