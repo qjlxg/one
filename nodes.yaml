@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -26,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: n3.chateditimage.com
   udp: true
-- name: '[VLESS] 174.136.205.68:443'
-  type: vless
-  server: 174.136.205.68
-  port: 443
-  uuid: 24717d75-93dc-46ad-9b99-89a33a978bf7
-  udp: true
-  tls: true
-  servername: 174.136.205.68
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1519,5 +1519,5 @@ proxies:
   tls: true
   servername: u710947u4c78s642.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-03-31 07:15:20 UTC
+update_time: 2026-03-31 10:05:54 UTC
 source: auto-fetched
