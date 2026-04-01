@@ -1,4 +1,5 @@
-# Updated at 2026-04-01 19:03:04 UTC
+# Updated at 2026-04-01 21:42:05 UTC
+trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n1.chateditimage.com:443?sni=n1.chateditimage.com#%5BTROJAN%5D%20n1.chateditimage.com%3A443
 trojan://dreDeMpIQpnv@104.21.44.185:2053?sni=aryanews.onetwothree123.ir#%5BTROJAN%5D%20104.21.44.185%3A2053
 trojan://n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj@82.26.155.20:10369?sni=fra35.chasem2026sud.com#%5BTROJAN%5D%2082.26.155.20%3A10369
 trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
@@ -32,7 +33,6 @@ trojan://IL37892054@caring-ghoul.rooster465.autos:443?sni=caring-ghoul.rooster46
 trojan://MeaDiUmPlkWbZJ2BON8tz@78.159.131.12:28259?sni=ads.x5.ru#%5BTROJAN%5D%2078.159.131.12%3A28259
 trojan://WF42809561@evolving-kangaroo.rooster465.autos:443?sni=evolving-kangaroo.rooster465.autos#%5BTROJAN%5D%20evolving-kangaroo.rooster465.autos%3A443
 trojan://WF42809561@funky-platypus.rooster465.autos:443?sni=funky-platypus.rooster465.autos#%5BTROJAN%5D%20funky-platypus.rooster465.autos%3A443
-trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n1.chateditimage.com:443?sni=n1.chateditimage.com#%5BTROJAN%5D%20n1.chateditimage.com%3A443
 trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n2.chateditimage.com:443?sni=n2.chateditimage.com#%5BTROJAN%5D%20n2.chateditimage.com%3A443
 trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n3.chateditimage.com:443?sni=n3.chateditimage.com#%5BTROJAN%5D%20n3.chateditimage.com%3A443
 trojan://strong-secret-pass-777@94.131.105.125:4443?sni=94.131.105.125#%5BTROJAN%5D%2094.131.105.125%3A4443

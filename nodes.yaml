@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] n1.chateditimage.com:443'
+  type: trojan
+  server: n1.chateditimage.com
+  port: 443
+  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
+  tls: true
+  skip-cert-verify: false
+  sni: n1.chateditimage.com
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -244,15 +253,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: funky-platypus.rooster465.autos
-  udp: true
-- name: '[TROJAN] n1.chateditimage.com:443'
-  type: trojan
-  server: n1.chateditimage.com
-  port: 443
-  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
-  tls: true
-  skip-cert-verify: false
-  sni: n1.chateditimage.com
   udp: true
 - name: '[TROJAN] n2.chateditimage.com:443'
   type: trojan
@@ -1427,5 +1427,5 @@ proxies:
   tls: true
   servername: sha.helper-internet.com
   skip-cert-verify: false
-update_time: 2026-04-01 19:03:04 UTC
+update_time: 2026-04-01 21:42:05 UTC
 source: auto-fetched
