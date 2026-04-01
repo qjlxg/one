@@ -1409,5 +1409,5 @@ proxies:
   tls: true
   servername: sha.helper-internet.com
   skip-cert-verify: false
-update_time: 2026-04-01 05:24:40 UTC
+update_time: 2026-04-01 07:21:30 UTC
 source: auto-fetched
