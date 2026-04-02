@@ -1,4 +1,4 @@
-# Updated at 2026-04-02 13:15:10 UTC
+# Updated at 2026-04-02 16:01:10 UTC
 trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n2.chateditimage.com:443?sni=n2.chateditimage.com#%5BTROJAN%5D%20n2.chateditimage.com%3A443
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
 trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n1.chateditimage.com:443?sni=n1.chateditimage.com#%5BTROJAN%5D%20n1.chateditimage.com%3A443
