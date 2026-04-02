@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[TROJAN] n2.chateditimage.com:443'
   type: trojan
   server: n2.chateditimage.com
@@ -1523,5 +1532,5 @@ proxies:
   tls: true
   servername: u710947u2fb8s110.okgfw.top
   skip-cert-verify: false
-update_time: 2026-04-02 18:57:33 UTC
+update_time: 2026-04-02 21:38:19 UTC
 source: auto-fetched
