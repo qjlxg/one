@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[TROJAN] n1.chateditimage.com:443'
   type: trojan
   server: n1.chateditimage.com
@@ -1422,5 +1431,5 @@ proxies:
       Host: octopusss4.com
   servername: octopusss4.com
   skip-cert-verify: true
-update_time: 2026-04-03 09:54:09 UTC
+update_time: 2026-04-03 13:05:05 UTC
 source: auto-fetched
