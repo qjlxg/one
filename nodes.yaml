@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: pSYcho.sUeX12.IR
   udp: true
-- name: '[TROJAN] n2.chateditimage.com:443'
-  type: trojan
-  server: n2.chateditimage.com
-  port: 443
-  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
-  tls: true
-  skip-cert-verify: false
-  sni: n2.chateditimage.com
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -219,6 +210,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: ord2.edge-command.click
+  udp: true
+- name: '[TROJAN] n2.chateditimage.com:443'
+  type: trojan
+  server: n2.chateditimage.com
+  port: 443
+  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
+  tls: true
+  skip-cert-verify: false
+  sni: n2.chateditimage.com
   udp: true
 - name: '[TROJAN] 82.26.155.20:10369'
   type: trojan
@@ -1422,5 +1422,5 @@ proxies:
       Host: octopusss4.com
   servername: octopusss4.com
   skip-cert-verify: true
-update_time: 2026-04-03 18:49:34 UTC
+update_time: 2026-04-03 21:34:53 UTC
 source: auto-fetched
