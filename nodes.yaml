@@ -35,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: n1.chateditimage.com
   udp: true
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1090,5 +1081,5 @@ proxies:
   tls: true
   servername: u710947u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-04 07:01:50 UTC
+update_time: 2026-04-04 09:38:40 UTC
 source: auto-fetched
