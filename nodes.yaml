@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] n1.chateditimage.com:443'
-  type: trojan
-  server: n1.chateditimage.com
-  port: 443
-  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
-  tls: true
-  skip-cert-verify: false
-  sni: n1.chateditimage.com
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -294,6 +285,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: ord2.edge-command.click
+  udp: true
+- name: '[TROJAN] n1.chateditimage.com:443'
+  type: trojan
+  server: n1.chateditimage.com
+  port: 443
+  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
+  tls: true
+  skip-cert-verify: false
+  sni: n1.chateditimage.com
   udp: true
 - name: '[TROJAN] n2.chateditimage.com:443'
   type: trojan
@@ -1081,5 +1081,5 @@ proxies:
   tls: true
   servername: u710947u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-04 15:32:26 UTC
+update_time: 2026-04-04 18:43:06 UTC
 source: auto-fetched
