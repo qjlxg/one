@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] 166.88.197.60:26650'
-  type: trojan
-  server: 166.88.197.60
-  port: 26650
-  password: UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm
-  tls: true
-  skip-cert-verify: false
-  sni: 166.88.197.60
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -287,6 +278,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: ads.x5.ru
+  udp: true
+- name: '[TROJAN] 166.88.197.60:26650'
+  type: trojan
+  server: 166.88.197.60
+  port: 26650
+  password: UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm
+  tls: true
+  skip-cert-verify: false
+  sni: sea9.firewallcontract.click
   udp: true
 - name: '[TROJAN] 104.238.162.6:13109'
   type: trojan
@@ -1092,5 +1092,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-05 15:33:24 UTC
+update_time: 2026-04-05 18:44:46 UTC
 source: auto-fetched
