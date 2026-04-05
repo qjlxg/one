@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.112.1:443'
+  type: trojan
+  server: 104.21.112.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: pSYcho.sUeX12.IR
+  udp: true
 - name: '[TROJAN] 82.26.155.3:10369'
   type: trojan
   server: 82.26.155.3
@@ -1092,5 +1101,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-05 09:39:19 UTC
+update_time: 2026-04-05 12:58:36 UTC
 source: auto-fetched
