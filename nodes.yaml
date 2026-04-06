@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: 81.29.149.240
   udp: true
-- name: '[TROJAN] 82.26.155.3:10369'
-  type: trojan
-  server: 82.26.155.3
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  tls: true
-  skip-cert-verify: false
-  sni: fra34.chasem2026sud.com
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1103,5 +1094,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-06 13:12:27 UTC
+update_time: 2026-04-06 15:48:53 UTC
 source: auto-fetched
