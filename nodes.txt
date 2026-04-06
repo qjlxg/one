@@ -1,4 +1,5 @@
-# Updated at 2026-04-06 19:01:18 UTC
+# Updated at 2026-04-06 21:38:04 UTC
+trojan://WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T@104.238.162.6:13109?sni=ord2.edge-command.click#%5BTROJAN%5D%20104.238.162.6%3A13109
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
 trojan://psycho@104.21.112.1:443?sni=pSYcho.sUeX12.IR#%5BTROJAN%5D%20104.21.112.1%3A443
 trojan://hCjWaBe5vTkewfiljOL=9FS9DYg0c09c.t@81.29.149.240:18390?sni=81.29.149.240#%5BTROJAN%5D%2081.29.149.240%3A18390
@@ -35,7 +36,6 @@ trojan://BvzUvt45hON9We5X9wM6I9ZrxHRcYd46QK@216.238.102.254:26593?sni=sao2.cdn-g
 trojan://BxceQaOe@58.152.25.253:443?sni=t.me/ripaojiedian#%5BTROJAN%5D%2058.152.25.253%3A443
 trojan://MeaDiUmPlkWbZJ2BON8tz@78.159.131.12:28259?sni=ads.x5.ru#%5BTROJAN%5D%2078.159.131.12%3A28259
 trojan://UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm@166.88.197.60:26650?sni=sea9.firewallcontract.click#%5BTROJAN%5D%20166.88.197.60%3A26650
-trojan://WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T@104.238.162.6:13109?sni=ord2.edge-command.click#%5BTROJAN%5D%20104.238.162.6%3A13109
 trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n1.chateditimage.com:443?sni=n1.chateditimage.com#%5BTROJAN%5D%20n1.chateditimage.com%3A443
 trojan://de7d6444-a7a8-4b3a-bf26-bc6939bb0279@n2.chateditimage.com:443?sni=n2.chateditimage.com#%5BTROJAN%5D%20n2.chateditimage.com%3A443
 trojan://n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj@82.26.155.20:10369?sni=fra35.chasem2026sud.com#%5BTROJAN%5D%2082.26.155.20%3A10369

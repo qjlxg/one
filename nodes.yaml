@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.238.162.6:13109'
+  type: trojan
+  server: 104.238.162.6
+  port: 13109
+  password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T
+  tls: true
+  skip-cert-verify: false
+  sni: ord2.edge-command.click
+  udp: true
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -280,15 +289,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: sea9.firewallcontract.click
-  udp: true
-- name: '[TROJAN] 104.238.162.6:13109'
-  type: trojan
-  server: 104.238.162.6
-  port: 13109
-  password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T
-  tls: true
-  skip-cert-verify: false
-  sni: ord2.edge-command.click
   udp: true
 - name: '[TROJAN] n1.chateditimage.com:443'
   type: trojan
@@ -1103,5 +1103,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-06 19:01:18 UTC
+update_time: 2026-04-06 21:38:04 UTC
 source: auto-fetched
