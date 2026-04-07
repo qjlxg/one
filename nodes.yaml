@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[TROJAN] 104.238.162.6:13109'
   type: trojan
   server: 104.238.162.6
@@ -16,24 +25,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: PSYchO.SueX12.Ir
-  udp: true
-- name: '[TROJAN] 104.21.112.1:443'
-  type: trojan
-  server: 104.21.112.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: pSYcho.sUeX12.IR
-  udp: true
-- name: '[TROJAN] 81.29.149.240:18390'
-  type: trojan
-  server: 81.29.149.240
-  port: 18390
-  password: hCjWaBe5vTkewfiljOL=9FS9DYg0c09c.t
-  tls: true
-  skip-cert-verify: false
-  sni: 81.29.149.240
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1135,5 +1126,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-07 07:18:17 UTC
+update_time: 2026-04-07 10:07:34 UTC
 source: auto-fetched
