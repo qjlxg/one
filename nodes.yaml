@@ -8,15 +8,6 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
-- name: '[TROJAN] 104.238.162.6:13109'
-  type: trojan
-  server: 104.238.162.6
-  port: 13109
-  password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T
-  tls: true
-  skip-cert-verify: false
-  sni: ord2.edge-command.click
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -285,6 +276,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: sea9.firewallcontract.click
+  udp: true
+- name: '[TROJAN] 104.238.162.6:13109'
+  type: trojan
+  server: 104.238.162.6
+  port: 13109
+  password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T
+  tls: true
+  skip-cert-verify: false
+  sni: ord2.edge-command.click
   udp: true
 - name: '[TROJAN] n1.chateditimage.com:443'
   type: trojan
@@ -1162,5 +1162,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-08 07:20:46 UTC
+update_time: 2026-04-08 10:08:16 UTC
 source: auto-fetched
