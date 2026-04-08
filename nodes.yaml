@@ -8,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: aryanews.onetwothree123.ir
   udp: true
+- name: '[TROJAN] 81.29.149.212:18390'
+  type: trojan
+  server: 81.29.149.212
+  port: 18390
+  password: hCjWaBe5vTkewfiljOL=9FS9DYg0c09c.t
+  tls: true
+  skip-cert-verify: false
+  sni: osl8.solidly.click
+  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1162,5 +1171,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-08 13:21:10 UTC
+update_time: 2026-04-08 16:15:16 UTC
 source: auto-fetched
