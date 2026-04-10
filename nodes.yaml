@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 85.211.192.237:13388'
+  type: trojan
+  server: 85.211.192.237
+  port: 13388
+  password: 413fdb10-a596-4e7c-b081-54243d252894
+  tls: true
+  skip-cert-verify: false
+  sni: 85.211.192.237
+  udp: true
 - name: '[VLESS] 150.241.83.152:10121'
   type: vless
   server: 150.241.83.152
@@ -1164,5 +1173,5 @@ proxies:
   tls: true
   servername: u711541u4a5cs863.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-10 07:28:31 UTC
+update_time: 2026-04-10 10:08:33 UTC
 source: auto-fetched
