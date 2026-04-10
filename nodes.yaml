@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 150.241.83.67:10121'
+  type: vless
+  server: 150.241.83.67
+  port: 10121
+  uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
+  udp: true
+  tls: true
+  servername: 150.241.83.67
+  skip-cert-verify: false
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -25,24 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 85.211.192.237
-  udp: true
-- name: '[VLESS] 150.241.83.67:10121'
-  type: vless
-  server: 150.241.83.67
-  port: 10121
-  uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
-  udp: true
-  tls: true
-  servername: 150.241.83.67
-  skip-cert-verify: false
-- name: '[TROJAN] 82.26.155.237:10369'
-  type: trojan
-  server: 82.26.155.237
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  tls: true
-  skip-cert-verify: false
-  sni: 82.26.155.237
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1173,5 +1164,5 @@ proxies:
   tls: true
   servername: u711541u4a5cs863.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-10 18:54:41 UTC
+update_time: 2026-04-10 21:37:51 UTC
 source: auto-fetched
