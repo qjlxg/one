@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.80.1:443'
+  type: trojan
+  server: 104.21.80.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: PSYchO.SueX12.Ir
+  udp: true
 - name: '[VLESS] 150.241.83.152:10121'
   type: vless
   server: 150.241.83.152
@@ -17,15 +26,6 @@ proxies:
   tls: true
   servername: 150.241.83.67
   skip-cert-verify: false
-- name: '[TROJAN] 104.21.80.1:443'
-  type: trojan
-  server: 104.21.80.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: PSYchO.SueX12.Ir
-  udp: true
 - name: '[TROJAN] 85.211.192.237:13388'
   type: trojan
   server: 85.211.192.237
@@ -1152,5 +1152,5 @@ proxies:
   tls: true
   servername: u711541u2fb8s110.okgfw.top
   skip-cert-verify: false
-update_time: 2026-04-11 02:22:00 UTC
+update_time: 2026-04-11 04:55:11 UTC
 source: auto-fetched
