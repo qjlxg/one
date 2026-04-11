@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 188.114.98.112:80'
+  type: vless
+  server: 188.114.98.112
+  port: 80
+  uuid: 0991a0c4-0ee5-4213-af89-7ad589f853f3
+  udp: true
+  tls: true
+  servername: 188.114.98.112
+  skip-cert-verify: false
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -1152,5 +1161,5 @@ proxies:
   tls: true
   servername: u711541u2fb8s110.okgfw.top
   skip-cert-verify: false
-update_time: 2026-04-11 09:40:48 UTC
+update_time: 2026-04-11 12:59:10 UTC
 source: auto-fetched
