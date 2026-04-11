@@ -35,15 +35,6 @@ proxies:
   tls: true
   servername: 150.241.83.152
   skip-cert-verify: false
-- name: '[TROJAN] 85.211.192.237:13388'
-  type: trojan
-  server: 85.211.192.237
-  port: 13388
-  password: 413fdb10-a596-4e7c-b081-54243d252894
-  tls: true
-  skip-cert-verify: false
-  sni: 85.211.192.237
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1161,5 +1152,5 @@ proxies:
   tls: true
   servername: u711541u2fb8s110.okgfw.top
   skip-cert-verify: false
-update_time: 2026-04-11 15:33:59 UTC
+update_time: 2026-04-11 18:45:54 UTC
 source: auto-fetched
