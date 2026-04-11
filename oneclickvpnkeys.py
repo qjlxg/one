@@ -227,10 +227,10 @@ async def main():
         writer.writerows(stats_log)
 
     # 6. 更新 README.md
-   # with open("README.md", "w", encoding="utf-8") as rm:
-   #     rm.write(f"# 订阅列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
-   #     rm.write(f"本次筛选后可用节点数: **{total_final}** 个 (去重前总数: {total_raw})\n\n")
-    #    rm.write(f"### 节点明文内容\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
+    with open("README.md", "w", encoding="utf-8") as rm:
+       rm.write(f"# 订阅列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
+       rm.write(f"本次筛选后可用节点数: **{total_final}** 个 (去重前总数: {total_raw})\n\n")
+       rm.write(f"### 节点明文内容\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
 
     # 7. 更新 nodes_list.txt
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
