@@ -9,7 +9,6 @@ import socket
 import maxminddb
 import urllib.parse
 import pytz
-import random
 from datetime import datetime
 from collections import defaultdict
 from bs4 import BeautifulSoup
@@ -18,14 +17,8 @@ from bs4 import BeautifulSoup
 CHANNELS = ["oneclickvpnkeys", "v2ray_free_conf"]
 SHANGHAI_TZ = pytz.timezone('Asia/Shanghai')
 DB_PATH = 'GeoLite2-Country.mmdb'  
-TIMEOUT = 3          # 端口检测超时时间
+TIMEOUT = 3      # 端口检测超时时间
 MAX_PAGES = 80000    # 每个频道回溯抓取的页数
-CRAWL_DELAY = 1.5    # 每次翻页基础延迟 (秒)
-STATE_FILE = 'crawl_state.json' # 记录抓取进度的文件
-
-# 代理配置 (如不需要请设为 None)
-# 示例: "http://127.0.0.1:7890"
-PROXY_URL = None 
 
 # 协议验证参数
 REQUIRED_PARAMS = {
@@ -40,19 +33,8 @@ REQUIRED_PARAMS = {
 
 # --- 2. 工具函数 ---
 
-def load_state():
-    if os.path.exists(STATE_FILE):
-        try:
-            with open(STATE_FILE, 'r') as f: return json.load(f)
-        except: return {}
-    return {}
-
-def save_state(state):
-    with open(STATE_FILE, 'w') as f:
-        json.dump(state, f, indent=4)
-
 def is_valid_uuid(uuid_str):
-    return bool(re.match(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$', str(uuid_str)))
+    return bool(re.match(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$', str(uuid_str)))
 
 def is_valid_port(port):
     try:
@@ -61,6 +43,7 @@ def is_valid_port(port):
     except: return False
 
 def parse_to_standard_dict(raw_url):
+    """将各种协议链接统一解析为标准字典"""
     try:
         parsed = urllib.parse.urlparse(raw_url)
         proto = parsed.scheme.lower()
@@ -92,6 +75,7 @@ def parse_to_standard_dict(raw_url):
     except: return None
 
 def apply_new_name(node_dict, new_name):
+    """修改节点名称并还原为链接"""
     proto = node_dict['type']
     raw = node_dict['raw']
     try:
@@ -107,12 +91,15 @@ def apply_new_name(node_dict, new_name):
 # --- 3. 核心异步逻辑 ---
 
 async def test_node_smart(node_dict, loop, geo_reader):
+    """测试节点可用性及获取地理位置"""
     result = {'ip': None, 'country': "Unknown", 'alive': False}
     address = node_dict.get('server')
     port = int(node_dict.get('port', 0))
+    
     if not address or not port: return result
     
     try:
+        # DNS 解析
         if not re.match(r"^\d{1,3}(\.\d{1,3}){3}$", address):
             try:
                 ip = await loop.run_in_executor(None, lambda: socket.gethostbyname(address))
@@ -120,6 +107,7 @@ async def test_node_smart(node_dict, loop, geo_reader):
         else: ip = address
         result['ip'] = ip
 
+        # 地理位置查询
         if geo_reader:
             try:
                 data = geo_reader.get(ip)
@@ -128,8 +116,9 @@ async def test_node_smart(node_dict, loop, geo_reader):
                     result['country'] = names.get('zh-CN', names.get('en', 'Unknown'))
             except: pass
 
+        # 存活测试
         if any(p in node_dict['type'] for p in ['hysteria', 'tuic']):
-            result['alive'] = True 
+            result['alive'] = True # UDP 协议默认标记，深层测试需额外工具
         else:
             try:
                 conn = asyncio.open_connection(ip, port)
@@ -141,74 +130,34 @@ async def test_node_smart(node_dict, loop, geo_reader):
     except: pass
     return result
 
-async def fetch_channel(session, channel_id, last_min_id=None):
-    """
-    抓取 Telegram 频道。
-    last_min_id: 上次抓取到的最旧消息 ID。如果提供，则从该 ID 继续往前回溯。
-    """
+async def fetch_channel(session, channel_id):
+    """抓取 Telegram 频道公开页面的订阅链接"""
     configs = []
     base_url = f"https://t.me/s/{channel_id}"
-    # 如果有断点记录，从断点开始，否则从头开始
-    current_url = f"{base_url}?before={last_min_id}" if last_min_id else base_url
+    current_url = base_url
     page_count = 0
-    new_min_id = last_min_id
-
-    print(f"[>] 正在{'继续' if last_min_id else '开始'}抓取频道: {channel_id} (起始ID: {last_min_id or '最新'})")
+    print(f"[>] 正在抓取频道: {channel_id}")
     
-    while page_count < MAX_PAGES:
+    while current_url and page_count < MAX_PAGES:
         try:
-            async with session.get(current_url, timeout=20, proxy=PROXY_URL) as resp:
-                if resp.status == 429:
-                    wait_time = int(resp.headers.get("Retry-After", 120))
-                    print(f"[!] 触发频率限制，需等待 {wait_time} 秒...")
-                    await asyncio.sleep(wait_time)
-                    continue
-                
-                if resp.status != 200:
-                    print(f"[!] 响应异常: {resp.status}")
-                    break
-
-                html = await resp.text()
-                soup = BeautifulSoup(html, 'html.parser')
-                
-                # 提取配置
+            async with session.get(current_url, timeout=15) as resp:
+                if resp.status != 200: break
+                soup = BeautifulSoup(await resp.text(), 'html.parser')
                 msgs = soup.find_all('div', class_='tgme_widget_message_text')
-                if not msgs:
-                    # 如果页面没内容，可能是到底了或者结构变了
-                    print(f"[*] 频道 {channel_id} 似乎没有更多消息了。")
-                    break
-
                 pattern = r'(?:vless|vmess|trojan|ss|ssr|hysteria2|hysteria|tuic)://[^\s<"\'#\t]+'
                 for m in msgs:
                     configs.extend(re.findall(pattern, m.get_text(separator='\n', strip=True)))
                 
-                # 寻找更旧的消息 ID (before=...)
-                # Telegram Web S版 消息由新到旧排列，找到当前页最上面（最早）的一条
+                # 获取“查看更多”按钮的偏移量
                 msgs_divs = soup.find_all('div', class_='tgme_widget_message', attrs={'data-post': True})
                 if msgs_divs:
-                    # 获取本页最旧的一条 ID
-                    try:
-                        first_post_id = int(msgs_divs[0].get('data-post').split('/')[-1])
-                        # 更新当前 URL 指向更旧的内容
-                        current_url = f"{base_url}?before={first_post_id}"
-                        new_min_id = first_post_id
-                        page_count += 1
-                        
-                        if page_count % 10 == 0:
-                            print(f"--- 已抓取 {page_count} 页，当前消息 ID 偏移至: {new_min_id}")
-                        
-                        await asyncio.sleep(CRAWL_DELAY + random.random())
-                    except Exception as e:
-                        print(f"[!] 解析消息ID失败: {e}")
-                        break
-                else:
-                    break
-        except Exception as e:
-            print(f"[!] 抓取网络异常: {e}")
-            await asyncio.sleep(5)
-            break
-
-    return configs, new_min_id
+                    current_url = f"{base_url}?before={msgs_divs[0].get('data-post').split('/')[-1]}"
+                    page_count += 1
+                    await asyncio.sleep(0.1)
+                    continue
+                break
+        except: break
+    return configs
 
 # --- 4. 主程序 ---
 
@@ -217,41 +166,31 @@ async def main():
     date_str = now.strftime('%Y-%m-%d %H:%M:%S')
     loop = asyncio.get_event_loop()
     
-    # 加载进度
-    crawl_state = load_state()
-    
     # 初始化 GeoDB
     geo_reader = None
     if os.path.exists(DB_PATH):
         geo_reader = maxminddb.open_database(DB_PATH)
 
-    all_configs = []
-    stats_log = []
-    total_raw = 0
-
-    # 1. 抓取 (逐个频道抓取以便维护状态)
-    async with aiohttp.ClientSession(headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'}) as session:
-        for cid in CHANNELS:
-            last_id = crawl_state.get(cid)
-            configs, min_id = await fetch_channel(session, cid, last_id)
-            
-            # 更新状态
-            crawl_state[cid] = min_id
-            save_state(crawl_state)
-            
-            all_configs.append(configs)
-            stats_log.append([date_str, cid, len(configs)])
-            total_raw += len(configs)
+    # 1. 抓取
+    async with aiohttp.ClientSession(headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}) as session:
+        tasks = [fetch_channel(session, cid) for cid in CHANNELS]
+        results = await asyncio.gather(*tasks)
 
     # 2. 深度去重与格式校验
     seen_keys = set()
     valid_nodes = []
+    total_raw = 0
+    stats_log = []
 
-    for configs in all_configs:
+    for i, configs in enumerate(results):
+        total_raw += len(configs)
+        stats_log.append([date_str, CHANNELS[i], len(configs)]) # 记录各频道抓取数
+        
         for c in configs:
             d = parse_to_standard_dict(c)
             if not d or not is_valid_port(d['port']): continue
             
+            # 生成唯一指纹 (协议+服务器+端口+核心认证信息)
             core_auth = d.get('uuid') or d.get('password') or d.get('cipher', '')
             unique_key = (d['type'], d['server'], d['port'], core_auth)
             
@@ -259,7 +198,7 @@ async def main():
                 seen_keys.add(unique_key)
                 valid_nodes.append(d)
 
-    print(f"\n[+] 原始抓取总数: {total_raw} | 深度去重后: {len(valid_nodes)}")
+    print(f"\n[+] 原始抓取: {total_raw} | 深度去重后: {len(valid_nodes)}")
 
     # 3. 并发可用性测试
     test_tasks = [test_node_smart(n, loop, geo_reader) for n in valid_nodes]
@@ -287,16 +226,24 @@ async def main():
             writer.writerow(['日期', '频道ID', '抓取数量'])
         writer.writerows(stats_log)
 
-    # 6. 更新 nodes_list.txt
-    # 注意：这里会覆盖之前的文件。如果想累加，请改为 'a' 模式
+    # 6. 更新 README.md
+   # with open("README.md", "w", encoding="utf-8") as rm:
+   #     rm.write(f"# 订阅列表\n\n最后更新时间: `{date_str}` (北京时间)\n\n")
+   #     rm.write(f"本次筛选后可用节点数: **{total_final}** 个 (去重前总数: {total_raw})\n\n")
+    #    rm.write(f"### 节点明文内容\n```text\n" + '\n'.join(final_nodes) + "\n```\n")
+
+    # 7. 更新 nodes_list.txt
     with open("nodes_list.txt", 'w', encoding='utf-8') as f:
         f.write('\n'.join(final_nodes))
+
+    # 8. 按年月归档备份
+   # dir_path = now.strftime('%Y/%m')
+   # os.makedirs(dir_path, exist_ok=True)
+   # backup_path = os.path.join(dir_path, f"nodes_list_{now.strftime('%Y%m%d_%H%M%S')}.txt")
+   # with open(backup_path, 'w', encoding='utf-8') as f:
+   #     f.write('\n'.join(final_nodes))
     
-    print(f"[OK] 处理完成！本次发现可用节点: {total_final}")
-    print(f"[*] 抓取进度已保存至 {STATE_FILE}，下次运行将继续往回抓取。")
+    print(f"[OK] 处理完成！可用节点: {total_final}")
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\n[!] 用户中断退出")
+    asyncio.run(main())
