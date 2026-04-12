@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 172.67.150.254:2095'
+  type: vless
+  server: 172.67.150.254
+  port: 2095
+  uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
+  udp: true
+  tls: true
+  servername: 172.67.150.254
+  skip-cert-verify: false
 - name: '[VLESS] 150.241.83.67:10121'
   type: vless
   server: 150.241.83.67
@@ -1150,5 +1159,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-12 07:14:43 UTC
+update_time: 2026-04-12 09:45:17 UTC
 source: auto-fetched
