@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
-  udp: true
 - name: '[VLESS] 150.241.83.67:10121'
   type: vless
   server: 150.241.83.67
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 150.241.83.67
   skip-cert-verify: false
+- name: '[TROJAN] 104.21.44.185:2053'
+  type: trojan
+  server: 104.21.44.185
+  port: 2053
+  password: dreDeMpIQpnv
+  tls: true
+  skip-cert-verify: false
+  sni: aryanews.onetwothree123.ir
+  udp: true
 - name: '[VLESS] 188.114.98.112:80'
   type: vless
   server: 188.114.98.112
@@ -59,13 +59,20 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-- name: '[TROJAN] 57.180.63.46:21413'
-  server: 57.180.63.46
-  port: 21413
+- name: '[TROJAN] 95.40.33.204:52687'
+  server: 95.40.33.204
+  port: 52687
   type: trojan
   password: 187dda4498be9ac4f28db939d5940185
   sni: www.nintendogames.net
   skip-cert-verify: false
+- name: '[TROJAN] 13.193.220.142:9211'
+  server: 13.193.220.142
+  port: 9211
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
 - name: '[TROJAN] 95.40.86.174:4972'
   server: 95.40.86.174
   port: 4972
@@ -73,6 +80,76 @@ proxies:
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
+- name: '[TROJAN] 18.177.145.165:4746'
+  server: 18.177.145.165
+  port: 4746
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 13.113.192.91:34818'
+  server: 13.113.192.91
+  port: 34818
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 18.177.145.165:2001'
+  server: 18.177.145.165
+  port: 2001
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 3.112.132.73:4674'
+  server: 3.112.132.73
+  port: 4674
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 18.177.145.165:4674'
+  server: 18.177.145.165
+  port: 4674
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 43.199.69.64:25675'
+  server: 43.199.69.64
+  port: 25675
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 18.177.145.165:3057'
+  server: 18.177.145.165
+  port: 3057
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 13.113.192.91:3057'
+  server: 13.113.192.91
+  port: 3057
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 54.46.53.176:44386'
+  server: 54.46.53.176
+  port: 44386
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 57.180.63.46:21413'
+  server: 57.180.63.46
+  port: 21413
+  type: trojan
+  password: 187dda4498be9ac4f28db939d5940185
+  sni: www.nintendogames.net
+  skip-cert-verify: false
 - name: '[TROJAN] 57.180.63.46:4746'
   server: 57.180.63.46
   port: 4746
@@ -129,76 +206,6 @@ proxies:
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 43.198.80.240:21413'
-  server: 43.198.80.240
-  port: 21413
-  type: trojan
-  password: 187dda4498be9ac4f28db939d5940185
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 57.180.66.105:9211'
-  server: 57.180.66.105
-  port: 9211
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 176.34.1.172:3122'
-  server: 176.34.1.172
-  port: 3122
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 160.16.124.17:4380'
-  server: 160.16.124.17
-  port: 4380
-  type: trojan
-  password: 187dda4498be9ac4f28db939d5940185
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 57.180.66.105:2001'
-  server: 57.180.66.105
-  port: 2001
-  type: trojan
-  password: 187dda4498be9ac4f28db939d5940185
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 160.16.124.17:4674'
-  server: 160.16.124.17
-  port: 4674
-  type: trojan
-  password: 187dda4498be9ac4f28db939d5940185
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 54.46.47.243:22045'
-  server: 54.46.47.243
-  port: 22045
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 160.16.124.17:3057'
-  server: 160.16.124.17
-  port: 3057
-  type: trojan
-  password: 187dda4498be9ac4f28db939d5940185
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 160.16.124.17:4019'
-  server: 160.16.124.17
-  port: 4019
-  type: trojan
-  password: 187dda4498be9ac4f28db939d5940185
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 95.40.120.247:23255'
-  server: 95.40.120.247
-  port: 23255
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
 - name: '[TROJAN] ubu.okaoclax.me:443'
   type: trojan
   server: ubu.okaoclax.me
@@ -213,6 +220,15 @@ proxies:
     path: /trojan-ws
     headers:
       Host: ubu.okaoclax.me
+- name: '[TROJAN] 160.16.124.17:4674'
+  type: trojan
+  server: 160.16.124.17
+  port: 4674
+  password: 9f7d5cb76d1645101994d9b25891e3b7
+  tls: true
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  udp: true
 - name: '[TROJAN] 160.16.132.38:3057'
   type: trojan
   server: 160.16.132.38
@@ -1134,32 +1150,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-- name: '[VLESS] s111.okgfw.top:443'
-  type: vless
-  server: s111.okgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541u42a9s111.okgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] ipv6s114.okgfw.top:443'
-  type: vless
-  server: ipv6s114.okgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541u5e6cipv6s114.okgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] s110.okgfw.top:443'
-  type: vless
-  server: s110.okgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541u2fb8s110.okgfw.top
-  skip-cert-verify: false
-update_time: 2026-04-11 21:33:52 UTC
+update_time: 2026-04-12 02:37:56 UTC
 source: auto-fetched
