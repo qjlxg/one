@@ -59,15 +59,6 @@ proxies:
   tls: true
   servername: 172.67.150.254
   skip-cert-verify: false
-- name: '[VLESS] 150.241.83.67:10121'
-  type: vless
-  server: 150.241.83.67
-  port: 10121
-  uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
-  udp: true
-  tls: true
-  servername: 150.241.83.67
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -748,6 +739,15 @@ proxies:
   tls: true
   servername: www.oracle.com
   skip-cert-verify: false
+- name: '[VLESS] 150.241.83.67:10121'
+  type: vless
+  server: 150.241.83.67
+  port: 10121
+  uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
+  udp: true
+  tls: true
+  servername: apple.com
+  skip-cert-verify: false
 - name: '[VLESS] 1xk7re.by-api-yandex.com:10121'
   type: vless
   server: 1xk7re.by-api-yandex.com
@@ -1163,5 +1163,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-13 13:26:56 UTC
+update_time: 2026-04-13 16:13:14 UTC
 source: auto-fetched

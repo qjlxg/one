@@ -1,4 +1,4 @@
-# Updated at 2026-04-13 13:26:56 UTC
+# Updated at 2026-04-13 16:13:14 UTC
 hysteria2://strong-secret-pass-777@94.131.105.125:444#%5BHYSTERIA2%5D%2094.131.105.125%3A444
 vless://d1209ffb-c159-48d5-b40d-542ce11fc768@138.124.6.182:10965?security=tls&sni=138.124.6.182#%5BVLESS%5D%20138.124.6.182%3A10965
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
@@ -6,7 +6,6 @@ trojan://UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm@166.88.197.60:26650?sni=166.88.197.6
 hysteria2://c006f502-9ae8-462b-9d48-3680f9dde45e@45.196.233.232:9999#%5BHYSTERIA2%5D%2045.196.233.232%3A9999
 hysteria2://strong-secret-pass-777@45.120.179.89:444#%5BHYSTERIA2%5D%2045.120.179.89%3A444
 vless://7890ce31-9a25-4fd4-90e7-80e5823ff510@172.67.150.254:2095?security=tls&sni=172.67.150.254#%5BVLESS%5D%20172.67.150.254%3A2095
-vless://d1209ffb-c159-48d5-b40d-542ce11fc768@150.241.83.67:10121?security=tls&sni=150.241.83.67#%5BVLESS%5D%20150.241.83.67%3A10121
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@63.180.254.10:443#[SS] 63.180.254.10:443
 vmess://eyJ2IjogIjIiLCAicHMiOiAiW1ZNRVNTXSB2MTAuaGRhY2QuY29tOjMwODA3IiwgImFkZCI6ICJ2MTAuaGRhY2QuY29tIiwgInBvcnQiOiAiMzA4MDciLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgImFpZCI6IDIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIifQ==
 trojan://187dda4498be9ac4f28db939d5940185@43.199.200.208:52687?sni=www.nintendogames.net#%5BTROJAN%5D%2043.199.200.208%3A52687
@@ -80,6 +79,7 @@ vless://a384c715-aeb5-45e8-859b-f687ca6c083f@5.180.97.139:443?security=tls&sni=g
 vless://a8da758c-510d-4827-83cf-2f2b51c49c5b@download.lastilhame.monster:443?security=tls&sni=download.lastilhame.monster#%5BVLESS%5D%20download.lastilhame.monster%3A443
 vless://b605b776-b676-430e-8957-00f1e0166bee@vleesvpn-app-uk01.gw-vpn.click:443?security=tls&sni=plus.im#%5BVLESS%5D%20vleesvpn-app-uk01.gw-vpn.click%3A443
 vless://cec4d434-0578-483e-a5cb-d6a11ea67e27@95.85.248.200:443?security=tls&sni=www.oracle.com#%5BVLESS%5D%2095.85.248.200%3A443
+vless://d1209ffb-c159-48d5-b40d-542ce11fc768@150.241.83.67:10121?security=tls&sni=apple.com#%5BVLESS%5D%20150.241.83.67%3A10121
 vless://d1209ffb-c159-48d5-b40d-542ce11fc768@1xk7re.by-api-yandex.com:10121?security=tls&sni=apple.com#%5BVLESS%5D%201xk7re.by-api-yandex.com%3A10121
 vless://e033ef6e-ab4b-47d4-a523-ff568d2c8dbb@103.231.73.181:8443?security=tls&sni=tradingview.com#%5BVLESS%5D%20103.231.73.181%3A8443
 vless://e033ef6e-ab4b-47d4-a523-ff568d2c8dbb@2.56.172.83:8443?security=tls&sni=tradingview.com#%5BVLESS%5D%202.56.172.83%3A8443
