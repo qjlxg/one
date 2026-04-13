@@ -1,4 +1,12 @@
 proxies:
+- name: '[HYSTERIA2] 94.131.105.125:444'
+  type: hysteria2
+  server: 94.131.105.125
+  port: 444
+  password: strong-secret-pass-777
+  tls: true
+  skip-cert-verify: false
+  udp: true
 - name: '[VLESS] 138.124.6.182:10965'
   type: vless
   server: 138.124.6.182
@@ -60,15 +68,6 @@ proxies:
   tls: true
   servername: 150.241.83.67
   skip-cert-verify: false
-- name: '[TROJAN] 104.21.44.185:2053'
-  type: trojan
-  server: 104.21.44.185
-  port: 2053
-  password: dreDeMpIQpnv
-  tls: true
-  skip-cert-verify: false
-  sni: aryanews.onetwothree123.ir
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1164,5 +1163,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-13 05:42:26 UTC
+update_time: 2026-04-13 08:04:39 UTC
 source: auto-fetched
