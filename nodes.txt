@@ -1,4 +1,5 @@
-# Updated at 2026-04-13 02:43:12 UTC
+# Updated at 2026-04-13 05:42:26 UTC
+vless://d1209ffb-c159-48d5-b40d-542ce11fc768@138.124.6.182:10965?security=tls&sni=138.124.6.182#%5BVLESS%5D%20138.124.6.182%3A10965
 trojan://psycho@104.21.80.1:443?sni=PSYchO.SueX12.Ir#%5BTROJAN%5D%20104.21.80.1%3A443
 trojan://UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm@166.88.197.60:26650?sni=166.88.197.60#%5BTROJAN%5D%20166.88.197.60%3A26650
 hysteria2://c006f502-9ae8-462b-9d48-3680f9dde45e@45.196.233.232:9999#%5BHYSTERIA2%5D%2045.196.233.232%3A9999
@@ -79,7 +80,6 @@ vless://a384c715-aeb5-45e8-859b-f687ca6c083f@5.180.97.139:443?security=tls&sni=g
 vless://a8da758c-510d-4827-83cf-2f2b51c49c5b@download.lastilhame.monster:443?security=tls&sni=download.lastilhame.monster#%5BVLESS%5D%20download.lastilhame.monster%3A443
 vless://b605b776-b676-430e-8957-00f1e0166bee@vleesvpn-app-uk01.gw-vpn.click:443?security=tls&sni=plus.im#%5BVLESS%5D%20vleesvpn-app-uk01.gw-vpn.click%3A443
 vless://cec4d434-0578-483e-a5cb-d6a11ea67e27@95.85.248.200:443?security=tls&sni=www.oracle.com#%5BVLESS%5D%2095.85.248.200%3A443
-vless://d1209ffb-c159-48d5-b40d-542ce11fc768@138.124.6.182:10965?security=tls&sni=deepl.com#%5BVLESS%5D%20138.124.6.182%3A10965
 vless://d1209ffb-c159-48d5-b40d-542ce11fc768@1xk7re.by-api-yandex.com:10121?security=tls&sni=apple.com#%5BVLESS%5D%201xk7re.by-api-yandex.com%3A10121
 vless://e033ef6e-ab4b-47d4-a523-ff568d2c8dbb@103.231.73.181:8443?security=tls&sni=tradingview.com#%5BVLESS%5D%20103.231.73.181%3A8443
 vless://e033ef6e-ab4b-47d4-a523-ff568d2c8dbb@2.56.172.83:8443?security=tls&sni=tradingview.com#%5BVLESS%5D%202.56.172.83%3A8443

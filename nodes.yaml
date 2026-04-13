@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 138.124.6.182:10965'
+  type: vless
+  server: 138.124.6.182
+  port: 10965
+  uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
+  udp: true
+  tls: true
+  servername: 138.124.6.182
+  skip-cert-verify: false
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -740,15 +749,6 @@ proxies:
   tls: true
   servername: www.oracle.com
   skip-cert-verify: false
-- name: '[VLESS] 138.124.6.182:10965'
-  type: vless
-  server: 138.124.6.182
-  port: 10965
-  uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
-  udp: true
-  tls: true
-  servername: deepl.com
-  skip-cert-verify: false
 - name: '[VLESS] 1xk7re.by-api-yandex.com:10121'
   type: vless
   server: 1xk7re.by-api-yandex.com
@@ -1164,5 +1164,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-13 02:43:12 UTC
+update_time: 2026-04-13 05:42:26 UTC
 source: auto-fetched
