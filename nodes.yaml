@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 104.21.80.1:443'
+  type: trojan
+  server: 104.21.80.1
+  port: 443
+  password: psycho
+  tls: true
+  skip-cert-verify: false
+  sni: PSYchO.SueX12.Ir
+  udp: true
 - name: '[TROJAN] 104.21.44.185:2053'
   type: trojan
   server: 104.21.44.185
@@ -25,32 +34,6 @@ proxies:
   tls: true
   servername: 138.124.6.182
   skip-cert-verify: false
-- name: '[TROJAN] 104.21.80.1:443'
-  type: trojan
-  server: 104.21.80.1
-  port: 443
-  password: psycho
-  tls: true
-  skip-cert-verify: false
-  sni: PSYchO.SueX12.Ir
-  udp: true
-- name: '[TROJAN] 166.88.197.60:26650'
-  type: trojan
-  server: 166.88.197.60
-  port: 26650
-  password: UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm
-  tls: true
-  skip-cert-verify: false
-  sni: 166.88.197.60
-  udp: true
-- name: '[HYSTERIA2] 45.196.233.232:9999'
-  type: hysteria2
-  server: 45.196.233.232
-  port: 9999
-  password: c006f502-9ae8-462b-9d48-3680f9dde45e
-  tls: true
-  skip-cert-verify: false
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -303,6 +286,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: ads.x5.ru
+  udp: true
+- name: '[TROJAN] 166.88.197.60:26650'
+  type: trojan
+  server: 166.88.197.60
+  port: 26650
+  password: UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm
+  tls: true
+  skip-cert-verify: false
+  sni: sea9.firewallcontract.click
   udp: true
 - name: '[TROJAN] 104.238.162.6:13109'
   type: trojan
@@ -1162,5 +1154,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-14 07:47:00 UTC
+update_time: 2026-04-14 10:15:14 UTC
 source: auto-fetched
