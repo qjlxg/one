@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 150.241.74.1:443'
+  type: vless
+  server: 150.241.74.1
+  port: 443
+  uuid: 5f98c4f8-19f4-471d-8ed5-10c0550c0423
+  udp: true
+  tls: true
+  servername: 150.241.74.1
+  skip-cert-verify: false
 - name: '[TROJAN] 104.21.80.1:443'
   type: trojan
   server: 104.21.80.1
@@ -473,15 +482,6 @@ proxies:
       Host: 639073677259599430.civic-perma.info
   servername: 639073677259599430.civic-perma.info
   skip-cert-verify: true
-- name: '[VLESS] 150.241.74.1:443'
-  type: vless
-  server: 150.241.74.1
-  port: 443
-  uuid: 5f98c4f8-19f4-471d-8ed5-10c0550c0423
-  udp: true
-  tls: true
-  servername: tunnel.vk-apps.com
-  skip-cert-verify: false
 - name: '[VLESS] 104.18.32.47:2096'
   type: vless
   server: 104.18.32.47
@@ -1144,5 +1144,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-15 10:16:36 UTC
+update_time: 2026-04-15 13:25:36 UTC
 source: auto-fetched
