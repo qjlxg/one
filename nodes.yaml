@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 129.153.71.226:443'
+  type: vless
+  server: 129.153.71.226
+  port: 443
+  uuid: d46056cf-da4e-4426-a3e4-39fcbfefa112
+  udp: true
+  tls: true
+  servername: 129.153.71.226
+  skip-cert-verify: false
 - name: '[HYSTERIA2] 45.15.171.80:444'
   type: hysteria2
   server: 45.15.171.80
@@ -1178,5 +1187,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-16 16:22:53 UTC
+update_time: 2026-04-16 19:15:36 UTC
 source: auto-fetched
