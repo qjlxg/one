@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 194.87.10.31:23357'
+  type: trojan
+  server: 194.87.10.31
+  port: 23357
+  password: fQmMJwOLMlqHednu2SVED8gi-+H-db9kbg
+  tls: true
+  skip-cert-verify: false
+  sni: 194.87.10.31
+  udp: true
 - name: '[HYSTERIA2] 45.15.171.80:444'
   type: hysteria2
   server: 45.15.171.80
@@ -1161,5 +1170,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-17 10:14:11 UTC
+update_time: 2026-04-17 13:21:08 UTC
 source: auto-fetched
