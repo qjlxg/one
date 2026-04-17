@@ -43,14 +43,6 @@ proxies:
   tls: true
   servername: 152.53.80.40
   skip-cert-verify: false
-- name: '[HYSTERIA2] 130.61.50.75:6443'
-  type: hysteria2
-  server: 130.61.50.75
-  port: 6443
-  password: zhangyang
-  tls: true
-  skip-cert-verify: false
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1169,5 +1161,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-17 07:47:56 UTC
+update_time: 2026-04-17 10:14:11 UTC
 source: auto-fetched
