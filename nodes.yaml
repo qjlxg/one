@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 209.33.172.190:10016'
+  type: vless
+  server: 209.33.172.190
+  port: 10016
+  uuid: f5721b9c-4709-4ddb-bab1-0912f5e28cfb
+  udp: true
+  tls: true
+  servername: 209.33.172.190
+  skip-cert-verify: false
 - name: '[TROJAN] 194.87.10.31:23357'
   type: trojan
   server: 194.87.10.31
@@ -1161,5 +1170,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-17 19:01:39 UTC
+update_time: 2026-04-17 21:41:35 UTC
 source: auto-fetched
