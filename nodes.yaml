@@ -43,15 +43,6 @@ proxies:
   skip-cert-verify: false
   sni: PSYchO.SueX12.Ir
   udp: true
-- name: '[VLESS] 152.53.80.40:443'
-  type: vless
-  server: 152.53.80.40
-  port: 443
-  uuid: e6567a1e-260f-4b0e-8de3-e2e12f90e854
-  udp: true
-  tls: true
-  servername: 152.53.80.40
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -818,6 +809,15 @@ proxies:
   tls: true
   servername: icloud.com
   skip-cert-verify: false
+- name: '[VLESS] 152.53.80.40:443'
+  type: vless
+  server: 152.53.80.40
+  port: 443
+  uuid: e6567a1e-260f-4b0e-8de3-e2e12f90e854
+  udp: true
+  tls: true
+  servername: sha.helper-internet.com
+  skip-cert-verify: false
 - name: '[VLESS] 188.114.98.0:2082'
   type: vless
   server: 188.114.98.0
@@ -1170,5 +1170,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-17 13:21:08 UTC
+update_time: 2026-04-17 16:01:24 UTC
 source: auto-fetched
