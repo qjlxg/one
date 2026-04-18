@@ -43,15 +43,6 @@ proxies:
   tls: true
   servername: 129.153.71.226
   skip-cert-verify: false
-- name: '[TROJAN] 80.173.230.196:26279'
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  tls: true
-  skip-cert-verify: false
-  sni: 80.173.230.196
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1147,5 +1138,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-18 07:09:04 UTC
+update_time: 2026-04-18 09:50:05 UTC
 source: auto-fetched
