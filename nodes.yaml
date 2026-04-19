@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 144.24.74.102:50911'
+  type: vless
+  server: 144.24.74.102
+  port: 50911
+  uuid: 820409af-997a-41c4-9e51-46f373951a39
+  udp: true
+  tls: true
+  servername: 144.24.74.102
+  skip-cert-verify: false
 - name: '[TROJAN] 82.26.155.199:10369'
   type: trojan
   server: 82.26.155.199
@@ -16,15 +25,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   udp: true
-- name: '[VLESS] 144.24.74.102:50911'
-  type: vless
-  server: 144.24.74.102
-  port: 50911
-  uuid: 820409af-997a-41c4-9e51-46f373951a39
-  udp: true
-  tls: true
-  servername: 144.24.74.102
-  skip-cert-verify: false
 - name: '[VLESS] 172.67.150.254:2095'
   type: vless
   server: 172.67.150.254
@@ -33,24 +33,6 @@ proxies:
   udp: true
   tls: true
   servername: 172.67.150.254
-  skip-cert-verify: false
-- name: '[VLESS] 152.53.80.40:443'
-  type: vless
-  server: 152.53.80.40
-  port: 443
-  uuid: e6567a1e-260f-4b0e-8de3-e2e12f90e854
-  udp: true
-  tls: true
-  servername: 152.53.80.40
-  skip-cert-verify: false
-- name: '[VLESS] 209.33.172.190:10016'
-  type: vless
-  server: 209.33.172.190
-  port: 10016
-  uuid: f5721b9c-4709-4ddb-bab1-0912f5e28cfb
-  udp: true
-  tls: true
-  servername: 209.33.172.190
   skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -797,6 +779,15 @@ proxies:
   tls: true
   servername: icloud.com
   skip-cert-verify: false
+- name: '[VLESS] 152.53.80.40:443'
+  type: vless
+  server: 152.53.80.40
+  port: 443
+  uuid: e6567a1e-260f-4b0e-8de3-e2e12f90e854
+  udp: true
+  tls: true
+  servername: sha.helper-internet.com
+  skip-cert-verify: false
 - name: '[VLESS] 188.114.98.0:2082'
   type: vless
   server: 188.114.98.0
@@ -1149,5 +1140,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-19 15:37:30 UTC
+update_time: 2026-04-19 18:52:52 UTC
 source: auto-fetched
