@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 80.173.230.196:26279'
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  tls: true
-  skip-cert-verify: false
-  sni: 80.173.230.196
-  udp: true
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
+  udp: true
+- name: '[TROJAN] 80.173.230.196:26279'
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  tls: true
+  skip-cert-verify: false
+  sni: 80.173.230.196
   udp: true
 - name: '[VLESS] 144.24.74.102:50911'
   type: vless
@@ -34,14 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 82.26.155.199
-  udp: true
-- name: '[HYSTERIA2] 20.230.191.53:8443'
-  type: hysteria2
-  server: 20.230.191.53
-  port: 8443
-  password: 3780fcbcddd107f7d7c727eb18e28f4c
-  tls: true
-  skip-cert-verify: false
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1130,5 +1122,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-21 07:51:27 UTC
+update_time: 2026-04-21 10:18:19 UTC
 source: auto-fetched
