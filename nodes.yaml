@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 80.173.230.196:26279'
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  tls: true
+  skip-cert-verify: false
+  sni: 80.173.230.196
+  udp: true
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -56,23 +65,23 @@ proxies:
   password: 868ecdaf6aed618ec98cf78585672b2b
   sni: www.nintendogames.net
   skip-cert-verify: false
-- name: '[TROJAN] 54.46.52.70:6313'
-  server: 54.46.52.70
-  port: 6313
+- name: '[TROJAN] 18.183.182.241:9211'
+  server: 18.183.182.241
+  port: 9211
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 52.69.111.130:6313'
-  server: 52.69.111.130
-  port: 6313
+- name: '[TROJAN] 18.183.182.241:50612'
+  server: 18.183.182.241
+  port: 50612
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 13.112.73.166:1951'
-  server: 13.112.73.166
-  port: 1951
+- name: '[TROJAN] 13.192.183.245:1783'
+  server: 13.192.183.245
+  port: 1783
   type: trojan
   password: BxceQaOe
   sni: t.me%252Fripaojiedian
@@ -105,9 +114,9 @@ proxies:
   password: 868ecdaf6aed618ec98cf78585672b2b
   sni: www.nintendogames.net
   skip-cert-verify: false
-- name: '[TROJAN] 95.40.68.160:12070'
-  server: 95.40.68.160
-  port: 12070
+- name: '[TROJAN] 18.183.182.241:28033'
+  server: 18.183.182.241
+  port: 28033
   type: trojan
   password: BxceQaOe
   sni: t.me%252Fripaojiedian
@@ -126,58 +135,44 @@ proxies:
   password: 868ecdaf6aed618ec98cf78585672b2b
   sni: www.nintendogames.net
   skip-cert-verify: false
-- name: '[TROJAN] 54.46.52.234:23255'
-  server: 54.46.52.234
-  port: 23255
+- name: '[TROJAN] 18.183.182.241:49534'
+  server: 18.183.182.241
+  port: 49534
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 16.162.188.94:52687'
-  server: 16.162.188.94
-  port: 52687
-  type: trojan
-  password: 868ecdaf6aed618ec98cf78585672b2b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 54.65.250.149:6313'
-  server: 54.65.250.149
+- name: '[TROJAN] 54.46.52.70:6313'
+  server: 54.46.52.70
   port: 6313
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 43.199.33.120:9211'
-  server: 43.199.33.120
-  port: 9211
+- name: '[TROJAN] 52.69.111.130:6313'
+  server: 52.69.111.130
+  port: 6313
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 57.180.27.122:1783'
-  server: 57.180.27.122
-  port: 1783
+- name: '[TROJAN] 13.112.73.166:1951'
+  server: 13.112.73.166
+  port: 1951
   type: trojan
   password: BxceQaOe
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 160.16.85.33:4937'
-  server: 160.16.85.33
-  port: 4937
-  type: trojan
-  password: 868ecdaf6aed618ec98cf78585672b2b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.199.217.68:28033'
-  server: 43.199.217.68
-  port: 28033
+- name: '[TROJAN] 95.40.68.160:12070'
+  server: 95.40.68.160
+  port: 12070
   type: trojan
   password: BxceQaOe
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 16.162.217.109:14919'
-  server: 16.162.217.109
-  port: 14919
+- name: '[TROJAN] 54.46.52.234:23255'
+  server: 54.46.52.234
+  port: 23255
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
@@ -1135,5 +1130,5 @@ proxies:
   tls: true
   servername: u711541u85f7s394.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-20 21:48:24 UTC
+update_time: 2026-04-21 02:38:08 UTC
 source: auto-fetched
