@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 85.209.153.60:52335'
-  type: vless
-  server: 85.209.153.60
-  port: 52335
-  uuid: 6ec3c298-1058-43bd-81e3-54b155c4ae21
-  udp: true
-  tls: true
-  servername: 85.209.153.60
-  skip-cert-verify: false
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -17,15 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[TROJAN] 80.173.230.196:26279'
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  tls: true
-  skip-cert-verify: false
-  sni: 80.173.230.196
+- name: '[VLESS] 85.209.153.60:52335'
+  type: vless
+  server: 85.209.153.60
+  port: 52335
+  uuid: 6ec3c298-1058-43bd-81e3-54b155c4ae21
   udp: true
+  tls: true
+  servername: 85.209.153.60
+  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -1144,5 +1135,5 @@ proxies:
   tls: true
   servername: u711541ubd67s863.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-23 07:54:12 UTC
+update_time: 2026-04-23 10:21:09 UTC
 source: auto-fetched
