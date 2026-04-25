@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 87.120.216.240:443'
+  type: trojan
+  server: 87.120.216.240
+  port: 443
+  password: '1234567890'
+  tls: true
+  skip-cert-verify: false
+  sni: kfm-bn0.pages.dev
+  udp: true
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -1144,5 +1153,5 @@ proxies:
   tls: true
   servername: u711541u4c78s642.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-25 05:12:04 UTC
+update_time: 2026-04-25 07:17:30 UTC
 source: auto-fetched
