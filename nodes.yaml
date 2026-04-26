@@ -8,15 +8,6 @@ proxies:
   skip-cert-verify: false
   sni: kfm-bn0.pages.dev
   udp: true
-- name: '[TROJAN] engaged-ram.rooster465.autos:443'
-  type: trojan
-  server: engaged-ram.rooster465.autos
-  port: 443
-  password: IL37892054
-  tls: true
-  skip-cert-verify: false
-  sni: engaged-ram.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -32,6 +23,90 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
+- name: '[TROJAN] 13.230.190.29:52687'
+  server: 13.230.190.29
+  port: 52687
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 43.199.78.220:9211'
+  server: 43.199.78.220
+  port: 9211
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 43.199.206.175:4886'
+  server: 43.199.206.175
+  port: 4886
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 13.231.195.214:3022'
+  server: 13.231.195.214
+  port: 3022
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 13.231.195.214:4380'
+  server: 13.231.195.214
+  port: 4380
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.132.38:4380'
+  server: 160.16.132.38
+  port: 4380
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.106.99:3057'
+  server: 160.16.106.99
+  port: 3057
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.132.38:32876'
+  server: 160.16.132.38
+  port: 32876
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 54.46.5.109:25675'
+  server: 54.46.5.109
+  port: 25675
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 13.231.195.214:4019'
+  server: 13.231.195.214
+  port: 4019
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 160.16.106.99:4019'
+  server: 160.16.106.99
+  port: 4019
+  type: trojan
+  password: 1774240c00db2b77d5a99f6540c47b69
+  sni: www.nintendogames.net
+  skip-cert-verify: false
+- name: '[TROJAN] 3.112.254.113:14919'
+  server: 3.112.254.113
+  port: 14919
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
 - name: '[TROJAN] 18.162.152.196:52687'
   server: 18.162.152.196
   port: 52687
@@ -81,13 +156,6 @@ proxies:
   password: 1774240c00db2b77d5a99f6540c47b69
   sni: www.nintendogames.net
   skip-cert-verify: false
-- name: '[TROJAN] 160.16.132.38:32876'
-  server: 160.16.132.38
-  port: 32876
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
 - name: '[TROJAN] 16.162.220.143:25675'
   server: 16.162.220.143
   port: 25675
@@ -112,90 +180,6 @@ proxies:
 - name: '[TROJAN] 18.166.61.147:23255'
   server: 18.166.61.147
   port: 23255
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 3.112.254.212:52687'
-  server: 3.112.254.212
-  port: 52687
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.206.194.205:54708'
-  server: 43.206.194.205
-  port: 54708
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 43.199.32.10:50612'
-  server: 43.199.32.10
-  port: 50612
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 54.249.58.71:3278'
-  server: 54.249.58.71
-  port: 3278
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 54.249.58.71:2001'
-  server: 54.249.58.71
-  port: 2001
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.199.32.10:4380'
-  server: 43.199.32.10
-  port: 4380
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 54.249.58.71:5594'
-  server: 54.249.58.71
-  port: 5594
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 54.249.58.71:32876'
-  server: 54.249.58.71
-  port: 32876
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.199.253.7:30726'
-  server: 43.199.253.7
-  port: 30726
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 13.231.43.53:4019'
-  server: 13.231.43.53
-  port: 4019
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.199.32.10:3057'
-  server: 43.199.32.10
-  port: 3057
-  type: trojan
-  password: 1774240c00db2b77d5a99f6540c47b69
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 52.195.168.226:14919'
-  server: 52.195.168.226
-  port: 14919
   type: trojan
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
@@ -874,15 +858,6 @@ proxies:
   tls: true
   servername: u711541ub838s678.ccgfw.top
   skip-cert-verify: false
-- name: '[VLESS] s644.ccgfw.top:443'
-  type: vless
-  server: s644.ccgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541ud3c8s644.ccgfw.top
-  skip-cert-verify: false
 - name: '[VLESS] ipv6s116.okgfw.top:443'
   type: vless
   server: ipv6s116.okgfw.top
@@ -900,15 +875,6 @@ proxies:
   udp: true
   tls: true
   servername: u711541u0c14ipv6s315.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] s643.ccgfw.top:443'
-  type: vless
-  server: s643.ccgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541u7190s643.ccgfw.top
   skip-cert-verify: false
 - name: '[VLESS] s473.ccgfw.top:443'
   type: vless
@@ -945,15 +911,6 @@ proxies:
   udp: true
   tls: true
   servername: u711541u6c80ipv6s114.okgfw.top
-  skip-cert-verify: false
-- name: '[VLESS] ipv6s235.ccgfw.top:443'
-  type: vless
-  server: ipv6s235.ccgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541ue122ipv6s235.ccgfw.top
   skip-cert-verify: false
 - name: '[VLESS] ipv6s316.okgg.top:443'
   type: vless
@@ -1008,15 +965,6 @@ proxies:
   udp: true
   tls: true
   servername: u711541ue788s306.okgg.top
-  skip-cert-verify: false
-- name: '[VLESS] ipv6s732.ccgfw.top:443'
-  type: vless
-  server: ipv6s732.ccgfw.top
-  port: 443
-  uuid: 872624ac-aa40-39b1-8232-f7270812c234
-  udp: true
-  tls: true
-  servername: u711541ub3fcipv6s732.ccgfw.top
   skip-cert-verify: false
 - name: '[VLESS] s348.ccgfw.top:443'
   type: vless
@@ -1144,6 +1092,42 @@ proxies:
   tls: true
   servername: u711541u8594s677.ccgfw.top
   skip-cert-verify: false
+- name: '[VLESS] s644.ccgfw.top:443'
+  type: vless
+  server: s644.ccgfw.top
+  port: 443
+  uuid: 872624ac-aa40-39b1-8232-f7270812c234
+  udp: true
+  tls: true
+  servername: u711541ud3c8s644.ccgfw.top
+  skip-cert-verify: false
+- name: '[VLESS] s643.ccgfw.top:443'
+  type: vless
+  server: s643.ccgfw.top
+  port: 443
+  uuid: 872624ac-aa40-39b1-8232-f7270812c234
+  udp: true
+  tls: true
+  servername: u711541u7190s643.ccgfw.top
+  skip-cert-verify: false
+- name: '[VLESS] ipv6s235.ccgfw.top:443'
+  type: vless
+  server: ipv6s235.ccgfw.top
+  port: 443
+  uuid: 872624ac-aa40-39b1-8232-f7270812c234
+  udp: true
+  tls: true
+  servername: u711541ue122ipv6s235.ccgfw.top
+  skip-cert-verify: false
+- name: '[VLESS] ipv6s732.ccgfw.top:443'
+  type: vless
+  server: ipv6s732.ccgfw.top
+  port: 443
+  uuid: 872624ac-aa40-39b1-8232-f7270812c234
+  udp: true
+  tls: true
+  servername: u711541ub3fcipv6s732.ccgfw.top
+  skip-cert-verify: false
 - name: '[VLESS] s642.ccgfw.top:443'
   type: vless
   server: s642.ccgfw.top
@@ -1153,5 +1137,5 @@ proxies:
   tls: true
   servername: u711541u4c78s642.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-25 21:37:17 UTC
+update_time: 2026-04-26 02:46:21 UTC
 source: auto-fetched
