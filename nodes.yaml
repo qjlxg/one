@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 82.26.155.105:10369'
+  type: trojan
+  server: 82.26.155.105
+  port: 10369
+  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
+  tls: true
+  skip-cert-verify: false
+  sni: 82.26.155.105
+  udp: true
 - name: '[TROJAN] 87.120.216.240:443'
   type: trojan
   server: 87.120.216.240
@@ -1137,5 +1146,5 @@ proxies:
   tls: true
   servername: u711541u4c78s642.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-04-26 07:40:13 UTC
+update_time: 2026-04-26 09:54:14 UTC
 source: auto-fetched
