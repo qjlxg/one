@@ -1613,5 +1613,5 @@ proxies:
   tls: true
   servername: mirror.yandex.ru
   skip-cert-verify: false
-update_time: 2026-04-28 06:08:51 UTC
+update_time: 2026-04-28 11:05:39 UTC
 source: auto-fetched
