@@ -1,4 +1,11 @@
 proxies:
+- name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
+  type: vless
+  server: cdn9-33.vk-cdnvideo.com
+  port: 8443
+  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
+  udp: true
+  tls: false
 - name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
   type: trojan
   server: 90081bb25c.node.tro.cac.cab
@@ -793,15 +800,6 @@ proxies:
   udp: true
   tls: true
   servername: cdn7-39.vk-cdnvideo.com
-  skip-cert-verify: false
-- name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
-  type: vless
-  server: cdn9-33.vk-cdnvideo.com
-  port: 8443
-  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
-  udp: true
-  tls: true
-  servername: cdn9-33.vk-cdnvideo.com
   skip-cert-verify: false
 - name: '[VLESS] 89.185.81.68:443'
   type: vless
@@ -2377,5 +2375,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-06-05 09:50:09 UTC
+update_time: 2026-06-05 14:32:21 UTC
 source: auto-fetched
