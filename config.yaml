@@ -8,18 +8,15 @@ proxies:
   server: null
   skip-cert-verify: true
   udp: true
-- cipher: auto
-  flow: ''
-  name: N_0001
-  network: tcp
-  port: 8443
-  server: cdn9-33.vk-cdnvideo.com
-  servername: null
+- name: N_0001
+  password: IL37892054
+  port: 443
+  server: engaged-ram.rooster465.autos
   skip-cert-verify: true
-  tls: false
-  type: vless
+  sni: engaged-ram.rooster465.autos
+  tls: true
+  type: trojan
   udp: true
-  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
 - name: N_0002
   password: 4f4d1167-ef14-4304-9bce-0740472503ef
   port: 45553
@@ -33,6 +30,18 @@ proxies:
   flow: ''
   name: N_0003
   network: tcp
+  port: 8443
+  server: cdn9-33.vk-cdnvideo.com
+  servername: null
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
+- cipher: auto
+  flow: ''
+  name: N_0004
+  network: tcp
   port: 22231
   server: 85.234.114.53
   servername: 85.234.114.53
@@ -41,15 +50,6 @@ proxies:
   type: vless
   udp: true
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-- name: N_0004
-  password: IL37892054
-  port: 443
-  server: engaged-ram.rooster465.autos
-  skip-cert-verify: true
-  sni: engaged-ram.rooster465.autos
-  tls: true
-  type: trojan
-  udp: true
 - cipher: auto
   flow: ''
   name: N_0005
