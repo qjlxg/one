@@ -1,29 +1,4 @@
 proxies:
-- name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
-  type: vless
-  server: cdn9-33.vk-cdnvideo.com
-  port: 8443
-  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
-  udp: true
-  tls: false
-- name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
-  type: trojan
-  server: 90081bb25c.node.tro.cac.cab
-  port: 45553
-  password: 4f4d1167-ef14-4304-9bce-0740472503ef
-  tls: true
-  skip-cert-verify: false
-  sni: ch.01.naiun.bili...</div>
-  udp: true
-- name: '[VLESS] 85.234.114.53:22231'
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: true
-  servername: 85.234.114.53
-  skip-cert-verify: false
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -33,6 +8,31 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
+- name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
+  type: trojan
+  server: 90081bb25c.node.tro.cac.cab
+  port: 45553
+  password: 4f4d1167-ef14-4304-9bce-0740472503ef
+  tls: true
+  skip-cert-verify: false
+  sni: ch.01.naiun.bili...</div>
+  udp: true
+- name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
+  type: vless
+  server: cdn9-33.vk-cdnvideo.com
+  port: 8443
+  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
+  udp: true
+  tls: false
+- name: '[VLESS] 85.234.114.53:22231'
+  type: vless
+  server: 85.234.114.53
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: 85.234.114.53
+  skip-cert-verify: false
 - name: '[VLESS] sourceforge.net:2087'
   type: vless
   server: sourceforge.net
@@ -2375,5 +2375,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-06-05 17:09:57 UTC
+update_time: 2026-06-05 19:45:18 UTC
 source: auto-fetched
