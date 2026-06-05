@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] engaged-ram.rooster465.autos:443'
-  type: trojan
-  server: engaged-ram.rooster465.autos
-  port: 443
-  password: IL37892054
-  tls: true
-  skip-cert-verify: false
-  sni: engaged-ram.rooster465.autos
-  udp: true
 - name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
   type: trojan
   server: 90081bb25c.node.tro.cac.cab
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: ch.01.naiun.bili...</div>
+  udp: true
+- name: '[TROJAN] engaged-ram.rooster465.autos:443'
+  type: trojan
+  server: engaged-ram.rooster465.autos
+  port: 443
+  password: IL37892054
+  tls: true
+  skip-cert-verify: false
+  sni: engaged-ram.rooster465.autos
   udp: true
 - name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
   type: vless
@@ -33,13 +33,6 @@ proxies:
   tls: true
   servername: 85.234.114.53
   skip-cert-verify: false
-- name: '[VLESS] sourceforge.net:2087'
-  type: vless
-  server: sourceforge.net
-  port: 2087
-  uuid: 43b8ccaf-05ea-427c-a5f0-9faa0d6e0267
-  udp: true
-  tls: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2375,5 +2368,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-06-05 19:45:18 UTC
+update_time: 2026-06-05 22:11:47 UTC
 source: auto-fetched
