@@ -1,4 +1,4 @@
-# Updated at 2026-06-06 10:50:56 UTC
+# Updated at 2026-06-06 13:16:09 UTC
 vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@85.234.114.53:22231?security=tls&sni=85.234.114.53#%5BVLESS%5D%2085.234.114.53%3A22231
 trojan://IL37892054@engaged-ram.rooster465.autos:443?sni=engaged-ram.rooster465.autos#%5BTROJAN%5D%20engaged-ram.rooster465.autos%3A443
 trojan://qDVh0NalwefxyZlHh3Ni2JSlhErcuC3Wiq@91.233.8.138:443?sni=91.233.8.138#%5BTROJAN%5D%2091.233.8.138%3A443
