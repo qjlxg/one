@@ -1,29 +1,4 @@
 proxies:
-- name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
-  type: trojan
-  server: 90081bb25c.node.tro.cac.cab
-  port: 45553
-  password: 4f4d1167-ef14-4304-9bce-0740472503ef
-  tls: true
-  skip-cert-verify: false
-  sni: ch.01.naiun.bili...</div>
-  udp: true
-- name: '[TROJAN] engaged-ram.rooster465.autos:443'
-  type: trojan
-  server: engaged-ram.rooster465.autos
-  port: 443
-  password: IL37892054
-  tls: true
-  skip-cert-verify: false
-  sni: engaged-ram.rooster465.autos
-  udp: true
-- name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
-  type: vless
-  server: cdn9-33.vk-cdnvideo.com
-  port: 8443
-  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
-  udp: true
-  tls: false
 - name: '[VLESS] 85.234.114.53:22231'
   type: vless
   server: 85.234.114.53
@@ -33,6 +8,40 @@ proxies:
   tls: true
   servername: 85.234.114.53
   skip-cert-verify: false
+- name: '[TROJAN] engaged-ram.rooster465.autos:443'
+  type: trojan
+  server: engaged-ram.rooster465.autos
+  port: 443
+  password: IL37892054
+  tls: true
+  skip-cert-verify: false
+  sni: engaged-ram.rooster465.autos
+  udp: true
+- name: '[TROJAN] 91.233.8.138:443'
+  type: trojan
+  server: 91.233.8.138
+  port: 443
+  password: qDVh0NalwefxyZlHh3Ni2JSlhErcuC3Wiq
+  tls: true
+  skip-cert-verify: false
+  sni: 91.233.8.138
+  udp: true
+- name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
+  type: trojan
+  server: 90081bb25c.node.tro.cac.cab
+  port: 45553
+  password: 4f4d1167-ef14-4304-9bce-0740472503ef
+  tls: true
+  skip-cert-verify: false
+  sni: ch.01.naiun.bili...</div>
+  udp: true
+- name: '[VLESS] cdn9-33.vk-cdnvideo.com:8443'
+  type: vless
+  server: cdn9-33.vk-cdnvideo.com
+  port: 8443
+  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
+  udp: true
+  tls: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -368,15 +377,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: www.cdn-structure.click
-  udp: true
-- name: '[TROJAN] 91.233.8.138:443'
-  type: trojan
-  server: 91.233.8.138
-  port: 443
-  password: qDVh0NalwefxyZlHh3Ni2JSlhErcuC3Wiq
-  tls: true
-  skip-cert-verify: false
-  sni: www.homelywebs.click
   udp: true
 - name: '[TROJAN] 172.238.120.124:443'
   type: trojan
@@ -2242,5 +2242,5 @@ proxies:
   skip-cert-verify: false
   udp: true
   sni: u716087us250.ayxj.top
-update_time: 2026-06-06 06:23:32 UTC
+update_time: 2026-06-06 10:50:56 UTC
 source: auto-fetched
