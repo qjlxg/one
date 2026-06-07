@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 85.234.114.53:22231'
+  type: vless
+  server: 85.234.114.53
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: 85.234.114.53
+  skip-cert-verify: false
 - name: '[TROJAN] 130.94.104.210:443'
   type: trojan
   server: 130.94.104.210
@@ -35,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: ch.01.naiun.bili...</div>
   udp: true
-- name: '[VLESS] 85.234.114.53:22231'
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: true
-  servername: 85.234.114.53
-  skip-cert-verify: false
 - name: '[TROJAN] 91.233.8.138:443'
   type: trojan
   server: 91.233.8.138
@@ -2221,5 +2221,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-06-07 11:03:10 UTC
+update_time: 2026-06-07 13:26:51 UTC
 source: auto-fetched
