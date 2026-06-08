@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] engaged-ram.rooster465.autos:443'
-  type: trojan
-  server: engaged-ram.rooster465.autos
-  port: 443
-  password: IL37892054
-  tls: true
-  skip-cert-verify: false
-  sni: engaged-ram.rooster465.autos
-  udp: true
 - name: '[VLESS] 178.215.238.148:8443'
   type: vless
   server: 178.215.238.148
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 178.215.238.148
   skip-cert-verify: false
+- name: '[TROJAN] engaged-ram.rooster465.autos:443'
+  type: trojan
+  server: engaged-ram.rooster465.autos
+  port: 443
+  password: IL37892054
+  tls: true
+  skip-cert-verify: false
+  sni: engaged-ram.rooster465.autos
+  udp: true
 - name: '[VLESS] pl.riotvpn.eu:443'
   type: vless
   server: pl.riotvpn.eu
@@ -2253,5 +2253,5 @@ proxies:
   udp: true
   servername: ''
   fingerprint: chrome
-update_time: 2026-06-08 13:01:06 UTC
+update_time: 2026-06-08 17:46:44 UTC
 source: auto-fetched

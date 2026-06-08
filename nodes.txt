@@ -1,6 +1,6 @@
-# Updated at 2026-06-08 13:01:06 UTC
-trojan://IL37892054@engaged-ram.rooster465.autos:443?sni=engaged-ram.rooster465.autos#%5BTROJAN%5D%20engaged-ram.rooster465.autos%3A443
+# Updated at 2026-06-08 17:46:44 UTC
 vless://21c1132b-068c-46fb-880e-3268f6a30e7f@178.215.238.148:8443?security=tls&sni=178.215.238.148#%5BVLESS%5D%20178.215.238.148%3A8443
+trojan://IL37892054@engaged-ram.rooster465.autos:443?sni=engaged-ram.rooster465.autos#%5BTROJAN%5D%20engaged-ram.rooster465.autos%3A443
 vless://ec5e0aed-c265-4f02-9142-8ec76ee50ceb@pl.riotvpn.eu:443?security=tls&sni=pl.riotvpn.eu#%5BVLESS%5D%20pl.riotvpn.eu%3A443
 trojan://4f4d1167-ef14-4304-9bce-0740472503ef@90081bb25c.node.tro.cac.cab:45553?sni=ch.01.naiun.bili...</div>#%5BTROJAN%5D%2090081bb25c.node.tro.cac.cab%3A45553
 vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@85.234.114.53:22231?security=tls&sni=85.234.114.53#%5BVLESS%5D%2085.234.114.53%3A22231
