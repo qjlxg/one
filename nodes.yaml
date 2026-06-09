@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 85.234.114.53:22231'
+  type: vless
+  server: 85.234.114.53
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: 85.234.114.53
+  skip-cert-verify: false
 - name: '[VLESS] r1.mizulina.top:22231'
   type: vless
   server: r1.mizulina.top
@@ -17,13 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[VLESS] 85.234.114.53:22231'
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: false
 - name: '[VLESS] 178.215.238.148:8443'
   type: vless
   server: 178.215.238.148
@@ -33,24 +35,6 @@ proxies:
   tls: true
   servername: 178.215.238.148
   skip-cert-verify: false
-- name: '[VLESS] pl.riotvpn.eu:443'
-  type: vless
-  server: pl.riotvpn.eu
-  port: 443
-  uuid: ec5e0aed-c265-4f02-9142-8ec76ee50ceb
-  udp: true
-  tls: true
-  servername: pl.riotvpn.eu
-  skip-cert-verify: false
-- name: '[TROJAN] 90081bb25c.node.tro.cac.cab:45553'
-  type: trojan
-  server: 90081bb25c.node.tro.cac.cab
-  port: 45553
-  password: 4f4d1167-ef14-4304-9bce-0740472503ef
-  tls: true
-  skip-cert-verify: false
-  sni: ch.01.naiun.bili...</div>
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2249,5 +2233,5 @@ proxies:
   skip-cert-verify: false
   udp: true
   sni: u723829us1316.csgfw.top
-update_time: 2026-06-09 06:43:02 UTC
+update_time: 2026-06-09 11:54:39 UTC
 source: auto-fetched
