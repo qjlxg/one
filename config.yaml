@@ -20,9 +20,18 @@ proxies:
   type: vless
   udp: true
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+- name: N_0002
+  password: IL37892054
+  port: 443
+  server: engaged-ram.rooster465.autos
+  skip-cert-verify: true
+  sni: engaged-ram.rooster465.autos
+  tls: true
+  type: trojan
+  udp: true
 - cipher: auto
   flow: ''
-  name: N_0002
+  name: N_0003
   network: tcp
   port: 22231
   server: r1.mizulina.top
@@ -32,15 +41,6 @@ proxies:
   type: vless
   udp: true
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-- name: N_0003
-  password: IL37892054
-  port: 443
-  server: engaged-ram.rooster465.autos
-  skip-cert-verify: true
-  sni: engaged-ram.rooster465.autos
-  tls: true
-  type: trojan
-  udp: true
 - cipher: auto
   flow: ''
   name: N_0004
