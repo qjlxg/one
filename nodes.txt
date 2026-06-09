@@ -1,4 +1,5 @@
-# Updated at 2026-06-09 02:30:49 UTC
+# Updated at 2026-06-09 06:43:02 UTC
+vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?security=tls&sni=r1.mizulina.top#%5BVLESS%5D%20r1.mizulina.top%3A22231
 trojan://IL37892054@engaged-ram.rooster465.autos:443?sni=engaged-ram.rooster465.autos#%5BTROJAN%5D%20engaged-ram.rooster465.autos%3A443
 vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@85.234.114.53:22231#%5BVLESS%5D%2085.234.114.53%3A22231
 vless://21c1132b-068c-46fb-880e-3268f6a30e7f@178.215.238.148:8443?security=tls&sni=178.215.238.148#%5BVLESS%5D%20178.215.238.148%3A8443
@@ -100,7 +101,6 @@ vless://9bbc4303-c291-42b8-8eb4-38923f4b6cdd@89.185.81.68:443?security=tls&sni=y
 vless://aa24026d-9542-4357-8625-3f04653fc4bd@57.181.38.2:59826?security=tls&sni=www.nvidia.com&allowInsecure=1#%5BVLESS%5D%2057.181.38.2%3A59826
 vless://acd726d3-0128-44d8-a575-21013ff7740a@51.44.25.250:44520?security=tls&sni=yahoo.com#%5BVLESS%5D%2051.44.25.250%3A44520
 vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@85.234.114.53:443?security=tls&sni=r1.mizulina.top#%5BVLESS%5D%2085.234.114.53%3A443
-vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?security=tls&sni=r1.mizulina.top#%5BVLESS%5D%20r1.mizulina.top%3A22231
 vless://b6ce8a51-19b9-4979-91ba-b4298c26d5fc@sw1tzerl4nd.gxcore.net:443?security=tls&sni=sw1tzerl4nd.gxcore.net#%5BVLESS%5D%20sw1tzerl4nd.gxcore.net%3A443
 vless://b831381d-6324-4d53-ad4f-8cda48b30811@67.102.180.16:443?security=tls&sni=67.102.180.16#%5BVLESS%5D%2067.102.180.16%3A443
 vless://b95dd8e5-2758-408f-be99-9362eecee609@pl.fantoff.online:443?security=tls&sni=yahoo.com#%5BVLESS%5D%20pl.fantoff.online%3A443
