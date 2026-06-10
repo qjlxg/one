@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] engaged-ram.rooster465.autos:443'
+  type: trojan
+  server: engaged-ram.rooster465.autos
+  port: 443
+  password: IL37892054
+  tls: true
+  skip-cert-verify: false
+  sni: engaged-ram.rooster465.autos
+  udp: true
 - name: '[VLESS] 178.215.238.148:8443'
   type: vless
   server: 178.215.238.148
@@ -17,15 +26,6 @@ proxies:
   tls: true
   servername: 85.234.114.53
   skip-cert-verify: false
-- name: '[TROJAN] engaged-ram.rooster465.autos:443'
-  type: trojan
-  server: engaged-ram.rooster465.autos
-  port: 443
-  password: IL37892054
-  tls: true
-  skip-cert-verify: false
-  sni: engaged-ram.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2079,5 +2079,5 @@ proxies:
     path: /IOebhLMhl1CTbFHbL95myfRX2
     headers:
       Host: de2.ping-game.ir
-update_time: 2026-06-10 20:18:39 UTC
+update_time: 2026-06-10 22:49:26 UTC
 source: auto-fetched
