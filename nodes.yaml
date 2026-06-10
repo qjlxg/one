@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 178.215.238.148:8443'
+  type: vless
+  server: 178.215.238.148
+  port: 8443
+  uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+  udp: true
+  tls: true
+  servername: 178.215.238.148
+  skip-cert-verify: false
 - name: '[VLESS] 85.234.114.53:22231'
   type: vless
   server: 85.234.114.53
@@ -17,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[VLESS] r1.mizulina.top:22231'
-  type: vless
-  server: r1.mizulina.top
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: true
-  servername: r1.mizulina.top
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -913,6 +913,15 @@ proxies:
   type: vless
   server: 85.234.114.53
   port: 443
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: r1.mizulina.top
+  skip-cert-verify: false
+- name: '[VLESS] r1.mizulina.top:22231'
+  type: vless
+  server: r1.mizulina.top
+  port: 22231
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
   udp: true
   tls: true
@@ -2070,5 +2079,5 @@ proxies:
     path: /IOebhLMhl1CTbFHbL95myfRX2
     headers:
       Host: de2.ping-game.ir
-update_time: 2026-06-10 17:53:41 UTC
+update_time: 2026-06-10 20:18:39 UTC
 source: auto-fetched
