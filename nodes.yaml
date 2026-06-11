@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] fr.noooo.win:443'
+  type: vless
+  server: fr.noooo.win
+  port: 443
+  uuid: 7b241232-208d-4d36-857e-913f91b044f4
+  udp: true
+  tls: true
+  servername: fr.noooo.win
+  skip-cert-verify: false
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -2306,5 +2315,5 @@ proxies:
   skip-cert-verify: false
   udp: true
   sni: u723828us372.okgfw.top
-update_time: 2026-06-11 18:12:20 UTC
+update_time: 2026-06-11 22:48:08 UTC
 source: auto-fetched
