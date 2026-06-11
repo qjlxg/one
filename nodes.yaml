@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 85.234.114.53:22231'
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: true
-  servername: 85.234.114.53
-  skip-cert-verify: false
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
+- name: '[VLESS] 85.234.114.53:22231'
+  type: vless
+  server: 85.234.114.53
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: 85.234.114.53
+  skip-cert-verify: false
 - name: '[VLESS] 178.215.238.148:8443'
   type: vless
   server: 178.215.238.148
@@ -2306,5 +2306,5 @@ proxies:
   skip-cert-verify: false
   udp: true
   sni: u723828us372.okgfw.top
-update_time: 2026-06-11 12:38:35 UTC
+update_time: 2026-06-11 18:12:20 UTC
 source: auto-fetched
