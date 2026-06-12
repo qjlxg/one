@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] engaged-ram.rooster465.autos:443'
-  type: trojan
-  server: engaged-ram.rooster465.autos
-  port: 443
-  password: IL37892054
-  tls: true
-  skip-cert-verify: false
-  sni: engaged-ram.rooster465.autos
-  udp: true
 - name: '[VLESS] fr.noooo.win:443'
   type: vless
   server: fr.noooo.win
@@ -17,6 +8,24 @@ proxies:
   tls: true
   servername: fr.noooo.win
   skip-cert-verify: false
+- name: '[VLESS] r1.mizulina.top:22231'
+  type: vless
+  server: r1.mizulina.top
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: r1.mizulina.top
+  skip-cert-verify: false
+- name: '[TROJAN] engaged-ram.rooster465.autos:443'
+  type: trojan
+  server: engaged-ram.rooster465.autos
+  port: 443
+  password: IL37892054
+  tls: true
+  skip-cert-verify: false
+  sni: engaged-ram.rooster465.autos
+  udp: true
 - name: '[VLESS] 85.234.114.53:22231'
   type: vless
   server: 85.234.114.53
@@ -2160,5 +2169,5 @@ proxies:
   uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
   udp: true
   tls: false
-update_time: 2026-06-12 07:17:25 UTC
+update_time: 2026-06-12 12:13:17 UTC
 source: auto-fetched
