@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[VLESS] 85.234.114.53:22231'
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: true
-  servername: 85.234.114.53
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2169,5 +2160,5 @@ proxies:
   uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
   udp: true
   tls: false
-update_time: 2026-06-12 12:13:17 UTC
+update_time: 2026-06-12 17:33:57 UTC
 source: auto-fetched
