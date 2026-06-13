@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[VLESS] fr.noooo.win:443'
-  type: vless
-  server: fr.noooo.win
-  port: 443
-  uuid: 7b241232-208d-4d36-857e-913f91b044f4
-  udp: true
-  tls: true
-  servername: fr.noooo.win
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2493,5 +2484,5 @@ proxies:
   tls: true
   servername: u727887u8594s677.ccgfw.top
   skip-cert-verify: false
-update_time: 2026-06-13 16:09:52 UTC
+update_time: 2026-06-13 19:14:10 UTC
 source: auto-fetched
