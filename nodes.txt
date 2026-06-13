@@ -1,4 +1,4 @@
-# Updated at 2026-06-13 11:10:26 UTC
+# Updated at 2026-06-13 13:44:31 UTC
 trojan://IL37892054@engaged-ram.rooster465.autos:443?sni=engaged-ram.rooster465.autos#%5BTROJAN%5D%20engaged-ram.rooster465.autos%3A443
 vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?security=tls&sni=r1.mizulina.top#%5BVLESS%5D%20r1.mizulina.top%3A22231
 vless://7b241232-208d-4d36-857e-913f91b044f4@fr.noooo.win:443?security=tls&sni=fr.noooo.win#%5BVLESS%5D%20fr.noooo.win%3A443
