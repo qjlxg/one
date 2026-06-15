@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 156.229.161.107:10001'
-  type: vless
-  server: 156.229.161.107
-  port: 10001
-  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
-  udp: true
-  tls: true
-  servername: 156.229.161.107
-  skip-cert-verify: false
 - name: '[VLESS] r1.mizulina.top:22231'
   type: vless
   server: r1.mizulina.top
@@ -26,14 +17,14 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[VLESS] 85.234.114.53:22231'
+- name: '[VLESS] 156.229.161.107:10001'
   type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  server: 156.229.161.107
+  port: 10001
+  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
   udp: true
   tls: true
-  servername: 85.234.114.53
+  servername: 156.229.161.107
   skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1989,5 +1980,5 @@ proxies:
   tls: true
   servername: u723828us538.okgfwbackxyz.xyz
   skip-cert-verify: false
-update_time: 2026-06-15 02:59:53 UTC
+update_time: 2026-06-15 09:29:02 UTC
 source: auto-fetched
