@@ -1,4 +1,4 @@
-# Updated at 2026-06-15 20:48:54 UTC
+# Updated at 2026-06-15 22:59:14 UTC
 vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?security=tls&sni=r1.mizulina.top#%5BVLESS%5D%20r1.mizulina.top%3A22231
 trojan://IL37892054@engaged-ram.rooster465.autos:443?sni=engaged-ram.rooster465.autos#%5BTROJAN%5D%20engaged-ram.rooster465.autos%3A443
 vless://9c79aceb-4649-44ea-9698-b5e9ecf6d6da@156.229.161.107:10001?security=tls&sni=156.229.161.107#%5BVLESS%5D%20156.229.161.107%3A10001
