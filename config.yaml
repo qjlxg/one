@@ -8,7 +8,19 @@ proxies:
   server: null
   skip-cert-verify: true
   udp: true
-- name: N_0001
+- cipher: auto
+  flow: ''
+  name: N_0001
+  network: tcp
+  port: 22231
+  server: 85.234.114.53
+  servername: 85.234.114.53
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+- name: N_0002
   password: IL37892054
   port: 443
   server: engaged-ram.rooster465.autos
@@ -19,23 +31,11 @@ proxies:
   udp: true
 - cipher: auto
   flow: ''
-  name: N_0002
+  name: N_0003
   network: tcp
   port: 22231
   server: r1.mizulina.top
   servername: r1.mizulina.top
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-- cipher: auto
-  flow: ''
-  name: N_0003
-  network: tcp
-  port: 22231
-  server: 85.234.114.53
-  servername: 85.234.114.53
   skip-cert-verify: true
   tls: true
   type: vless
