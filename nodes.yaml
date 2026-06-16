@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] r1.mizulina.top:22231'
-  type: vless
-  server: r1.mizulina.top
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  tls: true
-  servername: r1.mizulina.top
-  skip-cert-verify: false
 - name: '[TROJAN] engaged-ram.rooster465.autos:443'
   type: trojan
   server: engaged-ram.rooster465.autos
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
+- name: '[VLESS] r1.mizulina.top:22231'
+  type: vless
+  server: r1.mizulina.top
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
+  tls: true
+  servername: r1.mizulina.top
+  skip-cert-verify: false
 - name: '[VLESS] 85.234.114.53:22231'
   type: vless
   server: 85.234.114.53
@@ -25,15 +25,6 @@ proxies:
   udp: true
   tls: true
   servername: 85.234.114.53
-  skip-cert-verify: false
-- name: '[VLESS] 156.229.161.107:10001'
-  type: vless
-  server: 156.229.161.107
-  port: 10001
-  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
-  udp: true
-  tls: true
-  servername: 156.229.161.107
   skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2579,5 +2570,5 @@ proxies:
   skip-cert-verify: false
   udp: true
   sni: u723828us1244.csgfw.top
-update_time: 2026-06-16 10:59:10 UTC
+update_time: 2026-06-16 16:28:55 UTC
 source: auto-fetched
