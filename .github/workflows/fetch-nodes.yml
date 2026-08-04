@@ -1,4 +1,3 @@
-
 name: Fetch Free Nodes Daily
 
 on:
@@ -54,8 +53,7 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git commit -m "Update clash.yaml, stats.csv with latest free nodes $(date -u)"
+          git pull --rebase origin main
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-     
