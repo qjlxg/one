@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 94.156.122.215:8443'
+  type: vless
+  server: 94.156.122.215
+  port: 8443
+  uuid: ce5b6383-60f2-4aa3-9099-eacb6b01cf2b
+  udp: true
+  tls: true
+  servername: 94.156.122.215
+  skip-cert-verify: false
 - name: '[TROJAN] alert-fish.rooster465.autos:443'
   type: trojan
   server: alert-fish.rooster465.autos
@@ -26,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: helped-jennet.rooster465.autos
   udp: true
-- name: '[VLESS] 94.156.122.215:8443'
-  type: vless
-  server: 94.156.122.215
-  port: 8443
-  uuid: ce5b6383-60f2-4aa3-9099-eacb6b01cf2b
-  udp: true
-  tls: true
-  servername: 94.156.122.215
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5211,5 +5211,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-04 10:27:59 UTC
+update_time: 2026-08-04 13:46:05 UTC
 source: auto-fetched
