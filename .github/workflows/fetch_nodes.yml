@@ -11,6 +11,9 @@ on:
 jobs:
   execute_script:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
@@ -34,10 +37,13 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add nodes/
+          
+          # 仅添加实际生成的有效文件（移除了不存在的 nodes/ 目录）
           git add latest_nodes.txt latest_nodes_stats.csv
+          
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Update nodes and stats: $(date +'%Y-%m-%d %H:%M:%S')"
+            git pull --rebase origin main || git pull --rebase origin master
             git push
           else
             echo "No changes to commit"
