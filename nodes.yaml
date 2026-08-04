@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
+  type: trojan
+  server: ultimate-jaguar.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: ultimate-jaguar.rooster465.autos
+  udp: true
 - name: '[VLESS] 94.156.122.215:8443'
   type: vless
   server: 94.156.122.215
@@ -5211,5 +5220,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-04 19:17:53 UTC
+update_time: 2026-08-04 22:03:20 UTC
 source: auto-fetched
