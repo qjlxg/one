@@ -1,4 +1,4 @@
-# Updated at 2026-08-04 13:46:05 UTC
+# Updated at 2026-08-04 14:08:21 UTC
 vless://ce5b6383-60f2-4aa3-9099-eacb6b01cf2b@94.156.122.215:8443?security=tls&sni=94.156.122.215#%5BVLESS%5D%2094.156.122.215%3A8443
 trojan://CF68213490@alert-fish.rooster465.autos:443?sni=alert-fish.rooster465.autos#%5BTROJAN%5D%20alert-fish.rooster465.autos%3A443
 vless://a5ea9247-79f3-4655-aece-3fb51e1e669e@rezerv23.yunus.guru:443?security=tls&sni=rezerv23.yunus.guru#%5BVLESS%5D%20rezerv23.yunus.guru%3A443
