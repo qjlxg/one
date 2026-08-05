@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
-  type: trojan
-  server: ultimate-jaguar.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: ultimate-jaguar.rooster465.autos
-  udp: true
 - name: '[VLESS] 217.60.193.1:443'
   type: vless
   server: 217.60.193.1
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 217.60.193.1
   skip-cert-verify: false
+- name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
+  type: trojan
+  server: ultimate-jaguar.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: ultimate-jaguar.rooster465.autos
+  udp: true
 - name: '[VLESS] 94.156.122.215:8443'
   type: vless
   server: 94.156.122.215
@@ -35,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: alert-fish.rooster465.autos
   udp: true
-- name: '[VLESS] rezerv23.yunus.guru:443'
-  type: vless
-  server: rezerv23.yunus.guru
-  port: 443
-  uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
-  udp: true
-  tls: true
-  servername: rezerv23.yunus.guru
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5542,5 +5533,5 @@ proxies:
   tls: true
   servername: u695099ub023e5f3s2316.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-05 13:41:32 UTC
+update_time: 2026-08-05 16:26:17 UTC
 source: auto-fetched
