@@ -26,15 +26,6 @@ proxies:
   tls: true
   servername: 94.156.122.215
   skip-cert-verify: false
-- name: '[TROJAN] alert-fish.rooster465.autos:443'
-  type: trojan
-  server: alert-fish.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: alert-fish.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5533,5 +5524,5 @@ proxies:
   tls: true
   servername: u695099ub023e5f3s2316.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-05 16:26:17 UTC
+update_time: 2026-08-05 19:13:24 UTC
 source: auto-fetched
