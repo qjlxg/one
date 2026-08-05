@@ -44,15 +44,6 @@ proxies:
   tls: true
   servername: rezerv23.yunus.guru
   skip-cert-verify: false
-- name: '[TROJAN] helped-jennet.rooster465.autos:443'
-  type: trojan
-  server: helped-jennet.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: helped-jennet.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5551,5 +5542,5 @@ proxies:
   tls: true
   servername: u695099ub023e5f3s2316.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-05 01:30:21 UTC
+update_time: 2026-08-05 05:36:23 UTC
 source: auto-fetched
