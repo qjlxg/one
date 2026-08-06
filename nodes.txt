@@ -1,4 +1,6 @@
-# Updated at 2026-08-06 13:39:55 UTC
+# Updated at 2026-08-06 23:49:23 UTC
+trojan://ba07a8af-5544-48ac-ab62-3b6c00a44fa6@hkdcrtc-e.catcat321.com:20041?sni=de.catxstar.com#%5BTROJAN%5D%20hkdcrtc-e.catcat321.com%3A20041
+trojan://CF68213490@live-drake.rooster465.autos:443?sni=live-drake.rooster465.autos#%5BTROJAN%5D%20live-drake.rooster465.autos%3A443
 vless://b6f3b292-00c9-430e-bc4c-b1294bd895c0@185.126.67.76:443?security=tls&sni=185.126.67.76#%5BVLESS%5D%20185.126.67.76%3A443
 vless://f9d8ca28-2fff-45de-9b25-3bf29186018e@15.237.177.139:43248?security=tls&sni=15.237.177.139#%5BVLESS%5D%2015.237.177.139%3A43248
 trojan://CF68213490@eminent-dogfish.rooster465.autos:443?sni=eminent-dogfish.rooster465.autos#%5BTROJAN%5D%20eminent-dogfish.rooster465.autos%3A443
@@ -425,7 +427,6 @@ vless://5d02517f-63d5-3e9f-b467-1bcf4d4e25d3@s592.okgg.top:443?security=tls&sni=
 vless://5d02517f-63d5-3e9f-b467-1bcf4d4e25d3@s593.gogocs.xyz:443?security=tls&sni=u695099ub67c99c6s591.csgfw.top#%5BVLESS%5D%20s593.gogocs.xyz%3A443
 trojan://41c406e2-12b5-41f2-a329-d0621052d675@oplosgru-c.catcat321.com:20066?sni=hk.catxstar.com#%5BTROJAN%5D%20oplosgru-c.catcat321.com%3A20066
 trojan://ND91608427@sacred-treefrog.rooster465.autos:443?sni=sacred-treefrog.rooster465.autos#%5BTROJAN%5D%20sacred-treefrog.rooster465.autos%3A443
-trojan://ba07a8af-5544-48ac-ab62-3b6c00a44fa6@hkdcrtc-e.catcat321.com:20041?sni=hkdcrtc-e.catcat321.com#%5BTROJAN%5D%20hkdcrtc-e.catcat321.com%3A20041
 trojan://humanity@104.19.64.105:443?sni=www.calmlunch.com&type=ws&path=/assignment&host=www.calmlunch.com#%5BTROJAN%5D%20104.19.64.105%3A443
 vless://03707fb7-0990-440f-88f6-b0e0f7242a38@5hsytrdbbvcrxokk.localip.ir:2087?security=tls&sni=vo1.erooo12345.xyz&type=ws&path=/&host=vo1.erooo12345.xyz#%5BVLESS%5D%205hsytrdbbvcrxokk.localip.ir%3A2087
 vless://0370b162-baff-4757-86cc-cce4bf07f6f1@52.43.158.158:443?security=tls&sni=www.cloudflare.com#%5BVLESS%5D%2052.43.158.158%3A443

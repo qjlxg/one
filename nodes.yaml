@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] hkdcrtc-e.catcat321.com:20041'
+  type: trojan
+  server: hkdcrtc-e.catcat321.com
+  port: 20041
+  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
+  tls: true
+  skip-cert-verify: false
+  sni: de.catxstar.com
+  udp: true
+- name: '[TROJAN] live-drake.rooster465.autos:443'
+  type: trojan
+  server: live-drake.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: live-drake.rooster465.autos
+  udp: true
 - name: '[VLESS] 185.126.67.76:443'
   type: vless
   server: 185.126.67.76
@@ -4789,15 +4807,6 @@ proxies:
   skip-cert-verify: false
   sni: sacred-treefrog.rooster465.autos
   udp: true
-- name: '[TROJAN] hkdcrtc-e.catcat321.com:20041'
-  type: trojan
-  server: hkdcrtc-e.catcat321.com
-  port: 20041
-  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
-  tls: true
-  skip-cert-verify: false
-  sni: hkdcrtc-e.catcat321.com
-  udp: true
 - name: '[TROJAN] 104.19.64.105:443'
   type: trojan
   server: 104.19.64.105
@@ -5321,5 +5330,5 @@ proxies:
   tls: true
   servername: www.nvidia.com
   skip-cert-verify: false
-update_time: 2026-08-06 13:39:55 UTC
+update_time: 2026-08-06 23:49:23 UTC
 source: auto-fetched
