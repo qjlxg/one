@@ -5321,5 +5321,5 @@ proxies:
   tls: true
   servername: www.nvidia.com
   skip-cert-verify: false
-update_time: 2026-08-06 08:14:32 UTC
+update_time: 2026-08-06 11:12:01 UTC
 source: auto-fetched
