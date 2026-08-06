@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 15.237.177.139:43248'
+  type: vless
+  server: 15.237.177.139
+  port: 43248
+  uuid: f9d8ca28-2fff-45de-9b25-3bf29186018e
+  udp: true
+  tls: true
+  servername: 15.237.177.139
+  skip-cert-verify: false
 - name: '[TROJAN] eminent-dogfish.rooster465.autos:443'
   type: trojan
   server: eminent-dogfish.rooster465.autos
@@ -5312,5 +5321,5 @@ proxies:
   tls: true
   servername: www.nvidia.com
   skip-cert-verify: false
-update_time: 2026-08-06 05:38:48 UTC
+update_time: 2026-08-06 08:14:32 UTC
 source: auto-fetched

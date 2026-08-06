@@ -1,4 +1,5 @@
-# Updated at 2026-08-06 05:38:48 UTC
+# Updated at 2026-08-06 08:14:32 UTC
+vless://f9d8ca28-2fff-45de-9b25-3bf29186018e@15.237.177.139:43248?security=tls&sni=15.237.177.139#%5BVLESS%5D%2015.237.177.139%3A43248
 trojan://CF68213490@eminent-dogfish.rooster465.autos:443?sni=eminent-dogfish.rooster465.autos#%5BTROJAN%5D%20eminent-dogfish.rooster465.autos%3A443
 vless://5c192fd7-ef98-4112-a20c-129108fcd7e9@217.60.193.1:443?security=tls&sni=217.60.193.1#%5BVLESS%5D%20217.60.193.1%3A443
 trojan://CF68213490@ultimate-jaguar.rooster465.autos:443?sni=ultimate-jaguar.rooster465.autos#%5BTROJAN%5D%20ultimate-jaguar.rooster465.autos%3A443
