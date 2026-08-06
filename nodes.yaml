@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] eminent-dogfish.rooster465.autos:443'
+  type: trojan
+  server: eminent-dogfish.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: eminent-dogfish.rooster465.autos
+  udp: true
 - name: '[VLESS] 217.60.193.1:443'
   type: vless
   server: 217.60.193.1
@@ -17,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: ultimate-jaguar.rooster465.autos
   udp: true
-- name: '[VLESS] 94.156.122.215:8443'
-  type: vless
-  server: 94.156.122.215
-  port: 8443
-  uuid: ce5b6383-60f2-4aa3-9099-eacb6b01cf2b
-  udp: true
-  tls: true
-  servername: 94.156.122.215
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5312,5 +5312,5 @@ proxies:
   tls: true
   servername: www.nvidia.com
   skip-cert-verify: false
-update_time: 2026-08-06 01:27:20 UTC
+update_time: 2026-08-06 05:38:48 UTC
 source: auto-fetched
