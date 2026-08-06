@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 185.126.67.76:443'
+  type: vless
+  server: 185.126.67.76
+  port: 443
+  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
+  udp: true
+  tls: true
+  servername: 185.126.67.76
+  skip-cert-verify: false
 - name: '[VLESS] 15.237.177.139:43248'
   type: vless
   server: 15.237.177.139
@@ -1984,15 +1993,6 @@ proxies:
     headers:
       Host: ansooyefilter4.up.railway.app
   servername: ansooyefilter4.up.railway.app
-  skip-cert-verify: false
-- name: '[VLESS] 185.126.67.76:443'
-  type: vless
-  server: 185.126.67.76
-  port: 443
-  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
-  udp: true
-  tls: true
-  servername: cdn-de-4.ai-apiroute.cc
   skip-cert-verify: false
 - name: '[VLESS] x4g-production-75b2.up.railway.app:443'
   type: vless
@@ -5321,5 +5321,5 @@ proxies:
   tls: true
   servername: www.nvidia.com
   skip-cert-verify: false
-update_time: 2026-08-06 11:12:01 UTC
+update_time: 2026-08-06 13:39:55 UTC
 source: auto-fetched
