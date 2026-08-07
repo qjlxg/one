@@ -53,15 +53,6 @@ proxies:
   skip-cert-verify: false
   sni: eminent-dogfish.rooster465.autos
   udp: true
-- name: '[VLESS] 217.60.193.1:443'
-  type: vless
-  server: 217.60.193.1
-  port: 443
-  uuid: 5c192fd7-ef98-4112-a20c-129108fcd7e9
-  udp: true
-  tls: true
-  servername: 217.60.193.1
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5424,5 +5415,5 @@ proxies:
   tls: true
   servername: u695099ub67c99c6s591.csgfw.top
   skip-cert-verify: false
-update_time: 2026-08-07 12:38:54 UTC
+update_time: 2026-08-07 15:43:44 UTC
 source: auto-fetched
