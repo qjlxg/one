@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 185.126.67.76:443'
+  type: vless
+  server: 185.126.67.76
+  port: 443
+  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
+  udp: true
+  tls: true
+  servername: 185.126.67.76
+  skip-cert-verify: false
 - name: '[TROJAN] hkdcrtc-e.catcat321.com:20041'
   type: trojan
   server: hkdcrtc-e.catcat321.com
@@ -17,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: live-drake.rooster465.autos
   udp: true
-- name: '[VLESS] 185.126.67.76:443'
-  type: vless
-  server: 185.126.67.76
-  port: 443
-  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
-  udp: true
-  tls: true
-  servername: 185.126.67.76
-  skip-cert-verify: false
 - name: '[VLESS] 15.237.177.139:43248'
   type: vless
   server: 15.237.177.139
@@ -53,15 +53,6 @@ proxies:
   tls: true
   servername: 217.60.193.1
   skip-cert-verify: false
-- name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
-  type: trojan
-  server: ultimate-jaguar.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: ultimate-jaguar.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5433,5 +5424,5 @@ proxies:
   tls: true
   servername: u695099ub67c99c6s591.csgfw.top
   skip-cert-verify: false
-update_time: 2026-08-07 02:05:05 UTC
+update_time: 2026-08-07 04:47:26 UTC
 source: auto-fetched
