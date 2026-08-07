@@ -8,6 +8,15 @@ proxies:
   tls: true
   servername: 185.126.67.76
   skip-cert-verify: false
+- name: '[TROJAN] sensible-mongrel.rooster465.autos:443'
+  type: trojan
+  server: sensible-mongrel.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: sensible-mongrel.rooster465.autos
+  udp: true
 - name: '[TROJAN] hkdcrtc-e.catcat321.com:20041'
   type: trojan
   server: hkdcrtc-e.catcat321.com
@@ -568,15 +577,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: select-ferret.rooster465.autos
-  udp: true
-- name: '[TROJAN] sensible-mongrel.rooster465.autos:443'
-  type: trojan
-  server: sensible-mongrel.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: sensible-mongrel.rooster465.autos
   udp: true
 - name: '[TROJAN] skilled-lioness.rooster465.autos:443'
   type: trojan
@@ -5424,5 +5424,5 @@ proxies:
   tls: true
   servername: u695099ub67c99c6s591.csgfw.top
   skip-cert-verify: false
-update_time: 2026-08-07 09:50:36 UTC
+update_time: 2026-08-07 12:38:54 UTC
 source: auto-fetched

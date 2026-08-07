@@ -1,5 +1,6 @@
-# Updated at 2026-08-07 09:50:36 UTC
+# Updated at 2026-08-07 12:38:54 UTC
 vless://b6f3b292-00c9-430e-bc4c-b1294bd895c0@185.126.67.76:443?security=tls&sni=185.126.67.76#%5BVLESS%5D%20185.126.67.76%3A443
+trojan://ND91608427@sensible-mongrel.rooster465.autos:443?sni=sensible-mongrel.rooster465.autos#%5BTROJAN%5D%20sensible-mongrel.rooster465.autos%3A443
 trojan://ba07a8af-5544-48ac-ab62-3b6c00a44fa6@hkdcrtc-e.catcat321.com:20041?sni=de.catxstar.com#%5BTROJAN%5D%20hkdcrtc-e.catcat321.com%3A20041
 trojan://CF68213490@live-drake.rooster465.autos:443?sni=live-drake.rooster465.autos#%5BTROJAN%5D%20live-drake.rooster465.autos%3A443
 vless://f9d8ca28-2fff-45de-9b25-3bf29186018e@15.237.177.139:43248?security=tls&sni=15.237.177.139#%5BVLESS%5D%2015.237.177.139%3A43248
@@ -64,7 +65,6 @@ trojan://ND91608427@relaxed-gull.rooster465.autos:443?sni=relaxed-gull.rooster46
 trojan://ND91608427@relaxing-bluebird.rooster465.autos:443?sni=relaxing-bluebird.rooster465.autos#%5BTROJAN%5D%20relaxing-bluebird.rooster465.autos%3A443
 trojan://ND91608427@saving-octopus.rooster465.autos:443?sni=saving-octopus.rooster465.autos#%5BTROJAN%5D%20saving-octopus.rooster465.autos%3A443
 trojan://ND91608427@select-ferret.rooster465.autos:443?sni=select-ferret.rooster465.autos#%5BTROJAN%5D%20select-ferret.rooster465.autos%3A443
-trojan://ND91608427@sensible-mongrel.rooster465.autos:443?sni=sensible-mongrel.rooster465.autos#%5BTROJAN%5D%20sensible-mongrel.rooster465.autos%3A443
 trojan://ND91608427@skilled-lioness.rooster465.autos:443?sni=skilled-lioness.rooster465.autos#%5BTROJAN%5D%20skilled-lioness.rooster465.autos%3A443
 trojan://ND91608427@social-mutt.rooster465.autos:443?sni=social-mutt.rooster465.autos#%5BTROJAN%5D%20social-mutt.rooster465.autos%3A443
 trojan://ND91608427@striking-maggot.rooster465.autos:443?sni=striking-maggot.rooster465.autos#%5BTROJAN%5D%20striking-maggot.rooster465.autos%3A443
