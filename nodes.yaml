@@ -44,15 +44,6 @@ proxies:
   tls: true
   servername: 15.237.177.139
   skip-cert-verify: false
-- name: '[TROJAN] eminent-dogfish.rooster465.autos:443'
-  type: trojan
-  server: eminent-dogfish.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: eminent-dogfish.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5415,5 +5406,5 @@ proxies:
   tls: true
   servername: u695099ub67c99c6s591.csgfw.top
   skip-cert-verify: false
-update_time: 2026-08-07 15:43:44 UTC
+update_time: 2026-08-07 18:38:55 UTC
 source: auto-fetched
