@@ -8,15 +8,6 @@ proxies:
   tls: true
   servername: 185.126.67.76
   skip-cert-verify: false
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
-  udp: true
 - name: '[TROJAN] sensible-mongrel.rooster465.autos:443'
   type: trojan
   server: sensible-mongrel.rooster465.autos
@@ -25,6 +16,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: sensible-mongrel.rooster465.autos
+  udp: true
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -5372,5 +5372,5 @@ proxies:
   tls: true
   servername: eu-central.cendora.ru
   skip-cert-verify: false
-update_time: 2026-08-08 15:19:24 UTC
+update_time: 2026-08-08 18:21:33 UTC
 source: auto-fetched
