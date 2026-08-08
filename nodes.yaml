@@ -5372,5 +5372,5 @@ proxies:
   tls: true
   servername: eu-central.cendora.ru
   skip-cert-verify: false
-update_time: 2026-08-08 12:25:13 UTC
+update_time: 2026-08-08 15:19:24 UTC
 source: auto-fetched
