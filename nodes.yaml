@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: sensible-mongrel.rooster465.autos
   udp: true
-- name: '[TROJAN] hkdcrtc-e.catcat321.com:20041'
-  type: trojan
-  server: hkdcrtc-e.catcat321.com
-  port: 20041
-  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
-  tls: true
-  skip-cert-verify: false
-  sni: de.catxstar.com
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5381,5 +5372,5 @@ proxies:
   tls: true
   servername: eu-central.cendora.ru
   skip-cert-verify: false
-update_time: 2026-08-08 09:27:17 UTC
+update_time: 2026-08-08 12:25:13 UTC
 source: auto-fetched
