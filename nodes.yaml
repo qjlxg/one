@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] intimate-moray.rooster465.autos:443'
-  type: trojan
-  server: intimate-moray.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: intimate-moray.rooster465.autos
-  udp: true
 - name: '[VLESS] 185.126.67.76:443'
   type: vless
   server: 185.126.67.76
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 185.126.67.76
   skip-cert-verify: false
+- name: '[TROJAN] intimate-moray.rooster465.autos:443'
+  type: trojan
+  server: intimate-moray.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: intimate-moray.rooster465.autos
+  udp: true
 - name: '[TROJAN] sensible-mongrel.rooster465.autos:443'
   type: trojan
   server: sensible-mongrel.rooster465.autos
@@ -5648,5 +5648,5 @@ proxies:
   uuid: d9aa9ea3-9388-483f-a58d-a754f33ec505
   udp: true
   tls: false
-update_time: 2026-08-10 00:55:32 UTC
+update_time: 2026-08-10 04:22:21 UTC
 source: auto-fetched
