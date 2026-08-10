@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] intimate-moray.rooster465.autos:443'
+  type: trojan
+  server: intimate-moray.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: intimate-moray.rooster465.autos
+  udp: true
 - name: '[VLESS] 185.126.67.76:443'
   type: vless
   server: 185.126.67.76
@@ -32,6 +41,83 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
+- name: '[TROJAN] 57.183.7.187:39412'
+  server: 57.183.7.187
+  port: 39412
+  type: trojan
+  password: 6ec301428255a78a1d826988d86cc87e
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 16.162.190.25:35151'
+  server: 16.162.190.25
+  port: 35151
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 18.167.76.203:35151'
+  server: 18.167.76.203
+  port: 35151
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 18.167.76.203:4099'
+  server: 18.167.76.203
+  port: 4099
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 18.166.178.12:7630'
+  server: 18.166.178.12
+  port: 7630
+  type: trojan
+  password: 6ec301428255a78a1d826988d86cc87e
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 18.166.178.12:18286'
+  server: 18.166.178.12
+  port: 18286
+  type: trojan
+  password: 6ec301428255a78a1d826988d86cc87e
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 57.183.7.187:45747'
+  server: 57.183.7.187
+  port: 45747
+  type: trojan
+  password: 6ec301428255a78a1d826988d86cc87e
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 18.166.178.12:45744'
+  server: 18.166.178.12
+  port: 45744
+  type: trojan
+  password: 6ec301428255a78a1d826988d86cc87e
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 18.163.120.239:32434'
+  server: 18.163.120.239
+  port: 32434
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+- name: '[TROJAN] 18.163.100.58:34039'
+  server: 18.163.100.58
+  port: 34039
+  type: trojan
+  password: 6ec301428255a78a1d826988d86cc87e
+  sni: www.nintendogames.net
+  skip-cert-verify: true
+- name: '[TROJAN] 18.167.76.203:10418'
+  server: 18.167.76.203
+  port: 10418
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
 - name: '[TROJAN] 2c.fast9988.com:50887'
   server: 2c.fast9988.com
   port: 50887
@@ -116,90 +202,6 @@ proxies:
   password: BxceQaOe
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
-- name: '[TROJAN] 18.166.178.12:5077'
-  server: 18.166.178.12
-  port: 5077
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.198.209.68:27161'
-  server: 43.198.209.68
-  port: 27161
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 16.162.161.131:29444'
-  server: 16.162.161.131
-  port: 29444
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 95.40.58.84:9408'
-  server: 95.40.58.84
-  port: 9408
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 95.40.107.76:44229'
-  server: 95.40.107.76
-  port: 44229
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 18.163.100.58:54876'
-  server: 18.163.100.58
-  port: 54876
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 18.163.100.58:51396'
-  server: 18.163.100.58
-  port: 51396
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 18.166.178.12:51396'
-  server: 18.166.178.12
-  port: 51396
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 43.198.209.68:41421'
-  server: 43.198.209.68
-  port: 41421
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-- name: '[TROJAN] 18.166.178.12:39024'
-  server: 18.166.178.12
-  port: 39024
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 18.163.100.58:39024'
-  server: 18.163.100.58
-  port: 39024
-  type: trojan
-  password: d1960ba9f0f6353353994fa844cf817b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: '[TROJAN] 95.40.58.84:34039'
-  server: 95.40.58.84
-  port: 34039
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
 - name: '[TROJAN] 8y7r-2-4-3-1-4-5-2-2-3.poki-pakipon.ir:27111'
   type: trojan
   server: 8y7r-2-4-3-1-4-5-2-2-3.poki-pakipon.ir
@@ -257,131 +259,32 @@ proxies:
   skip-cert-verify: false
   sni: hk.catxstar.com
   udp: true
-- name: '[TROJAN] oplosgru-c.catcat321.com:20088'
+- name: '[TROJAN] 15.237.137.197:443'
   type: trojan
-  server: oplosgru-c.catcat321.com
-  port: 20088
-  password: 41c406e2-12b5-41f2-a329-d0621052d675
-  tls: true
-  skip-cert-verify: false
-  sni: hk.catxstar.com
-  udp: true
-- name: '[TROJAN] 13.192.168.51:443'
-  type: trojan
-  server: 13.192.168.51
+  server: 15.237.137.197
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: learning-leopard.rooster465.autos
+  sni: fancy-skink.rooster465.autos
   udp: true
-- name: '[TROJAN] 15.237.219.234:443'
+- name: '[TROJAN] 3.35.140.99:443'
   type: trojan
-  server: 15.237.219.234
+  server: 3.35.140.99
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: careful-tadpole.rooster465.autos
+  sni: moved-meerkat.rooster465.autos
   udp: true
-- name: '[TROJAN] 18.179.31.199:443'
+- name: '[TROJAN] 3.36.59.34:443'
   type: trojan
-  server: 18.179.31.199
+  server: 3.36.59.34
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: prompt-duckling.rooster465.autos
-  udp: true
-- name: '[TROJAN] 18.181.164.216:443'
-  type: trojan
-  server: 18.181.164.216
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: upright-impala.rooster465.autos
-  udp: true
-- name: '[TROJAN] 18.181.194.227:443'
-  type: trojan
-  server: 18.181.194.227
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: moral-buzzard.rooster465.autos
-  udp: true
-- name: '[TROJAN] 3.112.223.141:443'
-  type: trojan
-  server: 3.112.223.141
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: internal-sunbird.rooster465.autos
-  udp: true
-- name: '[TROJAN] 3.112.238.99:443'
-  type: trojan
-  server: 3.112.238.99
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: stunning-mite.rooster465.autos
-  udp: true
-- name: '[TROJAN] 3.38.106.2:443'
-  type: trojan
-  server: 3.38.106.2
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: communal-sunbird.rooster465.autos
-  udp: true
-- name: '[TROJAN] 43.203.244.203:443'
-  type: trojan
-  server: 43.203.244.203
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: grateful-owl.rooster465.autos
-  udp: true
-- name: '[TROJAN] 43.207.140.98:443'
-  type: trojan
-  server: 43.207.140.98
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: right-seahorse.rooster465.autos
-  udp: true
-- name: '[TROJAN] 43.207.155.134:443'
-  type: trojan
-  server: 43.207.155.134
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: smart-pup.rooster465.autos
-  udp: true
-- name: '[TROJAN] 52.194.230.221:443'
-  type: trojan
-  server: 52.194.230.221
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: happy-mutt.rooster465.autos
-  udp: true
-- name: '[TROJAN] 54.249.34.120:443'
-  type: trojan
-  server: 54.249.34.120
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: social-mutt.rooster465.autos
+  sni: select-ferret.rooster465.autos
   udp: true
 - name: '[TROJAN] ace-starling.rooster465.autos:443'
   type: trojan
@@ -410,15 +313,6 @@ proxies:
   skip-cert-verify: false
   sni: definite-malamute.rooster465.autos
   udp: true
-- name: '[TROJAN] devoted-heron.rooster465.autos:443'
-  type: trojan
-  server: devoted-heron.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: devoted-heron.rooster465.autos
-  udp: true
 - name: '[TROJAN] devoted-tapir.rooster465.autos:443'
   type: trojan
   server: devoted-tapir.rooster465.autos
@@ -436,15 +330,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: discrete-basilisk.rooster465.autos
-  udp: true
-- name: '[TROJAN] distinct-llama.rooster465.autos:443'
-  type: trojan
-  server: distinct-llama.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: distinct-llama.rooster465.autos
   udp: true
 - name: '[TROJAN] dynamic-grubworm.rooster465.autos:443'
   type: trojan
@@ -464,15 +349,6 @@ proxies:
   skip-cert-verify: false
   sni: exotic-chow.rooster465.autos
   udp: true
-- name: '[TROJAN] fancy-skink.rooster465.autos:443'
-  type: trojan
-  server: fancy-skink.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: fancy-skink.rooster465.autos
-  udp: true
 - name: '[TROJAN] fleet-bonefish.rooster465.autos:443'
   type: trojan
   server: fleet-bonefish.rooster465.autos
@@ -491,60 +367,6 @@ proxies:
   skip-cert-verify: false
   sni: gentle-raptor.rooster465.autos
   udp: true
-- name: '[TROJAN] healthy-louse.rooster465.autos:443'
-  type: trojan
-  server: healthy-louse.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: healthy-louse.rooster465.autos
-  udp: true
-- name: '[TROJAN] humorous-malamute.rooster465.autos:443'
-  type: trojan
-  server: humorous-malamute.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: humorous-malamute.rooster465.autos
-  udp: true
-- name: '[TROJAN] intimate-moray.rooster465.autos:443'
-  type: trojan
-  server: intimate-moray.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: intimate-moray.rooster465.autos
-  udp: true
-- name: '[TROJAN] moved-meerkat.rooster465.autos:443'
-  type: trojan
-  server: moved-meerkat.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: moved-meerkat.rooster465.autos
-  udp: true
-- name: '[TROJAN] nearby-egret.rooster465.autos:443'
-  type: trojan
-  server: nearby-egret.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: nearby-egret.rooster465.autos
-  udp: true
-- name: '[TROJAN] perfect-slug.rooster465.autos:443'
-  type: trojan
-  server: perfect-slug.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: perfect-slug.rooster465.autos
-  udp: true
 - name: '[TROJAN] pet-ghost.rooster465.autos:443'
   type: trojan
   server: pet-ghost.rooster465.autos
@@ -553,24 +375,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: pet-ghost.rooster465.autos
-  udp: true
-- name: '[TROJAN] pure-ram.rooster465.autos:443'
-  type: trojan
-  server: pure-ram.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: pure-ram.rooster465.autos
-  udp: true
-- name: '[TROJAN] real-werewolf.rooster465.autos:443'
-  type: trojan
-  server: real-werewolf.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: real-werewolf.rooster465.autos
   udp: true
 - name: '[TROJAN] relaxed-gull.rooster465.autos:443'
   type: trojan
@@ -599,15 +403,6 @@ proxies:
   skip-cert-verify: false
   sni: saving-octopus.rooster465.autos
   udp: true
-- name: '[TROJAN] select-ferret.rooster465.autos:443'
-  type: trojan
-  server: select-ferret.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: select-ferret.rooster465.autos
-  udp: true
 - name: '[TROJAN] star-kiwi.rooster465.autos:443'
   type: trojan
   server: star-kiwi.rooster465.autos
@@ -626,32 +421,14 @@ proxies:
   skip-cert-verify: false
   sni: striking-maggot.rooster465.autos
   udp: true
-- name: '[TROJAN] sure-humpback.rooster465.autos:443'
+- name: '[TROJAN] stunning-mite.rooster465.autos:443'
   type: trojan
-  server: sure-humpback.rooster465.autos
+  server: stunning-mite.rooster465.autos
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: sure-humpback.rooster465.autos
-  udp: true
-- name: '[TROJAN] thankful-mustang.rooster465.autos:443'
-  type: trojan
-  server: thankful-mustang.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: thankful-mustang.rooster465.autos
-  udp: true
-- name: '[TROJAN] uncommon-feline.rooster465.autos:443'
-  type: trojan
-  server: uncommon-feline.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: uncommon-feline.rooster465.autos
+  sni: stunning-mite.rooster465.autos
   udp: true
 - name: '[TROJAN] upright-hamster.rooster465.autos:443'
   type: trojan
@@ -661,6 +438,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: upright-hamster.rooster465.autos
+  udp: true
+- name: '[TROJAN] upright-impala.rooster465.autos:443'
+  type: trojan
+  server: upright-impala.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: upright-impala.rooster465.autos
   udp: true
 - name: '[TROJAN] willing-beagle.rooster465.autos:443'
   type: trojan
@@ -716,6 +502,71 @@ proxies:
   skip-cert-verify: false
   sni: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
   udp: true
+- name: '[TROJAN] 104.16.71.213:443'
+  type: trojan
+  server: 104.16.71.213
+  port: 443
+  password: humanity
+  tls: true
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[TROJAN] 104.17.121.71:443'
+  type: trojan
+  server: 104.17.121.71
+  port: 443
+  password: humanity
+  tls: true
+  skip-cert-verify: false
+  sni: 104.17.121.71
+  udp: true
+- name: '[TROJAN] 172.64.152.23:443'
+  type: trojan
+  server: 172.64.152.23
+  port: 443
+  password: humanity
+  tls: true
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[TROJAN] 185.18.250.245:443'
+  type: trojan
+  server: 185.18.250.245
+  port: 443
+  password: humanity
+  tls: true
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[TROJAN] millionaire.levikogjgfdd.ir:443'
+  type: trojan
+  server: millionaire.levikogjgfdd.ir
+  port: 443
+  password: humanity
+  tls: true
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
 - name: '[VLESS] x4g-production-c71f.up.railway.app:443'
   type: vless
   server: x4g-production-c71f.up.railway.app
@@ -769,7 +620,7 @@ proxies:
   uuid: 0b0915d7-6800-4580-a44b-77d84f105e6a
   udp: true
   tls: true
-  servername: 185.79.138.71
+  servername: www.samsung.com
   skip-cert-verify: false
 - name: '[VLESS] ansooyefilter6.up.railway.app:443'
   type: vless
@@ -791,7 +642,9 @@ proxies:
   port: 59216
   uuid: 0bcec952-a452-43ed-9468-4547b9f5dfc4
   udp: true
-  tls: false
+  tls: true
+  servername: 70.39.197.9
+  skip-cert-verify: false
 - name: '[VLESS] 47.236.106.241:40480'
   type: vless
   server: 47.236.106.241
@@ -809,15 +662,6 @@ proxies:
   udp: true
   tls: true
   servername: cloudflare.com
-  skip-cert-verify: false
-- name: '[VLESS] 179.255.148.66:47588'
-  type: vless
-  server: 179.255.148.66
-  port: 47588
-  uuid: 14be84e2-8b22-42c0-a1ba-3535fc8e9257
-  udp: true
-  tls: true
-  servername: yellowpages.amazon.com
   skip-cert-verify: false
 - name: '[VLESS] x4g-production-06e2.up.railway.app:443'
   type: vless
@@ -848,14 +692,7 @@ proxies:
   port: 443
   uuid: 166ef05e-8ab5-43b7-8910-d1bb0a4326a5
   udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /api/v1/rooms/63368e3dbb/sync
-    headers:
-      Host: sync.watchwave.link
-  servername: cdn.tracker.yandex.net
-  skip-cert-verify: false
+  tls: false
 - name: '[VLESS] x4g-production-0a61.up.railway.app:443'
   type: vless
   server: x4g-production-0a61.up.railway.app
@@ -869,6 +706,29 @@ proxies:
     headers:
       Host: x4g-production-0a61.up.railway.app
   servername: x4g-production-0a61.up.railway.app
+  skip-cert-verify: false
+- name: '[VLESS] 16.176.42.97:443'
+  type: vless
+  server: 16.176.42.97
+  port: 443
+  uuid: 1bc380b1-cff7-446f-b13f-5c0ad29fc75a
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: zero.csmaster.ggff.net
+  servername: zero.csmaster.ggff.net
+  skip-cert-verify: false
+- name: '[VLESS] 188.225.42.117:443'
+  type: vless
+  server: 188.225.42.117
+  port: 443
+  uuid: 1bced29a-3051-42b8-b393-005135b97616
+  udp: true
+  tls: true
+  servername: 188.225.42.117
   skip-cert-verify: false
 - name: '[VLESS] v546965.hosted-by-vdsina.com:8443'
   type: vless
@@ -916,6 +776,15 @@ proxies:
   tls: true
   servername: telewebion.com.Fin2.ShAkHlE.iR
   skip-cert-verify: false
+- name: '[VLESS] 139.28.241.21:443'
+  type: vless
+  server: 139.28.241.21
+  port: 443
+  uuid: 218fd696-e3a2-4c33-b397-a5f13a82969e
+  udp: true
+  tls: true
+  servername: www.telekom.de
+  skip-cert-verify: false
 - name: '[VLESS] 95.85.251.116:59631'
   type: vless
   server: 95.85.251.116
@@ -945,6 +814,15 @@ proxies:
     headers:
       Host: cdn-xui911.korvexe.ir
   servername: 91panel-axiora-vpn.korvexe.ir
+  skip-cert-verify: false
+- name: '[VLESS] 130.78.216.194:443'
+  type: vless
+  server: 130.78.216.194
+  port: 443
+  uuid: 2a12bb81-f3a3-0065-99ab-36febf676b4a
+  udp: true
+  tls: true
+  servername: 130.78.216.194
   skip-cert-verify: false
 - name: '[VLESS] hemidal-production-1351.up.railway.app:443'
   type: vless
@@ -980,9 +858,7 @@ proxies:
   port: 443
   uuid: 33aa2b47-484b-49f6-8f23-fb34602d221f
   udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
+  tls: false
 - name: '[VLESS] 95.85.224.51:443'
   type: vless
   server: 95.85.224.51
@@ -1070,6 +946,38 @@ proxies:
   tls: true
   servername: yahoo.com
   skip-cert-verify: false
+- name: '[VLESS] 135.125.184.182:50559'
+  type: vless
+  server: 135.125.184.182
+  port: 50559
+  uuid: 3fd3909b-238f-42c4-9170-38d10014b1d8
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Play.googel.com
+  servername: 135.125.184.182
+  skip-cert-verify: false
+- name: '[VLESS] 185.141.227.141:40006'
+  type: vless
+  server: 185.141.227.141
+  port: 40006
+  uuid: 41784775-8846-4579-9d9d-9ad6ea802e2e
+  udp: true
+  tls: true
+  servername: ads.x5.ru
+  skip-cert-verify: false
+- name: '[VLESS] ru-3.techprovide.icu:40003'
+  type: vless
+  server: ru-3.techprovide.icu
+  port: 40003
+  uuid: 41784775-8846-4579-9d9d-9ad6ea802e2e
+  udp: true
+  tls: true
+  servername: ads.x5.ru
+  skip-cert-verify: false
 - name: '[VLESS] free-amsterdam-node-1.cloudwidecdn.com:443'
   type: vless
   server: free-amsterdam-node-1.cloudwidecdn.com
@@ -1087,6 +995,36 @@ proxies:
   udp: true
   tls: true
   servername: 64.176.61.124
+  skip-cert-verify: false
+- name: '[VLESS] 91.235.234.186:443'
+  type: vless
+  server: 91.235.234.186
+  port: 443
+  uuid: 4593aa27-a2a1-412f-935f-3829495c0970
+  udp: true
+  tls: true
+  servername: us7fs3.proxen.pdevinfra.com
+  skip-cert-verify: false
+- name: '[VLESS] 185.23.35.175:8450'
+  type: vless
+  server: 185.23.35.175
+  port: 8450
+  uuid: 48817310-fd5c-4877-b2ac-70fee6db6acc
+  udp: true
+  tls: false
+  network: ws
+  ws-opts:
+    path: /lk/profile
+    headers:
+      Host: x5club.ru
+- name: '[VLESS] 65.109.208.236:36179'
+  type: vless
+  server: 65.109.208.236
+  port: 36179
+  uuid: 4ae81411-9337-4cac-a612-f5b1650c7627
+  udp: true
+  tls: true
+  servername: 65.109.208.236
   skip-cert-verify: false
 - name: '[VLESS] premium-us-ca-01-gthost.efgwf.online:8080'
   type: vless
@@ -1114,6 +1052,48 @@ proxies:
       Host: titandarkness.mooo.com
   servername: titandarkness.mooo.com
   skip-cert-verify: false
+- name: '[VLESS] titandarkness.mooo.com:443'
+  type: vless
+  server: titandarkness.mooo.com
+  port: 443
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /21381/0kO2id8FMQ
+    headers:
+      Host: titandarkness.mooo.com
+  servername: titandarkness.mooo.com
+  skip-cert-verify: false
+- name: '[VLESS] cdn-ru.sxvpn.pro:443'
+  type: vless
+  server: cdn-ru.sxvpn.pro
+  port: 443
+  uuid: 501b6afa-f955-473f-8440-1010110a1548
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /sx-cdn-ws
+    headers:
+      Host: cdn-ru.sxvpn.pro
+  servername: cdn-ru.sxvpn.pro
+  skip-cert-verify: false
+- name: '[VLESS] cdn.sxvpn.pro:443'
+  type: vless
+  server: cdn.sxvpn.pro
+  port: 443
+  uuid: 501b6afa-f955-473f-8440-1010110a1548
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /sx-cdn-ws
+    headers:
+      Host: cdn.sxvpn.pro
+  servername: cdn.sxvpn.pro
+  skip-cert-verify: false
 - name: '[VLESS] 87.121.86.131.tyr-agentstvo.tech:443'
   type: vless
   server: 87.121.86.131.tyr-agentstvo.tech
@@ -1128,6 +1108,24 @@ proxies:
       Host: 87.121.86.131.tyr-agentstvo.tech
   servername: 87.121.86.131.tyr-agentstvo.tech
   skip-cert-verify: false
+- name: '[VLESS] 37.252.17.192:8444'
+  type: vless
+  server: 37.252.17.192
+  port: 8444
+  uuid: 53f940dd-b054-46c8-bac4-88a9733926fe
+  udp: true
+  tls: true
+  servername: www.rumedia-cdn.com
+  skip-cert-verify: false
+- name: '[VLESS] 144.31.226.177:443'
+  type: vless
+  server: 144.31.226.177
+  port: 443
+  uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
+  udp: true
+  tls: true
+  servername: node15.mxvpn.dev
+  skip-cert-verify: false
 - name: '[VLESS] 144.31.65.59:443'
   type: vless
   server: 144.31.65.59
@@ -1136,15 +1134,6 @@ proxies:
   udp: true
   tls: true
   servername: node17.mxvpn.dev
-  skip-cert-verify: false
-- name: '[VLESS] 144.31.65.68:443'
-  type: vless
-  server: 144.31.65.68
-  port: 443
-  uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
-  udp: true
-  tls: true
-  servername: node18.mxvpn.dev
   skip-cert-verify: false
 - name: '[VLESS] 77.239.123.219:443'
   type: vless
@@ -1155,9 +1144,27 @@ proxies:
   tls: true
   servername: node19.mxvpn.dev
   skip-cert-verify: false
-- name: '[VLESS] 81.19.137.181:443'
+- name: '[VLESS] node16.mxvpn.dev:443'
   type: vless
-  server: 81.19.137.181
+  server: node16.mxvpn.dev
+  port: 443
+  uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
+  udp: true
+  tls: true
+  servername: node16.mxvpn.dev
+  skip-cert-verify: false
+- name: '[VLESS] node20.mxvpn.dev:443'
+  type: vless
+  server: node20.mxvpn.dev
+  port: 443
+  uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
+  udp: true
+  tls: true
+  servername: node20.mxvpn.dev
+  skip-cert-verify: false
+- name: '[VLESS] node21.mxvpn.dev:443'
+  type: vless
+  server: node21.mxvpn.dev
   port: 443
   uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
   udp: true
@@ -1281,14 +1288,23 @@ proxies:
       Host: x4g-production-1e7a.up.railway.app
   servername: x4g-production-1e7a.up.railway.app
   skip-cert-verify: false
-- name: '[VLESS] 77.233.214.116:40443'
+- name: '[VLESS] images.netraidly.ru:40443'
   type: vless
-  server: 77.233.214.116
+  server: images.netraidly.ru
   port: 40443
   uuid: 69a74770-7152-4a27-bef0-2615ca16e1b1
   udp: true
   tls: true
   servername: deepl.com
+  skip-cert-verify: true
+- name: '[VLESS] 91.107.148.158:8080'
+  type: vless
+  server: 91.107.148.158
+  port: 8080
+  uuid: 6bfcc22f-c80f-481b-b82b-bf28ed3e9f82
+  udp: true
+  tls: true
+  servername: 91.107.148.158
   skip-cert-verify: false
 - name: '[VLESS] f35-production-20fd.up.railway.app:443'
   type: vless
@@ -1332,6 +1348,13 @@ proxies:
       Host: join-v2ngnet-daefaaf.up.railway.app
   servername: join-v2ngnet-daefaaf.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] 178.253.55.89:443'
+  type: vless
+  server: 178.253.55.89
+  port: 443
+  uuid: 71cada65-d23e-418c-88e4-a06188d14689
+  udp: true
+  tls: false
 - name: '[VLESS] 206.189.146.23:17658'
   type: vless
   server: 206.189.146.23
@@ -1344,15 +1367,6 @@ proxies:
     path: /Free By Tharuwa (0767597317)
     headers:
       Host: zoom.us
-- name: '[VLESS] 89.23.103.121:443'
-  type: vless
-  server: 89.23.103.121
-  port: 443
-  uuid: 7596b721-f311-4194-96e6-b7b407cd6083
-  udp: true
-  tls: true
-  servername: www.debian.org
-  skip-cert-verify: false
 - name: '[VLESS] telegramemen-timazadi-8585.up.railway.app:443'
   type: vless
   server: telegramemen-timazadi-8585.up.railway.app
@@ -1374,7 +1388,7 @@ proxies:
   uuid: 76713d07-5a6b-49c2-abd8-bc450a2fa7fc
   udp: true
   tls: true
-  servername: de2.spectrum.vu
+  servername: 45.145.56.163
   skip-cert-verify: false
 - name: '[VLESS] x4g-production-5110.up.railway.app:443'
   type: vless
@@ -1492,13 +1506,29 @@ proxies:
       Host: x4g-production-0f83.up.railway.app
   servername: x4g-production-0f83.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] melinet8.sav-savteam.ir:6985'
+  type: vless
+  server: melinet8.sav-savteam.ir
+  port: 6985
+  uuid: 832e0199-9614-4d74-a7ba-1dca5453dab5
+  udp: true
+  tls: true
+  servername: melinet8.sav-savteam.ir
+  skip-cert-verify: false
 - name: '[VLESS] 172.64.146.153:2095'
   type: vless
   server: 172.64.146.153
   port: 2095
   uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
   udp: true
-  tls: false
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: fangbinxingnmsl.pusytroller.gq
+  servername: 172.64.146.153
+  skip-cert-verify: false
 - name: '[VLESS] fuckfangbinxing.pusytroller.gq:2095'
   type: vless
   server: fuckfangbinxing.pusytroller.gq
@@ -1523,15 +1553,18 @@ proxies:
     path: /
     headers:
       Host: nmslfangbinxing.pusytroller.gq
-- name: '[VLESS] 46.8.158.22:443'
+- name: '[VLESS] www.wto.org:2095'
   type: vless
-  server: 46.8.158.22
-  port: 443
-  uuid: 89755337-8050-401c-86d1-c8c34fb88d89
+  server: www.wto.org
+  port: 2095
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
   udp: true
-  tls: true
-  servername: www.icloud.com
-  skip-cert-verify: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: fuckingfangbinxing.pusytroller.cf
 - name: '[VLESS] tun.proxy1.raketa-balance.com:443'
   type: vless
   server: tun.proxy1.raketa-balance.com
@@ -1553,83 +1586,64 @@ proxies:
     path: /
     headers:
       Host: 9bae1d148edc10e6.apruxdomain.xyz
-- name: '[VLESS] 134.98.155.228:62145'
+- name: '[VLESS] 143.47.179.35:62145'
   type: vless
-  server: 134.98.155.228
+  server: 143.47.179.35
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 144.21.40.16:62145'
+- name: '[VLESS] 149.130.177.227:62145'
   type: vless
-  server: 144.21.40.16
+  server: 149.130.177.227
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 149.130.168.29:62145'
+- name: '[VLESS] 157.137.215.84:62145'
   type: vless
-  server: 149.130.168.29
+  server: 157.137.215.84
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 149.130.188.226:62145'
+- name: '[VLESS] 157.137.220.255:62145'
   type: vless
-  server: 149.130.188.226
+  server: 157.137.220.255
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 157.137.213.216:62145'
+- name: '[VLESS] 157.137.224.100:62145'
   type: vless
-  server: 157.137.213.216
+  server: 157.137.224.100
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 157.137.221.79:62145'
+- name: '[VLESS] 158.180.14.198:62145'
   type: vless
-  server: 157.137.221.79
+  server: 158.180.14.198
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 157.137.227.216:62145'
+- name: '[VLESS] 193.123.57.230:62145'
   type: vless
-  server: 157.137.227.216
+  server: 193.123.57.230
   port: 62145
   uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   udp: true
   tls: false
-- name: '[VLESS] 158.178.154.97:62145'
+- name: '[VLESS] 147.45.47.28:443'
   type: vless
-  server: 158.178.154.97
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  server: 147.45.47.28
+  port: 443
+  uuid: 8fdf6dde-a1ca-456d-9b18-86b74d5768e6
   udp: true
-  tls: false
-- name: '[VLESS] 158.180.14.247:62145'
-  type: vless
-  server: 158.180.14.247
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 158.247.126.16:62145'
-  type: vless
-  server: 158.247.126.16
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 193.123.63.156:62145'
-  type: vless
-  server: 193.123.63.156
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
+  tls: true
+  servername: 147.45.47.28
+  skip-cert-verify: false
 - name: '[VLESS] railway-production-b185.up.railway.app:443'
   type: vless
   server: railway-production-b185.up.railway.app
@@ -1643,15 +1657,6 @@ proxies:
     headers:
       Host: railway-production-b185.up.railway.app
   servername: railway-production-b185.up.railway.app
-  skip-cert-verify: false
-- name: '[VLESS] 64.188.62.138:40443'
-  type: vless
-  server: 64.188.62.138
-  port: 40443
-  uuid: 9150748b-fa2b-4ef1-a7f1-7c4a76e2dc0b
-  udp: true
-  tls: true
-  servername: deepl.com
   skip-cert-verify: false
 - name: '[VLESS] kaoqy-uk-akile.cf.090227.xyz:8443'
   type: vless
@@ -1695,6 +1700,15 @@ proxies:
       Host: x4g-production-709e.up.railway.app
   servername: x4g-production-709e.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] 144.31.237.206:443'
+  type: vless
+  server: 144.31.237.206
+  port: 443
+  uuid: 9500cf8b-020a-4a70-906c-e14bb5375875
+  udp: true
+  tls: true
+  servername: 144.31.237.206
+  skip-cert-verify: false
 - name: '[VLESS] x4g-production-1c57.up.railway.app:443'
   type: vless
   server: x4g-production-1c57.up.railway.app
@@ -1708,6 +1722,20 @@ proxies:
     headers:
       Host: x4g-production-1c57.up.railway.app
   servername: x4g-production-1c57.up.railway.app
+  skip-cert-verify: false
+- name: '[VLESS] 87.58.201.109:80'
+  type: vless
+  server: 87.58.201.109
+  port: 80
+  uuid: 970c1b71-70db-4788-9cbd-0abbabb60b69
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN
+    headers:
+      Host: 87.58.201.109
+  servername: 87.58.201.109
   skip-cert-verify: false
 - name: '[VLESS] freev2.cloudflare.182682.xyz:443'
   type: vless
@@ -1747,7 +1775,23 @@ proxies:
   port: 32355
   uuid: a2f6da81-64bd-4b86-b806-5658e161b7e4
   udp: true
-  tls: false
+  tls: true
+  servername: 103.227.225.198
+  skip-cert-verify: false
+- name: '[VLESS] ct.877774.xyz:443'
+  type: vless
+  server: ct.877774.xyz
+  port: 443
+  uuid: a367c9d0-cfac-4547-b367-645f3774df6a
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /announcement
+    headers:
+      Host: us-lax.862400.xyz
+  servername: us-lax.862400.xyz
+  skip-cert-verify: false
 - name: '[VLESS] x4g-production-f44e.up.railway.app:443'
   type: vless
   server: x4g-production-f44e.up.railway.app
@@ -1812,7 +1856,7 @@ proxies:
   udp: true
   tls: true
   servername: files.noneok.com
-  skip-cert-verify: false
+  skip-cert-verify: true
 - name: '[VLESS] ansooyefilter-production-454e.up.railway.app:443'
   type: vless
   server: ansooyefilter-production-454e.up.railway.app
@@ -1864,6 +1908,15 @@ proxies:
       Host: x4g-production-23fd.up.railway.app
   servername: x4g-production-23fd.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] 169.197.113.179:20190'
+  type: vless
+  server: 169.197.113.179
+  port: 20190
+  uuid: ad4dd89a-2e4b-4f33-bb96-7e9c4eb85d0b
+  udp: true
+  tls: true
+  servername: 169.197.113.179
+  skip-cert-verify: false
 - name: '[VLESS] netazad1-production.up.railway.app:443'
   type: vless
   server: netazad1-production.up.railway.app
@@ -1878,6 +1931,29 @@ proxies:
       Host: netazad1-production.up.railway.app
   servername: netazad1-production.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] 45.74.178.41:719'
+  type: vless
+  server: 45.74.178.41
+  port: 719
+  uuid: ae9bcc43-5fd8-4891-b06e-1c93e2747ed9
+  udp: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /api/v2/xtrnwqjbkr?ed=2560
+    headers:
+      Host: play.google.com
+  servername: 45.74.178.41
+  skip-cert-verify: false
+- name: '[VLESS] 147.45.48.143:443'
+  type: vless
+  server: 147.45.48.143
+  port: 443
+  uuid: b1b3e430-ff52-44b8-b95d-27fa580fbc4f
+  udp: true
+  tls: true
+  servername: id.vk.com
+  skip-cert-verify: false
 - name: '[VLESS] ns.o11111o.club:443'
   type: vless
   server: ns.o11111o.club
@@ -1887,26 +1963,14 @@ proxies:
   tls: true
   servername: id.vk.com
   skip-cert-verify: false
-- name: '[VLESS] 144.31.157.202:110'
+- name: '[VLESS] 176.109.85.140:9444'
   type: vless
-  server: 144.31.157.202
-  port: 110
-  uuid: b1d206b2-83b8-4756-aa3d-838242451c8d
-  udp: true
-  tls: false
-- name: '[VLESS] dyar3.javanrooo.ir:2087'
-  type: vless
-  server: dyar3.javanrooo.ir
-  port: 2087
-  uuid: b3c0e083-7608-48b1-84ac-efd75522b745
+  server: 176.109.85.140
+  port: 9444
+  uuid: b251ec8f-47ec-4ab4-8bd2-13ac333a4100
   udp: true
   tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
-  servername: dyar3.javanrooo.ir
+  servername: 176.109.85.140
   skip-cert-verify: false
 - name: '[VLESS] 144.31.131.241:8443'
   type: vless
@@ -2009,9 +2073,27 @@ proxies:
   tls: true
   servername: 5us.skorostnet.space
   skip-cert-verify: false
-- name: '[VLESS] 185.193.89.51:443'
+- name: '[VLESS] 178.248.236.155:18443'
   type: vless
-  server: 185.193.89.51
+  server: 178.248.236.155
+  port: 18443
+  uuid: c099de6a-0805-4052-b959-fd4ab4fc209e
+  udp: true
+  tls: true
+  servername: rutube.ru
+  skip-cert-verify: false
+- name: '[VLESS] 188.225.33.206:8443'
+  type: vless
+  server: 188.225.33.206
+  port: 8443
+  uuid: c124a209-d949-4951-8234-e2d918b3e6c0
+  udp: true
+  tls: true
+  servername: max.ru
+  skip-cert-verify: false
+- name: '[VLESS] paris.vypnet.su:443'
+  type: vless
+  server: paris.vypnet.su
   port: 443
   uuid: c124a209-d949-4951-8234-e2d918b3e6c0
   udp: true
@@ -2096,6 +2178,15 @@ proxies:
   tls: true
   servername: bgcpartners.com
   skip-cert-verify: false
+- name: '[VLESS] cdn-b305c2ba.glomedia-cdn.com:443'
+  type: vless
+  server: cdn-b305c2ba.glomedia-cdn.com
+  port: 443
+  uuid: d067adf8-9adc-4854-990d-f779875a855e
+  udp: true
+  tls: true
+  servername: www.rumedia-cdn.com
+  skip-cert-verify: false
 - name: '[VLESS] x4g-production-6be3.up.railway.app:443'
   type: vless
   server: x4g-production-6be3.up.railway.app
@@ -2110,19 +2201,14 @@ proxies:
       Host: x4g-production-6be3.up.railway.app
   servername: x4g-production-6be3.up.railway.app
   skip-cert-verify: false
-- name: '[VLESS] x4g-production-ff3b.up.railway.app:443'
+- name: '[VLESS] 169.40.42.121:443'
   type: vless
-  server: x4g-production-ff3b.up.railway.app
+  server: 169.40.42.121
   port: 443
-  uuid: d517ffb6-9d5c-278d-8df3-5398b941f578
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
   udp: true
   tls: true
-  network: ws
-  ws-opts:
-    path: /ws/d517ffb6-9d5c-278d-8df3-5398b941f578
-    headers:
-      Host: x4g-production-ff3b.up.railway.app
-  servername: x4g-production-ff3b.up.railway.app
+  servername: yahoo.com
   skip-cert-verify: false
 - name: '[VLESS] 169.40.42.133:443'
   type: vless
@@ -2154,6 +2240,15 @@ proxies:
 - name: '[VLESS] 169.40.42.52:443'
   type: vless
   server: 169.40.42.52
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: yahoo.com
+  skip-cert-verify: false
+- name: '[VLESS] 169.40.42.95:443'
+  type: vless
+  server: 169.40.42.95
   port: 443
   uuid: d65cc14c-f53f-4fe2-b262-97856601319c
   udp: true
@@ -2193,22 +2288,26 @@ proxies:
   port: 43646
   uuid: d92afe21-8e8b-42c7-98c2-8a33da64d28f
   udp: true
-  tls: false
+  tls: true
   network: ws
   ws-opts:
     path: /d92afe21
     headers:
       Host: 39.109.117.110
-- name: '[VLESS] 54.37.6.119:2053'
-  type: vless
-  server: 54.37.6.119
-  port: 2053
-  uuid: d9aa9ea3-9388-483f-a58d-a754f33ec505
-  udp: true
-  tls: false
+  servername: 39.109.117.110
+  skip-cert-verify: false
 - name: '[VLESS] gr005.bamajobin.ir:2053'
   type: vless
   server: gr005.bamajobin.ir
+  port: 2053
+  uuid: d9aa9ea3-9388-483f-a58d-a754f33ec505
+  udp: true
+  tls: true
+  servername: play.google.com
+  skip-cert-verify: false
+- name: '[VLESS] gr048.bamajobin.ir:2053'
+  type: vless
+  server: gr048.bamajobin.ir
   port: 2053
   uuid: d9aa9ea3-9388-483f-a58d-a754f33ec505
   udp: true
@@ -2229,6 +2328,13 @@ proxies:
       Host: x4g-production-4ce4.up.railway.app
   servername: x4g-production-4ce4.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] 178.83.46.30:5794'
+  type: vless
+  server: 178.83.46.30
+  port: 5794
+  uuid: ddd72e51-9224-43a2-b3a0-9c4170f78ed1
+  udp: true
+  tls: false
 - name: '[VLESS] x4g-production-b148.up.railway.app:443'
   type: vless
   server: x4g-production-b148.up.railway.app
@@ -2243,19 +2349,19 @@ proxies:
       Host: x4g-production-b148.up.railway.app
   servername: x4g-production-b148.up.railway.app
   skip-cert-verify: false
-- name: '[VLESS] ct.877774.xyz:443'
+- name: '[VLESS] 199.232.78.159:443'
   type: vless
-  server: ct.877774.xyz
+  server: 199.232.78.159
   port: 443
-  uuid: e4281fbe-7729-4ef1-ad3b-f33aca54e339
+  uuid: e1a5c7fd-d1c7-49a3-b772-9e2935d420db
   udp: true
   tls: true
   network: ws
   ws-opts:
-    path: /announcement
+    path: /
     headers:
-      Host: us-lax.862400.xyz
-  servername: us-lax.862400.xyz
+      Host: SvnTeamChannel.global.ssl.fastly.net
+  servername: ssl.fastly.com
   skip-cert-verify: false
 - name: '[VLESS] rubr5.cheburnetnastalgia1998.com:50058'
   type: vless
@@ -2310,7 +2416,7 @@ proxies:
   uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
   udp: true
   tls: true
-  servername: 5.253.42.164
+  servername: deepl.com
   skip-cert-verify: false
 - name: '[VLESS] x4g-production-1322.up.railway.app:443'
   type: vless
@@ -2354,6 +2460,33 @@ proxies:
       Host: v2rayngselllbot-aaws.up.railway.app
   servername: v2rayngselllbot-aaws.up.railway.app
   skip-cert-verify: false
+- name: '[VLESS] 142.111.244.75:448'
+  type: vless
+  server: 142.111.244.75
+  port: 448
+  uuid: f128bc2c-8018-43a1-8ed7-66eabc8f157c
+  udp: true
+  tls: true
+  servername: www.samsung.com
+  skip-cert-verify: false
+- name: '[VLESS] 194.150.166.12:443'
+  type: vless
+  server: 194.150.166.12
+  port: 443
+  uuid: f1c496bf-d2ab-45be-bc13-051d60d227b7
+  udp: true
+  tls: true
+  servername: www.avito.ru
+  skip-cert-verify: false
+- name: '[VLESS] 84.32.209.7:443'
+  type: vless
+  server: 84.32.209.7
+  port: 443
+  uuid: f1c496bf-d2ab-45be-bc13-051d60d227b7
+  udp: true
+  tls: true
+  servername: dartsearch-cn.net
+  skip-cert-verify: false
 - name: '[VLESS] rvg-production-8249.up.railway.app:443'
   type: vless
   server: rvg-production-8249.up.railway.app
@@ -2390,6 +2523,24 @@ proxies:
     headers:
       Host: ans-channel-production-b262.up.railway.app
   servername: ans-channel-production-b262.up.railway.app
+  skip-cert-verify: false
+- name: '[VLESS] 84.32.96.102:443'
+  type: vless
+  server: 84.32.96.102
+  port: 443
+  uuid: f7c25743-140c-4d32-a296-a53bc49682d8
+  udp: true
+  tls: true
+  servername: direct-nl.bachidze.com
+  skip-cert-verify: false
+- name: '[VLESS] 217.145.79.102:24478'
+  type: vless
+  server: 217.145.79.102
+  port: 24478
+  uuid: f937575c-35c2-4889-832e-b67935d565d8
+  udp: true
+  tls: true
+  servername: 217.145.79.102
   skip-cert-verify: false
 - name: '[VLESS] 1405-4-19-ansooyefilter-telegram.up.railway.app:443'
   type: vless
@@ -3496,6 +3647,108 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
+- name: '[VMESS] JP032001.ssgreen.org:443'
+  type: vmess
+  server: JP032001.ssgreen.org
+  port: 443
+  uuid: 842bf7b4-1c6b-478f-8edb-5b93abde9691
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032001.ssgreen.org
+  servername: JP032001.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] JP032002.ssgreen.org:443'
+  type: vmess
+  server: JP032002.ssgreen.org
+  port: 443
+  uuid: 5a412bde-b31d-4f75-bedb-375195b9cf41
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032002.ssgreen.org
+  servername: JP032002.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] JP032006.ssgreen.org:443'
+  type: vmess
+  server: JP032006.ssgreen.org
+  port: 443
+  uuid: 2f4b5909-0ae6-484e-b528-2a570d474e56
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032006.ssgreen.org
+  servername: JP032006.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] JP032008.ssgreen.org:443'
+  type: vmess
+  server: JP032008.ssgreen.org
+  port: 443
+  uuid: fdd5c90a-96f7-44dd-9adc-58413bd85981
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032008.ssgreen.org
+  servername: JP032008.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] JP032009.ssgreen.org:443'
+  type: vmess
+  server: JP032009.ssgreen.org
+  port: 443
+  uuid: 011fca93-33cd-4c3b-a584-7960621e0a3b
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032009.ssgreen.org
+  servername: JP032009.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] JP032010.ssgreen.org:443'
+  type: vmess
+  server: JP032010.ssgreen.org
+  port: 443
+  uuid: 114af209-c748-49eb-9e45-629986aacfbb
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032010.ssgreen.org
+  servername: JP032010.ssgreen.org
+  fingerprint: ''
 - name: '[VMESS] StrEaMCorEnoDe8-apILINkHUb4-NeTwEbGate.CloUDsYnc9.cOm:443'
   type: vmess
   server: StrEaMCorEnoDe8-apILINkHUb4-NeTwEbGate.CloUDsYnc9.cOm
@@ -3513,6 +3766,91 @@ proxies:
       Host: STReamCoRENodE8-APiLInKHub4-netwEBGATE.clouDSYNC9.COm
   servername: sTREAMcoRenODe8-apIliNKHub4-nEtWebgAtE.ClOUDSYnc9.COM
   fingerprint: chrome
+- name: '[VMESS] US032010.westmgreen.com:443'
+  type: vmess
+  server: US032010.westmgreen.com
+  port: 443
+  uuid: 238879d6-f2ea-4f0d-9fe9-0972a2995f78
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032010.westmgreen.com
+  servername: US032010.westmgreen.com
+  fingerprint: ''
+- name: '[VMESS] US032013.ssgreen.org:443'
+  type: vmess
+  server: US032013.ssgreen.org
+  port: 443
+  uuid: 58968a6c-2def-4bfb-b20a-8cbc4baed978
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032013.ssgreen.org
+  servername: US032013.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] US032014.ssgreen.org:443'
+  type: vmess
+  server: US032014.ssgreen.org
+  port: 443
+  uuid: 69bd12dd-03a2-4782-b4bd-46a90d17214f
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032014.ssgreen.org
+  servername: US032014.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] US032017.ssgreen.org:443'
+  type: vmess
+  server: US032017.ssgreen.org
+  port: 443
+  uuid: 51ca2c43-70e5-4537-b7fd-cd52e24ac2c2
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032017.ssgreen.org
+  servername: US032017.ssgreen.org
+  fingerprint: ''
+- name: '[VMESS] US122207.ssgreen.org:443'
+  type: vmess
+  server: US122207.ssgreen.org
+  port: 443
+  uuid: a784449b-074f-4fe7-9f4a-119b33d8c05d
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US122207.ssgreen.org
+  servername: US122207.ssgreen.org
+  fingerprint: ''
 - name: '[VMESS] apjhdggyx.com:443'
   type: vmess
   server: apjhdggyx.com
@@ -3543,6 +3881,17 @@ proxies:
   udp: true
   servername: atiins.com.tr
   fingerprint: chrome
+- name: '[VMESS] board-02.ddnskunlun.com:11885'
+  type: vmess
+  server: board-02.ddnskunlun.com
+  port: 11885
+  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
+  alterId: '0'
+  cipher: auto
+  network: tcp
+  tls: false
+  skip-cert-verify: false
+  udp: true
 - name: '[VMESS] c722s801.portablesubmarines.com:16025'
   type: vmess
   server: c722s801.portablesubmarines.com
@@ -4175,6 +4524,23 @@ proxies:
     path: /vpnjantit
     headers:
       Host: ''
+- name: '[VMESS] us.klxiaogou.com:41963'
+  type: vmess
+  server: us.klxiaogou.com
+  port: 41963
+  uuid: 7a4830df-5391-4748-b1c7-b6857ad04acb
+  alterId: '0'
+  cipher: auto
+  network: ws
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    path: /124
+    headers:
+      Host: us.klxiaogou.com
+  servername: us.klxiaogou.com
+  fingerprint: ''
 - name: '[VMESS] vip1314.vip:443'
   type: vmess
   server: vip1314.vip
@@ -4335,10 +4701,10 @@ proxies:
       Host: zt-ai.cloud
   servername: ''
   fingerprint: ''
-- name: '[VMESS] board-02.ddnskunlun.com:11885'
+- name: '[VMESS] select-us.ddnskunlun.com:9027'
   type: vmess
-  server: board-02.ddnskunlun.com
-  port: 11885
+  server: select-us.ddnskunlun.com
+  port: 9027
   uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
   alterId: '0'
   cipher: auto
@@ -4346,210 +4712,6 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[VMESS] JP032002.ssgreen.org:443'
-  type: vmess
-  server: JP032002.ssgreen.org
-  port: 443
-  uuid: 5a412bde-b31d-4f75-bedb-375195b9cf41
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: JP032002.ssgreen.org
-  servername: JP032002.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] JP032006.ssgreen.org:443'
-  type: vmess
-  server: JP032006.ssgreen.org
-  port: 443
-  uuid: 2f4b5909-0ae6-484e-b528-2a570d474e56
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: JP032006.ssgreen.org
-  servername: JP032006.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] JP032008.ssgreen.org:443'
-  type: vmess
-  server: JP032008.ssgreen.org
-  port: 443
-  uuid: fdd5c90a-96f7-44dd-9adc-58413bd85981
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: JP032008.ssgreen.org
-  servername: JP032008.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] JP032009.ssgreen.org:443'
-  type: vmess
-  server: JP032009.ssgreen.org
-  port: 443
-  uuid: 011fca93-33cd-4c3b-a584-7960621e0a3b
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: JP032009.ssgreen.org
-  servername: JP032009.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] JP032010.ssgreen.org:443'
-  type: vmess
-  server: JP032010.ssgreen.org
-  port: 443
-  uuid: 114af209-c748-49eb-9e45-629986aacfbb
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: JP032010.ssgreen.org
-  servername: JP032010.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] US032010.westmgreen.com:443'
-  type: vmess
-  server: US032010.westmgreen.com
-  port: 443
-  uuid: 238879d6-f2ea-4f0d-9fe9-0972a2995f78
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: US032010.westmgreen.com
-  servername: US032010.westmgreen.com
-  fingerprint: ''
-- name: '[VMESS] US032014.ssgreen.org:443'
-  type: vmess
-  server: US032014.ssgreen.org
-  port: 443
-  uuid: 69bd12dd-03a2-4782-b4bd-46a90d17214f
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: US032014.ssgreen.org
-  servername: US032014.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] US032017.ssgreen.org:443'
-  type: vmess
-  server: US032017.ssgreen.org
-  port: 443
-  uuid: 51ca2c43-70e5-4537-b7fd-cd52e24ac2c2
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: US032017.ssgreen.org
-  servername: US032017.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] US122207.ssgreen.org:443'
-  type: vmess
-  server: US122207.ssgreen.org
-  port: 443
-  uuid: a784449b-074f-4fe7-9f4a-119b33d8c05d
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: US122207.ssgreen.org
-  servername: US122207.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] JP032001.ssgreen.org:443'
-  type: vmess
-  server: JP032001.ssgreen.org
-  port: 443
-  uuid: 842bf7b4-1c6b-478f-8edb-5b93abde9691
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: JP032001.ssgreen.org
-  servername: JP032001.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] US032013.ssgreen.org:443'
-  type: vmess
-  server: US032013.ssgreen.org
-  port: 443
-  uuid: 58968a6c-2def-4bfb-b20a-8cbc4baed978
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /wes
-    headers:
-      Host: US032013.ssgreen.org
-  servername: US032013.ssgreen.org
-  fingerprint: ''
-- name: '[VMESS] us.klxiaogou.com:41963'
-  type: vmess
-  server: us.klxiaogou.com
-  port: 41963
-  uuid: 7a4830df-5391-4748-b1c7-b6857ad04acb
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /124
-    headers:
-      Host: us.klxiaogou.com
-  servername: us.klxiaogou.com
-  fingerprint: ''
 - name: '[VLESS] 192.0.2.1:1'
   type: vless
   server: 192.0.2.1
@@ -5043,580 +5205,448 @@ proxies:
   tls: true
   servername: u695099u57be39cds394.csgfw.top
   skip-cert-verify: false
-- name: '[TROJAN] hkdcrtc-e.catcat321.com:20129'
+- name: '[TROJAN] oplosgru-c.catcat321.com:20088'
   type: trojan
-  server: hkdcrtc-e.catcat321.com
-  port: 20129
+  server: oplosgru-c.catcat321.com
+  port: 20088
   password: 41c406e2-12b5-41f2-a329-d0621052d675
   tls: true
   skip-cert-verify: false
   sni: hk.catxstar.com
   udp: true
-- name: '[TROJAN] 177.3.208.169:443'
+- name: '[TROJAN] 13.192.168.51:443'
   type: trojan
-  server: 177.3.208.169
-  port: 443
-  password: 581e14a5fcc14107b9326cc54f047891
-  tls: true
-  skip-cert-verify: false
-  sni: titandarkness.mooo.com
-  udp: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: /43588/G43plZahWW
-- name: '[TROJAN] 3.64.59.246:443'
-  type: trojan
-  server: 3.64.59.246
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: gentle-raptor.rooster465.autos
-  udp: true
-- name: '[TROJAN] 57.180.13.78:443'
-  type: trojan
-  server: 57.180.13.78
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: healthy-louse.rooster465.autos
-  udp: true
-- name: '[TROJAN] 89.39.70.180:443'
-  type: trojan
-  server: 89.39.70.180
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: eager-louse.rooster465.autos
-  udp: true
-- name: '[TROJAN] adjusted-labrador.rooster465.autos:443'
-  type: trojan
-  server: adjusted-labrador.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: adjusted-labrador.rooster465.autos
-  udp: true
-- name: '[TROJAN] better-molly.rooster465.autos:443'
-  type: trojan
-  server: better-molly.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: better-molly.rooster465.autos
-  udp: true
-- name: '[TROJAN] careful-tadpole.rooster465.autos:443'
-  type: trojan
-  server: careful-tadpole.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: careful-tadpole.rooster465.autos
-  udp: true
-- name: '[TROJAN] clear-snail.rooster465.autos:443'
-  type: trojan
-  server: clear-snail.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: clear-snail.rooster465.autos
-  udp: true
-- name: '[TROJAN] definite-sturgeon.rooster465.autos:443'
-  type: trojan
-  server: definite-sturgeon.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: definite-sturgeon.rooster465.autos
-  udp: true
-- name: '[TROJAN] happy-mutt.rooster465.autos:443'
-  type: trojan
-  server: happy-mutt.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: happy-mutt.rooster465.autos
-  udp: true
-- name: '[TROJAN] internal-sunbird.rooster465.autos:443'
-  type: trojan
-  server: internal-sunbird.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: internal-sunbird.rooster465.autos
-  udp: true
-- name: '[TROJAN] learning-leopard.rooster465.autos:443'
-  type: trojan
-  server: learning-leopard.rooster465.autos
+  server: 13.192.168.51
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
   sni: learning-leopard.rooster465.autos
   udp: true
-- name: '[TROJAN] moral-buzzard.rooster465.autos:443'
+- name: '[TROJAN] 15.237.219.234:443'
   type: trojan
-  server: moral-buzzard.rooster465.autos
+  server: 15.237.219.234
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: moral-buzzard.rooster465.autos
+  sni: careful-tadpole.rooster465.autos
   udp: true
-- name: '[TROJAN] next-turkey.rooster465.autos:443'
+- name: '[TROJAN] 18.179.31.199:443'
   type: trojan
-  server: next-turkey.rooster465.autos
+  server: 18.179.31.199
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: next-turkey.rooster465.autos
+  sni: prompt-duckling.rooster465.autos
   udp: true
-- name: '[TROJAN] picked-guinea.rooster465.autos:443'
+- name: '[TROJAN] 18.181.164.216:443'
   type: trojan
-  server: picked-guinea.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: picked-guinea.rooster465.autos
-  udp: true
-- name: '[TROJAN] sincere-gelding.rooster465.autos:443'
-  type: trojan
-  server: sincere-gelding.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: sincere-gelding.rooster465.autos
-  udp: true
-- name: '[TROJAN] skilled-lioness.rooster465.autos:443'
-  type: trojan
-  server: skilled-lioness.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: skilled-lioness.rooster465.autos
-  udp: true
-- name: '[TROJAN] social-mutt.rooster465.autos:443'
-  type: trojan
-  server: social-mutt.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: social-mutt.rooster465.autos
-  udp: true
-- name: '[TROJAN] stunning-mite.rooster465.autos:443'
-  type: trojan
-  server: stunning-mite.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: stunning-mite.rooster465.autos
-  udp: true
-- name: '[TROJAN] tidy-gelding.rooster465.autos:443'
-  type: trojan
-  server: tidy-gelding.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: tidy-gelding.rooster465.autos
-  udp: true
-- name: '[TROJAN] tough-robin.rooster465.autos:443'
-  type: trojan
-  server: tough-robin.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: tough-robin.rooster465.autos
-  udp: true
-- name: '[TROJAN] upright-impala.rooster465.autos:443'
-  type: trojan
-  server: upright-impala.rooster465.autos
+  server: 18.181.164.216
   port: 443
   password: ND91608427
   tls: true
   skip-cert-verify: false
   sni: upright-impala.rooster465.autos
   udp: true
-- name: '[TROJAN] 165.215.250.14:443'
+- name: '[TROJAN] 18.181.194.227:443'
   type: trojan
-  server: 165.215.250.14
+  server: 18.181.194.227
   port: 443
-  password: humanity
+  password: ND91608427
   tls: true
   skip-cert-verify: false
-  sni: www.calmlunch.com
+  sni: moral-buzzard.rooster465.autos
   udp: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: '[VLESS] 164.37.111.117:2020'
-  type: vless
-  server: 164.37.111.117
-  port: 2020
-  uuid: 0dbacd35-9159-4648-89ac-c38b741567a8
-  udp: true
-  tls: false
-- name: '[VLESS] 104.17.108.69:443'
-  type: vless
-  server: 104.17.108.69
+- name: '[TROJAN] 3.112.223.141:443'
+  type: trojan
+  server: 3.112.223.141
   port: 443
-  uuid: 3a17b816-a8ae-415d-a592-29345d7a7591
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: internal-sunbird.rooster465.autos
+  udp: true
+- name: '[TROJAN] 3.112.238.99:443'
+  type: trojan
+  server: 3.112.238.99
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: stunning-mite.rooster465.autos
+  udp: true
+- name: '[TROJAN] 3.38.106.2:443'
+  type: trojan
+  server: 3.38.106.2
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: communal-sunbird.rooster465.autos
+  udp: true
+- name: '[TROJAN] 43.203.244.203:443'
+  type: trojan
+  server: 43.203.244.203
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: grateful-owl.rooster465.autos
+  udp: true
+- name: '[TROJAN] 43.207.140.98:443'
+  type: trojan
+  server: 43.207.140.98
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: right-seahorse.rooster465.autos
+  udp: true
+- name: '[TROJAN] 43.207.155.134:443'
+  type: trojan
+  server: 43.207.155.134
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: smart-pup.rooster465.autos
+  udp: true
+- name: '[TROJAN] 52.194.230.221:443'
+  type: trojan
+  server: 52.194.230.221
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: happy-mutt.rooster465.autos
+  udp: true
+- name: '[TROJAN] 54.249.34.120:443'
+  type: trojan
+  server: 54.249.34.120
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: social-mutt.rooster465.autos
+  udp: true
+- name: '[TROJAN] devoted-heron.rooster465.autos:443'
+  type: trojan
+  server: devoted-heron.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: devoted-heron.rooster465.autos
+  udp: true
+- name: '[TROJAN] distinct-llama.rooster465.autos:443'
+  type: trojan
+  server: distinct-llama.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: distinct-llama.rooster465.autos
+  udp: true
+- name: '[TROJAN] fancy-skink.rooster465.autos:443'
+  type: trojan
+  server: fancy-skink.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: fancy-skink.rooster465.autos
+  udp: true
+- name: '[TROJAN] healthy-louse.rooster465.autos:443'
+  type: trojan
+  server: healthy-louse.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: healthy-louse.rooster465.autos
+  udp: true
+- name: '[TROJAN] humorous-malamute.rooster465.autos:443'
+  type: trojan
+  server: humorous-malamute.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: humorous-malamute.rooster465.autos
+  udp: true
+- name: '[TROJAN] moved-meerkat.rooster465.autos:443'
+  type: trojan
+  server: moved-meerkat.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: moved-meerkat.rooster465.autos
+  udp: true
+- name: '[TROJAN] nearby-egret.rooster465.autos:443'
+  type: trojan
+  server: nearby-egret.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: nearby-egret.rooster465.autos
+  udp: true
+- name: '[TROJAN] perfect-slug.rooster465.autos:443'
+  type: trojan
+  server: perfect-slug.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: perfect-slug.rooster465.autos
+  udp: true
+- name: '[TROJAN] pure-ram.rooster465.autos:443'
+  type: trojan
+  server: pure-ram.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: pure-ram.rooster465.autos
+  udp: true
+- name: '[TROJAN] real-werewolf.rooster465.autos:443'
+  type: trojan
+  server: real-werewolf.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: real-werewolf.rooster465.autos
+  udp: true
+- name: '[TROJAN] select-ferret.rooster465.autos:443'
+  type: trojan
+  server: select-ferret.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: select-ferret.rooster465.autos
+  udp: true
+- name: '[TROJAN] sure-humpback.rooster465.autos:443'
+  type: trojan
+  server: sure-humpback.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: sure-humpback.rooster465.autos
+  udp: true
+- name: '[TROJAN] thankful-mustang.rooster465.autos:443'
+  type: trojan
+  server: thankful-mustang.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: thankful-mustang.rooster465.autos
+  udp: true
+- name: '[TROJAN] uncommon-feline.rooster465.autos:443'
+  type: trojan
+  server: uncommon-feline.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: uncommon-feline.rooster465.autos
+  udp: true
+- name: '[VLESS] 179.255.148.66:47588'
+  type: vless
+  server: 179.255.148.66
+  port: 47588
+  uuid: 14be84e2-8b22-42c0-a1ba-3535fc8e9257
   udp: true
   tls: true
-  network: ws
-  ws-opts:
-    path: /nova-geo-psiphon-ca
-    headers:
-      Host: 89drg3d.zenvorix.ir
-  servername: 89drg3d.zenvorix.ir
+  servername: yellowpages.amazon.com
   skip-cert-verify: false
-- name: '[VLESS] 138.68.53.88:443'
+- name: '[VLESS] 144.31.65.68:443'
   type: vless
-  server: 138.68.53.88
-  port: 443
-  uuid: 413a66e9-b05b-4ae6-a9eb-6d28204a28f4
-  udp: true
-  tls: false
-- name: '[VLESS] 144.31.226.177:443'
-  type: vless
-  server: 144.31.226.177
+  server: 144.31.65.68
   port: 443
   uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
   udp: true
   tls: true
-  servername: node15.mxvpn.dev
+  servername: node18.mxvpn.dev
   skip-cert-verify: false
-- name: '[VLESS] 77.239.123.224:443'
+- name: '[VLESS] 81.19.137.181:443'
   type: vless
-  server: 77.239.123.224
+  server: 81.19.137.181
   port: 443
   uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
   udp: true
   tls: true
-  servername: node20.mxvpn.dev
+  servername: node21.mxvpn.dev
   skip-cert-verify: false
-- name: '[VLESS] support.zoom.us:80'
+- name: '[VLESS] 77.233.214.116:40443'
   type: vless
-  server: support.zoom.us
-  port: 80
-  uuid: 6aa028bc-08a9-41d1-a397-d60ce65df081
+  server: 77.233.214.116
+  port: 40443
+  uuid: 69a74770-7152-4a27-bef0-2615ca16e1b1
   udp: true
   tls: true
-  network: ws
-  ws-opts:
-    path: /shalana
-    headers:
-      Host: shalana.xyz
-  servername: support.zoom.us
+  servername: deepl.com
   skip-cert-verify: false
-- name: '[VLESS] 69.46.46.30:443'
+- name: '[VLESS] 89.23.103.121:443'
   type: vless
-  server: 69.46.46.30
+  server: 89.23.103.121
   port: 443
-  uuid: 6e50ed70-fbde-3719-6867-64348d81f276
+  uuid: 7596b721-f311-4194-96e6-b7b407cd6083
   udp: true
   tls: true
-  network: ws
-  ws-opts:
-    path: /ws/6e50ed70-fbde-3719-6867-64348d81f276
-    headers:
-      Host: hashish-production-evj7.up.railway.app
-  servername: hashish-production-evj7.up.railway.app
+  servername: www.debian.org
   skip-cert-verify: false
-- name: '[VLESS] 64.188.82.57:443'
+- name: '[VLESS] 46.8.158.22:443'
   type: vless
-  server: 64.188.82.57
+  server: 46.8.158.22
   port: 443
-  uuid: 76713d07-5a6b-49c2-abd8-bc450a2fa7fc
+  uuid: 89755337-8050-401c-86d1-c8c34fb88d89
   udp: true
   tls: true
-  servername: ee-download.spectrum.vu
+  servername: www.icloud.com
   skip-cert-verify: false
-- name: '[VLESS] cf.levikogjgfdd.ir:2095'
+- name: '[VLESS] 134.98.155.228:62145'
   type: vless
-  server: cf.levikogjgfdd.ir
-  port: 2095
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  server: 134.98.155.228
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 144.21.40.16:62145'
+  type: vless
+  server: 144.21.40.16
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 149.130.168.29:62145'
+  type: vless
+  server: 149.130.168.29
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 149.130.188.226:62145'
+  type: vless
+  server: 149.130.188.226
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 157.137.213.216:62145'
+  type: vless
+  server: 157.137.213.216
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 157.137.221.79:62145'
+  type: vless
+  server: 157.137.221.79
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 157.137.227.216:62145'
+  type: vless
+  server: 157.137.227.216
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 158.178.154.97:62145'
+  type: vless
+  server: 158.178.154.97
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 158.180.14.247:62145'
+  type: vless
+  server: 158.180.14.247
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 158.247.126.16:62145'
+  type: vless
+  server: 158.247.126.16
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 193.123.63.156:62145'
+  type: vless
+  server: 193.123.63.156
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  udp: true
+  tls: false
+- name: '[VLESS] 64.188.62.138:40443'
+  type: vless
+  server: 64.188.62.138
+  port: 40443
+  uuid: 9150748b-fa2b-4ef1-a7f1-7c4a76e2dc0b
+  udp: true
+  tls: true
+  servername: deepl.com
+  skip-cert-verify: false
+- name: '[VLESS] 144.31.157.202:110'
+  type: vless
+  server: 144.31.157.202
+  port: 110
+  uuid: b1d206b2-83b8-4756-aa3d-838242451c8d
+  udp: true
+  tls: false
+- name: '[VLESS] dyar3.javanrooo.ir:2087'
+  type: vless
+  server: dyar3.javanrooo.ir
+  port: 2087
+  uuid: b3c0e083-7608-48b1-84ac-efd75522b745
   udp: true
   tls: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: fuckingfangbinxing.pusytroller.cf
-  servername: cf.levikogjgfdd.ir
+      Host: play.google.com
+  servername: dyar3.javanrooo.ir
   skip-cert-verify: false
-- name: '[VLESS] 141.144.200.165:62145'
+- name: '[VLESS] 185.193.89.51:443'
   type: vless
-  server: 141.144.200.165
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 141.148.236.62:62145'
-  type: vless
-  server: 141.148.236.62
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 149.130.177.227:62145'
-  type: vless
-  server: 149.130.177.227
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 149.130.187.35:62145'
-  type: vless
-  server: 149.130.187.35
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 149.130.187.58:62145'
-  type: vless
-  server: 149.130.187.58
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 149.130.191.105:62145'
-  type: vless
-  server: 149.130.191.105
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 149.130.191.17:62145'
-  type: vless
-  server: 149.130.191.17
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 152.70.60.147:62145'
-  type: vless
-  server: 152.70.60.147
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.208.150:62145'
-  type: vless
-  server: 157.137.208.150
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.210.130:62145'
-  type: vless
-  server: 157.137.210.130
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.211.247:62145'
-  type: vless
-  server: 157.137.211.247
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.214.20:62145'
-  type: vless
-  server: 157.137.214.20
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.226.173:62145'
-  type: vless
-  server: 157.137.226.173
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.226.67:62145'
-  type: vless
-  server: 157.137.226.67
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 157.137.230.163:62145'
-  type: vless
-  server: 157.137.230.163
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 158.178.145.70:62145'
-  type: vless
-  server: 158.178.145.70
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 193.123.60.154:62145'
-  type: vless
-  server: 193.123.60.154
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 84.235.160.97:62145'
-  type: vless
-  server: 84.235.160.97
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  udp: true
-  tls: false
-- name: '[VLESS] 89.124.124.221:443'
-  type: vless
-  server: 89.124.124.221
-  port: 443
-  uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
-  udp: true
-  tls: true
-  servername: 19.07.yunus.guru
-  skip-cert-verify: false
-- name: '[VLESS] 69.46.46.53:443'
-  type: vless
-  server: 69.46.46.53
-  port: 443
-  uuid: a88e95f3-a30c-0fe6-9e22-08858297fcab
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws/a88e95f3-a30c-0fe6-9e22-08858297fcab
-    headers:
-      Host: x4g-production-ee62c.up.railway.app
-  servername: x4g-production-ee62c.up.railway.app
-  skip-cert-verify: false
-- name: '[VLESS] 88.216.220.87:443'
-  type: vless
-  server: 88.216.220.87
-  port: 443
-  uuid: a8e3155b-ceb1-4fcb-bc0c-2e77ec005401
-  udp: true
-  tls: true
-  servername: api.noneok.com
-  skip-cert-verify: false
-- name: '[VLESS] 185.212.119.177:443'
-  type: vless
-  server: 185.212.119.177
-  port: 443
-  uuid: c04bf2df-2b7f-44da-a893-3792d3910fd8
-  udp: true
-  tls: false
-- name: '[VLESS] 185.23.239.129:443'
-  type: vless
-  server: 185.23.239.129
-  port: 443
-  uuid: c04bf2df-2b7f-44da-a893-3792d3910fd8
-  udp: true
-  tls: true
-  servername: ger06.skorostnet.space
-  skip-cert-verify: false
-- name: '[VLESS] 185.232.117.117:443'
-  type: vless
-  server: 185.232.117.117
-  port: 443
-  uuid: c04bf2df-2b7f-44da-a893-3792d3910fd8
-  udp: true
-  tls: true
-  servername: vl07.skorostnet.space
-  skip-cert-verify: false
-- name: '[VLESS] paris.vypnet.su:443'
-  type: vless
-  server: paris.vypnet.su
+  server: 185.193.89.51
   port: 443
   uuid: c124a209-d949-4951-8234-e2d918b3e6c0
   udp: true
   tls: true
   servername: p.keshevoz.ru
   skip-cert-verify: false
-- name: '[VLESS] smm-01.smmmdesign.com:443'
+- name: '[VLESS] x4g-production-ff3b.up.railway.app:443'
   type: vless
-  server: smm-01.smmmdesign.com
+  server: x4g-production-ff3b.up.railway.app
   port: 443
-  uuid: cab38fce-e08d-4a3d-9828-dcb96b18d132
+  uuid: d517ffb6-9d5c-278d-8df3-5398b941f578
   udp: true
   tls: true
   network: ws
   ws-opts:
-    path: /vless
+    path: /ws/d517ffb6-9d5c-278d-8df3-5398b941f578
     headers:
-      Host: smm-01.smmmdesign.com
-  servername: smm-01.smmmdesign.com
+      Host: x4g-production-ff3b.up.railway.app
+  servername: x4g-production-ff3b.up.railway.app
   skip-cert-verify: false
-- name: '[VLESS] 169.40.42.121:443'
+- name: '[VLESS] 54.37.6.119:2053'
   type: vless
-  server: 169.40.42.121
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] 169.40.42.95:443'
-  type: vless
-  server: 169.40.42.95
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: yahoo.com
-  skip-cert-verify: false
-- name: '[VLESS] 142.111.244.75:448'
-  type: vless
-  server: 142.111.244.75
-  port: 448
-  uuid: f128bc2c-8018-43a1-8ed7-66eabc8f157c
-  udp: true
-  tls: true
-  servername: www.samsung.com
-  skip-cert-verify: false
-- name: '[VLESS] 84.32.209.7:443'
-  type: vless
-  server: 84.32.209.7
-  port: 443
-  uuid: f1c496bf-d2ab-45be-bc13-051d60d227b7
-  udp: true
-  tls: true
-  servername: dartsearch-cn.net
-  skip-cert-verify: false
-- name: '[VLESS] 194.87.30.161:22647'
-  type: vless
-  server: 194.87.30.161
-  port: 22647
-  uuid: ffa289e7-a058-493a-b234-3db1f26378d7
+  server: 54.37.6.119
+  port: 2053
+  uuid: d9aa9ea3-9388-483f-a58d-a754f33ec505
   udp: true
   tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 194.87.30.161
-update_time: 2026-08-09 21:21:25 UTC
+update_time: 2026-08-10 00:55:32 UTC
 source: auto-fetched
