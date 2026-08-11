@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: 43.160.197.160
   udp: true
-- name: '[TROJAN] intimate-moray.rooster465.autos:443'
-  type: trojan
-  server: intimate-moray.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: intimate-moray.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -462,6 +453,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: humorous-malamute.rooster465.autos
+  udp: true
+- name: '[TROJAN] intimate-moray.rooster465.autos:443'
+  type: trojan
+  server: intimate-moray.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: intimate-moray.rooster465.autos
   udp: true
 - name: '[TROJAN] moved-meerkat.rooster465.autos:443'
   type: trojan
@@ -5808,5 +5808,5 @@ proxies:
   tls: true
   servername: u695099u57be39cds394.csgfw.top
   skip-cert-verify: false
-update_time: 2026-08-11 12:39:41 UTC
+update_time: 2026-08-11 15:50:00 UTC
 source: auto-fetched
