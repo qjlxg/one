@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] devoted-heron.rooster465.autos:443'
+  type: trojan
+  server: devoted-heron.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: devoted-heron.rooster465.autos
+  udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -420,15 +429,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: communal-sunbird.rooster465.autos
-  udp: true
-- name: '[TROJAN] devoted-heron.rooster465.autos:443'
-  type: trojan
-  server: devoted-heron.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: devoted-heron.rooster465.autos
   udp: true
 - name: '[TROJAN] dynamic-grubworm.rooster465.autos:443'
   type: trojan
@@ -5721,5 +5721,5 @@ proxies:
   tls: true
   servername: dartsearch-cn.net
   skip-cert-verify: false
-update_time: 2026-08-13 01:02:48 UTC
+update_time: 2026-08-13 04:44:47 UTC
 source: auto-fetched
