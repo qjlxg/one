@@ -26,15 +26,6 @@ proxies:
   tls: true
   servername: 185.126.67.76
   skip-cert-verify: false
-- name: '[TROJAN] calm-muskrat.rooster465.autos:443'
-  type: trojan
-  server: calm-muskrat.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: calm-muskrat.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5721,5 +5712,5 @@ proxies:
   tls: true
   servername: dartsearch-cn.net
   skip-cert-verify: false
-update_time: 2026-08-13 09:53:33 UTC
+update_time: 2026-08-13 12:44:11 UTC
 source: auto-fetched
