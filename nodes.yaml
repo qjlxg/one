@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] live-drake.rooster465.autos:443'
+  type: trojan
+  server: live-drake.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: live-drake.rooster465.autos
+  udp: true
 - name: '[TROJAN] devoted-heron.rooster465.autos:443'
   type: trojan
   server: devoted-heron.rooster465.autos
@@ -17,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: 43.160.197.160
   udp: true
-- name: '[VLESS] 185.126.67.76:443'
-  type: vless
-  server: 185.126.67.76
-  port: 443
-  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
-  udp: true
-  tls: true
-  servername: 185.126.67.76
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5712,5 +5712,5 @@ proxies:
   tls: true
   servername: dartsearch-cn.net
   skip-cert-verify: false
-update_time: 2026-08-13 18:46:40 UTC
+update_time: 2026-08-13 21:34:22 UTC
 source: auto-fetched
