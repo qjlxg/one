@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 156.229.161.107:10001'
+  type: vless
+  server: 156.229.161.107
+  port: 10001
+  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
+  udp: true
+  tls: true
+  servername: 156.229.161.107
+  skip-cert-verify: false
 - name: '[VLESS] 45.155.52.231:443'
   type: vless
   server: 45.155.52.231
@@ -5870,5 +5879,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-14 18:39:53 UTC
+update_time: 2026-08-14 21:15:34 UTC
 source: auto-fetched
