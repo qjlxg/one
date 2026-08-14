@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 45.155.52.231:443'
+  type: vless
+  server: 45.155.52.231
+  port: 443
+  uuid: 219f9fec-8983-4f6f-af8c-31bd0c6dbf19
+  udp: true
+  tls: true
+  servername: 45.155.52.231
+  skip-cert-verify: false
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -16,15 +25,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: live-drake.rooster465.autos
-  udp: true
-- name: '[TROJAN] devoted-heron.rooster465.autos:443'
-  type: trojan
-  server: devoted-heron.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: devoted-heron.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -5235,6 +5235,15 @@ proxies:
   skip-cert-verify: false
   sni: communal-sunbird.rooster465.autos
   udp: true
+- name: '[TROJAN] devoted-heron.rooster465.autos:443'
+  type: trojan
+  server: devoted-heron.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: devoted-heron.rooster465.autos
+  udp: true
 - name: '[TROJAN] exotic-chow.rooster465.autos:443'
   type: trojan
   server: exotic-chow.rooster465.autos
@@ -5861,5 +5870,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-14 12:39:49 UTC
+update_time: 2026-08-14 15:41:28 UTC
 source: auto-fetched
