@@ -1,13 +1,13 @@
 proxies:
-- name: '[VLESS] 156.229.161.107:10001'
-  type: vless
-  server: 156.229.161.107
-  port: 10001
-  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
-  udp: true
+- name: '[TROJAN] joint-ewe.rooster465.autos:443'
+  type: trojan
+  server: joint-ewe.rooster465.autos
+  port: 443
+  password: AE62539071
   tls: true
-  servername: 156.229.161.107
   skip-cert-verify: false
+  sni: joint-ewe.rooster465.autos
+  udp: true
 - name: '[VLESS] 45.155.52.231:443'
   type: vless
   server: 45.155.52.231
@@ -17,6 +17,15 @@ proxies:
   tls: true
   servername: 45.155.52.231
   skip-cert-verify: false
+- name: '[VLESS] 156.229.161.107:10001'
+  type: vless
+  server: 156.229.161.107
+  port: 10001
+  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
+  udp: true
+  tls: true
+  servername: 156.229.161.107
+  skip-cert-verify: false
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 43.160.197.160
-  udp: true
-- name: '[TROJAN] live-drake.rooster465.autos:443'
-  type: trojan
-  server: live-drake.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: live-drake.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -5828,5 +5828,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-15 00:37:47 UTC
+update_time: 2026-08-15 03:29:46 UTC
 source: auto-fetched
