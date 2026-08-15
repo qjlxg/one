@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 45.155.52.231:443'
+  type: vless
+  server: 45.155.52.231
+  port: 443
+  uuid: 219f9fec-8983-4f6f-af8c-31bd0c6dbf19
+  udp: true
+  tls: true
+  servername: 45.155.52.231
+  skip-cert-verify: false
 - name: '[TROJAN] whole-perch.rooster465.autos:443'
   type: trojan
   server: whole-perch.rooster465.autos
@@ -26,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: joint-ewe.rooster465.autos
   udp: true
-- name: '[VLESS] 45.155.52.231:443'
-  type: vless
-  server: 45.155.52.231
-  port: 443
-  uuid: 219f9fec-8983-4f6f-af8c-31bd0c6dbf19
-  udp: true
-  tls: true
-  servername: 45.155.52.231
-  skip-cert-verify: false
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -5837,5 +5837,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-15 18:13:14 UTC
+update_time: 2026-08-15 21:11:38 UTC
 source: auto-fetched
