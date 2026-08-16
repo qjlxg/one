@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] joint-ewe.rooster465.autos:443'
+  type: trojan
+  server: joint-ewe.rooster465.autos
+  port: 443
+  password: AE62539071
+  tls: true
+  skip-cert-verify: false
+  sni: joint-ewe.rooster465.autos
+  udp: true
 - name: '[VLESS] 45.155.52.231:443'
   type: vless
   server: 45.155.52.231
@@ -26,15 +35,6 @@ proxies:
   tls: true
   servername: 156.229.161.107
   skip-cert-verify: false
-- name: '[TROJAN] joint-ewe.rooster465.autos:443'
-  type: trojan
-  server: joint-ewe.rooster465.autos
-  port: 443
-  password: AE62539071
-  tls: true
-  skip-cert-verify: false
-  sni: joint-ewe.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5941,5 +5941,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-08-16 06:22:08 UTC
+update_time: 2026-08-16 09:17:33 UTC
 source: auto-fetched
