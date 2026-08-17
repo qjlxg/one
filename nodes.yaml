@@ -17,15 +17,6 @@ proxies:
   tls: true
   servername: 45.155.52.231
   skip-cert-verify: false
-- name: '[TROJAN] whole-perch.rooster465.autos:443'
-  type: trojan
-  server: whole-perch.rooster465.autos
-  port: 443
-  password: AE62539071
-  tls: true
-  skip-cert-verify: false
-  sni: whole-perch.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5979,5 +5970,5 @@ proxies:
   tls: true
   servername: www.cloudflare.com
   skip-cert-verify: false
-update_time: 2026-08-17 00:37:07 UTC
+update_time: 2026-08-17 03:40:31 UTC
 source: auto-fetched
