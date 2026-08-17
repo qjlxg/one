@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] noted-cougar.rooster465.autos:443'
+  type: trojan
+  server: noted-cougar.rooster465.autos
+  port: 443
+  password: FH72359861
+  tls: true
+  skip-cert-verify: false
+  sni: noted-cougar.rooster465.autos
+  udp: true
 - name: '[TROJAN] joint-ewe.rooster465.autos:443'
   type: trojan
   server: joint-ewe.rooster465.autos
@@ -780,15 +789,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: needed-gelding.rooster465.autos
-  udp: true
-- name: '[TROJAN] noted-cougar.rooster465.autos:443'
-  type: trojan
-  server: noted-cougar.rooster465.autos
-  port: 443
-  password: FH72359861
-  tls: true
-  skip-cert-verify: false
-  sni: noted-cougar.rooster465.autos
   udp: true
 - name: '[TROJAN] one-dove.rooster465.autos:443'
   type: trojan
@@ -5961,5 +5961,5 @@ proxies:
   tls: true
   servername: www.cloudflare.com
   skip-cert-verify: false
-update_time: 2026-08-17 15:15:53 UTC
+update_time: 2026-08-17 18:22:20 UTC
 source: auto-fetched
