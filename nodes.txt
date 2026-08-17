@@ -1,4 +1,4 @@
-# Updated at 2026-08-17 03:40:31 UTC
+# Updated at 2026-08-17 06:32:52 UTC
 trojan://AE62539071@joint-ewe.rooster465.autos:443?sni=joint-ewe.rooster465.autos#%5BTROJAN%5D%20joint-ewe.rooster465.autos%3A443
 vless://219f9fec-8983-4f6f-af8c-31bd0c6dbf19@45.155.52.231:443?security=tls&sni=45.155.52.231#%5BVLESS%5D%2045.155.52.231%3A443
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@63.180.254.10:443#[SS] 63.180.254.10:443
