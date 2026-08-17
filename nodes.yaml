@@ -8,15 +8,6 @@ proxies:
   skip-cert-verify: false
   sni: joint-ewe.rooster465.autos
   udp: true
-- name: '[VLESS] 45.155.52.231:443'
-  type: vless
-  server: 45.155.52.231
-  port: 443
-  uuid: 219f9fec-8983-4f6f-af8c-31bd0c6dbf19
-  udp: true
-  tls: true
-  servername: 45.155.52.231
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -5970,5 +5961,5 @@ proxies:
   tls: true
   servername: www.cloudflare.com
   skip-cert-verify: false
-update_time: 2026-08-17 09:30:08 UTC
+update_time: 2026-08-17 12:21:08 UTC
 source: auto-fetched
