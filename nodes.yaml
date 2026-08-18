@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] engaged-ram.rooster465.autos:443'
+  type: trojan
+  server: engaged-ram.rooster465.autos
+  port: 443
+  password: IL37892054
+  tls: true
+  skip-cert-verify: false
+  sni: engaged-ram.rooster465.autos
+  udp: true
 - name: '[TROJAN] noted-cougar.rooster465.autos:443'
   type: trojan
   server: noted-cougar.rooster465.autos
@@ -6099,5 +6108,5 @@ proxies:
   tls: true
   servername: fin2.freeinternat.com
   skip-cert-verify: false
-update_time: 2026-08-18 06:24:30 UTC
+update_time: 2026-08-18 09:22:10 UTC
 source: auto-fetched
