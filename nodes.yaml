@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 109.206.241.10:449'
+  type: trojan
+  server: 109.206.241.10
+  port: 449
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  tls: true
+  skip-cert-verify: false
+  sni: russiapower.accesscam.org...</div>
+  udp: true
 - name: '[TROJAN] 159.195.5.181:443'
   type: trojan
   server: 159.195.5.181
@@ -818,15 +827,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: frsdata.southbyte.xyz
-  udp: true
-- name: '[TROJAN] 109.206.241.10:449'
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  tls: true
-  skip-cert-verify: false
-  sni: russiapower.accesscam.org
   udp: true
 - name: '[VLESS] x4g-production-c71f.up.railway.app:443'
   type: vless
@@ -6809,5 +6809,5 @@ proxies:
   tls: true
   servername: u643766ub12cc47as1976.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-19 15:20:30 UTC
+update_time: 2026-08-19 18:18:38 UTC
 source: auto-fetched
