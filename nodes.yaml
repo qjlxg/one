@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: engaged-ram.rooster465.autos
   udp: true
-- name: '[TROJAN] noted-cougar.rooster465.autos:443'
-  type: trojan
-  server: noted-cougar.rooster465.autos
-  port: 443
-  password: FH72359861
-  tls: true
-  skip-cert-verify: false
-  sni: noted-cougar.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -521,6 +512,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: needed-gelding.rooster465.autos
+  udp: true
+- name: '[TROJAN] noted-cougar.rooster465.autos:443'
+  type: trojan
+  server: noted-cougar.rooster465.autos
+  port: 443
+  password: FH72359861
+  tls: true
+  skip-cert-verify: false
+  sni: noted-cougar.rooster465.autos
   udp: true
 - name: '[TROJAN] one-dove.rooster465.autos:443'
   type: trojan
@@ -6809,5 +6809,5 @@ proxies:
   tls: true
   servername: u643766ub12cc47as1976.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-19 06:24:56 UTC
+update_time: 2026-08-19 09:22:49 UTC
 source: auto-fetched
