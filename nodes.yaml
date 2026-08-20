@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 139.162.100.58:49755'
+  type: trojan
+  server: 139.162.100.58
+  port: 49755
+  password: a196faa4-403e-4a8b-987a-d1789f379685
+  tls: true
+  skip-cert-verify: false
+  sni: 139.162.100.58
+  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -6715,5 +6724,5 @@ proxies:
   tls: true
   servername: ecc06d49s2316.fuhuovps.xyz
   skip-cert-verify: false
-update_time: 2026-08-20 03:38:13 UTC
+update_time: 2026-08-20 06:26:24 UTC
 source: auto-fetched
