@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 144.31.171.143:443'
+  type: vless
+  server: 144.31.171.143
+  port: 443
+  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
+  udp: true
+  tls: true
+  servername: 144.31.171.143
+  skip-cert-verify: false
 - name: '[TROJAN] 139.162.100.58:49755'
   type: trojan
   server: 139.162.100.58
@@ -6670,5 +6679,5 @@ proxies:
   tls: true
   servername: u643766u39d0c1b5s8746.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-21 15:23:12 UTC
+update_time: 2026-08-21 18:21:55 UTC
 source: auto-fetched
