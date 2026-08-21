@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: russiapower.accesscam.org...</div>
   udp: true
-- name: '[TROJAN] 159.195.5.181:443'
-  type: trojan
-  server: 159.195.5.181
-  port: 443
-  password: '1234567890'
-  tls: true
-  skip-cert-verify: false
-  sni: kfm-bn0.pages.dev
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -6679,5 +6670,5 @@ proxies:
   tls: true
   servername: u643766u39d0c1b5s8746.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-21 03:41:48 UTC
+update_time: 2026-08-21 06:27:07 UTC
 source: auto-fetched
