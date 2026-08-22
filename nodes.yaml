@@ -8,15 +8,6 @@ proxies:
   tls: true
   servername: 144.31.171.143
   skip-cert-verify: false
-- name: '[TROJAN] 139.162.100.58:49755'
-  type: trojan
-  server: 139.162.100.58
-  port: 49755
-  password: a196faa4-403e-4a8b-987a-d1789f379685
-  tls: true
-  skip-cert-verify: false
-  sni: 139.162.100.58
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -6443,5 +6434,5 @@ proxies:
   tls: true
   servername: se1.se-cdn.ru
   skip-cert-verify: false
-update_time: 2026-08-22 06:20:56 UTC
+update_time: 2026-08-22 09:17:19 UTC
 source: auto-fetched
