@@ -6434,5 +6434,5 @@ proxies:
   tls: true
   servername: se1.se-cdn.ru
   skip-cert-verify: false
-update_time: 2026-08-22 15:10:40 UTC
+update_time: 2026-08-22 18:14:21 UTC
 source: auto-fetched
