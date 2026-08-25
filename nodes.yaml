@@ -26,15 +26,6 @@ proxies:
   tls: true
   servername: 144.31.171.143
   skip-cert-verify: false
-- name: '[VLESS] 154.196.139.50:443'
-  type: vless
-  server: 154.196.139.50
-  port: 443
-  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
-  udp: true
-  tls: true
-  servername: 154.196.139.50
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -6466,5 +6457,5 @@ proxies:
   tls: true
   servername: u643766u84547b91s848.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-25 18:23:07 UTC
+update_time: 2026-08-25 21:17:35 UTC
 source: auto-fetched
