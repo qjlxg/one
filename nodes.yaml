@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 109.206.241.10:449'
+  type: trojan
+  server: 109.206.241.10
+  port: 449
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  tls: true
+  skip-cert-verify: false
+  sni: russiapower.accesscam.org...</div>
+  udp: true
 - name: '[VLESS] 144.31.171.143:443'
   type: vless
   server: 144.31.171.143
@@ -285,15 +294,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
-  udp: true
-- name: '[TROJAN] 109.206.241.10:449'
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  tls: true
-  skip-cert-verify: false
-  sni: russiapower.accesscam.org
   udp: true
 - name: '[VLESS] pl1.nihaovpn.ru:443'
   type: vless
@@ -6457,5 +6457,5 @@ proxies:
   tls: true
   servername: u643766u84547b91s848.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-08-25 03:39:17 UTC
+update_time: 2026-08-25 06:26:54 UTC
 source: auto-fetched
