@@ -1,40 +1,4 @@
 proxies:
-- name: '[TROJAN] 109.206.241.10:449'
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  tls: true
-  skip-cert-verify: false
-  sni: russiapower.accesscam.org...</div>
-  udp: true
-- name: '[VLESS] 154.196.139.50:443'
-  type: vless
-  server: 154.196.139.50
-  port: 443
-  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
-  udp: true
-  tls: true
-  servername: 154.196.139.50
-  skip-cert-verify: false
-- name: '[VLESS] 45.131.4.115:80'
-  type: vless
-  server: 45.131.4.115
-  port: 80
-  uuid: a7b22989-6c1f-4b59-b0f3-0605401813c4
-  udp: true
-  tls: true
-  servername: 45.131.4.115
-  skip-cert-verify: false
-- name: '[VLESS] 45.155.52.231:443'
-  type: vless
-  server: 45.155.52.231
-  port: 443
-  uuid: 219f9fec-8983-4f6f-af8c-31bd0c6dbf19
-  udp: true
-  tls: true
-  servername: 45.155.52.231
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -192,6 +156,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
+  udp: true
+- name: '[TROJAN] 109.206.241.10:449'
+  type: trojan
+  server: 109.206.241.10
+  port: 449
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  tls: true
+  skip-cert-verify: false
+  sni: russiapower.accesscam.org
   udp: true
 - name: '[VLESS] x4g-production-c71f.up.railway.app:443'
   type: vless
@@ -6302,5 +6275,5 @@ proxies:
   tls: true
   servername: u643766u17cc9b82s180.kukuss.top
   skip-cert-verify: false
-update_time: 2026-08-29 04:43:36 UTC
+update_time: 2026-08-29 11:55:59 UTC
 source: auto-fetched
