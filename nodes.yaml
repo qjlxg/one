@@ -6665,5 +6665,5 @@ proxies:
   tls: true
   servername: app23.jarvestip.ru
   skip-cert-verify: false
-update_time: 2026-09-01 18:02:40 UTC
+update_time: 2026-09-01 22:53:42 UTC
 source: auto-fetched
