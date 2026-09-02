@@ -1,4 +1,4 @@
-# Updated at 2026-09-02 13:03:53 UTC
+# Updated at 2026-09-02 18:13:29 UTC
 trojan://NQ26071394@thorough-foxhound.rooster465.autos:443?sni=thorough-foxhound.rooster465.autos#%5BTROJAN%5D%20thorough-foxhound.rooster465.autos%3A443
 trojan://NQ26071394@massive-ocelot.rooster465.autos:443?sni=massive-ocelot.rooster465.autos#%5BTROJAN%5D%20massive-ocelot.rooster465.autos%3A443
 vless://219f9fec-8983-4f6f-af8c-31bd0c6dbf19@45.155.52.231:443?security=tls&sni=45.155.52.231#%5BVLESS%5D%2045.155.52.231%3A443
