@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[TROJAN] jp200m.jiasu.asia:50000'
   type: trojan
   server: jp200m.jiasu.asia
@@ -7429,5 +7438,5 @@ proxies:
   tls: true
   servername: u643766ubd3eac86s709.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-09-06 07:24:19 UTC
+update_time: 2026-09-06 12:27:09 UTC
 source: auto-fetched
