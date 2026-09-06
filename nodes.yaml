@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] smooth-lark.rooster465.autos:443'
+  type: trojan
+  server: smooth-lark.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: smooth-lark.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -7438,5 +7447,5 @@ proxies:
   tls: true
   servername: u643766ubd3eac86s709.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-09-06 12:27:09 UTC
+update_time: 2026-09-06 17:24:20 UTC
 source: auto-fetched
