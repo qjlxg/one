@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] careful-penguin.rooster465.autos:443'
+  type: trojan
+  server: careful-penguin.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: careful-penguin.rooster465.autos
+  udp: true
 - name: '[TROJAN] smooth-lark.rooster465.autos:443'
   type: trojan
   server: smooth-lark.rooster465.autos
@@ -26,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: jp200m.jiasu.asia
   udp: true
-- name: '[VLESS] 31.76.79.118:2444'
-  type: vless
-  server: 31.76.79.118
-  port: 2444
-  uuid: fc1ee51e-72ec-4af0-ab0f-540c9e22427b
-  udp: true
-  tls: true
-  servername: 31.76.79.118
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7072,5 +7072,5 @@ proxies:
   uuid: fd4b654f-9ae2-42c5-977b-6aa54e8e9a83
   udp: true
   tls: false
-update_time: 2026-09-07 01:47:10 UTC
+update_time: 2026-09-07 07:39:29 UTC
 source: auto-fetched
