@@ -26,15 +26,6 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
-- name: '[TROJAN] jp200m.jiasu.asia:50000'
-  type: trojan
-  server: jp200m.jiasu.asia
-  port: 50000
-  password: 481b5768-a154-4086-9a48-b2b3e787c9dc
-  tls: true
-  skip-cert-verify: false
-  sni: jp200m.jiasu.asia
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7072,5 +7063,5 @@ proxies:
   uuid: fd4b654f-9ae2-42c5-977b-6aa54e8e9a83
   udp: true
   tls: false
-update_time: 2026-09-07 07:39:29 UTC
+update_time: 2026-09-07 14:34:26 UTC
 source: auto-fetched
