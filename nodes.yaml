@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] communal-sunbird.rooster465.autos:443'
+  type: trojan
+  server: communal-sunbird.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: communal-sunbird.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -7063,5 +7072,5 @@ proxies:
   uuid: fd4b654f-9ae2-42c5-977b-6aa54e8e9a83
   udp: true
   tls: false
-update_time: 2026-09-07 18:55:00 UTC
+update_time: 2026-09-07 23:09:02 UTC
 source: auto-fetched
