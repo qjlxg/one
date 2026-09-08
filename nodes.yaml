@@ -1,40 +1,4 @@
 proxies:
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
-  udp: true
-- name: '[TROJAN] communal-sunbird.rooster465.autos:443'
-  type: trojan
-  server: communal-sunbird.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: communal-sunbird.rooster465.autos
-  udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
-- name: '[TROJAN] careful-penguin.rooster465.autos:443'
-  type: trojan
-  server: careful-penguin.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: careful-penguin.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7147,5 +7111,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-08 13:09:18 UTC
+update_time: 2026-09-08 18:11:55 UTC
 source: auto-fetched
