@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] distinct-llama.rooster465.autos:443'
+  type: trojan
+  server: distinct-llama.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: distinct-llama.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -7268,5 +7277,5 @@ proxies:
   tls: true
   servername: u643766u5f223784s2316.kukuss.top
   skip-cert-verify: false
-update_time: 2026-09-09 02:03:25 UTC
+update_time: 2026-09-09 07:40:09 UTC
 source: auto-fetched
