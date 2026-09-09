@@ -1,4 +1,4 @@
-# Updated at 2026-09-09 13:14:36 UTC
+# Updated at 2026-09-09 18:08:41 UTC
 trojan://ND91608427@distinct-llama.rooster465.autos:443?sni=distinct-llama.rooster465.autos#%5BTROJAN%5D%20distinct-llama.rooster465.autos%3A443
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 trojan://38f169d6-d202-4b1b-8db8-e6eb1648f5cf@43.160.197.160:443?sni=43.160.197.160#%5BTROJAN%5D%2043.160.197.160%3A443
