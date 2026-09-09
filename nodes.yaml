@@ -1,12 +1,12 @@
 proxies:
-- name: '[TROJAN] distinct-llama.rooster465.autos:443'
+- name: '[TROJAN] live-drake.rooster465.autos:443'
   type: trojan
-  server: distinct-llama.rooster465.autos
+  server: live-drake.rooster465.autos
   port: 443
-  password: ND91608427
+  password: CF68213490
   tls: true
   skip-cert-verify: false
-  sni: distinct-llama.rooster465.autos
+  sni: live-drake.rooster465.autos
   udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
@@ -17,6 +17,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] distinct-llama.rooster465.autos:443'
+  type: trojan
+  server: distinct-llama.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: distinct-llama.rooster465.autos
+  udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -7268,5 +7277,5 @@ proxies:
   tls: true
   servername: u643766u5f223784s2316.kukuss.top
   skip-cert-verify: false
-update_time: 2026-09-09 18:08:41 UTC
+update_time: 2026-09-09 22:49:55 UTC
 source: auto-fetched
