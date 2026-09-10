@@ -1,40 +1,4 @@
 proxies:
-- name: '[VLESS] 130.12.102.125:443'
-  type: vless
-  server: 130.12.102.125
-  port: 443
-  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
-  udp: true
-  tls: true
-  servername: 130.12.102.125
-  skip-cert-verify: false
-- name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
-  type: trojan
-  server: ultimate-jaguar.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: ultimate-jaguar.rooster465.autos
-  udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
-- name: '[TROJAN] live-drake.rooster465.autos:443'
-  type: trojan
-  server: live-drake.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: live-drake.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7103,5 +7067,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-10 20:19:05 UTC
+update_time: 2026-09-10 22:51:00 UTC
 source: auto-fetched
