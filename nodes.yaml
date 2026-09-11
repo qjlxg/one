@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] eminent-dogfish.rooster465.autos:443'
+  type: trojan
+  server: eminent-dogfish.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: eminent-dogfish.rooster465.autos
+  udp: true
 - name: '[VLESS] 130.12.102.125:443'
   type: vless
   server: 130.12.102.125
@@ -7239,5 +7248,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-11 01:58:57 UTC
+update_time: 2026-09-11 07:34:51 UTC
 source: auto-fetched
