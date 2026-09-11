@@ -1,4 +1,4 @@
-# Updated at 2026-09-11 20:34:41 UTC
+# Updated at 2026-09-11 22:52:28 UTC
 trojan://NQ26071394@devoted-heron.rooster465.autos:443?sni=devoted-heron.rooster465.autos#%5BTROJAN%5D%20devoted-heron.rooster465.autos%3A443
 trojan://CF68213490@eminent-dogfish.rooster465.autos:443?sni=eminent-dogfish.rooster465.autos#%5BTROJAN%5D%20eminent-dogfish.rooster465.autos%3A443
 vless://6429d27e-a7d4-4e04-ae57-e88243fbbfe3@130.12.102.125:443?security=tls&sni=130.12.102.125#%5BVLESS%5D%20130.12.102.125%3A443
