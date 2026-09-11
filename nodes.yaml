@@ -35,15 +35,6 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
-- name: '[TROJAN] live-drake.rooster465.autos:443'
-  type: trojan
-  server: live-drake.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: live-drake.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7248,5 +7239,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-11 07:34:51 UTC
+update_time: 2026-09-11 13:06:02 UTC
 source: auto-fetched
