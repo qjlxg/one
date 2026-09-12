@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: eminent-dogfish.rooster465.autos
   udp: true
-- name: '[VLESS] 130.12.102.125:443'
-  type: vless
-  server: 130.12.102.125
-  port: 443
-  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
-  udp: true
-  tls: true
-  servername: 130.12.102.125
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7271,5 +7262,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-12 02:03:22 UTC
+update_time: 2026-09-12 07:25:55 UTC
 source: auto-fetched
