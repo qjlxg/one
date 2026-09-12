@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: devoted-heron.rooster465.autos
   udp: true
-- name: '[TROJAN] eminent-dogfish.rooster465.autos:443'
-  type: trojan
-  server: eminent-dogfish.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: eminent-dogfish.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7271,5 +7262,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-12 12:29:51 UTC
+update_time: 2026-09-12 17:31:41 UTC
 source: auto-fetched
