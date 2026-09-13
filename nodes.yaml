@@ -17,15 +17,6 @@ proxies:
   skip-cert-verify: false
   sni: live-drake.rooster465.autos
   udp: true
-- name: '[TROJAN] devoted-heron.rooster465.autos:443'
-  type: trojan
-  server: devoted-heron.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: devoted-heron.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7252,5 +7243,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-13 07:44:50 UTC
+update_time: 2026-09-13 13:31:11 UTC
 source: auto-fetched
