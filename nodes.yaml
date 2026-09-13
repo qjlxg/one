@@ -1,4 +1,22 @@
 proxies:
+- name: '[VLESS] 195.123.213.28:443'
+  type: vless
+  server: 195.123.213.28
+  port: 443
+  uuid: 02fcc1a4-ee90-4970-8bbb-4ffaa8109d24
+  udp: true
+  tls: true
+  servername: 195.123.213.28
+  skip-cert-verify: false
+- name: '[TROJAN] exotic-chow.rooster465.autos:443'
+  type: trojan
+  server: exotic-chow.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: exotic-chow.rooster465.autos
+  udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -6912,15 +6930,6 @@ proxies:
   tls: true
   servername: amp-api-edge.apps.apple.com
   skip-cert-verify: false
-- name: '[VLESS] 195.123.213.28:443'
-  type: vless
-  server: 195.123.213.28
-  port: 443
-  uuid: 02fcc1a4-ee90-4970-8bbb-4ffaa8109d24
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  skip-cert-verify: false
 - name: '[VLESS] 94.183.170.135:443'
   type: vless
   server: 94.183.170.135
@@ -7243,5 +7252,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-13 13:31:11 UTC
+update_time: 2026-09-13 17:47:01 UTC
 source: auto-fetched
