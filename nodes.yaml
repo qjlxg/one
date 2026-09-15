@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] smooth-lark.rooster465.autos:443'
-  type: trojan
-  server: smooth-lark.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: smooth-lark.rooster465.autos
-  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] smooth-lark.rooster465.autos:443'
+  type: trojan
+  server: smooth-lark.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: smooth-lark.rooster465.autos
+  udp: true
 - name: '[VLESS] 195.123.213.28:443'
   type: vless
   server: 195.123.213.28
@@ -7485,5 +7485,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-15 08:08:20 UTC
+update_time: 2026-09-15 13:57:59 UTC
 source: auto-fetched
