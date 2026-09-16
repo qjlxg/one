@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
+  type: trojan
+  server: ultimate-jaguar.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: ultimate-jaguar.rooster465.autos
+  udp: true
 - name: '[TROJAN] intimate-moray.rooster465.autos:443'
   type: trojan
   server: intimate-moray.rooster465.autos
@@ -7528,5 +7537,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-16 02:15:33 UTC
+update_time: 2026-09-16 08:02:13 UTC
 source: auto-fetched
