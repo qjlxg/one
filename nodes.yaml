@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] thorough-foxhound.rooster465.autos:443'
+  type: trojan
+  server: thorough-foxhound.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: thorough-foxhound.rooster465.autos
+  udp: true
 - name: '[TROJAN] ultimate-jaguar.rooster465.autos:443'
   type: trojan
   server: ultimate-jaguar.rooster465.autos
@@ -44,15 +53,6 @@ proxies:
   tls: true
   servername: 195.123.213.28
   skip-cert-verify: false
-- name: '[TROJAN] exotic-chow.rooster465.autos:443'
-  type: trojan
-  server: exotic-chow.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: exotic-chow.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7537,5 +7537,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-16 18:32:24 UTC
+update_time: 2026-09-16 23:22:58 UTC
 source: auto-fetched
