@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 162.159.81.104:80'
+  type: vless
+  server: 162.159.81.104
+  port: 80
+  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
+  udp: true
+  tls: true
+  servername: 162.159.81.104
+  skip-cert-verify: false
 - name: '[TROJAN] thorough-foxhound.rooster465.autos:443'
   type: trojan
   server: thorough-foxhound.rooster465.autos
@@ -7392,5 +7401,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-17 02:19:25 UTC
+update_time: 2026-09-17 08:07:41 UTC
 source: auto-fetched
