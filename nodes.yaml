@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] united-molly.rooster465.autos:443'
+  type: trojan
+  server: united-molly.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: united-molly.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -7398,5 +7407,5 @@ proxies:
   tls: true
   servername: u643766u4d99b056s591.csgfw.top
   skip-cert-verify: false
-update_time: 2026-09-18 20:17:08 UTC
+update_time: 2026-09-18 22:54:39 UTC
 source: auto-fetched
