@@ -8,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] wise-rhino.rooster465.autos:443'
+  type: trojan
+  server: wise-rhino.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: wise-rhino.rooster465.autos
+  udp: true
 - name: '[TROJAN] careful-penguin.rooster465.autos:443'
   type: trojan
   server: careful-penguin.rooster465.autos
@@ -7398,5 +7407,5 @@ proxies:
   tls: true
   servername: u643766u4d99b056s591.csgfw.top
   skip-cert-verify: false
-update_time: 2026-09-18 02:05:16 UTC
+update_time: 2026-09-18 07:43:00 UTC
 source: auto-fetched
