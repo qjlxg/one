@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] capable-jay.rooster465.autos:443'
+  type: trojan
+  server: capable-jay.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: capable-jay.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -6954,5 +6963,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-19 12:45:29 UTC
+update_time: 2026-09-19 17:35:04 UTC
 source: auto-fetched

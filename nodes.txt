@@ -1,4 +1,5 @@
-# Updated at 2026-09-19 12:45:29 UTC
+# Updated at 2026-09-19 17:35:04 UTC
+trojan://NQ26071394@capable-jay.rooster465.autos:443?sni=capable-jay.rooster465.autos#%5BTROJAN%5D%20capable-jay.rooster465.autos%3A443
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 trojan://CF68213490@united-molly.rooster465.autos:443?sni=united-molly.rooster465.autos#%5BTROJAN%5D%20united-molly.rooster465.autos%3A443
 trojan://NQ26071394@wise-rhino.rooster465.autos:443?sni=wise-rhino.rooster465.autos#%5BTROJAN%5D%20wise-rhino.rooster465.autos%3A443
