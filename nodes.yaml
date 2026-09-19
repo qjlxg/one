@@ -53,15 +53,6 @@ proxies:
   tls: true
   servername: 162.159.81.104
   skip-cert-verify: false
-- name: '[TROJAN] thorough-foxhound.rooster465.autos:443'
-  type: trojan
-  server: thorough-foxhound.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: thorough-foxhound.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -6963,5 +6954,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-19 17:35:04 UTC
+update_time: 2026-09-19 19:45:01 UTC
 source: auto-fetched
