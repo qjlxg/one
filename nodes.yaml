@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] charming-puma.rooster465.autos:443'
+  type: trojan
+  server: charming-puma.rooster465.autos
+  port: 443
+  password: FH72359861
+  tls: true
+  skip-cert-verify: false
+  sni: charming-puma.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -44,15 +53,6 @@ proxies:
   skip-cert-verify: false
   sni: careful-penguin.rooster465.autos
   udp: true
-- name: '[VLESS] 162.159.81.104:80'
-  type: vless
-  server: 162.159.81.104
-  port: 80
-  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
-  udp: true
-  tls: true
-  servername: 162.159.81.104
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7005,5 +7005,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-20 02:15:50 UTC
+update_time: 2026-09-20 08:01:58 UTC
 source: auto-fetched
