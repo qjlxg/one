@@ -1,4 +1,5 @@
-# Updated at 2026-09-20 19:56:56 UTC
+# Updated at 2026-09-20 22:47:23 UTC
+trojan://AE62539071@firm-krill.rooster465.autos:443?sni=firm-krill.rooster465.autos#%5BTROJAN%5D%20firm-krill.rooster465.autos%3A443
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 trojan://FH72359861@charming-puma.rooster465.autos:443?sni=charming-puma.rooster465.autos#%5BTROJAN%5D%20charming-puma.rooster465.autos%3A443
 trojan://NQ26071394@capable-jay.rooster465.autos:443?sni=capable-jay.rooster465.autos#%5BTROJAN%5D%20capable-jay.rooster465.autos%3A443

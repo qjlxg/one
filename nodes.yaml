@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] firm-krill.rooster465.autos:443'
+  type: trojan
+  server: firm-krill.rooster465.autos
+  port: 443
+  password: AE62539071
+  tls: true
+  skip-cert-verify: false
+  sni: firm-krill.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -6996,5 +7005,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-20 19:56:56 UTC
+update_time: 2026-09-20 22:47:23 UTC
 source: auto-fetched
