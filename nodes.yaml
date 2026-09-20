@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] charming-puma.rooster465.autos:443'
-  type: trojan
-  server: charming-puma.rooster465.autos
-  port: 443
-  password: FH72359861
-  tls: true
-  skip-cert-verify: false
-  sni: charming-puma.rooster465.autos
-  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] charming-puma.rooster465.autos:443'
+  type: trojan
+  server: charming-puma.rooster465.autos
+  port: 443
+  password: FH72359861
+  tls: true
+  skip-cert-verify: false
+  sni: charming-puma.rooster465.autos
+  udp: true
 - name: '[TROJAN] capable-jay.rooster465.autos:443'
   type: trojan
   server: capable-jay.rooster465.autos
@@ -43,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: wise-rhino.rooster465.autos
-  udp: true
-- name: '[TROJAN] careful-penguin.rooster465.autos:443'
-  type: trojan
-  server: careful-penguin.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: careful-penguin.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -7005,5 +6996,5 @@ proxies:
       Host: renderer-stream-2-62.mirra.now
   servername: renderer-stream-2-62.mirra.now
   fingerprint: ''
-update_time: 2026-09-20 08:01:58 UTC
+update_time: 2026-09-20 13:17:41 UTC
 source: auto-fetched
