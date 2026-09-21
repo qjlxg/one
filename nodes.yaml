@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] alert-fish.rooster465.autos:443'
+  type: trojan
+  server: alert-fish.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: alert-fish.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -7149,5 +7158,5 @@ proxies:
   tls: true
   servername: 91.99.58.134
   skip-cert-verify: false
-update_time: 2026-09-21 08:20:12 UTC
+update_time: 2026-09-21 15:27:45 UTC
 source: auto-fetched
