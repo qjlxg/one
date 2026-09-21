@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] alert-fish.rooster465.autos:443'
-  type: trojan
-  server: alert-fish.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: alert-fish.rooster465.autos
-  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] alert-fish.rooster465.autos:443'
+  type: trojan
+  server: alert-fish.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: alert-fish.rooster465.autos
+  udp: true
 - name: '[TROJAN] firm-krill.rooster465.autos:443'
   type: trojan
   server: firm-krill.rooster465.autos
@@ -43,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: capable-jay.rooster465.autos
-  udp: true
-- name: '[TROJAN] united-molly.rooster465.autos:443'
-  type: trojan
-  server: united-molly.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: united-molly.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -7158,5 +7149,5 @@ proxies:
   tls: true
   servername: 91.99.58.134
   skip-cert-verify: false
-update_time: 2026-09-21 15:27:45 UTC
+update_time: 2026-09-21 21:22:21 UTC
 source: auto-fetched
