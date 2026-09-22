@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[VLESS] 38.47.96.220:11424'
   type: vless
   server: 38.47.96.220
@@ -17,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: darling-mongrel.rooster465.autos
   udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
 - name: '[TROJAN] alert-fish.rooster465.autos:443'
   type: trojan
   server: alert-fish.rooster465.autos
@@ -7133,5 +7133,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-22 13:45:41 UTC
+update_time: 2026-09-22 18:24:25 UTC
 source: auto-fetched

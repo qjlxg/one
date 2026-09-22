@@ -1,7 +1,7 @@
-# Updated at 2026-09-22 13:45:41 UTC
+# Updated at 2026-09-22 18:24:25 UTC
+vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 vless://1d16c6e0-1bbe-435b-b661-90043fee999c@38.47.96.220:11424?security=tls&sni=38.47.96.220#%5BVLESS%5D%2038.47.96.220%3A11424
 trojan://CF68213490@darling-mongrel.rooster465.autos:443?sni=darling-mongrel.rooster465.autos#%5BTROJAN%5D%20darling-mongrel.rooster465.autos%3A443
-vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 trojan://CF68213490@alert-fish.rooster465.autos:443?sni=alert-fish.rooster465.autos#%5BTROJAN%5D%20alert-fish.rooster465.autos%3A443
 trojan://AE62539071@firm-krill.rooster465.autos:443?sni=firm-krill.rooster465.autos#%5BTROJAN%5D%20firm-krill.rooster465.autos%3A443
 trojan://FH72359861@charming-puma.rooster465.autos:443?sni=charming-puma.rooster465.autos#%5BTROJAN%5D%20charming-puma.rooster465.autos%3A443
