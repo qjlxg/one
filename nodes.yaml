@@ -1,49 +1,4 @@
 proxies:
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
-- name: '[TROJAN] alert-fish.rooster465.autos:443'
-  type: trojan
-  server: alert-fish.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: alert-fish.rooster465.autos
-  udp: true
-- name: '[TROJAN] firm-krill.rooster465.autos:443'
-  type: trojan
-  server: firm-krill.rooster465.autos
-  port: 443
-  password: AE62539071
-  tls: true
-  skip-cert-verify: false
-  sni: firm-krill.rooster465.autos
-  udp: true
-- name: '[TROJAN] charming-puma.rooster465.autos:443'
-  type: trojan
-  server: charming-puma.rooster465.autos
-  port: 443
-  password: FH72359861
-  tls: true
-  skip-cert-verify: false
-  sni: charming-puma.rooster465.autos
-  udp: true
-- name: '[TROJAN] capable-jay.rooster465.autos:443'
-  type: trojan
-  server: capable-jay.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: capable-jay.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -7124,5 +7079,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-22 02:19:53 UTC
+update_time: 2026-09-22 08:02:43 UTC
 source: auto-fetched
