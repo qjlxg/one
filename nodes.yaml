@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] capable-jay.rooster465.autos:443'
+  type: trojan
+  server: capable-jay.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: capable-jay.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -43,15 +52,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: firm-krill.rooster465.autos
-  udp: true
-- name: '[TROJAN] charming-puma.rooster465.autos:443'
-  type: trojan
-  server: charming-puma.rooster465.autos
-  port: 443
-  password: FH72359861
-  tls: true
-  skip-cert-verify: false
-  sni: charming-puma.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -7133,5 +7133,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-22 18:24:25 UTC
+update_time: 2026-09-22 23:22:11 UTC
 source: auto-fetched
