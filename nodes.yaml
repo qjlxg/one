@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] firm-krill.rooster465.autos:443'
+  type: trojan
+  server: firm-krill.rooster465.autos
+  port: 443
+  password: AE62539071
+  tls: true
+  skip-cert-verify: false
+  sni: firm-krill.rooster465.autos
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -43,15 +52,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: alert-fish.rooster465.autos
-  udp: true
-- name: '[TROJAN] firm-krill.rooster465.autos:443'
-  type: trojan
-  server: firm-krill.rooster465.autos
-  port: 443
-  password: AE62539071
-  tls: true
-  skip-cert-verify: false
-  sni: firm-krill.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -7221,5 +7221,5 @@ proxies:
       Host: ''
   servername: dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn
   fingerprint: ''
-update_time: 2026-09-23 08:05:08 UTC
+update_time: 2026-09-23 13:57:06 UTC
 source: auto-fetched
