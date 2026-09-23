@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] capable-jay.rooster465.autos:443'
-  type: trojan
-  server: capable-jay.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: capable-jay.rooster465.autos
-  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] capable-jay.rooster465.autos:443'
+  type: trojan
+  server: capable-jay.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: capable-jay.rooster465.autos
+  udp: true
 - name: '[VLESS] 38.47.96.220:11424'
   type: vless
   server: 38.47.96.220
@@ -7221,5 +7221,5 @@ proxies:
       Host: ''
   servername: dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn
   fingerprint: ''
-update_time: 2026-09-23 02:20:09 UTC
+update_time: 2026-09-23 08:05:08 UTC
 source: auto-fetched
