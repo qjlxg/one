@@ -1,4 +1,22 @@
 proxies:
+- name: '[VLESS] gesmankos.sadiepinki.com:443'
+  type: vless
+  server: gesmankos.sadiepinki.com
+  port: 443
+  uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
+  udp: true
+  tls: true
+  servername: gesmankos.sadiepinki.com
+  skip-cert-verify: false
+- name: '[TROJAN] live-drake.rooster465.autos:443'
+  type: trojan
+  server: live-drake.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: live-drake.rooster465.autos
+  udp: true
 - name: '[VLESS] 172.67.130.159:2096'
   type: vless
   server: 172.67.130.159
@@ -43,24 +61,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: capable-jay.rooster465.autos
-  udp: true
-- name: '[VLESS] 38.47.96.220:11424'
-  type: vless
-  server: 38.47.96.220
-  port: 11424
-  uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-  udp: true
-  tls: true
-  servername: 38.47.96.220
-  skip-cert-verify: false
-- name: '[TROJAN] darling-mongrel.rooster465.autos:443'
-  type: trojan
-  server: darling-mongrel.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: darling-mongrel.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1740,5 +1740,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-24 18:44:32 UTC
+update_time: 2026-09-24 23:39:42 UTC
 source: auto-fetched
