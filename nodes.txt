@@ -1,4 +1,4 @@
-# Updated at 2026-09-24 13:53:40 UTC
+# Updated at 2026-09-24 18:44:32 UTC
 vless://550d6eb0-1775-44a4-a464-9176e3d74b50@172.67.130.159:2096?security=tls&sni=172.67.130.159#%5BVLESS%5D%20172.67.130.159%3A2096
 trojan://38f169d6-d202-4b1b-8db8-e6eb1648f5cf@43.160.197.160:443?sni=43.160.197.160#%5BTROJAN%5D%2043.160.197.160%3A443
 trojan://AE62539071@firm-krill.rooster465.autos:443?sni=firm-krill.rooster465.autos#%5BTROJAN%5D%20firm-krill.rooster465.autos%3A443
