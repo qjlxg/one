@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
+  udp: true
 - name: '[VLESS] 172.67.130.159:2096'
   type: vless
   server: 172.67.130.159
@@ -1731,5 +1740,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-24 02:07:42 UTC
+update_time: 2026-09-24 07:55:37 UTC
 source: auto-fetched
