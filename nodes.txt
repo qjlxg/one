@@ -1,4 +1,4 @@
-# Updated at 2026-09-26 13:28:05 UTC
+# Updated at 2026-09-26 18:09:47 UTC
 trojan://CF68213490@alert-fish.rooster465.autos:443?sni=alert-fish.rooster465.autos#%5BTROJAN%5D%20alert-fish.rooster465.autos%3A443
 trojan://oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1@109.206.241.10:449?sni=russiapower.accesscam.org...</div>#%5BTROJAN%5D%20109.206.241.10%3A449
 vless://c5694dc5-39fd-4a92-8430-3837baa522a3@gesmankos.sadiepinki.com:443?security=tls&sni=gesmankos.sadiepinki.com#%5BVLESS%5D%20gesmankos.sadiepinki.com%3A443
