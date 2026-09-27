@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] alert-fish.rooster465.autos:443'
-  type: trojan
-  server: alert-fish.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: alert-fish.rooster465.autos
-  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: russiapower.accesscam.org...</div>
+  udp: true
+- name: '[TROJAN] alert-fish.rooster465.autos:443'
+  type: trojan
+  server: alert-fish.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: alert-fish.rooster465.autos
   udp: true
 - name: '[VLESS] gesmankos.sadiepinki.com:443'
   type: vless
@@ -43,24 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: live-drake.rooster465.autos
-  udp: true
-- name: '[VLESS] 172.67.130.159:2096'
-  type: vless
-  server: 172.67.130.159
-  port: 2096
-  uuid: 550d6eb0-1775-44a4-a464-9176e3d74b50
-  udp: true
-  tls: true
-  servername: 172.67.130.159
-  skip-cert-verify: false
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2037,5 +2019,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-09-27 02:25:14 UTC
+update_time: 2026-09-27 08:41:25 UTC
 source: auto-fetched
