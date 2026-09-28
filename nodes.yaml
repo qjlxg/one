@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
+  udp: true
 - name: '[VLESS] 162.159.81.104:80'
   type: vless
   server: 162.159.81.104
@@ -34,24 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: alert-fish.rooster465.autos
-  udp: true
-- name: '[VLESS] gesmankos.sadiepinki.com:443'
-  type: vless
-  server: gesmankos.sadiepinki.com
-  port: 443
-  uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-  udp: true
-  tls: true
-  servername: gesmankos.sadiepinki.com
-  skip-cert-verify: false
-- name: '[TROJAN] free-v7-09.elbrusway.online:443'
-  type: trojan
-  server: free-v7-09.elbrusway.online
-  port: 443
-  password: 11559103-9993-4d00-b599-d6bcd8db2197
-  tls: true
-  skip-cert-verify: false
-  sni: free-v7-09.elbrusw...</div>
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -1997,5 +1988,5 @@ proxies:
   tls: true
   servername: storage.yandexcloud.net
   skip-cert-verify: false
-update_time: 2026-09-28 09:05:31 UTC
+update_time: 2026-09-28 18:55:24 UTC
 source: auto-fetched
