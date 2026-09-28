@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 162.159.81.104:80'
+  type: vless
+  server: 162.159.81.104
+  port: 80
+  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
+  udp: true
+  tls: true
+  servername: 162.159.81.104
+  skip-cert-verify: false
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -1988,5 +1997,5 @@ proxies:
   tls: true
   servername: storage.yandexcloud.net
   skip-cert-verify: false
-update_time: 2026-09-28 02:29:06 UTC
+update_time: 2026-09-28 09:05:31 UTC
 source: auto-fetched
