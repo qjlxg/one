@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] capable-jay.rooster465.autos:443'
-  type: trojan
-  server: capable-jay.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: capable-jay.rooster465.autos
-  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: russiapower.accesscam.org...</div>
+  udp: true
+- name: '[TROJAN] capable-jay.rooster465.autos:443'
+  type: trojan
+  server: capable-jay.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: capable-jay.rooster465.autos
   udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
@@ -2036,5 +2036,5 @@ proxies:
       Host: ''
   servername: null
   fingerprint: null
-update_time: 2026-09-29 09:14:33 UTC
+update_time: 2026-09-29 17:13:46 UTC
 source: auto-fetched
