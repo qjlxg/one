@@ -1,12 +1,12 @@
 proxies:
-- name: '[TROJAN] united-molly.rooster465.autos:443'
+- name: '[TROJAN] thorough-foxhound.rooster465.autos:443'
   type: trojan
-  server: united-molly.rooster465.autos
+  server: thorough-foxhound.rooster465.autos
   port: 443
-  password: CF68213490
+  password: NQ26071394
   tls: true
   skip-cert-verify: false
-  sni: united-molly.rooster465.autos
+  sni: thorough-foxhound.rooster465.autos
   udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
@@ -16,6 +16,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: russiapower.accesscam.org...</div>
+  udp: true
+- name: '[TROJAN] united-molly.rooster465.autos:443'
+  type: trojan
+  server: united-molly.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: united-molly.rooster465.autos
   udp: true
 - name: '[TROJAN] capable-jay.rooster465.autos:443'
   type: trojan
@@ -44,15 +53,6 @@ proxies:
   tls: true
   servername: 162.159.81.104
   skip-cert-verify: false
-- name: '[TROJAN] live-drake.rooster465.autos:443'
-  type: trojan
-  server: live-drake.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: live-drake.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2078,5 +2078,5 @@ proxies:
   tls: true
   servername: fra2.loozerp.wiki
   skip-cert-verify: false
-update_time: 2026-09-30 09:07:41 UTC
+update_time: 2026-09-30 17:11:48 UTC
 source: auto-fetched
