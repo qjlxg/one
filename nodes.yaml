@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] wise-rhino.rooster465.autos:443'
+  type: trojan
+  server: wise-rhino.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: wise-rhino.rooster465.autos
+  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -44,15 +53,6 @@ proxies:
   skip-cert-verify: false
   sni: 43.160.197.160
   udp: true
-- name: '[VLESS] 162.159.81.104:80'
-  type: vless
-  server: 162.159.81.104
-  port: 80
-  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
-  udp: true
-  tls: true
-  servername: 162.159.81.104
-  skip-cert-verify: false
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -2511,5 +2511,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-10-01 03:00:46 UTC
+update_time: 2026-10-01 12:01:31 UTC
 source: auto-fetched
