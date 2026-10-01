@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] wise-rhino.rooster465.autos:443'
-  type: trojan
-  server: wise-rhino.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: wise-rhino.rooster465.autos
-  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: russiapower.accesscam.org...</div>
+  udp: true
+- name: '[TROJAN] wise-rhino.rooster465.autos:443'
+  type: trojan
+  server: wise-rhino.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: wise-rhino.rooster465.autos
   udp: true
 - name: '[TROJAN] thorough-foxhound.rooster465.autos:443'
   type: trojan
@@ -43,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: capable-jay.rooster465.autos
-  udp: true
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2511,5 +2502,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-10-01 12:01:31 UTC
+update_time: 2026-10-01 19:57:40 UTC
 source: auto-fetched
