@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 72.56.41.33:40443'
+  type: vless
+  server: 72.56.41.33
+  port: 40443
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  udp: true
+  tls: true
+  servername: 72.56.41.33
+  skip-cert-verify: false
 - name: '[TROJAN] communal-sunbird.rooster465.autos:443'
   type: trojan
   server: communal-sunbird.rooster465.autos
@@ -43,15 +52,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: united-molly.rooster465.autos
-  udp: true
-- name: '[TROJAN] capable-jay.rooster465.autos:443'
-  type: trojan
-  server: capable-jay.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: capable-jay.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -2447,15 +2447,6 @@ proxies:
     path: /vless-test
     headers:
       Host: 162.35.104.144
-- name: '[VLESS] 72.56.41.33:40443'
-  type: vless
-  server: 72.56.41.33
-  port: 40443
-  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-  udp: true
-  tls: true
-  servername: deepl.com
-  skip-cert-verify: false
 - name: '[VLESS] 91.193.58.108:2096'
   type: vless
   server: 91.193.58.108
@@ -2728,5 +2719,5 @@ proxies:
   tls: true
   servername: www.apple.com
   skip-cert-verify: false
-update_time: 2026-10-02 00:19:03 UTC
+update_time: 2026-10-02 09:08:36 UTC
 source: auto-fetched
