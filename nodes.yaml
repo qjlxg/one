@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] devoted-heron.rooster465.autos:443'
+  type: trojan
+  server: devoted-heron.rooster465.autos
+  port: 443
+  password: NQ26071394
+  tls: true
+  skip-cert-verify: false
+  sni: devoted-heron.rooster465.autos
+  udp: true
 - name: '[VLESS] 72.56.41.33:40443'
   type: vless
   server: 72.56.41.33
@@ -2719,5 +2728,5 @@ proxies:
   tls: true
   servername: www.apple.com
   skip-cert-verify: false
-update_time: 2026-10-02 09:08:36 UTC
+update_time: 2026-10-02 17:00:13 UTC
 source: auto-fetched
