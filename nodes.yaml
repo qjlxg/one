@@ -1,49 +1,4 @@
 proxies:
-- name: '[TROJAN] 109.206.241.10:449'
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  tls: true
-  skip-cert-verify: false
-  sni: russiapower.accesscam.org...</div>
-  udp: true
-- name: '[TROJAN] wise-rhino.rooster465.autos:443'
-  type: trojan
-  server: wise-rhino.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: wise-rhino.rooster465.autos
-  udp: true
-- name: '[TROJAN] devoted-heron.rooster465.autos:443'
-  type: trojan
-  server: devoted-heron.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: devoted-heron.rooster465.autos
-  udp: true
-- name: '[VLESS] 72.56.41.33:40443'
-  type: vless
-  server: 72.56.41.33
-  port: 40443
-  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-  udp: true
-  tls: true
-  servername: 72.56.41.33
-  skip-cert-verify: false
-- name: '[TROJAN] communal-sunbird.rooster465.autos:443'
-  type: trojan
-  server: communal-sunbird.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: communal-sunbird.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -416,6 +371,15 @@ proxies:
     path: /
     headers:
       Host: 139.162.149.105
+- name: '[VLESS] 72.56.41.33:40443'
+  type: vless
+  server: 72.56.41.33
+  port: 40443
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  udp: true
+  tls: true
+  servername: deepl.com
+  skip-cert-verify: false
 - name: '[VLESS] 176.108.245.167:9881'
   type: vless
   server: 176.108.245.167
@@ -2760,5 +2724,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-10-03 18:25:32 UTC
+update_time: 2026-10-03 23:25:58 UTC
 source: auto-fetched
