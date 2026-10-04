@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] communal-sunbird.rooster465.autos:443'
-  type: trojan
-  server: communal-sunbird.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: communal-sunbird.rooster465.autos
-  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: russiapower.accesscam.org...</div>
+  udp: true
+- name: '[TROJAN] communal-sunbird.rooster465.autos:443'
+  type: trojan
+  server: communal-sunbird.rooster465.autos
+  port: 443
+  password: CF68213490
+  tls: true
+  skip-cert-verify: false
+  sni: communal-sunbird.rooster465.autos
   udp: true
 - name: '[TROJAN] wise-rhino.rooster465.autos:443'
   type: trojan
@@ -2881,5 +2881,5 @@ proxies:
   tls: true
   servername: sh-ee-01.mintrocket.org
   skip-cert-verify: false
-update_time: 2026-10-04 03:19:38 UTC
+update_time: 2026-10-04 11:29:33 UTC
 source: auto-fetched
