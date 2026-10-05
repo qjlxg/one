@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] distinct-llama.rooster465.autos:443'
+  type: trojan
+  server: distinct-llama.rooster465.autos
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: distinct-llama.rooster465.autos
+  udp: true
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -25,15 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: wise-rhino.rooster465.autos
-  udp: true
-- name: '[TROJAN] devoted-heron.rooster465.autos:443'
-  type: trojan
-  server: devoted-heron.rooster465.autos
-  port: 443
-  password: NQ26071394
-  tls: true
-  skip-cert-verify: false
-  sni: devoted-heron.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -3302,5 +3302,5 @@ proxies:
   tls: true
   servername: 3391ba82s642.fuhuovps.xyz
   skip-cert-verify: false
-update_time: 2026-10-05 02:56:05 UTC
+update_time: 2026-10-05 09:50:43 UTC
 source: auto-fetched
