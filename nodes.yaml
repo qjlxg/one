@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 72.56.41.33:40443'
+  type: vless
+  server: 72.56.41.33
+  port: 40443
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  udp: true
+  tls: true
+  servername: 72.56.41.33
+  skip-cert-verify: false
 - name: '[TROJAN] distinct-llama.rooster465.autos:443'
   type: trojan
   server: distinct-llama.rooster465.autos
@@ -3302,5 +3311,5 @@ proxies:
   tls: true
   servername: 3391ba82s642.fuhuovps.xyz
   skip-cert-verify: false
-update_time: 2026-10-05 09:50:43 UTC
+update_time: 2026-10-05 19:54:39 UTC
 source: auto-fetched
