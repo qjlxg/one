@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] fancy-javelin.rooster465.autos:443'
+  type: trojan
+  server: fancy-javelin.rooster465.autos
+  port: 443
+  password: UX82473651
+  tls: true
+  skip-cert-verify: false
+  sni: fancy-javelin.rooster465.autos
+  udp: true
+- name: '[TROJAN] 109.206.241.10:449'
+  type: trojan
+  server: 109.206.241.10
+  port: 449
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  tls: true
+  skip-cert-verify: false
+  sni: russiapower.accesscam.org...</div>
+  udp: true
 - name: '[TROJAN] prime-corgi.rooster465.autos:443'
   type: trojan
   server: prime-corgi.rooster465.autos
@@ -17,24 +35,6 @@ proxies:
   tls: true
   servername: 72.56.41.33
   skip-cert-verify: false
-- name: '[TROJAN] 109.206.241.10:449'
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  tls: true
-  skip-cert-verify: false
-  sni: russiapower.accesscam.org...</div>
-  udp: true
-- name: '[TROJAN] fancy-javelin.rooster465.autos:443'
-  type: trojan
-  server: fancy-javelin.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: fancy-javelin.rooster465.autos
-  udp: true
 - name: '[TROJAN] distinct-llama.rooster465.autos:443'
   type: trojan
   server: distinct-llama.rooster465.autos
@@ -2990,5 +2990,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-07 12:16:19 UTC
+update_time: 2026-10-07 20:18:06 UTC
 source: auto-fetched
