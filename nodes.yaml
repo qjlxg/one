@@ -1,4 +1,22 @@
 proxies:
+- name: '[TROJAN] prime-corgi.rooster465.autos:443'
+  type: trojan
+  server: prime-corgi.rooster465.autos
+  port: 443
+  password: UX82473651
+  tls: true
+  skip-cert-verify: false
+  sni: prime-corgi.rooster465.autos
+  udp: true
+- name: '[VLESS] 72.56.41.33:40443'
+  type: vless
+  server: 72.56.41.33
+  port: 40443
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  udp: true
+  tls: true
+  servername: 72.56.41.33
+  skip-cert-verify: false
 - name: '[TROJAN] 109.206.241.10:449'
   type: trojan
   server: 109.206.241.10
@@ -17,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: fancy-javelin.rooster465.autos
   udp: true
-- name: '[VLESS] 72.56.41.33:40443'
-  type: vless
-  server: 72.56.41.33
-  port: 40443
-  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-  udp: true
-  tls: true
-  servername: 72.56.41.33
-  skip-cert-verify: false
 - name: '[TROJAN] distinct-llama.rooster465.autos:443'
   type: trojan
   server: distinct-llama.rooster465.autos
@@ -34,15 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: distinct-llama.rooster465.autos
-  udp: true
-- name: '[TROJAN] communal-sunbird.rooster465.autos:443'
-  type: trojan
-  server: communal-sunbird.rooster465.autos
-  port: 443
-  password: CF68213490
-  tls: true
-  skip-cert-verify: false
-  sni: communal-sunbird.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -388,15 +388,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: pretty-rat.rooster465.autos
-  udp: true
-- name: '[TROJAN] prime-corgi.rooster465.autos:443'
-  type: trojan
-  server: prime-corgi.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: prime-corgi.rooster465.autos
   udp: true
 - name: '[TROJAN] promoted-rattler.rooster465.autos:443'
   type: trojan
@@ -2999,5 +2990,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-07 03:13:20 UTC
+update_time: 2026-10-07 12:16:19 UTC
 source: auto-fetched
