@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 72.56.41.33:40443'
+  type: vless
+  server: 72.56.41.33
+  port: 40443
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  udp: true
+  tls: true
+  servername: 72.56.41.33
+  skip-cert-verify: false
 - name: '[TROJAN] fancy-javelin.rooster465.autos:443'
   type: trojan
   server: fancy-javelin.rooster465.autos
@@ -25,24 +34,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: prime-corgi.rooster465.autos
-  udp: true
-- name: '[VLESS] 72.56.41.33:40443'
-  type: vless
-  server: 72.56.41.33
-  port: 40443
-  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-  udp: true
-  tls: true
-  servername: 72.56.41.33
-  skip-cert-verify: false
-- name: '[TROJAN] distinct-llama.rooster465.autos:443'
-  type: trojan
-  server: distinct-llama.rooster465.autos
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: distinct-llama.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -3030,5 +3021,5 @@ proxies:
       Host: qtkdr8jxe3wefxjm.v.3dns.vip
   servername: qtkdr8jxe3wefxjm.v.3dns.vip
   fingerprint: ''
-update_time: 2026-10-08 00:33:10 UTC
+update_time: 2026-10-08 09:41:20 UTC
 source: auto-fetched
