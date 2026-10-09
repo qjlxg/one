@@ -1,12 +1,12 @@
 proxies:
-- name: '[VLESS] 169.40.42.229:443'
+- name: '[VLESS] 162.159.81.104:80'
   type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  server: 162.159.81.104
+  port: 80
+  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
   udp: true
   tls: true
-  servername: 169.40.42.229
+  servername: 162.159.81.104
   skip-cert-verify: false
 - name: '[TROJAN] organic-caribou.rooster465.autos:443'
   type: trojan
@@ -17,6 +17,15 @@ proxies:
   skip-cert-verify: false
   sni: organic-caribou.rooster465.autos
   udp: true
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[VLESS] 72.56.41.33:40443'
   type: vless
   server: 72.56.41.33
@@ -3139,5 +3148,5 @@ proxies:
       Host: s4ws.ragingbull.de5.net
   servername: s4ws.ragingbull.de5.net
   skip-cert-verify: false
-update_time: 2026-10-09 00:48:17 UTC
+update_time: 2026-10-09 09:47:19 UTC
 source: auto-fetched
