@@ -1,4 +1,4 @@
-# Updated at 2026-10-10 20:51:16 UTC
+# Updated at 2026-10-10 23:57:21 UTC
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 trojan://UX82473651@warm-krill.rooster465.autos:443?sni=warm-krill.rooster465.autos#%5BTROJAN%5D%20warm-krill.rooster465.autos%3A443
 vless://4b00d726-e072-429b-997e-f07affea3b7f@162.159.81.104:80?security=tls&sni=162.159.81.104#%5BVLESS%5D%20162.159.81.104%3A80
