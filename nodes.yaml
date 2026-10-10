@@ -44,15 +44,6 @@ proxies:
   tls: true
   servername: 72.56.41.33
   skip-cert-verify: false
-- name: '[TROJAN] fancy-javelin.rooster465.autos:443'
-  type: trojan
-  server: fancy-javelin.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: fancy-javelin.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -247,6 +238,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: equipped-stingray.rooster465.autos
+  udp: true
+- name: '[TROJAN] fancy-javelin.rooster465.autos:443'
+  type: trojan
+  server: fancy-javelin.rooster465.autos
+  port: 443
+  password: UX82473651
+  tls: true
+  skip-cert-verify: false
+  sni: fancy-javelin.rooster465.autos
   udp: true
 - name: '[TROJAN] full-egret.rooster465.autos:443'
   type: trojan
@@ -3360,5 +3360,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-10 16:33:29 UTC
+update_time: 2026-10-10 20:51:16 UTC
 source: auto-fetched
