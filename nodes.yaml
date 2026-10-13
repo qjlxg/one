@@ -1,12 +1,12 @@
 proxies:
-- name: '[VLESS] dey.lnmarketplace.net:443'
+- name: '[VLESS] 169.40.42.229:443'
   type: vless
-  server: dey.lnmarketplace.net
+  server: 169.40.42.229
   port: 443
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
   udp: true
   tls: true
-  servername: dey.lnmarketplace.net
+  servername: 169.40.42.229
   skip-cert-verify: false
 - name: '[TROJAN] warm-krill.rooster465.autos:443'
   type: trojan
@@ -17,14 +17,14 @@ proxies:
   skip-cert-verify: false
   sni: warm-krill.rooster465.autos
   udp: true
-- name: '[VLESS] 169.40.42.229:443'
+- name: '[VLESS] dey.lnmarketplace.net:443'
   type: vless
-  server: 169.40.42.229
+  server: dey.lnmarketplace.net
   port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
   udp: true
   tls: true
-  servername: 169.40.42.229
+  servername: dey.lnmarketplace.net
   skip-cert-verify: false
 - name: '[VLESS] 129.153.71.28:28863'
   type: vless
@@ -3442,5 +3442,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-13 13:08:23 UTC
+update_time: 2026-10-13 20:25:31 UTC
 source: auto-fetched
