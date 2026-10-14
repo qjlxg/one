@@ -1,4 +1,4 @@
-# Updated at 2026-10-14 14:09:45 UTC
+# Updated at 2026-10-14 19:02:12 UTC
 trojan://UX82473651@organic-caribou.rooster465.autos:443?sni=organic-caribou.rooster465.autos#%5BTROJAN%5D%20organic-caribou.rooster465.autos%3A443
 vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?security=tls&sni=dey.lnmarketplace.net#%5BVLESS%5D%20dey.lnmarketplace.net%3A443
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
