@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] organic-caribou.rooster465.autos:443'
-  type: trojan
-  server: organic-caribou.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: organic-caribou.rooster465.autos
-  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] organic-caribou.rooster465.autos:443'
+  type: trojan
+  server: organic-caribou.rooster465.autos
+  port: 443
+  password: UX82473651
+  tls: true
+  skip-cert-verify: false
+  sni: organic-caribou.rooster465.autos
+  udp: true
 - name: '[VLESS] dey.lnmarketplace.net:443'
   type: vless
   server: dey.lnmarketplace.net
@@ -3634,5 +3634,5 @@ proxies:
   tls: true
   servername: fi.pythonsetupbib.online
   skip-cert-verify: false
-update_time: 2026-10-15 18:45:52 UTC
+update_time: 2026-10-15 23:24:32 UTC
 source: auto-fetched
