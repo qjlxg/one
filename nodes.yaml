@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 209.248.32.116:28101'
+  type: trojan
+  server: 209.248.32.116
+  port: 28101
+  password: i99Cef
+  tls: true
+  skip-cert-verify: false
+  sni: 209.248.32.116
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -3674,5 +3683,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-16 02:09:04 UTC
+update_time: 2026-10-16 07:38:49 UTC
 source: auto-fetched
