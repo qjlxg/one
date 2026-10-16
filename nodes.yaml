@@ -35,15 +35,6 @@ proxies:
   tls: true
   servername: dey.lnmarketplace.net
   skip-cert-verify: false
-- name: '[TROJAN] warm-krill.rooster465.autos:443'
-  type: trojan
-  server: warm-krill.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: warm-krill.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -3683,5 +3674,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-16 13:36:46 UTC
+update_time: 2026-10-16 18:30:40 UTC
 source: auto-fetched
