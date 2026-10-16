@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] warm-krill.rooster465.autos:443'
+  type: trojan
+  server: warm-krill.rooster465.autos
+  port: 443
+  password: UX82473651
+  tls: true
+  skip-cert-verify: false
+  sni: warm-krill.rooster465.autos
+  udp: true
 - name: '[TROJAN] 209.248.32.116:28101'
   type: trojan
   server: 209.248.32.116
@@ -3674,5 +3683,5 @@ proxies:
   tls: true
   servername: www.samsung.com
   skip-cert-verify: false
-update_time: 2026-10-16 18:30:40 UTC
+update_time: 2026-10-16 23:06:59 UTC
 source: auto-fetched
