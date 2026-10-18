@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[TROJAN] warm-krill.rooster465.autos:443'
   type: trojan
   server: warm-krill.rooster465.autos
@@ -34,24 +43,6 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 209.248.32.116
-  udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
-- name: '[TROJAN] organic-caribou.rooster465.autos:443'
-  type: trojan
-  server: organic-caribou.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: organic-caribou.rooster465.autos
   udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
@@ -3487,5 +3478,5 @@ proxies:
   tls: true
   servername: github.com
   skip-cert-verify: false
-update_time: 2026-10-18 12:51:36 UTC
+update_time: 2026-10-18 17:39:20 UTC
 source: auto-fetched
