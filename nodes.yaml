@@ -1,12 +1,12 @@
 proxies:
-- name: '[TROJAN] 43.160.197.160:443'
+- name: '[TROJAN] warm-krill.rooster465.autos:443'
   type: trojan
-  server: 43.160.197.160
+  server: warm-krill.rooster465.autos
   port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  password: UX82473651
   tls: true
   skip-cert-verify: false
-  sni: 43.160.197.160
+  sni: warm-krill.rooster465.autos
   udp: true
 - name: '[VLESS] dey.lnmarketplace.net:443'
   type: vless
@@ -17,14 +17,14 @@ proxies:
   tls: true
   servername: dey.lnmarketplace.net
   skip-cert-verify: false
-- name: '[TROJAN] warm-krill.rooster465.autos:443'
+- name: '[TROJAN] 43.160.197.160:443'
   type: trojan
-  server: warm-krill.rooster465.autos
+  server: 43.160.197.160
   port: 443
-  password: UX82473651
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
   tls: true
   skip-cert-verify: false
-  sni: warm-krill.rooster465.autos
+  sni: 43.160.197.160
   udp: true
 - name: '[TROJAN] 209.248.32.116:28101'
   type: trojan
@@ -3487,5 +3487,5 @@ proxies:
   tls: true
   servername: github.com
   skip-cert-verify: false
-update_time: 2026-10-18 02:02:10 UTC
+update_time: 2026-10-18 07:31:13 UTC
 source: auto-fetched
