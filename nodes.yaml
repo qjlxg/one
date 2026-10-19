@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
-  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -17,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
+  udp: true
 - name: '[TROJAN] warm-krill.rooster465.autos:443'
   type: trojan
   server: warm-krill.rooster465.autos
@@ -35,15 +35,6 @@ proxies:
   tls: true
   servername: dey.lnmarketplace.net
   skip-cert-verify: false
-- name: '[TROJAN] 209.248.32.116:28101'
-  type: trojan
-  server: 209.248.32.116
-  port: 28101
-  password: i99Cef
-  tls: true
-  skip-cert-verify: false
-  sni: 209.248.32.116
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -3235,5 +3226,5 @@ proxies:
       Host: vmess.lbw666.dpdns.org
   servername: vmess.lbw666.dpdns.org
   fingerprint: chrome
-update_time: 2026-10-19 02:19:07 UTC
+update_time: 2026-10-19 08:15:02 UTC
 source: auto-fetched
