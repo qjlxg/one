@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 203.198.122.187:443'
+  type: trojan
+  server: 203.198.122.187
+  port: 443
+  password: BxceQaOe
+  tls: true
+  skip-cert-verify: false
+  sni: 203.198.122.187
+  udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -3226,5 +3235,5 @@ proxies:
       Host: vmess.lbw666.dpdns.org
   servername: vmess.lbw666.dpdns.org
   fingerprint: chrome
-update_time: 2026-10-19 08:15:02 UTC
+update_time: 2026-10-19 15:59:50 UTC
 source: auto-fetched
