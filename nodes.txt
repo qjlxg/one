@@ -1,4 +1,4 @@
-# Updated at 2026-10-20 13:57:28 UTC
+# Updated at 2026-10-20 18:49:10 UTC
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
 trojan://38f169d6-d202-4b1b-8db8-e6eb1648f5cf@43.160.197.160:443?sni=43.160.197.160#%5BTROJAN%5D%2043.160.197.160%3A443
 vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?security=tls&sni=dey.lnmarketplace.net#%5BVLESS%5D%20dey.lnmarketplace.net%3A443
