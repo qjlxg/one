@@ -8,6 +8,15 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
+- name: '[TROJAN] 43.206.225.188:443'
+  type: trojan
+  server: 43.206.225.188
+  port: 443
+  password: UX82473651
+  tls: true
+  skip-cert-verify: false
+  sni: 43.206.225.188
+  udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -552,5 +561,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-20 18:49:10 UTC
+update_time: 2026-10-20 23:31:49 UTC
 source: auto-fetched
