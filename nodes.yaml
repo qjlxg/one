@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -26,15 +35,6 @@ proxies:
   skip-cert-verify: false
   sni: 203.198.122.187
   udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
 - name: '[TROJAN] warm-krill.rooster465.autos:443'
   type: trojan
   server: warm-krill.rooster465.autos
@@ -552,5 +552,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-20 08:00:40 UTC
+update_time: 2026-10-20 13:57:28 UTC
 source: auto-fetched
