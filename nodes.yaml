@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
+  udp: true
 - name: '[VLESS] dey.lnmarketplace.net:443'
   type: vless
   server: dey.lnmarketplace.net
@@ -26,15 +35,6 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
-  udp: true
 - name: '[TROJAN] warm-krill.rooster465.autos:443'
   type: trojan
   server: warm-krill.rooster465.autos
@@ -552,5 +552,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-20 02:32:43 UTC
+update_time: 2026-10-20 08:00:40 UTC
 source: auto-fetched
