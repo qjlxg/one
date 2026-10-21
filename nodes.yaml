@@ -44,15 +44,6 @@ proxies:
   skip-cert-verify: false
   sni: 203.198.122.187
   udp: true
-- name: '[TROJAN] warm-krill.rooster465.autos:443'
-  type: trojan
-  server: warm-krill.rooster465.autos
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: warm-krill.rooster465.autos
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -561,5 +552,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-20 23:31:49 UTC
+update_time: 2026-10-21 02:27:08 UTC
 source: auto-fetched
