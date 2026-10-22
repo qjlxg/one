@@ -1,49 +1,4 @@
 proxies:
-- name: '[TROJAN] 43.206.225.188:443'
-  type: trojan
-  server: 43.206.225.188
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: 43.206.225.188
-  udp: true
-- name: '[VLESS] dey.lnmarketplace.net:443'
-  type: vless
-  server: dey.lnmarketplace.net
-  port: 443
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-  udp: true
-  tls: true
-  servername: dey.lnmarketplace.net
-  skip-cert-verify: false
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
-  udp: true
-- name: '[TROJAN] 203.198.122.187:443'
-  type: trojan
-  server: 203.198.122.187
-  port: 443
-  password: BxceQaOe
-  tls: true
-  skip-cert-verify: false
-  sni: 203.198.122.187
-  udp: true
 - name: '[SS] 63.180.254.10:443'
   server: 63.180.254.10
   port: 443
@@ -552,5 +507,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-22 08:05:24 UTC
+update_time: 2026-10-22 14:12:38 UTC
 source: auto-fetched
