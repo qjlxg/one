@@ -1,7 +1,7 @@
-# Updated at 2026-10-26 22:03:30 UTC
+# Updated at 2026-10-27 02:50:02 UTC
+vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?security=tls&sni=dey.lnmarketplace.net#%5BVLESS%5D%20dey.lnmarketplace.net%3A443
 trojan://UX82473651@43.206.225.188:443?sni=43.206.225.188#%5BTROJAN%5D%2043.206.225.188%3A443
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?security=tls&sni=169.40.42.229#%5BVLESS%5D%20169.40.42.229%3A443
-vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?security=tls&sni=dey.lnmarketplace.net#%5BVLESS%5D%20dey.lnmarketplace.net%3A443
 vless://339cda3d-79a5-4d37-8ad8-eddc130c992a@128.241.25.11:30021?security=tls&sni=128.241.25.11#%5BVLESS%5D%20128.241.25.11%3A30021
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@63.180.254.10:443#[SS] 63.180.254.10:443
 vmess://eyJ2IjogIjIiLCAicHMiOiAiW1ZNRVNTXSB2MTAuaGRhY2QuY29tOjMwODA3IiwgImFkZCI6ICJ2MTAuaGRhY2QuY29tIiwgInBvcnQiOiAiMzA4MDciLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgImFpZCI6IDIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIifQ==
