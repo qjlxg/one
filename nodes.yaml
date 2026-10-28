@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
 - name: '[TROJAN] 43.206.225.188:443'
   type: trojan
   server: 43.206.225.188
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: 43.206.225.188
   udp: true
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[VLESS] dey.lnmarketplace.net:443'
   type: vless
   server: dey.lnmarketplace.net
@@ -534,5 +534,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-27 21:35:24 UTC
+update_time: 2026-10-28 02:57:52 UTC
 source: auto-fetched
