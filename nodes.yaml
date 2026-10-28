@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 128.241.25.11:30021'
-  type: vless
-  server: 128.241.25.11
-  port: 30021
-  uuid: 339cda3d-79a5-4d37-8ad8-eddc130c992a
-  udp: true
-  tls: true
-  servername: 128.241.25.11
-  skip-cert-verify: false
 - name: '[TROJAN] 43.206.225.188:443'
   type: trojan
   server: 43.206.225.188
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: 43.206.225.188
   udp: true
+- name: '[VLESS] 128.241.25.11:30021'
+  type: vless
+  server: 128.241.25.11
+  port: 30021
+  uuid: 339cda3d-79a5-4d37-8ad8-eddc130c992a
+  udp: true
+  tls: true
+  servername: 128.241.25.11
+  skip-cert-verify: false
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -543,5 +543,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-28 09:16:09 UTC
+update_time: 2026-10-28 17:36:17 UTC
 source: auto-fetched
