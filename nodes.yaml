@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 193.163.203.170:443'
-  type: vless
-  server: 193.163.203.170
-  port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  udp: true
-  tls: true
-  servername: 193.163.203.170
-  skip-cert-verify: false
 - name: '[TROJAN] 43.206.225.188:443'
   type: trojan
   server: 43.206.225.188
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: 43.206.225.188
   udp: true
+- name: '[VLESS] 193.163.203.170:443'
+  type: vless
+  server: 193.163.203.170
+  port: 443
+  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
+  udp: true
+  tls: true
+  servername: 193.163.203.170
+  skip-cert-verify: false
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
   server: 169.40.42.229
@@ -543,5 +543,5 @@ proxies:
   tls: true
   servername: u695098u3b5ab61cs124.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-10-30 11:50:26 UTC
+update_time: 2026-10-30 17:26:05 UTC
 source: auto-fetched
