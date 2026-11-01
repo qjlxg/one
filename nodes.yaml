@@ -50,5 +50,5 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-update_time: 2026-11-01 03:06:59 UTC
+update_time: 2026-11-01 12:16:29 UTC
 source: auto-fetched
