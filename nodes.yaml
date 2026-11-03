@@ -1,12 +1,12 @@
 proxies:
-- name: '[TROJAN] 78.40.209.33:443'
+- name: '[TROJAN] 43.206.225.188:443'
   type: trojan
-  server: 78.40.209.33
+  server: 43.206.225.188
   port: 443
-  password: humanity
+  password: UX82473651
   tls: true
   skip-cert-verify: false
-  sni: www.cordweave.com
+  sni: 43.206.225.188
   udp: true
 - name: '[VLESS] 169.40.42.229:443'
   type: vless
@@ -17,14 +17,14 @@ proxies:
   tls: true
   servername: 169.40.42.229
   skip-cert-verify: false
-- name: '[TROJAN] 43.206.225.188:443'
+- name: '[TROJAN] 78.40.209.33:443'
   type: trojan
-  server: 43.206.225.188
+  server: 78.40.209.33
   port: 443
-  password: UX82473651
+  password: humanity
   tls: true
   skip-cert-verify: false
-  sni: 43.206.225.188
+  sni: www.cordweave.com
   udp: true
 - name: '[VLESS] 128.241.25.11:30021'
   type: vless
@@ -465,5 +465,5 @@ proxies:
   tls: true
   servername: u695098u35e1e8c1s489.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-11-03 04:30:13 UTC
+update_time: 2026-11-03 13:13:08 UTC
 source: auto-fetched
