@@ -294,15 +294,6 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[VLESS] cf-cname.xingpingcn.top:443'
-  type: vless
-  server: cf-cname.xingpingcn.top
-  port: 443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  servername: af06d20es1291.fuhuovps.xyz
-  skip-cert-verify: false
 - name: '[VLESS] www.codex2api.com:443'
   type: vless
   server: www.codex2api.com
@@ -310,7 +301,7 @@ proxies:
   uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
   udp: true
   tls: true
-  servername: f0c5bfd6s394.fuhuovps.xyz
+  servername: b5cb4fa7s274.kuback.top
   skip-cert-verify: false
 - name: '[VLESS] cf.090227.xyz:443'
   type: vless
@@ -319,7 +310,133 @@ proxies:
   uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
   udp: true
   tls: true
-  servername: edd8bb3cs478.fuhuovps.xyz
+  servername: 7758c2c5s552.kuback.top
+  skip-cert-verify: false
+- name: '[VLESS] s8748.xxti.top:443'
+  type: vless
+  server: s8748.xxti.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098ufe65960bs8746.fuhuovps.xyz
+  skip-cert-verify: false
+- name: '[VLESS] s2455.ccgfw.online:443'
+  type: vless
+  server: s2455.ccgfw.online
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u195e2634s2454.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2477.csgfw.top:443'
+  type: vless
+  server: s2477.csgfw.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098ue6ff16a6s2475.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] cf-cname.xingpingcn.top:443'
+  type: vless
+  server: cf-cname.xingpingcn.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: e1a88402s1291.kuback.top
+  skip-cert-verify: false
+- name: '[VLESS] s8747.xxti.top:443'
+  type: vless
+  server: s8747.xxti.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098ufe65960bs8746.fuhuovps.xyz
+  skip-cert-verify: false
+- name: '[VLESS] s2480.okgfwbackxyz.xyz:443'
+  type: vless
+  server: s2480.okgfwbackxyz.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u5ee03bdds2472.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2481.kukuss.top:443'
+  type: vless
+  server: s2481.kukuss.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u5ee03bdds2472.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2449.gogocs.xyz:443'
+  type: vless
+  server: s2449.gogocs.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u66e05ed8s2448.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2462.wagahaha.xyz:443'
+  type: vless
+  server: s2462.wagahaha.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u5ed7b5aes2460.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2490.uugfw.top:443'
+  type: vless
+  server: s2490.uugfw.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u6d620bd7s2474.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2317.gogocs.xyz:443'
+  type: vless
+  server: s2317.gogocs.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098uf215742bs2316.fuhuovps.xyz
+  skip-cert-verify: false
+- name: '[VLESS] s2461.gogocs.xyz:443'
+  type: vless
+  server: s2461.gogocs.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u5ed7b5aes2460.xxti.top
+  skip-cert-verify: false
+- name: '[HYSTERIA2] s2486.wagahaha.xyz:443'
+  type: hysteria2
+  server: s2486.wagahaha.xyz
+  port: 443
+  password: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  sni: u695098u04af05e4s2473.xxti.top
+- name: '[VLESS] s2485.gogocs.xyz:443'
+  type: vless
+  server: s2485.gogocs.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u04af05e4s2473.xxti.top
   skip-cert-verify: false
 - name: '[VLESS] s2359.kukuss.top:443'
   type: vless
@@ -329,6 +446,33 @@ proxies:
   udp: true
   tls: true
   servername: u695098u14c5ddd4s2358.gogocs.xyz
+  skip-cert-verify: false
+- name: '[VLESS] s2476.sspcccdn.xyz:443'
+  type: vless
+  server: s2476.sspcccdn.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098ue6ff16a6s2475.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] 141.164.40.4:443'
+  type: vless
+  server: 141.164.40.4
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u66e05ed8s2448.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] 64.176.62.37:443'
+  type: vless
+  server: 64.176.62.37
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098ue6ff16a6s2475.xxti.top
   skip-cert-verify: false
 - name: '[VLESS] s2360.kukuss.top:443'
   type: vless
@@ -357,124 +501,5 @@ proxies:
   tls: true
   servername: u695098u14c5ddd4s2358.gogocs.xyz
   skip-cert-verify: false
-- name: '[VLESS] 152.175.6.229:31884'
-  type: vless
-  server: 152.175.6.229
-  port: 31884
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  udp: true
-  tls: true
-  servername: hk010.zestapp778.com
-  skip-cert-verify: false
-- name: '[VMESS] 172.67.190.164:443'
-  type: vmess
-  server: 172.67.190.164
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-  servername: guanwang.awsno.com
-  fingerprint: chrome
-- name: '[VMESS] www.shopify.com:443'
-  type: vmess
-  server: www.shopify.com
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-  servername: guanwang.awsno.com
-  fingerprint: chrome
-- name: '[VLESS] edge.bookmai.com:443'
-  type: vless
-  server: edge.bookmai.com
-  port: 443
-  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-  udp: true
-  tls: true
-  servername: mother-earth.fyi
-  skip-cert-verify: false
-- name: '[VLESS] 134.255.211.36:443'
-  type: vless
-  server: 134.255.211.36
-  port: 443
-  uuid: c5f59ef3-9540-49fa-bd1e-c6c2f79df49a
-  udp: true
-  tls: true
-  servername: sg-sin.probe.geomyip.com
-  skip-cert-verify: false
-- name: '[VLESS] z1q3pv4g78.rucdncomp.pro:443'
-  type: vless
-  server: z1q3pv4g78.rucdncomp.pro
-  port: 443
-  uuid: c720cb74-4c84-4fce-b8ae-637dbaa16199
-  udp: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /useraction/events/b892639b7195/
-    headers:
-      Host: z1q3pv4g78.rucdncomp.pro
-  servername: z1q3pv4g78.rucdncomp.pro
-  skip-cert-verify: false
-- name: '[VMESS] guanwang.awsno.com:443'
-  type: vmess
-  server: guanwang.awsno.com
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: '0'
-  cipher: auto
-  network: ws
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-  servername: guanwang.awsno.com
-  fingerprint: ''
-- name: '[VLESS] 79.182.39.57:443'
-  type: vless
-  server: 79.182.39.57
-  port: 443
-  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
-  udp: true
-  tls: true
-  servername: a0688bt.us4.h1clayd.click
-  skip-cert-verify: false
-- name: '[VLESS] 147.45.161.4:443'
-  type: vless
-  server: 147.45.161.4
-  port: 443
-  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
-  udp: true
-  tls: true
-  servername: defs-68.topp-con.xyz
-  skip-cert-verify: false
-- name: '[VLESS] www.codex2api.com:18443'
-  type: vless
-  server: www.codex2api.com
-  port: 18443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  servername: 6793594bs709.fuhuovps.xyz
-  skip-cert-verify: false
-update_time: 2026-11-07 21:12:53 UTC
+update_time: 2026-11-08 03:14:42 UTC
 source: auto-fetched
