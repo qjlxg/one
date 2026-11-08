@@ -8,15 +8,6 @@ proxies:
   skip-cert-verify: false
   sni: 43.206.225.188
   udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
 - name: '[VLESS] cf02.564895.xyz:2096'
   server: cf02.564895.xyz
   port: 2096
@@ -501,5 +492,5 @@ proxies:
   tls: true
   servername: u695098u14c5ddd4s2358.gogocs.xyz
   skip-cert-verify: false
-update_time: 2026-11-08 03:14:42 UTC
+update_time: 2026-11-08 12:24:26 UTC
 source: auto-fetched
