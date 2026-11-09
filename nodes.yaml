@@ -321,15 +321,6 @@ proxies:
   tls: true
   servername: u695098ufe65960bs8746.fuhuovps.xyz
   skip-cert-verify: false
-- name: '[VLESS] s2455.ccgfw.online:443'
-  type: vless
-  server: s2455.ccgfw.online
-  port: 443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  servername: u695098u195e2634s2454.xxti.top
-  skip-cert-verify: false
 - name: '[VLESS] s2477.csgfw.top:443'
   type: vless
   server: s2477.csgfw.top
@@ -346,7 +337,7 @@ proxies:
   uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
   udp: true
   tls: true
-  servername: e1a88402s1291.kuback.top
+  servername: a16f22cds861.kuback.top
   skip-cert-verify: false
 - name: '[VLESS] s8747.xxti.top:443'
   type: vless
@@ -393,15 +384,6 @@ proxies:
   tls: true
   servername: u695098u5ed7b5aes2460.xxti.top
   skip-cert-verify: false
-- name: '[VLESS] s2490.uugfw.top:443'
-  type: vless
-  server: s2490.uugfw.top
-  port: 443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  servername: u695098u6d620bd7s2474.xxti.top
-  skip-cert-verify: false
 - name: '[VLESS] s2317.gogocs.xyz:443'
   type: vless
   server: s2317.gogocs.xyz
@@ -419,24 +401,6 @@ proxies:
   udp: true
   tls: true
   servername: u695098u5ed7b5aes2460.xxti.top
-  skip-cert-verify: false
-- name: '[HYSTERIA2] s2486.wagahaha.xyz:443'
-  type: hysteria2
-  server: s2486.wagahaha.xyz
-  port: 443
-  password: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  sni: u695098u04af05e4s2473.xxti.top
-- name: '[VLESS] s2485.gogocs.xyz:443'
-  type: vless
-  server: s2485.gogocs.xyz
-  port: 443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  servername: u695098u04af05e4s2473.xxti.top
   skip-cert-verify: false
 - name: '[VLESS] s2359.kukuss.top:443'
   type: vless
@@ -456,6 +420,24 @@ proxies:
   tls: true
   servername: u695098ue6ff16a6s2475.xxti.top
   skip-cert-verify: false
+- name: '[VLESS] 64.176.62.37:443'
+  type: vless
+  server: 64.176.62.37
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098ue6ff16a6s2475.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] 64.176.55.214:443'
+  type: vless
+  server: 64.176.55.214
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u5ee03bdds2472.xxti.top
+  skip-cert-verify: false
 - name: '[VLESS] 141.164.40.4:443'
   type: vless
   server: 141.164.40.4
@@ -465,14 +447,23 @@ proxies:
   tls: true
   servername: u695098u66e05ed8s2448.xxti.top
   skip-cert-verify: false
-- name: '[VLESS] 64.176.62.37:443'
+- name: '[VLESS] 45.77.18.34:443'
   type: vless
-  server: 64.176.62.37
+  server: 45.77.18.34
   port: 443
   uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
   udp: true
   tls: true
-  servername: u695098ue6ff16a6s2475.xxti.top
+  servername: u695098u5ed7b5aes2460.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2318.wagahaha.xyz:443'
+  type: vless
+  server: s2318.wagahaha.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098uf215742bs2316.fuhuovps.xyz
   skip-cert-verify: false
 - name: '[VLESS] s2360.kukuss.top:443'
   type: vless
@@ -483,23 +474,50 @@ proxies:
   tls: true
   servername: u695098u14c5ddd4s2358.gogocs.xyz
   skip-cert-verify: false
-- name: '[VLESS] cf.090227.xyz:18443'
+- name: '[VLESS] s2450.wagahaha.xyz:443'
   type: vless
-  server: cf.090227.xyz
-  port: 18443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  servername: 6793594bs709.fuhuovps.xyz
-  skip-cert-verify: false
-- name: '[VLESS] 193.53.126.91:443'
-  type: vless
-  server: 193.53.126.91
+  server: s2450.wagahaha.xyz
   port: 443
   uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
   udp: true
   tls: true
-  servername: u695098u14c5ddd4s2358.gogocs.xyz
+  servername: u695098u66e05ed8s2448.xxti.top
   skip-cert-verify: false
-update_time: 2026-11-08 19:14:09 UTC
+- name: '[VLESS] s2455.ccgfw.online:443'
+  type: vless
+  server: s2455.ccgfw.online
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u195e2634s2454.xxti.top
+  skip-cert-verify: false
+- name: '[VLESS] s2490.uugfw.top:443'
+  type: vless
+  server: s2490.uugfw.top
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u6d620bd7s2474.xxti.top
+  skip-cert-verify: false
+- name: '[HYSTERIA2] s2486.wagahaha.xyz:443'
+  type: hysteria2
+  server: s2486.wagahaha.xyz
+  port: 443
+  password: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  tls: true
+  skip-cert-verify: false
+  udp: true
+  sni: u695098u04af05e4s2473.xxti.top
+- name: '[VLESS] s2485.gogocs.xyz:443'
+  type: vless
+  server: s2485.gogocs.xyz
+  port: 443
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  udp: true
+  tls: true
+  servername: u695098u04af05e4s2473.xxti.top
+  skip-cert-verify: false
+update_time: 2026-11-09 00:17:11 UTC
 source: auto-fetched
