@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 179.255.132.69:443'
-  type: trojan
-  server: 179.255.132.69
-  port: 443
-  password: humanity
-  tls: true
-  skip-cert-verify: false
-  sni: www.cordweave.com
-  udp: true
 - name: '[TROJAN] 43.206.225.188:443'
   type: trojan
   server: 43.206.225.188
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: 43.206.225.188
+  udp: true
+- name: '[TROJAN] 179.255.132.69:443'
+  type: trojan
+  server: 179.255.132.69
+  port: 443
+  password: humanity
+  tls: true
+  skip-cert-verify: false
+  sni: www.cordweave.com
   udp: true
 - name: '[VLESS] cf02.564895.xyz:2096'
   server: cf02.564895.xyz
@@ -519,5 +519,5 @@ proxies:
   tls: true
   servername: u695098u04af05e4s2473.xxti.top
   skip-cert-verify: false
-update_time: 2026-11-09 00:17:11 UTC
+update_time: 2026-11-09 10:35:05 UTC
 source: auto-fetched
