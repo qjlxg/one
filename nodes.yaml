@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
+  udp: true
 - name: '[TROJAN] 43.206.225.188:443'
   type: trojan
   server: 43.206.225.188
@@ -582,5 +591,5 @@ proxies:
   tls: true
   servername: u695098u66e05ed8s2448.xxti.top
   skip-cert-verify: false
-update_time: 2026-11-10 13:56:06 UTC
+update_time: 2026-11-10 21:05:42 UTC
 source: auto-fetched
