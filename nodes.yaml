@@ -8,15 +8,6 @@ proxies:
   skip-cert-verify: false
   sni: 43.160.197.160
   udp: true
-- name: '[TROJAN] 43.206.225.188:443'
-  type: trojan
-  server: 43.206.225.188
-  port: 443
-  password: UX82473651
-  tls: true
-  skip-cert-verify: false
-  sni: 43.206.225.188
-  udp: true
 - name: '[SS] 202.50.253.63:19999'
   server: 202.50.253.63
   port: 19999
@@ -848,5 +839,5 @@ proxies:
   tls: true
   servername: u695098u4a88067fs2640.xxti.top
   skip-cert-verify: false
-update_time: 2026-11-12 14:12:55 UTC
+update_time: 2026-11-12 21:38:47 UTC
 source: auto-fetched
