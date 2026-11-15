@@ -330,5 +330,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-14 19:34:30 UTC
+update_time: 2026-11-15 00:29:55 UTC
 source: auto-fetched
