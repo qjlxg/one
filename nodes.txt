@@ -1,6 +1,6 @@
-# Updated at 2026-11-16 21:24:31 UTC
-trojan://1234567890@202.61.195.167:443?sni=kfm-bn0.pages.dev#%5BTROJAN%5D%20202.61.195.167%3A443
+# Updated at 2026-11-17 05:39:18 UTC
 trojan://38f169d6-d202-4b1b-8db8-e6eb1648f5cf@43.160.197.160:443?sni=43.160.197.160#%5BTROJAN%5D%2043.160.197.160%3A443
+trojan://1234567890@202.61.195.167:443?sni=kfm-bn0.pages.dev#%5BTROJAN%5D%20202.61.195.167%3A443
 ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.63:19999#[SS] 202.50.253.63:19999
 ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.27:19999#[SS] 202.50.253.27:19999
 vless://b0dc852a-97ec-4d4e-9179-f0e5c2ef1489@139.162.91.239:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=#%5BVLESS%5D%20139.162.91.239%3A443
@@ -12,22 +12,4 @@ vless://7f0270f9-1abc-4c4f-960d-0a23e32f1eb8@139.162.20.241:443?security=tls&sni
 vless://38ae2bc6-577c-4e0a-b49c-81c44a0b4383@172.235.53.103:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=#%5BVLESS%5D%20172.235.53.103%3A443
 vless://6b4861de-7316-4a5a-bc45-0cbd8bf97eab@172.236.239.126:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=#%5BVLESS%5D%20172.236.239.126%3A443
 trojan://Mitivpn@151.101.110.219:443?sni=ssl.fastly.com#%5BTROJAN%5D%20151.101.110.219%3A443
-vless://76825bbe-3ad2-4156-b9ed-a5bdfcc93bd3@50.7.44.27:443?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2050.7.44.27%3A443
-vless://76825bbe-3ad2-4156-b9ed-a5bdfcc93bd3@50.7.44.27:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2050.7.44.27%3A2053
-vless://76825bbe-3ad2-4156-b9ed-a5bdfcc93bd3@50.7.44.27:2083?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2050.7.44.27%3A2083
-vless://76825bbe-3ad2-4156-b9ed-a5bdfcc93bd3@cdn-jp.skyvora.app:8443?security=tls&sni=cdn-jp.skyvora.app&allowInsecure=1&type=ws&path=/pmcxbjzdau6&host=cdn-jp.skyvora.app#%5BVLESS%5D%20cdn-jp.skyvora.app%3A8443
-vless://3b8896fd-ba38-4da7-b365-d0f01f37aa40@66.90.115.123:2083?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2066.90.115.123%3A2083
-vless://3b8896fd-ba38-4da7-b365-d0f01f37aa40@66.90.115.133:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2066.90.115.133%3A2053
-vless://3b8896fd-ba38-4da7-b365-d0f01f37aa40@66.90.115.133:2083?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2066.90.115.133%3A2083
-vless://3b8896fd-ba38-4da7-b365-d0f01f37aa40@cdn-hk.skyvora.app:8443?security=tls&sni=cdn-hk.skyvora.app&allowInsecure=1&type=ws&path=/zmeadqv620k&host=cdn-hk.skyvora.app#%5BVLESS%5D%20cdn-hk.skyvora.app%3A8443
-vless://3eb38d44-2e61-4553-b6ae-026033eacba5@67.159.49.30:443?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2067.159.49.30%3A443
-vless://3eb38d44-2e61-4553-b6ae-026033eacba5@67.159.49.26:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2067.159.49.26%3A2053
-vless://3eb38d44-2e61-4553-b6ae-026033eacba5@67.159.49.27:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2067.159.49.27%3A2053
-vless://3eb38d44-2e61-4553-b6ae-026033eacba5@cdn-sg.skyvora.app:8443?security=tls&sni=cdn-sg.skyvora.app&allowInsecure=1&type=ws&path=/axzfrv47qcn&host=cdn-sg.skyvora.app#%5BVLESS%5D%20cdn-sg.skyvora.app%3A8443
-vless://71d6fdb8-eda2-4aa8-b3e2-34a3aad51382@38.145.220.39:443?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2038.145.220.39%3A443
-vless://13134515-adc7-404b-8d2a-f9ad99e8dcbd@188.164.248.110:443?security=tls&sni=imanvipreserved.pages.dev&allowInsecure=1&type=ws&path=/&host=imanvipreserved.pages.dev#%5BVLESS%5D%20188.164.248.110%3A443
-vless://71d6fdb8-eda2-4aa8-b3e2-34a3aad51382@38.145.220.39:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2038.145.220.39%3A2053
-vless://71d6fdb8-eda2-4aa8-b3e2-34a3aad51382@cdn-us.skyvora.app:8443?security=tls&sni=cdn-us.skyvora.app&allowInsecure=1&type=ws&path=/kqdyeo2k4b1&host=cdn-us.skyvora.app#%5BVLESS%5D%20cdn-us.skyvora.app%3A8443
-vless://746c7209-49e1-494e-9ad1-a630d48ed26d@50.7.86.203:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2050.7.86.203%3A2053
-vless://746c7209-49e1-494e-9ad1-a630d48ed26d@50.7.86.214:2053?security=tls&sni=www.apple.com&allowInsecure=1#%5BVLESS%5D%2050.7.86.214%3A2053
 vmess://eyJ2IjogIjIiLCAicHMiOiAiW1ZNRVNTXSAxOTIuMC4yLjE6MSIsICJhZGQiOiAiMTkyLjAuMi4xIiwgInBvcnQiOiAiMSIsICJpZCI6ICI2YzZhMDYyNS1hYzNmLTRiZDgtOWNjOC0wNTQ1ZTRlMTE0MDkiLCAiYWlkIjogIjAiLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiIn0=
