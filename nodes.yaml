@@ -1,13 +1,4 @@
 proxies:
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -17,6 +8,15 @@ proxies:
   skip-cert-verify: false
   sni: 43.160.197.160
   udp: true
+- name: '[VLESS] 169.40.42.229:443'
+  type: vless
+  server: 169.40.42.229
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  servername: 169.40.42.229
+  skip-cert-verify: false
 - name: '[TROJAN] 202.61.195.167:443'
   type: trojan
   server: 202.61.195.167
@@ -174,5 +174,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-20 01:56:53 UTC
+update_time: 2026-11-20 10:42:40 UTC
 source: auto-fetched
