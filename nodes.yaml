@@ -1,4 +1,13 @@
 proxies:
+- name: '[VLESS] api.ferrin.uk:443'
+  type: vless
+  server: api.ferrin.uk
+  port: 443
+  uuid: 7d1a74fd-8a38-4a29-863f-5da53a9e557e
+  udp: true
+  tls: true
+  servername: api.ferrin.uk
+  skip-cert-verify: false
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -174,5 +183,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-20 10:42:40 UTC
+update_time: 2026-11-20 19:24:25 UTC
 source: auto-fetched
