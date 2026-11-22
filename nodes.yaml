@@ -26,15 +26,6 @@ proxies:
   skip-cert-verify: false
   sni: 43.160.197.160
   udp: true
-- name: '[VLESS] 169.40.42.229:443'
-  type: vless
-  server: 169.40.42.229
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  servername: 169.40.42.229
-  skip-cert-verify: false
 - name: '[SS] 202.50.253.63:19999'
   server: 202.50.253.63
   port: 19999
@@ -183,5 +174,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-22 10:29:14 UTC
+update_time: 2026-11-22 18:49:10 UTC
 source: auto-fetched
