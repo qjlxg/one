@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 43.160.197.160:443'
-  type: trojan
-  server: 43.160.197.160
-  port: 443
-  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-  tls: true
-  skip-cert-verify: false
-  sni: 43.160.197.160
-  udp: true
 - name: '[TROJAN] 202.61.195.167:443'
   type: trojan
   server: 202.61.195.167
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: kfm-bn0.pages.dev
+  udp: true
+- name: '[TROJAN] 43.160.197.160:443'
+  type: trojan
+  server: 43.160.197.160
+  port: 443
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  tls: true
+  skip-cert-verify: false
+  sni: 43.160.197.160
   udp: true
 - name: '[VLESS] api.ferrin.uk:443'
   type: vless
@@ -565,5 +565,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-24 07:31:41 UTC
+update_time: 2026-11-24 19:47:26 UTC
 source: auto-fetched
