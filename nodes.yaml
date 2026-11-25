@@ -1,13 +1,4 @@
 proxies:
-- name: '[TROJAN] 18.179.31.199:443'
-  type: trojan
-  server: 18.179.31.199
-  port: 443
-  password: ND91608427
-  tls: true
-  skip-cert-verify: false
-  sni: 18.179.31.199
-  udp: true
 - name: '[TROJAN] 202.61.195.167:443'
   type: trojan
   server: 202.61.195.167
@@ -16,6 +7,15 @@ proxies:
   tls: true
   skip-cert-verify: false
   sni: kfm-bn0.pages.dev
+  udp: true
+- name: '[TROJAN] 18.179.31.199:443'
+  type: trojan
+  server: 18.179.31.199
+  port: 443
+  password: ND91608427
+  tls: true
+  skip-cert-verify: false
+  sni: 18.179.31.199
   udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
@@ -477,5 +477,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-25 03:52:12 UTC
+update_time: 2026-11-25 16:25:07 UTC
 source: auto-fetched
