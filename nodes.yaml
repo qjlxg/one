@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 138.124.111.115:443'
+  type: trojan
+  server: 138.124.111.115
+  port: 443
+  password: '162534'
+  tls: true
+  skip-cert-verify: false
+  sni: cchh2.pages.dev
+  udp: true
 - name: '[TROJAN] 202.61.195.167:443'
   type: trojan
   server: 202.61.195.167
@@ -298,5 +307,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-26 01:17:33 UTC
+update_time: 2026-11-26 11:40:53 UTC
 source: auto-fetched
