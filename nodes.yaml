@@ -490,5 +490,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-27 03:21:49 UTC
+update_time: 2026-11-27 15:47:57 UTC
 source: auto-fetched
