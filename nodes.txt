@@ -1,12 +1,23 @@
-# Updated at 2026-11-26 20:41:06 UTC
+# Updated at 2026-11-27 03:21:49 UTC
+trojan://38f169d6-d202-4b1b-8db8-e6eb1648f5cf@43.160.197.160:443?sni=43.160.197.160#%5BTROJAN%5D%2043.160.197.160%3A443
 trojan://162534@138.124.111.115:443?sni=cchh2.pages.dev#%5BTROJAN%5D%20138.124.111.115%3A443
 trojan://1234567890@202.61.195.167:443?sni=kfm-bn0.pages.dev#%5BTROJAN%5D%20202.61.195.167%3A443
 trojan://ND91608427@18.179.31.199:443?sni=18.179.31.199#%5BTROJAN%5D%2018.179.31.199%3A443
 ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.63:19999#[SS] 202.50.253.63:19999
-ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.27:19999#[SS] 202.50.253.27:19999
 vless://b4ec7f6b-b41e-4018-9f76-19204e138db9@139.162.91.182:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20139.162.91.182%3A443
 vless://010431f3-04f6-4404-a801-b93bf2e3c2b2@172.104.86.181:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.104.86.181%3A443
 vless://40a4b915-5e6f-4316-9bb1-e899f30608e3@172.233.129.172:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.233.129.172%3A443
+vless://330a570e-c0ba-4a9d-8e37-d20540cc8eaa@jp2mqtt.jumpernode.site:443?security=tls&sni=stg.nvbugspro.nvidia.com&allowInsecure=1#%5BVLESS%5D%20jp2mqtt.jumpernode.site%3A443
+ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.18:19999#[SS] 202.50.253.18:19999
+vless://c8c9b995-b4b9-4915-9c7d-dee94aa733ba@172.105.203.15:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.105.203.15%3A443
+vless://911dce8c-a2d7-4267-acb4-1dec7cc360c4@139.162.91.228:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20139.162.91.228%3A443
+vless://81f4e114-5a60-41b5-9038-8d742380c84f@172.105.197.24:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.105.197.24%3A443
+vless://0dbe84f8-74fd-4bd1-99fe-e67eb7eaff85@172.104.48.162:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.104.48.162%3A443
+vless://a28d0884-193d-4591-aa64-8638ba1481ce@172.104.48.194:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.104.48.194%3A443
+vless://61e3954d-0d66-4b69-b6cd-9b4fc2352303@172.233.142.149:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.233.142.149%3A443
+vless://87ff88cc-5c1f-4f46-86b8-c43f55b71dd2@172.104.186.185:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.104.186.185%3A443
+vless://a15c47e7-0d24-4e82-a759-891d0e951a01@172.235.36.11:443?security=tls&sni=itunes.apple.com&allowInsecure=1&type=ws&path=/ws&host=itunes.apple.com#%5BVLESS%5D%20172.235.36.11%3A443
+ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.27:19999#[SS] 202.50.253.27:19999
 vless://b69cf773-da16-486e-afce-a45b94f998b3@166.88.14.71:8443?security=tls&sni=senflarelink-node-71i.pages.dev&allowInsecure=1&type=ws&path=/&host=senflarelink-node-71i.pages.dev#%5BVLESS%5D%20166.88.14.71%3A8443
 vless://b69cf773-da16-486e-afce-a45b94f998b3@45.32.57.15:8443?security=tls&sni=senflarelink-node-nwz76h.pages.dev&allowInsecure=1&type=ws&path=/&host=senflarelink-node-nwz76h.pages.dev#%5BVLESS%5D%2045.32.57.15%3A8443
 vless://b69cf773-da16-486e-afce-a45b94f998b3@185.206.171.66:8443?security=tls&sni=senflarelink-node-7uv.pages.dev&allowInsecure=1&type=ws&path=/&host=senflarelink-node-7uv.pages.dev#%5BVLESS%5D%20185.206.171.66%3A8443
