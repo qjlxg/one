@@ -1,4 +1,13 @@
 proxies:
+- name: '[TROJAN] 43.156.36.253:443'
+  type: trojan
+  server: 43.156.36.253
+  port: 443
+  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
+  tls: true
+  skip-cert-verify: false
+  sni: 43.156.36.253
+  udp: true
 - name: '[TROJAN] 43.160.197.160:443'
   type: trojan
   server: 43.160.197.160
@@ -92,22 +101,6 @@ proxies:
     headers:
       Host: itunes.apple.com
     v2ray-http-upgrade: false
-  udp: true
-- name: '[VLESS] jp2mqtt.jumpernode.site:443'
-  server: jp2mqtt.jumpernode.site
-  port: 443
-  type: vless
-  uuid: 330a570e-c0ba-4a9d-8e37-d20540cc8eaa
-  tls: true
-  tfo: false
-  flow: xtls-rprx-vision
-  skip-cert-verify: true
-  reality-opts:
-    public-key: KBPuCiAKJQQtlsodm5MIBFfYf-TGsrjCK5GGJzJJli4
-    short-id: 6a3c0a718181
-  servername: stg.nvbugspro.nvidia.com
-  client-fingerprint: chrome
-  network: tcp
   udp: true
 - name: '[SS] 202.50.253.18:19999'
   server: 202.50.253.18
@@ -276,6 +269,55 @@ proxies:
       Host: itunes.apple.com
     v2ray-http-upgrade: false
   udp: true
+- name: '[VLESS] 216.236.51.44:1891'
+  server: 216.236.51.44
+  port: 1891
+  type: vless
+  uuid: e9923122-5d88-43f1-8548-5771d7750ef5
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: senflarelink-node-71i.pages.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: senflarelink-node-71i.pages.dev
+    v2ray-http-upgrade: false
+  udp: true
+- name: '[VLESS] 38.207.172.59:28418'
+  server: 38.207.172.59
+  port: 28418
+  type: vless
+  uuid: e6552569-97ce-430c-a324-53ad1c546e05
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: mfxE6lW_fuPZKWtrySdTx9HOh0vtX3-7aMiYDCh2YCA
+    short-id: ddd21e20
+  servername: op.gg
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: '[VLESS] jp2mqtt.jumpernode.site:443'
+  server: jp2mqtt.jumpernode.site
+  port: 443
+  type: vless
+  uuid: 330a570e-c0ba-4a9d-8e37-d20540cc8eaa
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: KBPuCiAKJQQtlsodm5MIBFfYf-TGsrjCK5GGJzJJli4
+    short-id: 6a3c0a718181
+  servername: stg.nvbugspro.nvidia.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
 - name: '[VMESS] 192.0.2.1:1'
   type: vmess
   server: 192.0.2.1
@@ -287,5 +329,5 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-update_time: 2026-11-28 00:49:35 UTC
+update_time: 2026-11-28 11:05:03 UTC
 source: auto-fetched
